@@ -167,11 +167,13 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
               {/* Host Identity */}
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-full bg-slate-50 border border-slate-150 flex items-center justify-center overflow-hidden shrink-0 shadow-sm">
-                    {/* Compact logo avatar */}
-                    <div className="bg-[#0f2942] w-full h-full flex items-center justify-center text-white font-bold text-sm tracking-widest font-serif">
-                      AUM
-                    </div>
+                  <div className="w-11 h-11 rounded-full border border-slate-150 flex items-center justify-center overflow-hidden shrink-0 shadow-sm">
+                    {/* Logo avatar from image */}
+                    <img 
+                      src="/images/aum-logo.png" 
+                      alt="AUM Consultancy Logo" 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div>
                     <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Aum Consultancy</h4>
