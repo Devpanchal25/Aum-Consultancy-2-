@@ -1,0 +1,8 @@
+{
+  "name": "Aum Consultancy",
+  "description": "Premium corporate offshore back-office, bookkeeping, and taxation firm targeting global clients in USA, UK, Canada, Australia, and UAE.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
