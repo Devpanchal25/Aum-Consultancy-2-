@@ -36,7 +36,7 @@ export default function PrivacyPolicyView() {
           <div className="space-y-4">
             <h2 className="font-serif text-lg font-bold text-navy-900">1. Summary</h2>
             <p className="text-xs sm:text-sm font-light leading-relaxed">
-              At Aum Consultancy Services Private Limited (Ahmedabad, India), we deliver premium, whitelabel offshore financial solutions, bookkeeping, tax preparation, and full-time dedicated accountant staffing. This Privacy Policy outlines how we collect, store, secure, process, and protect proprietary client data and financial records. We enforce absolute physical and environment isolations with zero local storage protocols.
+              At Aum Consultancy (Vadodara, India), we deliver premium, whitelabel offshore financial solutions, bookkeeping, tax preparation, and full-time dedicated accountant staffing. This Privacy Policy outlines how we collect, store, secure, process, and protect proprietary client data and financial records. We enforce absolute physical and environment isolations with zero local storage protocols.
             </p>
           </div>
 

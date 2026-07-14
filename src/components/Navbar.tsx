@@ -203,7 +203,7 @@ export default function Navbar({
           <div className="flex items-center gap-5">
             {/* Social Media Links */}
             <div className="flex items-center gap-3">
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-[#007cff] text-slate-400 transition-colors" title="LinkedIn">
+              <a href="https://www.linkedin.com/company/aum-consultancy-india/" target="_blank" rel="noreferrer" className="hover:text-[#007cff] text-slate-400 transition-colors" title="LinkedIn">
                 <Linkedin className="w-3.5 h-3.5" />
               </a>
             </div>

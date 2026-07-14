@@ -69,7 +69,7 @@ export default function Footer({ setCurrentPage, openConsultation, openSecurityP
             </p>
           </div>
           <div className="flex items-center gap-2.5">
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="w-8 h-8 bg-navy-800 rounded-full flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all text-slate-400" title="LinkedIn">
+            <a href="https://www.linkedin.com/company/aum-consultancy-india/" target="_blank" rel="noreferrer" className="w-8 h-8 bg-navy-800 rounded-full flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all text-slate-400" title="LinkedIn">
               <Linkedin className="w-3.5 h-3.5" />
             </a>
           </div>
@@ -84,8 +84,8 @@ export default function Footer({ setCurrentPage, openConsultation, openSecurityP
               <div>
                 <strong className="text-white block font-medium">India Head Office:</strong>
                 <p className="mt-1">
-                  Aum Consultancy, A-4 Hare Krishna 2, <br />
-                  Behind Earth Icon, New VIP Road,,<br />
+                  Aum Consultancy, A-4 Hare Krishna 2,<br />
+                  Behind Earth Icon, New VIP Road,<br />
                   Vadodara, Gujarat, India – 390006
                 </p>
               </div>
@@ -161,24 +161,13 @@ export default function Footer({ setCurrentPage, openConsultation, openSecurityP
       {/* Under-Footer Copyright and Legal compliance indicators */}
       <div className="border-t border-navy-800 bg-navy-950 py-8 px-4 sm:px-6 lg:px-8 text-xs font-medium text-slate-500">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <div>
+          <div className="w-full">
             <p className="text-center md:text-left">
-              &copy; {new Date().getFullYear()} Aum Consultancy Services Private Limited. All Rights Reserved.
+              &copy; {new Date().getFullYear()} Aum Consultancy. All Rights Reserved.
             </p>
             <p className="text-[10px] text-slate-600 mt-1 leading-relaxed text-center md:text-left">
               Corporate legal disclosures: All back-office operations adhere fully to GDPR, CCPA, PIPEDA, and Australian Privacy Principles. Services are provided through secure dedicated remote virtual frameworks.
             </p>
-          </div>
-          <div className="flex flex-wrap justify-center gap-4 text-[11px]">
-            <button onClick={openSecurityPolicy} className="hover:text-slate-300 text-indigo-400 font-bold transition-colors">Data Security Policy</button>
-            <span>•</span>
-            <button onClick={() => navigate('/privacy-policy')} className="hover:text-slate-300 transition-colors">Privacy Policy</button>
-            <span>•</span>
-            <button onClick={() => navigate('/terms-conditions')} className="hover:text-slate-300 transition-colors">Terms of Service</button>
-            <span>•</span>
-            <button onClick={openSecurityPolicy} className="hover:text-slate-300 transition-colors">Data Processing Addendum</button>
-            <span>•</span>
-            <button onClick={openSecurityPolicy} className="hover:text-slate-300 transition-colors">ISO 27001 Controls</button>
           </div>
         </div>
       </div>

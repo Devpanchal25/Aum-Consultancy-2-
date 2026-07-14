@@ -63,7 +63,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     accountingSections: [
       {
         type: 'text-block',
-        title: '🛠️ Your Daily & Monthly Upkeep Checklist',
+        title: 'Your Daily & Monthly Upkeep Checklist',
         text: 'Every task we execute is aligned precisely with your firm\'s existing workflow. Utilizing cloud-based platforms, you gain real-time visibility, streamlined processes, and better control over your numbers—without the operational burden of daily supervision.\n\nWe simplify each step, ensuring seamless integration from initial scope to final delivery. Our process is designed to enhance your efficiency and reduce your workload.'
       },
       {
@@ -83,7 +83,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'bullet',
-        title: '🚨 Financial Backlog or Unfinished Books? We resolve it all.',
+        title: 'Financial Backlog or Unfinished Books? We resolve it all.',
         text: 'Whether your books are behind by weeks, months or years- Our dedicated team step in immediately to resolve backlogs ensuring your books prepared - ready for upcoming tax deadline, an unexpected audit, or an upcoming investor review',
         items: [
           'Forensic Historical Catch-Up: We dive backward into your files to sort, categorize, and reconstruct months or years of missing data.',
@@ -166,12 +166,12 @@ const BASE_SUB_SERVICES: SubService[] = [
     accountingSections: [
       {
         type: 'text-block',
-        title: '🛠️ Your Bill Processing & Outflow Checklist',
+        title: 'Your Bill Processing & Outflow Checklist',
         text: 'We hook into your preferred platforms—including QuickBooks, Xero, Sage, and NetSuite—and layer in smart document tools like Dext, Hubdoc, or secure client portals to capture data instantly. Our team handles everything from the initial receipt to final payment matching.'
       },
       {
         type: 'checklist',
-        title: '📋 Our Comprehensive Scope of Work:',
+        title: 'Our Comprehensive Scope of Work:',
         items: [
           'Digital Invoice Capture & Intake: We gather incoming vendor bills from centralized emails or portals, parsing details instantly via digital systems to eliminate paper clutter.',
           'Meticulous GL Coding & Line-Item Entry: Every invoice is coded down to the exact General Ledger account code, department, or project line.',
@@ -202,12 +202,12 @@ const BASE_SUB_SERVICES: SubService[] = [
     accountingSections: [
       {
         type: 'text-block',
-        title: '🛠️ Your Billing & Cash Collection Checklist',
+        title: 'Your Billing & Cash Collection Checklist',
         text: 'From customer onboarding to final cash application, we keep your customer ledgers mathematically precise and highly organized.'
       },
       {
         type: 'checklist',
-        title: '📋 Our Comprehensive Scope of Work:',
+        title: 'Our Comprehensive Scope of Work:',
         items: [
           'New Customer Profile Onboarding: We document customer preferences, credit parameters, and customized billing requirements right inside your software framework.',
           'Accurate Invoice Generation & Dispatch: We build and send clean, branded invoices featuring proper tax treatments, correct invoice numbers, and clear payment links the moment a sale closes.',
@@ -233,17 +233,17 @@ const BASE_SUB_SERVICES: SubService[] = [
       'Drastic Risk Reduction: By handing calculations over to offshore processing experts, you completely eliminate internal processing mistakes and expensive compliance penalties.',
       'Absolute Privacy & Confidentiality: Payroll data is highly sensitive. We utilize secure, encrypted cloud data transfers and enforce strict access controls to ensure your payroll records remain completely confidential.'
     ],
-    didYouKnow: '📅 Worried about payroll tax penalties or missing statutory deadlines? Rest easy—we track it all. Missing an employment tax deadline or miscalculating a filing can lead to massive regulatory fines. Our payroll specialists run continuous checks against the latest regional updates, guaranteeing your business remains 100% compliant with local laws (IRS/DOL in the US, HMRC in the UK,add other 2 countries’ laws or your regional equivalent). We prepare and organize your monthly, quarterly, and year-end payroll tax returns automatically.',
+    didYouKnow: 'Worried about payroll tax penalties or missing statutory deadlines? Rest easy—we track it all. Missing an employment tax deadline or miscalculating a filing can lead to massive regulatory fines. Our payroll specialists run continuous checks against the latest regional updates, guaranteeing your business remains 100% compliant with local laws (IRS/DOL in the US, HMRC in the UK,add other 2 countries’ laws or your regional equivalent). We prepare and organize your monthly, quarterly, and year-end payroll tax returns automatically.',
     ctaText: 'Schedule Consultation',
     accountingSections: [
       {
         type: 'text-block',
-        title: '🛠️ Your Seamless Payroll Execution Checklist',
+        title: 'Your Seamless Payroll Execution Checklist',
         text: 'We adapt completely to your preferred payroll infrastructure—whether you utilize Gusto, ADP, Paychex, BrightPay, Xero Payroll, or QuickBooks Payroll. Our team handles the back-end calculations, data formatting, and compliance tracking from start to finish.'
       },
       {
         type: 'checklist',
-        title: '📋 Our Comprehensive Scope of Work:',
+        title: 'Our Comprehensive Scope of Work:',
         items: [
           'Time & Attendance Synchronization: We collect, verify, and organize employee hours, overtime logs, and timesheets to ensure data entry is 100% accurate before processing.',
           'Gross-to-Net Pay Calculations: Continuous management of salary profiles, hourly wages, bonuses, commissions, and unpaid leave allocations.',
@@ -255,7 +255,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'text-block',
-        title: '📅 Worried about payroll tax penalties or missing statutory deadlines? Rest easy—we track it all.',
+        title: 'Worried about payroll tax penalties or missing statutory deadlines? Rest easy—we track it all.',
         text: 'Missing an employment tax deadline or miscalculating a filing can lead to massive regulatory fines. Our payroll specialists run continuous checks against the latest regional updates, guaranteeing your business remains 100% compliant with local laws (IRS/DOL in the US, HMRC in the UK,add other 2 countries’ laws or your regional equivalent). We prepare and organize your monthly, quarterly, and year-end payroll tax returns automatically.'
       }
     ]
@@ -274,17 +274,17 @@ const BASE_SUB_SERVICES: SubService[] = [
       'Flawless Integration with Core Platforms: Our specialists operate natively inside major cloud networks, securely managing data transfers without any friction.',
       'Operational Cost Reductions: Scale up your firm\'s client onboarding capacity during intense peak busy seasons while dropping your bottom-line invoice processing costs significantly.'
     ],
-    whyPartnerTitle: '🚀 The Aum Consultancy Competitive Advantage',
+    whyPartnerTitle: 'The Aum Consultancy Competitive Advantage',
     ctaText: 'Explore Audit Support Capacity',
     accountingSections: [
       {
         type: 'text-block',
-        title: '🛠️ End-to-End Audit Phase Support',
+        title: 'End-to-End Audit Phase Support',
         text: 'We integrate effortlessly with your internal platforms, following your firm\'s custom checklists to deliver complete audit packages at every critical phase.'
       },
       {
         type: 'nested-sections',
-        title: '📋 Our Comprehensive Scope of Work:',
+        title: 'Our Comprehensive Scope of Work:',
         subSections: [
           {
             title: '1. Planning',
@@ -335,14 +335,14 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'bullet',
-        title: '🏛️ Seamless Compliance Across 4 Global Jurisdictions',
+        title: 'Seamless Compliance Across 4 Global Jurisdictions',
         text: 'Your dedicated offshore pod at Aum Consultancy is thoroughly trained to prepare working papers that seamlessly meet the rigorous compliance frameworks of your home country:',
         items: [
           '🇺🇸 United States: Strict alignment with AICPA / GAAS clarity frameworks for private entities and non-profits, alongside meticulous compliance mapping for public firms following PCAOB Standards.',
           '🇬🇧 United Kingdom: Flawless file structure meeting UK ISAs as set by the Financial Reporting Council (FRC), fully compliant with the statutory parameters of the Companies Act 2006.',
           '🇨🇦 Canada: Complete integration with Canadian Auditing Standards (CAS) and rules detailed within the CPA Canada Handbook – Assurance.',
           '🇦🇺 Australia: Legally binding work structures formatted exactly to Australian Auditing Standards (ASAs) under the federal Corporations Act 2001.',
-          '🌐 International Baseline: Every document we generate adheres to the International Standards on Auditing (ISA) set by the IAASB.'
+          'International Baseline: Every document we generate adheres to the International Standards on Auditing (ISA) set by the IAASB.'
         ]
       }
     ]
@@ -421,12 +421,12 @@ const BASE_SUB_SERVICES: SubService[] = [
     accountingSections: [
       {
         type: 'text-block',
-        title: '🛠️ Our Step-by-Step Back-Year Resolution Checklist',
+        title: 'Our Step-by-Step Back-Year Resolution Checklist',
         text: 'We don’t just fill out the missing years; we forensically audit them to ensure you pay the absolute minimum required by law while catching up.'
       },
       {
         type: 'bullet',
-        title: '📋 Our Comprehensive Scope of Work:',
+        title: 'Our Comprehensive Scope of Work:',
         items: [
           'IRS & State Transcript Retrieval: We pull your official historical tax transcripts directly from the authorities to see exactly what income has been reported and what years are flagged.',
           'Forensic Accounting & Document Reconstruction: Missing bank statements or old receipts? We piece your financial history together using specialized ledger reconstruction techniques.',
@@ -437,7 +437,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'nested-sections',
-        title: '🚀 The Back-Year Road to Relief',
+        title: 'The Back-Year Road to Relief',
         subSections: [
           {
             title: '1.Confidential File Intake:',
@@ -471,7 +471,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'bullet',
-        title: '🚀 Why Trust Aum Consultancy with Your Catch-Up Filing?',
+        title: 'Why Trust Aum Consultancy with Your Catch-Up Filing?',
         items: [
           'Absolute Privacy & Confidentiality: Your financial history is completely safe, encrypted, and protected by strict professional non-disclosure protocols.',
           'Drastic Penalty Reduction: We actively seek out every legal pathway to shave off accumulated interest and compliance fines.',
@@ -495,7 +495,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     accountingSections: [
       {
         type: 'grid',
-        title: '🛠️ Specialized Personal Tax Scenarios We Handle',
+        title: 'Specialized Personal Tax Scenarios We Handle',
         text: 'We go far beyond standard wage statements. Our personal tax team is highly skilled in processing complex, multi-layered personal income streams:',
         gridItems: [
           {
@@ -522,7 +522,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'nested-sections',
-        title: '🚀 Our Simple, 4-Step Personal Filing Process',
+        title: 'Our Simple, 4-Step Personal Filing Process',
         subSections: [
           {
             title: '1.Secure Document Upload:',
@@ -556,7 +556,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'bullet',
-        title: '🚀 Why File Your Personal Taxes with Aum Consultancy?',
+        title: 'Why File Your Personal Taxes with Aum Consultancy?',
         items: [
           'Surgical Accuracy, Zero Stress: Rest easy knowing your personal return is being handled by qualified, meticulous tax professionals who know local laws inside and out.',
           'Audit Protection Check: Every personal return goes through a thorough compliance screening to flag and fix common audit triggers before submission.',
@@ -580,12 +580,12 @@ const BASE_SUB_SERVICES: SubService[] = [
     accountingSections: [
       {
         type: 'text-block',
-        title: '🛠️ Complete C-Corp Compliance Support',
+        title: 'Complete C-Corp Compliance Support',
         text: 'We take full ownership of the heavy financial mapping required for corporate returns, ensuring your general ledger mirrors your tax disclosures flawlessly.'
       },
       {
         type: 'bullet',
-        title: '📋 Our Comprehensive Scope of Work:',
+        title: 'Our Comprehensive Scope of Work:',
         items: [
           'Meticulous Form 1120 & State Filing: We prepare and file your comprehensive Federal Form 1120 along with all required state and local corporate tax returns.',
           'Schedule M-1 & M-2 Reconciliations: Meticulous tracking and reconciliation of differences between your book income and taxable income, keeping your corporate records perfectly balanced.',
@@ -596,7 +596,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'nested-sections',
-        title: '🚀 Our Corporate Filing Workflow',
+        title: 'Our Corporate Filing Workflow',
         subSections: [
           {
             title: '1.Ledger & Balance Sheet Intake:',
@@ -630,7 +630,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'bullet',
-        title: '🚀 Why Partner with Aum Consultancy for Your C-Corp Return?',
+        title: 'Why Partner with Aum Consultancy for Your C-Corp Return?',
         items: [
           'Advanced Corporate Expertise: Your returns are processed by elite corporate tax specialists who natively understand complex equity structures, debt-to-equity compliance, and corporate code.',
           'Bulletproof Audit Readiness: We double-verify every corporate balance sheet line against clear, verifiable audit trails, minimizing red flags before submission.',
@@ -654,7 +654,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     accountingSections: [
       {
         type: 'grid',
-        title: '🌍 Instant Local Authority & Form Mapping',
+        title: 'Instant Local Authority & Form Mapping',
         gridItems: [
           {
             title: '🇺🇸 United States',
@@ -680,7 +680,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'bullet',
-        title: '🛠️ Complete Partnership & Flow-Through Scope of Work',
+        title: 'Complete Partnership & Flow-Through Scope of Work',
         text: 'We handle the end-to-end accounting-to-tax transformation, ensuring your partnership agreements tie out exactly with your final filings.',
         items: [
           'Schedule M-1 & Book-to-Tax Reconciliations: We analyze and reconcile all differences between book net income and taxable net income, adjusting for permanent and temporary variations.',
@@ -691,7 +691,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'nested-sections',
-        title: '🚀 Our Global Data Filing Workflow',
+        title: 'Our Global Data Filing Workflow',
         subSections: [
           {
             title: '1.Secure Trial Balance & Intake:',
@@ -740,7 +740,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     accountingSections: [
       {
         type: 'grid',
-        title: '🧭 Multi-Jurisdictional Frameworks We Handle',
+        title: 'Multi-Jurisdictional Frameworks We Handle',
         text: 'Our global delivery center manages complex regional and state-level tax structures natively, shielding your business or CPA firm from compliance oversights:',
         gridItems: [
           {
@@ -767,7 +767,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'bullet',
-        title: '🛠️ Our Complete Multi-Region Scope of Work',
+        title: 'Our Complete Multi-Region Scope of Work',
         text: 'We provide full operational oversight to ensure your sales platforms and financial ledgers align perfectly with regional tax laws.',
         items: [
           'Economic & Physical Nexus Studies: We run historical sales data through our tracking software to pinpoint exactly which states, provinces, or countries you have crossed compliance lines in.',
@@ -778,7 +778,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'nested-sections',
-        title: '🚀 Our Multi-Region Compliance Process',
+        title: 'Our Multi-Region Compliance Process',
         subSections: [
           {
             title: '1.Data & Sales Intake:',
@@ -827,7 +827,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     accountingSections: [
       {
         type: 'bullet',
-        title: '🛠️ Advanced Tax Planning Frameworks We Deploy',
+        title: 'Advanced Tax Planning Frameworks We Deploy',
         text: 'We design bespoke, comprehensive tax roadmaps tailored to the complex needs of growing businesses, corporate executives, and multi-national founders:',
         items: [
           'Entity Structure Optimization: Evaluating your business structure (S-Corp, C-Corp, LLC, or LLP) to ensure you are operating under the most tax-advantageous legal framework.',
@@ -839,7 +839,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'nested-sections',
-        title: '🚀 Our Strategic Advisory Blueprint',
+        title: 'Our Strategic Advisory Blueprint',
         text: 'Our forward-looking tax planning process is designed to give you complete visibility over your financial future:',
         subSections: [
           {
@@ -874,7 +874,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'bullet',
-        title: '🚀 Why Partner with Aum Consultancy?',
+        title: 'Why Partner with Aum Consultancy?',
         items: [
           'Proactive, Not Reactive: We don\'t wait for you to call us. We actively monitor global and regional tax updates to bring you cost-saving strategies before you even know they exist.',
           'White-Label Capacity for CPA Firms: If you run a local accounting firm, we act as your specialized backend research and financial modeling team, allowing you to sell high-ticket tax planning advisory services to your clients effortlessly.',
@@ -898,7 +898,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     accountingSections: [
       {
         type: 'grid',
-        title: '🌍 Trust & Fiduciary Form Mapping Across Borders',
+        title: 'Trust & Fiduciary Form Mapping Across Borders',
         text: 'Our global tax delivery center natively untangles the unique reporting structures of various international trust frameworks:',
         gridItems: [
           {
@@ -925,7 +925,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'bullet',
-        title: '🛠️ Complete Fiduciary Accounting & Compliance Scope',
+        title: 'Complete Fiduciary Accounting & Compliance Scope',
         text: 'We handle the heavy data processing and structural compliance required to protect trustees and executors from financial exposure.',
         items: [
           'Principal vs. Income Allocations: We audit transaction trails to ensure receipts and expenditures are properly attributed according to local trust laws and deed terms.',
@@ -936,7 +936,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'nested-sections',
-        title: '🚀 Our Meticulous Trust Filing Workflow',
+        title: 'Our Meticulous Trust Filing Workflow',
         subSections: [
           {
             title: '1.Deed & Ledger Review:',
@@ -983,7 +983,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     accountingSections: [
       {
         type: 'bullet',
-        title: '🚨 Are You Experiencing Any of These Critical Scaling challenges?',
+        title: ' Are You Experiencing Any of These Critical Scaling challenges?',
         text: "Busy founders don't have time for theory. If your business or your client's firm is hitting any of these operational bottlenecks, our Virtual CFO team can step in and fix it immediately:",
         items: [
           '•\t" making sales, but bank account is always empty." → We build dynamic cash flow models to plug spending leaks and optimize operational cash cycles.',
@@ -994,7 +994,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'bullet',
-        title: '🛠️ What Our Virtual CFO Team Handles For You',
+        title: 'What Our Virtual CFO Team Handles For You',
         text: 'Our fractional CFOs handle the high-level financial engineering while keeping your local management completely in control:',
         items: [
           '13-Week Dynamic Cash Flow Forecasting: Pinpoint exactly when cash enters and leaves your business to eliminate payroll stress and inventory shortages.',
@@ -1005,7 +1005,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'nested-sections',
-        title: '🚀 How We Onboard & Protect Your Business',
+        title: 'How We Onboard & Protect Your Business',
         subSections: [
           {
             title: '1.The 72-Hour Financial Diagnostic:',
@@ -1032,7 +1032,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'bullet',
-        title: "💡 Why Scale with Aum Consultancy's CFO Team?",
+        title: "Why Scale with Aum Consultancy's CFO Team?",
         items: [
           'Massive Cost Reductions: Gain access to top-tier financial strategists without taking on local full-time executive payroll burdens, benefits, or bonuses.',
           "White-Label Support for CPA Firms: Expand your accounting practice's margins overnight by using our team as your white-label backend CFO delivery engine for your highest-paying clients.",
@@ -1041,7 +1041,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       }
     ],
     didYouKnow: 'Hiring a full-time, seasoned CFO in the US, UK, Canada, or Australia is incredibly expensive, often costing $200,000 to $350,000+ per year. Our flexible, fractional Virtual CFO model delivers the same elite guidance at a fraction of the cost.',
-    ctaText: '👉 Click Here to Book a Custom CFO Capability Call.'
+    ctaText: 'Click Here to Book a Custom CFO Capability Call.'
   },
   {
     id: 'fpa-dashboards',
@@ -1056,7 +1056,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     accountingSections: [
       {
         type: 'bullet',
-        title: '🚨 Is Your Leadership Team Guessing on These Critical Questions?',
+        title: 'Is Your Leadership Team Guessing on These Critical Questions?',
         text: 'If your executive team or your clients are relying on guesswork to answer these questions, your business is exposed to unnecessary operational risk:',
         items: [
           '"What happens to our profit margins if raw material or labor costs spike by 15%?" → We build dynamic sensitivity models to stress-test your business against changing market conditions.',
@@ -1067,7 +1067,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'bullet',
-        title: '🛠️ The Strategic FP&A Framework We Build For You',
+        title: 'The Strategic FP&A Framework We Build For You',
         text: 'We handle the heavy data modeling and software integrations to build a completely transparent reporting architecture:',
         items: [
           'Dynamic Rolling Forecasts: Move away from static annual budgets. We implement rolling 12-month forecasts that adjust automatically as actual monthly data streams in.',
@@ -1078,7 +1078,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'text-block',
-        title: '📊 Live Visual Reporting Architecture',
+        title: 'Live Visual Reporting Architecture',
         text: `  [ Raw Data Sources ]             [ Cloud Pipeline ]             [ Executive View ]
 ┌──────────────────────┐        ┌──────────────────────┐        ┌──────────────────────┐
 │  • Xero / QBO / Sage │        │  Automated Data      │        │  Live KPI Dashboards │
@@ -1088,7 +1088,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'nested-sections',
-        title: '🚀 Our 3-Step Dashboards & Modeling Delivery Process',
+        title: 'Our 3-Step Dashboards & Modeling Delivery Process',
         subSections: [
           {
             title: '1.Data Inventory & Stack Audit:',
@@ -1115,7 +1115,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       }
     ],
     didYouKnow: 'Most companies spend weeks after the month-end close compiling spreadsheets. We automate the cloud pipeline so you can view live, normalized performance data inside BI tools in real time.',
-    ctaText: '👉 Click Here to Request a Custom Dashboard Demo'
+    ctaText: 'Click Here to Request a Custom Dashboard Demo'
   },
   {
     id: 'deal-advisory',
@@ -1130,7 +1130,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     accountingSections: [
       {
         type: 'bullet',
-        title: '🚨 Are You Protected Against These Critical Transaction Risks? (is this preferable to keep)',
+        title: 'Are You Protected Against These Critical Transaction Risks? (is this preferable to keep)',
         text: 'Corporate buyers and sellers must move fast, but they cannot afford to overlook structural risks. Our M&A pod steps in to answer the critical questions that protect your capital:',
         items: [
           '"Are the target company’s reported earnings actually sustainable?" → We run detailed Quality of Earnings (QoE) assessments to strip out one-time spikes and isolate true recurring cash flow.',
@@ -1141,11 +1141,11 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'nested-sections',
-        title: '🛠️ Complete Deal Advisory & Valuation Scope of Work',
+        title: 'Complete Deal Advisory & Valuation Scope of Work',
         text: 'We handle the heavy financial engineering and forensic analysis required to see through transactional data:',
         subSections: [
           {
-            title: '🔍 Buy-Side Due Diligence & Financial Verification',
+            title: 'Buy-Side Due Diligence & Financial Verification',
             items: [
               'Quality of Earnings (QoE) Analysis: Moving beyond standard audits to evaluate actual cash generation, revenue concentration risks, and normalized EBITDA adjustments.',
               'Working Capital Target Optimization: Determining the exact net working capital required to run the business post-closing to avoid day-one cash shortages.',
@@ -1153,14 +1153,14 @@ const BASE_SUB_SERVICES: SubService[] = [
             ]
           },
           {
-            title: '📊 Independent Corporate Business Valuations',
+            title: 'Independent Corporate Business Valuations',
             items: [
               'Multi-Model Valuation Frameworks: Designing defensible valuations based on Discounted Cash Flow ($DCF$) modeling, Market Comparables, and Asset-Based approaches.',
               'Intangible Asset & Goodwill Analysis: Calculating the true market value of intellectual property, customer lists, brand equity, and proprietary software stacks.'
             ]
           },
           {
-            title: '🚀 Sell-Side Exit Preparation',
+            title: 'Sell-Side Exit Preparation',
             items: [
               'Data Room Mobilization: Organizing, cleaning, and structuring financial ledgers and tax records to ensure smooth buyer reviews and minimize deal friction.',
               'Reversing Hidden Operating Inefficiencies: Identifying cost-saving opportunities prior to market entry to instantly lift baseline EBITDA and increase exit valuation multiples.'
@@ -1170,7 +1170,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'text-block',
-        title: '📈 The Transaction Execution Lifecycle',
+        title: 'The Transaction Execution Lifecycle',
         text: `    [ Phase 1: Intake ]              [ Phase 2: Analysis ]             [ Phase 3: Closing ]
 ┌─────────────────────────┐       ┌─────────────────────────┐       ┌─────────────────────────┐
 │ • Secure Data Room Setup│       │ • QoE Modeling & Bridge │       │ • Final Valuation Draft │
@@ -1180,7 +1180,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'bullet',
-        title: '💡 Why Partner with Our Global M&A Advisory Team?',
+        title: 'Why Partner with Our Global M&A Advisory Team?',
         items: [
           'Deep Mid-Market Expertise: We understand the exact valuation dynamics and regulatory environments governing transactions across the US, UK, Canada, and Australia.',
           "On-Demand Capacity for Local CPA & Law Firms: Scale your firm's advisory capabilities instantly. We act as your specialized backend corporate finance team, delivering elite transaction reports under your brand.",
@@ -1189,7 +1189,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       }
     ],
     didYouKnow: 'Ticking tax or operational liabilities—such as unfiled state sales tax, payroll gaps, and bad debts—can lie undetected. Our forensic due diligence protects your capital and negotiates from absolute strength.',
-    ctaText: '👉 Schedule a Business Valuation Briefing -  book a call or consultation button'
+    ctaText: 'Schedule a Business Valuation Briefing -  book a call or consultation button'
   },
   {
     id: 'virtual-assistant',
@@ -1204,7 +1204,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     accountingSections: [
       {
         type: 'bullet',
-        title: '🚨 Is Your Leadership Team Overwhelmed by Clerical Tasks?',
+        title: 'Is Your Leadership Team Overwhelmed by Clerical Tasks?',
         text: 'If you or your department heads are losing valuable hours every week to these operational friction points, our dedicated VAs can step in and fix it immediately:',
         items: [
           '•\t"I nbox is overflowing, and missing critical client emails." → We triage your inbox, filter out spam, categorize action items, and draft responses daily.',
@@ -1215,18 +1215,18 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'nested-sections',
-        title: '🛠️ The Comprehensive Administrative Support We Handle For You',
+        title: 'The Comprehensive Administrative Support We Handle For You',
         text: 'Our Executive VAs are fluent in modern corporate tool stacks and step in to handle administrative duties across any department (Finance, Operations, Sales, or Marketing):',
         subSections: [
           {
-            title: '📞 1. Calendar & Inbox Triage',
+            title: '1. Calendar & Inbox Triage',
             items: [
               'Email Management: Daily sorting, filtering, flag alerts, and draft archiving to keep you as close to "Inbox Zero" as possible.',
               'Executive Scheduling: Setting up discovery calls, managing team syncs, and coordinating complex multi-timezone agendas.'
             ]
           },
           {
-            title: '📊 2. CRM & Document Management',
+            title: '2. CRM & Document Management',
             items: [
               'System Data Entry: Keeping platforms like HubSpot, Salesforce, or Zoho immaculate and up to date.',
               'Cloud Organization: Re-organizing messy Google Drive, OneDrive, or Dropbox structures into logical, secure folder hierarchies.',
@@ -1234,7 +1234,7 @@ const BASE_SUB_SERVICES: SubService[] = [
             ]
           },
           {
-            title: '🛠️ 3. Multi-Department Operational Support',
+            title: '3. Multi-Department Operational Support',
             items: [
               'Finance Admin: Preparing expense reports, organizing receipts, and routing vendor invoices to your bookkeeping team.',
               'Sales & Marketing Admin: Building clean PowerPoint or Keynote decks, formatting proposals, and inputting marketing leads.',
@@ -1245,7 +1245,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'bullet',
-        title: '💻 Seamless Integration with the Systems You Already Use',
+        title: 'Seamless Integration with the Systems You Already Use',
         text: 'Our assistants operate natively inside the major global platforms you rely on every day, requiring zero training time:',
         items: [
           'Communication & Collaboration: Slack, Microsoft Teams, Zoom, Google Meet.',
@@ -1256,7 +1256,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'bullet',
-        title: '💡 Why Scale with Aum Consultancy’s Executive VAs?',
+        title: 'Why Scale with Aum Consultancy’s Executive VAs?',
         items: [
           'Costs savings Over Local Hiring: Eliminate the heavy financial burden of local recruitment fees, payroll taxes, physical office space, and employee benefit programs.',
           'No Long-Term Staffing Risks: Scale your virtual assistant support hours up during busy quarters or project launches, and dial them back down smoothly on demand.',
@@ -1265,12 +1265,12 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'paragraph',
-        title: '📞 Overwhelmed by Daily Paperwork?',
+        title: 'Overwhelmed by Daily Paperwork?',
         text: "Let us clear your administrative backlog so you can focus on growth.\n\nStop letting small clerical tasks dictate your schedule. Connect with our administrative operations team to outline your exact bottlenecks, map out your current systems, and assign a dedicated executive virtual assistant to your workflow.\n\n👉 Schedule an Admin Support Consultation ➔\n\nFlexible hourly packages and dedicated monthly assistant retainers are available to match your specific business volume."
       }
     ],
     didYouKnow: 'Our executive virtual assistants operate natively inside major platforms like Slack, Teams, Zoom, Asana, ClickUp, Monday.com, Trello, Google Workspace, Microsoft 365, HubSpot, Salesforce, Pipedrive, and Zoho.',
-    ctaText: '👉 Schedule an Admin Support Consultation'
+    ctaText: 'Schedule an Admin Support Consultation'
   },
   {
     id: 'risk-strategy',
@@ -1285,7 +1285,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     accountingSections: [
       {
         type: 'bullet',
-        title: '🚨 Is Your Enterprise Vulnerable to These Structural Risks?',
+        title: 'Is Your Enterprise Vulnerable to These Structural Risks?',
         text: 'Growth without structural control creates operational chaos. Our risk and strategy team steps in to help you solve critical structural vulnerabilities before they impact your bottom line:',
         items: [
           '•\t"Are our internal financial controls strong enough to prevent fraud or error?" → We audit your internal systems, segregate financial duties, and build secure oversight workflows.',
@@ -1296,11 +1296,11 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'nested-sections',
-        title: '🛠️ Complete Risk Advisory & Corporate Strategy Scope',
+        title: 'Complete Risk Advisory & Corporate Strategy Scope',
         text: 'We deliver high-level corporate analysis and actionable operational frameworks to protect and grow your enterprise:',
         subSections: [
           {
-            title: '🔒 1. Internal Controls & Risk Mitigation',
+            title: '1. Internal Controls & Risk Mitigation',
             items: [
               'Fraud Prevention & Workflow Auditing: Reviewing your internal accounting, procurement, and payment workflows to eliminate systemic security vulnerabilities.',
               'Regulatory & Operational Compliance: Aligning your internal processing standards with local corporate governance guidelines across western markets.',
@@ -1308,7 +1308,7 @@ const BASE_SUB_SERVICES: SubService[] = [
             ]
           },
           {
-            title: '🎯 2. Corporate Strategy & Scalable Roadmaps',
+            title: '2. Corporate Strategy & Scalable Roadmaps',
             items: [
               'Strategic Alliance & Joint Venture Structuring: Providing financial logic, risk mapping, and operational frameworks to help you execute corporate partnerships smoothly.',
               'Business Model & Pricing Optimization: Re-engineering your pricing tiers, service bundles, and delivery frameworks to maximize long-term customer profitability.',
@@ -1319,7 +1319,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'text-block',
-        title: '📈 The Strategic Alignment Framework',
+        title: 'The Strategic Alignment Framework',
         text: `   [ 1. Risk Diagnosis ]            [ 2. Control Engineering ]          [ 3. Strategic Growth ]
 ┌───────────────────────────┐      ┌───────────────────────────┐      ┌───────────────────────────┐
 │ • Workflow Vulnerability  │      │ • Duty Segregation        │      │ • Joint Venture Framework │
@@ -1329,7 +1329,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'bullet',
-        title: '💡 Why Partner with Aum Consultancy for Corporate Strategy?',
+        title: 'Why Partner with Aum Consultancy for Corporate Strategy?',
         items: [
           'Objective, Data-Driven Insights: We look beyond company politics and surface-level reports to give you a clear, unbiased assessment of your operational strengths and hidden risks.',
           "On-Demand Advisory Scale for CPA Firms: Provide high-ticket management consulting to your premier clients without over-extending your local executive team. We act as your specialized backend advisory engine.",
@@ -1338,12 +1338,12 @@ const BASE_SUB_SERVICES: SubService[] = [
       },
       {
         type: 'paragraph',
-        title: '🎯 Protect Your Core Operations. Engineer Your Next Move.',
+        title: 'Protect Your Core Operations. Engineer Your Next Move.',
         text: "Let's build a secure, high-margin roadmap for your business.\n\nDon't wait for a workflow bottleneck or financial oversight to impact your profit margins. Connect with our corporate strategy and risk advisory specialists today to schedule an operational assessment, evaluate your internal control frameworks, and design a scalable growth strategy.\n\n👉 Schedule an Operational Risk Assessment ➔\n\nAll initial strategic inquiries are handled with absolute corporate confidentiality and guided directly by our senior consulting leads."
       }
     ],
     didYouKnow: "Don't wait for a workflow bottleneck or financial oversight to impact your profit margins. An operational audit isolates hidden waste, supply chain leakages, or software overspending early.",
-    ctaText: '👉 Schedule an Operational Risk Assessment'
+    ctaText: 'Schedule an Operational Risk Assessment'
   }
 ];
 

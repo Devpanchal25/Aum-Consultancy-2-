@@ -97,7 +97,7 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
                       />
                     </div>
                     <a 
-                      href="https://www.linkedin.com/in/ca-jitendra-tilwani-offshoring-accounting/" 
+                      href={member.linkedinUrl || "https://www.linkedin.com/company/aum-consultancy-india/"} 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="absolute bottom-1 right-2 bg-[#007cff] p-2 rounded-full text-white border-2 border-white hover:bg-blue-600 transition-colors shadow-md cursor-pointer flex items-center justify-center"
@@ -270,7 +270,7 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
                     />
                   </div>
                   <a 
-                    href="https://www.linkedin.com/in/heena-karamchandani-tilwani-4b07a93b0/" 
+                    href={activeMember.linkedinUrl || "https://www.linkedin.com/company/aum-consultancy-india/"} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="absolute bottom-0 right-1 bg-[#007cff] p-1.5 rounded-full text-white border-2 border-white hover:bg-blue-600 transition-colors shadow-sm cursor-pointer flex items-center justify-center"
