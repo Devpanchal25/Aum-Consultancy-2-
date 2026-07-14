@@ -11,7 +11,7 @@ export const OFFSHORE_SERVICES: SubService[] = [
     iconName: 'Calculator',
     checklists: [
       {
-        title: '📋 Core General Ledger Duties',
+        title: 'Core General Ledger Duties',
         items: [
           'Post Adjusting Entries: Manage complex accrued liabilities, deferred revenue, and amortization entries accurately.',
           'Fixed Asset Accounting: Record asset capitalizations, track disposals, and compute precise MACRS depreciation.',
@@ -20,7 +20,7 @@ export const OFFSHORE_SERVICES: SubService[] = [
         ]
       },
       {
-        title: '📊 Management Accounting & Reporting',
+        title: 'Management Accounting & Reporting',
         items: [
           'Custom Reporting Packs: Compile structured profit and loss, balance sheet, and cash flow statements.',
           'Financial Variance Analysis: Highlight budget-to-actual deviations and investigate ledger discrepancies.',
@@ -79,7 +79,7 @@ export const OFFSHORE_SERVICES: SubService[] = [
     iconName: 'Calculator',
     checklists: [
       {
-        title: '📝 Meticulous Daily Operations',
+        title: 'Meticulous Daily Operations',
         items: [
           'Daily Feed Processing: Classify bank, credit card, and payment gateway feeds (Stripe, PayPal) daily.',
           'Digital Receipt Capture: Ingest, code, and match raw receipts utilizing tools like Dext and Hubdoc.',
@@ -88,7 +88,7 @@ export const OFFSHORE_SERVICES: SubService[] = [
         ]
       },
       {
-        title: '🔑 Monthly Reporting & Checks',
+        title: 'Monthly Reporting & Checks',
         items: [
           'Bank Statements Reconciliation: Reconcile ledger accounts against actual bank statement balances.',
           'Aged Debtor & Creditor Reports: Compile clean accounts receivable and payable summaries.',
@@ -147,7 +147,7 @@ export const OFFSHORE_SERVICES: SubService[] = [
     iconName: 'Receipt',
     checklists: [
       {
-        title: '📁 Complete Tax Compliance Prep',
+        title: 'Complete Tax Compliance Prep',
         items: [
           'Form 1040/Individual Prep: Build comprehensive draft returns for individuals, including Schedule C/E filings.',
           'Form 1120/Corporate Filing: Gather lead schedules and prepare complex S-Corp and C-Corp tax returns.',
@@ -156,7 +156,7 @@ export const OFFSHORE_SERVICES: SubService[] = [
         ]
       },
       {
-        title: '🔧 Workpaper & System Operations',
+        title: 'Workpaper & System Operations',
         items: [
           'Book-to-Tax Adjustments: Prepare complete Schedule M-1 and M-3 balance reconciliations.',
           'Depreciation Computations: Calculate exact MACRS depreciation schedules and section 179 deductions.',
@@ -215,7 +215,7 @@ export const OFFSHORE_SERVICES: SubService[] = [
     iconName: 'FileText',
     checklists: [
       {
-        title: '🔎 Elite Quality Assurance Review',
+        title: 'Elite Quality Assurance Review',
         items: [
           'Detailed Audit Trail: Perform 3-way balance sheet checks to confirm all assets, liabilities, and equity match.',
           'Corporate & Partnership Audits: Verify multi-state tax returns, partner capital structures, and Schedule K-1s.',
@@ -224,7 +224,7 @@ export const OFFSHORE_SERVICES: SubService[] = [
         ]
       },
       {
-        title: '📈 Performance Optimization',
+        title: 'Performance Optimization',
         items: [
           'Resolve Software Diagnostics: Identify and clear diagnostic flags and software input discrepancies.',
           'Junior Staff Coaching: Post detailed, clear review notes to help prep staff improve data accuracy.',
@@ -283,7 +283,7 @@ export const OFFSHORE_SERVICES: SubService[] = [
     iconName: 'Briefcase',
     checklists: [
       {
-        title: '📈 High-Level Financial Advisory',
+        title: 'High-Level Financial Advisory',
         items: [
           'Dynamic Cash Flow Forecasting: Design robust rolling cash flow forecasts to manage liquidity.',
           'Sensitivity Modeling: Map financial scenarios to evaluate capital expenditures and investments.',
@@ -292,7 +292,7 @@ export const OFFSHORE_SERVICES: SubService[] = [
         ]
       },
       {
-        title: '📊 Advanced Analytics & BI',
+        title: 'Advanced Analytics & BI',
         items: [
           'Visual KPI Dashboards: Deploy dynamic performance dashboards using platforms like Power BI.',
           'Profitability Analysis: Perform in-depth cost reviews by customer, product, and territory.',
@@ -351,7 +351,7 @@ export const OFFSHORE_SERVICES: SubService[] = [
     iconName: 'UserCheck',
     checklists: [
       {
-        title: '🛠️ Operational Workflow Management',
+        title: 'Operational Workflow Management',
         items: [
           'Daily Queue Supervision: Manage daily tasks, assign bookkeeping loads, and resolve system issues.',
           'Workflow Optimization: Audit processes to find bottlenecks and optimize daily output.',
@@ -360,7 +360,7 @@ export const OFFSHORE_SERVICES: SubService[] = [
         ]
       },
       {
-        title: '🔍 Rigorous Quality Controls',
+        title: 'Rigorous Quality Controls',
         items: [
           'Dual-Signoff Ledger Audits: Audit all bookkeeping files to ensure zero errors reach your desk.',
           'SOP Compliance Reviews: Verify that all financial reconciliations strictly follow client SOPs.',
@@ -419,7 +419,7 @@ export const OFFSHORE_SERVICES: SubService[] = [
     iconName: 'FileText',
     checklists: [
       {
-        title: '📋 Comprehensive Audit Prep',
+        title: 'Comprehensive Audit Prep',
         items: [
           'Detailed Lead Schedules: Compile accurate lead schedules and support files for all balance sheet accounts.',
           'Subledger to GL Balancing: Reconcile accounts receivable, accounts payable, and inventory accounts.',
@@ -428,7 +428,7 @@ export const OFFSHORE_SERVICES: SubService[] = [
         ]
       },
       {
-        title: '📁 Document Triaging & Support',
+        title: 'Document Triaging & Support',
         items: [
           'Auditor Inquiry Support: Gather supporting invoices, bank records, and NDAs requested by auditors.',
           'Fixed Assets Auditing: Reconcile fixed asset registers, verifying depreciation entries and asset disposals.',
@@ -487,7 +487,7 @@ export const OFFSHORE_SERVICES: SubService[] = [
     iconName: 'Users',
     checklists: [
       {
-        title: '📋 End-to-End Payroll Processing',
+        title: 'End-to-End Payroll Processing',
         items: [
           'Run Scheduled Payroll: Calculate and run scheduled payroll runs for hourly, salaried, and contract teams.',
           'Precise Deduction Management: Calculate withholdings, benefits, retirement plans, and court-ordered deductions.',
@@ -496,7 +496,7 @@ export const OFFSHORE_SERVICES: SubService[] = [
         ]
       },
       {
-        title: '🔒 Tax Filing & Compliance Support',
+        title: 'Tax Filing & Compliance Support',
         items: [
           'Federal and State Filings: Compile draft tax forms (W-2, 941, 1099, P60, STP) for year-end submission.',
           'Accruals and Ledger Tracking: Track accrued vacation, sick leave, and paid-time-off balances.',
@@ -555,7 +555,7 @@ export const OFFSHORE_SERVICES: SubService[] = [
     iconName: 'Calculator',
     checklists: [
       {
-        title: '📋 Precision Customer Invoicing',
+        title: 'Precision Customer Invoicing',
         items: [
           'Invoice Generation: Compile billable hours, time logs, and shipping files to generate customer invoices.',
           'Verify Invoicing Details: Double-check customer contracts, tax rates, and discount codes to ensure accuracy.',
@@ -564,7 +564,7 @@ export const OFFSHORE_SERVICES: SubService[] = [
         ]
       },
       {
-        title: '🔧 Billing Support & Database Management',
+        title: 'Billing Support & Database Management',
         items: [
           'Address Invoicing Queries: Resolve customer invoicing discrepancies and issue credit notes.',
           'Contract Renewal Audits: Track customer contract terms, rate revisions, and renewal timelines.',
@@ -623,7 +623,7 @@ export const OFFSHORE_SERVICES: SubService[] = [
     iconName: 'TrendingUp',
     checklists: [
       {
-        title: '📋 Professional Payment Collection',
+        title: 'Professional Payment Collection',
         items: [
           'Aged Debtors Review: Monitor aged debtor reports regularly to identify outstanding customer balances.',
           'Friendly Payment Reminders: Coordinate professional follow-up emails and reminder calls to customers.',
@@ -632,7 +632,7 @@ export const OFFSHORE_SERVICES: SubService[] = [
         ]
       },
       {
-        title: '🔑 Cash Reconciliations & Ledger Management',
+        title: 'Cash Reconciliations & Ledger Management',
         items: [
           'Customer Ledger Posting: Reconcile bank deposits, credit card payments, and wire clearings.',
           'Accounts Receivable Matching: Match incoming customer payments directly to outstanding invoices.',
@@ -691,7 +691,7 @@ export const OFFSHORE_SERVICES: SubService[] = [
     iconName: 'UserCheck',
     checklists: [
       {
-        title: '📋 Executive Administration Support',
+        title: 'Executive Administration Support',
         items: [
           'Inbox Management & Triage: Sort and filter incoming corporate emails, drafting clear, professional responses.',
           'Calendar and Meetings: Coordinate multi-timezone calendars, book meetings, and send invitations.',
@@ -700,7 +700,7 @@ export const OFFSHORE_SERVICES: SubService[] = [
         ]
       },
       {
-        title: '🔧 Database & Operational Upkeep',
+        title: 'Database & Operational Upkeep',
         items: [
           'CRM System Updates: Input client data, track deal pipelines, and update contact files.',
           'Business Expense Tracking: Gather executive travel receipts, compile expenses, and log reports.',
