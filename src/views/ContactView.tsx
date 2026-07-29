@@ -51,7 +51,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
     email: '',
     phone: '',
     website: '',
-    hearAbout: 'Search Engine',
+    hearAbout: '',
     message: ''
   });
 
@@ -103,7 +103,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
         email: '',
         phone: '',
         website: '',
-        hearAbout: 'Search Engine',
+        hearAbout: '',
         message: ''
       });
     }
@@ -159,9 +159,9 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                   <div className="space-y-0.5">
                     <h4 className="font-serif text-lg font-bold text-[#0f2942]">Registered Office</h4>
                     <p className="text-sm text-slate-500 font-light leading-relaxed">
-                      Aum Consultancy, A-4 Hare Krishna 2 <br />
+                      Aum Consultancy, A-4 Hare Krishna 2,<br />
                       Behind Earth Icon, New VIP Road,<br />
-                      Vadodara, Gujarat - 390006, India
+                      Vadodara, Gujarat, India – 390006
                     </p>
                   </div>
                 </div>
@@ -242,7 +242,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
-                        placeholder="Enter Your Name"
+                        placeholder="Enter Your Name *"
                         aria-label="Your Name"
                         className="w-full bg-white border border-slate-200 rounded-lg p-3.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#007cff] focus:ring-1 focus:ring-[#007cff] transition-all"
                       />
@@ -257,7 +257,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                           name="email"
                           value={formData.email}
                           onChange={handleInputChange}
-                          placeholder="Enter Your Email Id"
+                          placeholder="Enter Your Email Id *"
                           aria-label="Your Email Address"
                           className="w-full bg-white border border-slate-200 rounded-lg p-3.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#007cff] focus:ring-1 focus:ring-[#007cff] transition-all"
                         />
@@ -269,7 +269,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          placeholder="Enter Your Number"
+                          placeholder="Enter Your Number *"
                           aria-label="Your Phone Number"
                           className="w-full bg-white border border-slate-200 rounded-lg p-3.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#007cff] focus:ring-1 focus:ring-[#007cff] transition-all"
                         />
@@ -283,7 +283,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                         name="website"
                         value={formData.website}
                         onChange={handleInputChange}
-                        placeholder="Enter Your Website"
+                        placeholder="Enter Your Website (Optional)"
                         aria-label="Your Website URL"
                         className="w-full bg-white border border-slate-200 rounded-lg p-3.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#007cff] focus:ring-1 focus:ring-[#007cff] transition-all"
                       />
@@ -296,14 +296,16 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                         required
                         value={formData.hearAbout}
                         onChange={handleInputChange}
-                        aria-label="How did you hear about Aum Consultancy?"
-                        className="w-full bg-white border border-slate-200 rounded-lg p-3.5 pr-10 text-xs text-slate-600 focus:outline-none focus:border-[#007cff] focus:ring-1 focus:ring-[#007cff] appearance-none cursor-pointer transition-all"
+                        aria-label="Where did you hear about us?"
+                        className={`w-full bg-white border border-slate-200 rounded-lg p-3.5 pr-10 text-xs focus:outline-none focus:border-[#007cff] focus:ring-1 focus:ring-[#007cff] appearance-none cursor-pointer transition-all ${
+                          formData.hearAbout === '' ? 'text-slate-400' : 'text-slate-800 font-medium'
+                        }`}
                       >
-                        <option value="Search Engine">Search Engine (Google, Bing, etc.)</option>
-                        <option value="Social Media">Social Media (LinkedIn, Facebook)</option>
-                        <option value="Email Newsletter">Email Newsletter</option>
-                        <option value="Referral / Word of Mouth">Referral / Word of Mouth</option>
-                        <option value="Other">Other</option>
+                        <option value="" disabled>Where did you hear about us? *</option>
+                        <option value="Social Media" className="text-slate-800">Social Media (LinkedIn, Facebook)</option>
+                        <option value="Email Newsletter" className="text-slate-800">Email Newsletter</option>
+                        <option value="Referral / Word of Mouth" className="text-slate-800">Referral / Word of Mouth</option>
+                        <option value="Other" className="text-slate-800">Other</option>
                       </select>
                       <div className="absolute inset-y-0 right-0 flex items-center pr-3.5 pointer-events-none text-slate-400">
                         <ChevronDown className="w-4 h-4" />
@@ -318,7 +320,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                         name="message"
                         value={formData.message}
                         onChange={handleInputChange}
-                        placeholder="Your Message"
+                        placeholder="Your Message *"
                         aria-label="Your Message or Project Details"
                         className="w-full bg-white border border-slate-200 rounded-lg p-3.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#007cff] focus:ring-1 focus:ring-[#007cff] resize-none transition-all"
                       />
@@ -328,13 +330,10 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-[#007cff] hover:bg-[#006bff] text-white font-bold py-3.5 px-6 rounded-full text-xs tracking-wider transition-all uppercase flex items-center justify-between cursor-pointer shadow-md shadow-blue-500/10 active:translate-y-[1px]"
+                      className="w-full bg-[#007cff] hover:bg-[#006bff] text-white font-bold py-3.5 px-6 rounded-full text-xs tracking-wider transition-all uppercase flex items-center justify-center cursor-pointer shadow-md shadow-blue-500/10 active:translate-y-[1px]"
                       id="contact-form-submit"
                     >
                       <span>{isSubmitting ? 'Sending Message...' : 'SUBMIT NOW'}</span>
-                      <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center shrink-0">
-                        <span className="text-white text-base font-bold leading-none -mt-[2px]">+</span>
-                      </div>
                     </button>
                     
                     <p className="text-[10px] text-slate-400 font-mono text-center">

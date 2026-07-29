@@ -101,70 +101,46 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
     <div className="pt-20">
       
       {/* 1. HERO SECTION */}
-      <section className="relative text-navy-950 overflow-hidden py-24 sm:py-32 lg:py-40 bg-navy-950 border-b border-slate-850" id="hero-section">
-
+      <section className="relative text-navy-950 overflow-hidden py-16 sm:py-24 lg:py-28 bg-white border-b border-slate-100" id="hero-section">
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8">
             
-            {/* Centered Hero Panel with Premium Light-Glass Overlay & Integrated Background Photo */}
-            <div className="relative overflow-hidden bg-white/85 sm:bg-white/90 backdrop-blur-xl border border-white/60 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl space-y-6 sm:space-y-8">
-              
-              {/* Background Photo overlay inside the glass card for rich texture and high-end depth */}
-              <div className="absolute inset-0 z-0 select-none pointer-events-none">
-                <SafeImage 
-                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200" 
-                  alt="Financial Back-Office Analytics" 
-                  className="w-full h-full object-cover opacity-25"
-                  category="other"
-                />
-                {/* Advanced multi-layer gradient system to ensure pristine contrast and legibility */}
-                <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/80 to-white/95"></div>
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.4),rgba(255,255,255,0.95))]"></div>
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(241,159,28,0.05),transparent_75%)]"></div>
-              </div>
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.25 }}
+              className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-navy-950 tracking-tight leading-tight"
+            >
+              Scale Your Capacity & Slash Your Local Overhead. <br />
+              <span className="text-[#007cff]">
+                We’ll Handle the Numbers.
+              </span>
+            </motion.h1>
+            
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
+              className="text-slate-700 text-sm sm:text-base md:text-lg max-w-3xl mx-auto leading-relaxed font-normal"
+            >
+              Elite white-label accounting, bookkeeping, auditing, and back-office offshore services. Our expert, CA/CPA-led teams seamlessly manage your daily workflows and full compliance across the US, UK, Canada, and Australia—delivering strict US GAAP & IFRS precision at a fraction of the cost of an in-house hire.
+            </motion.p>
 
-              {/* Contents wrapped in a z-10 layer to display cleanly above the background photo */}
-              <div className="relative z-10 space-y-6 sm:space-y-8">
-                
-                <motion.h1 
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, ease: "easeOut", delay: 0.25 }}
-                  className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-navy-950 tracking-tight leading-tight"
-                >
-                  Scale Your Capacity & Slash Your Local Overhead. <br />
-                  <span className="text-[#007cff]">
-                    We’ll Handle the Numbers.
-                  </span>
-                </motion.h1>
-                
-                <motion.p 
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
-                  className="text-slate-700 text-sm sm:text-base md:text-lg max-w-3xl mx-auto leading-relaxed font-normal"
-                >
-                  Elite white-label accounting, bookkeeping, auditing, and back-office offshore services. Our expert, CA/CPA-led teams seamlessly manage your daily workflows and full compliance across the US, UK, Canada, and Australia—delivering strict US GAAP & IFRS precision at a fraction of the cost of an in-house hire.
-                </motion.p>
-
-                {/* Action Buttons */}
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, ease: "easeOut", delay: 0.55 }}
-                  className="flex flex-col sm:flex-row gap-4 justify-center pt-2"
-                >
-                  <button 
-                    onClick={openConsultation}
-                    className="bg-[#007cff] hover:bg-blue-600 text-white font-extrabold text-xs tracking-wider px-8 py-4 rounded-xl shadow-lg shadow-blue-500/15 hover:scale-[1.03] active:scale-95 transition-all uppercase cursor-pointer"
-                  >
-                    Schedule a Consultation
-                  </button>
-                </motion.div>
-
-              </div>
-            </div>
+            {/* Action Buttons */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.55 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center pt-2"
+            >
+              <button 
+                onClick={openConsultation}
+                className="bg-[#007cff] hover:bg-blue-600 text-white font-extrabold text-xs tracking-wider px-8 py-4 rounded-xl shadow-lg shadow-blue-500/15 hover:scale-[1.03] active:scale-95 transition-all uppercase cursor-pointer"
+              >
+                Schedule a Consultation
+              </button>
+            </motion.div>
 
           </div>
         </div>

@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Page } from '../types';
 import { TEAM } from '../data';
 import { ShieldCheck, Target, Eye, CheckCircle, GraduationCap, X, Linkedin, ChevronRight } from 'lucide-react';
@@ -10,13 +11,31 @@ interface AboutViewProps {
 }
 
 export default function AboutView({ setCurrentPage, openConsultation }: AboutViewProps) {
+  const location = useLocation();
   const [activeMember, setActiveMember] = useState<any>(null);
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const timer = setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          const yOffset = -110;
+          const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+        }
+      }, 100);
+      return () => clearTimeout(timer);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [location.pathname, location.hash]);
 
   return (
     <div className="pt-20">
       
       {/* Hero Banner Header */}
-      <section className="relative text-navy-950 overflow-hidden py-16 sm:py-24 bg-white border-b border-slate-100" id="about-hero-header">
+      <section className="relative text-navy-950 overflow-hidden py-16 sm:py-24 bg-white border-b border-slate-100 scroll-mt-28 sm:scroll-mt-32" id="about-hero-header">
         <div className="absolute inset-0 z-0">
           {/* Radial and vertical gradients for elegant lighting and focus */}
           <div className="absolute inset-0 bg-gradient-to-b from-blue-50/20 via-transparent to-transparent"></div>
@@ -24,24 +43,21 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            {/* Centered Hero Panel with Premium Glass Overlay */}
-            <div className="bg-white/80 backdrop-blur-md border border-slate-200/50 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl space-y-4 sm:space-y-6">
-              <span className="text-xs font-mono text-[#007cff] uppercase tracking-widest font-semibold block">Secure, competent, scalable, and culturally aligned</span>
-              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0e1b2e] leading-tight">
-                Your Global Financial Engine. <br />
-                <span className="text-[#007cff] font-sans">Driven by Precision, Built for Scale.</span>
-              </h1>
-              <p className="text-slate-600 text-xs sm:text-sm md:text-base max-w-2xl mx-auto font-light leading-relaxed">
-                Bridging the gap between elite CA/CPA-led oversight and cost-efficient back-office execution for growing businesses and public accounting practices worldwide.
-              </p>
-            </div>
+          <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6">
+            <span className="text-xs font-mono text-[#007cff] uppercase tracking-widest font-semibold block">Secure, competent, scalable, and culturally aligned</span>
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0e1b2e] leading-tight">
+              Your Global Financial Engine. <br />
+              <span className="text-[#007cff] font-sans">Driven by Precision, Built for Scale.</span>
+            </h1>
+            <p className="text-slate-600 text-xs sm:text-sm md:text-base max-w-2xl mx-auto font-light leading-relaxed">
+              Bridging the gap between elite CA/CPA-led oversight and cost-efficient back-office execution for growing businesses and public accounting practices worldwide.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* What is Aum Consultancy - Brand Story */}
-      <section className="py-20 bg-slate-50 border-b border-slate-100" id="brand-story-section">
+      {/* 1. What is Aum Consultancy - Brand Story */}
+      <section className="py-20 bg-slate-50 border-b border-slate-100 scroll-mt-28 sm:scroll-mt-32" id="brand-story-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center space-y-8">
             
@@ -65,10 +81,8 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
         </div>
       </section>
 
-
-
-      {/* Founder & Core Leadership Team */}
-      <section className="py-20 bg-white" id="founders-section">
+      {/* 2. Founder & Core Leadership Team */}
+      <section className="py-20 bg-white border-b border-slate-100 scroll-mt-28 sm:scroll-mt-32" id="founders-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div className="text-center max-w-2xl mx-auto space-y-3">
@@ -113,15 +127,9 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
                     <span className="text-[10px] text-[#007cff] uppercase font-mono tracking-wider font-bold block">{member.role}</span>
                   </div>
 
-                  {/* Snippet of Bio */}
-                  <p className="text-xs text-slate-500 leading-relaxed font-light line-clamp-3">
-                    {member.bio}
-                  </p>
-
                 </div>
 
-                {/* Know More Pill Button */}
-                <div className="pt-6">
+                <div className="pt-4">
                   <button
                     onClick={() => setActiveMember(member)}
                     className="border border-[#007cff]/30 text-[#007cff] hover:bg-[#007cff]/5 px-6 py-2 rounded-full text-xs font-medium hover:border-[#007cff] transition-all duration-200 inline-flex items-center gap-1.5 cursor-pointer"
@@ -138,8 +146,46 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
         </div>
       </section>
 
-      {/* Strategic Positioning & Capability Summary */}
-      <section className="py-20 bg-slate-50 border-t border-b border-slate-100/80" id="core-values-section">
+      {/* 3. Ironclad Security Section */}
+      <section className="py-20 bg-slate-50 border-b border-slate-200/80 relative overflow-hidden scroll-mt-28 sm:scroll-mt-32" id="about-security-section">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,124,255,0.015),transparent_50%)]"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
+          <div className="text-center max-w-2xl mx-auto space-y-3">
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-navy-900 flex items-center justify-center gap-2">
+              Ironclad Security: Enterprise-Grade Data Protection
+            </h2>
+            <p className="text-slate-600 text-xs sm:text-sm font-light leading-relaxed">
+              We know that handing over financial data requires absolute confidence. To gain and maintain your complete trust, we enforce bank-grade security protocols across our entire ecosystem:
+            </p>
+          </div>
+ 
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white border border-slate-200/60 p-6 sm:p-8 rounded-2xl space-y-4 hover:shadow-lg hover:border-slate-300/60 transition-all duration-300">
+              <h3 className="text-xs font-extrabold text-navy-900 uppercase tracking-wider font-sans">Zero-Local-Storage Policy</h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
+                Your client data remains entirely locked within secure, designated cloud environments—never downloaded or stored on local drives.
+              </p>
+            </div>
+ 
+            <div className="bg-white border border-slate-200/60 p-6 sm:p-8 rounded-2xl space-y-4 hover:shadow-lg hover:border-slate-300/60 transition-all duration-300">
+              <h3 className="text-xs font-extrabold text-navy-900 uppercase tracking-wider font-sans">Multi-Tier Encryption</h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
+                We protect your sensitive data using AES 256-bit encryption for all data at rest and in transit.
+              </p>
+            </div>
+ 
+            <div className="bg-white border border-slate-200/60 p-6 sm:p-8 rounded-2xl space-y-4 hover:shadow-lg hover:border-slate-300/60 transition-all duration-300">
+              <h3 className="text-xs font-extrabold text-navy-900 uppercase tracking-wider font-sans">Strict Access Control</h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
+                Enforced multi-factor authentication (MFA) and continuous security auditing ensure only authorized personnel touch your files.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Strategic Positioning & Capability Summary */}
+      <section className="py-20 bg-white scroll-mt-28 sm:scroll-mt-32" id="core-values-section">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           {/* Block 1: Prominent Statement */}
@@ -172,7 +218,7 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
           </div>
 
           {/* Block 4: Premier Chartered Accountants Detail Banner */}
-          <div className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-10 shadow-xl space-y-6 relative overflow-hidden">
+          <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-6 sm:p-10 shadow-xl space-y-6 relative overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(0,124,255,0.03),transparent_50%)]"></div>
             
             <div className="relative z-10 space-y-6">
@@ -192,7 +238,7 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
                 </p>
               </div>
 
-              <div className="pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center border-t border-slate-100 gap-4">
+              <div className="pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center border-t border-slate-200/60 gap-4">
                 <span className="text-xs font-semibold text-[#007cff] font-sans tracking-wide uppercase flex items-center gap-1.5">
                   ✓ Tailored solutions for your exact operational & financial needs
                 </span>
@@ -203,44 +249,6 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
             </div>
           </div>
 
-        </div>
-      </section>
-
-      {/* Ironclad Security Section */}
-      <section className="py-20 bg-white border-t border-slate-100 relative overflow-hidden" id="about-security-section">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,124,255,0.015),transparent_50%)]"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
-          <div className="text-center max-w-2xl mx-auto space-y-3">
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-navy-900 flex items-center justify-center gap-2">
-              Ironclad Security: Enterprise-Grade Data Protection
-            </h2>
-            <p className="text-slate-600 text-xs sm:text-sm font-light leading-relaxed">
-              We know that handing over financial data requires absolute confidence. To gain and maintain your complete trust, we enforce bank-grade security protocols across our entire ecosystem:
-            </p>
-          </div>
- 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-slate-50/70 border border-slate-200/50 p-6 sm:p-8 rounded-2xl space-y-4 hover:shadow-lg hover:border-slate-300/60 transition-all duration-300">
-              <h3 className="text-xs font-extrabold text-navy-900 uppercase tracking-wider font-sans">Zero-Local-Storage Policy</h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
-                Your client data remains entirely locked within secure, designated cloud environments—never downloaded or stored on local drives.
-              </p>
-            </div>
- 
-            <div className="bg-slate-50/70 border border-slate-200/50 p-6 sm:p-8 rounded-2xl space-y-4 hover:shadow-lg hover:border-slate-300/60 transition-all duration-300">
-              <h3 className="text-xs font-extrabold text-navy-900 uppercase tracking-wider font-sans">Multi-Tier Encryption</h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
-                We protect your sensitive data using AES 256-bit encryption for all data at rest and in transit.
-              </p>
-            </div>
- 
-            <div className="bg-slate-50/70 border border-slate-200/50 p-6 sm:p-8 rounded-2xl space-y-4 hover:shadow-lg hover:border-slate-300/60 transition-all duration-300">
-              <h3 className="text-xs font-extrabold text-navy-900 uppercase tracking-wider font-sans">Strict Access Control</h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
-                Enforced multi-factor authentication (MFA) and continuous security auditing ensure only authorized personnel touch your files.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 

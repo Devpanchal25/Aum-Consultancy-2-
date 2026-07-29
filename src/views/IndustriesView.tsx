@@ -124,35 +124,19 @@ export default function IndustriesView({
   return (
     <div className="pt-20">
       
-      {/* Header with Background Photo */}
-      <section className="relative text-white overflow-hidden py-24 sm:py-32 lg:py-40 bg-navy-950 border-b border-navy-850">
-        <div className="absolute inset-0 z-0">
-          <SafeImage 
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1600" 
-            alt="Corporate skyscraper background" 
-            className="w-full h-full object-cover opacity-15 select-none pointer-events-none"
-            category="general"
-          />
-          {/* Layer 1: Solid high-density dark tint for rich text-contrast */}
-          <div className="absolute inset-0 bg-navy-950/75 mix-blend-multiply"></div>
-          {/* Layer 2: Radial and vertical gradients for elegant lighting and focus */}
-          <div className="absolute inset-0 bg-gradient-to-b from-navy-950/45 via-navy-950/85 to-navy-950"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,124,255,0.06),transparent_65%)]"></div>
-        </div>
-
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <div className="bg-navy-950/70 backdrop-blur-md border border-white/10 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl space-y-4 sm:space-y-6 animate-fadeIn">
-            <span className="text-[10px] sm:text-xs font-mono text-[#007cff] uppercase tracking-[0.25em] font-extrabold block">
-              Vertical Financial Expertise
-            </span>
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-none text-white">
-              Sectors We Serve
-            </h1>
-            <div className="h-1 w-16 bg-[#007cff] mx-auto rounded-full"></div>
-            <p className="text-slate-300 text-xs sm:text-sm md:text-base max-w-2xl mx-auto font-light leading-relaxed">
-              Accounting is not one-size-fits-all. We adapt our standard operating controls to suit complex e-commerce catalogs, healthcare patient privacy, manufacturing COGS, or multi-LLC property structures.
-            </p>
-          </div>
+      {/* Header Banner */}
+      <section className="relative text-navy-950 overflow-hidden py-16 sm:py-20 bg-white border-b border-slate-100" id="industries-hero-header">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4 sm:space-y-6">
+          <span className="text-xs font-mono text-[#007cff] uppercase tracking-widest font-extrabold block">
+            Vertical Financial Expertise
+          </span>
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-none text-navy-950">
+            Sectors We Serve
+          </h1>
+          <div className="h-1 w-16 bg-[#007cff] mx-auto rounded-full"></div>
+          <p className="text-slate-600 text-xs sm:text-sm md:text-base max-w-2xl mx-auto font-light leading-relaxed">
+            Accounting is not one-size-fits-all. We adapt our standard operating controls to suit complex e-commerce catalogs, healthcare patient privacy, manufacturing COGS, or multi-LLC property structures.
+          </p>
         </div>
       </section>
 

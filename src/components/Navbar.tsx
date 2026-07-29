@@ -135,10 +135,11 @@ export default function Navbar({
 
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeMega, setActiveMega] = useState<'services' | 'industries' | 'resources' | 'hire' | null>(null);
+  const [activeMega, setActiveMega] = useState<'services' | 'industries' | 'resources' | 'hire' | 'about' | null>(null);
   const [activeCategoryTab, setActiveCategoryTab] = useState<string>('accounting');
   
   // Track mobile accordions
+  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileHireOpen, setMobileHireOpen] = useState(false);
   const [mobilePageSectorsOpen, setMobilePageSectorsOpen] = useState(false);
@@ -174,6 +175,23 @@ export default function Navbar({
     }
   };
 
+  const handleAboutSectionClick = (sectionId: string) => {
+    setIsOpen(false);
+    setActiveMega(null);
+    if (location.pathname !== '/about') {
+      navigate(`/about#${sectionId}`);
+    } else {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        const yOffset = -110;
+        const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  };
+
   const handleFaqsClick = () => {
     setIsOpen(false);
     setActiveMega(null);
@@ -184,29 +202,21 @@ export default function Navbar({
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300">
       
-      {/* Upper Info Top Bar with Social Links & Number */}
-      <div className="bg-slate-50 border-b border-slate-200 text-slate-600 py-2.5 text-xs font-medium">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-[11px] sm:text-xs">
+      {/* Upper Info Top Bar with Phone, Email & LinkedIn */}
+      <div className="bg-slate-50 border-b border-slate-200 text-slate-600 py-2 text-xs font-medium">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center sm:justify-end">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 sm:gap-5 text-[11px] sm:text-xs">
             <a href="tel:+919879161400" className="flex items-center gap-1.5 hover:text-[#007cff] transition-colors font-bold text-navy-900">
               <Phone className="w-3.5 h-3.5 text-[#007cff] animate-bounce" />
               <span>+91 9879161400</span>
             </a>
-            <span className="flex items-center gap-1.5 hover:text-[#007cff] transition-colors text-slate-700">
-              <a href="mailto:aumconsulting.india@gmail.com" className="flex items-center gap-1.5">
-                <Mail className="w-3.5 h-3.5 text-[#007cff]" />
-                <span>aumconsulting.india@gmail.com</span>
-              </a>
-            </span>
-          </div>
-          
-          <div className="flex items-center gap-5">
-            {/* Social Media Links */}
-            <div className="flex items-center gap-3">
-              <a href="https://www.linkedin.com/company/aum-consultancy-india/" target="_blank" rel="noreferrer" className="hover:text-[#007cff] text-slate-400 transition-colors" title="LinkedIn">
-                <Linkedin className="w-3.5 h-3.5" />
-              </a>
-            </div>
+            <a href="mailto:aumconsulting.india@gmail.com" className="flex items-center gap-1.5 hover:text-[#007cff] transition-colors text-slate-700">
+              <Mail className="w-3.5 h-3.5 text-[#007cff]" />
+              <span>aumconsulting.india@gmail.com</span>
+            </a>
+            <a href="https://www.linkedin.com/company/aum-consultancy-india/" target="_blank" rel="noreferrer" className="flex items-center gap-1 pl-2 border-l border-slate-300 text-slate-500 hover:text-[#007cff] transition-colors" title="LinkedIn">
+              <Linkedin className="w-3.5 h-3.5 text-[#007cff]" />
+            </a>
           </div>
         </div>
       </div>
@@ -235,12 +245,58 @@ export default function Navbar({
                 Home
               </button>
 
-              <button 
-                onClick={() => handleNavClick('about')}
-                className={`text-sm font-semibold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'about' ? 'text-[#007cff]' : 'text-slate-600'}`}
+              {/* About Us Dropdown Trigger */}
+              <div 
+                className="relative"
+                onMouseEnter={() => setActiveMega('about')}
+                onMouseLeave={() => setActiveMega(null)}
               >
-                About Us
-              </button>
+                <button 
+                  onClick={() => handleNavClick('about')}
+                  className={`flex items-center gap-1 text-sm font-semibold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'about' ? 'text-[#007cff]' : 'text-slate-600'}`}
+                >
+                  About Us
+                  <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeMega === 'about' ? 'rotate-180' : ''}`} />
+                </button>
+
+                {/* About Us Dropdown Panel */}
+                {activeMega === 'about' && (
+                  <div className="absolute top-full left-0 w-56 pt-2 z-50 animate-fadeIn">
+                    <div className="bg-white border border-slate-200/80 shadow-2xl rounded-xl p-2 flex flex-col gap-0.5">
+                      <button
+                        onClick={() => handleAboutSectionClick('about-hero-header')}
+                        className="text-left text-xs font-semibold text-slate-700 hover:text-[#007cff] hover:bg-slate-50 p-2.5 rounded-lg transition-all cursor-pointer bg-transparent border-0 w-full"
+                      >
+                        Company Overview
+                      </button>
+                      <button
+                        onClick={() => handleAboutSectionClick('brand-story-section')}
+                        className="text-left text-xs font-semibold text-slate-700 hover:text-[#007cff] hover:bg-slate-50 p-2.5 rounded-lg transition-all cursor-pointer bg-transparent border-0 w-full"
+                      >
+                        Our Story & Mission
+                      </button>
+                      <button
+                        onClick={() => handleAboutSectionClick('founders-section')}
+                        className="text-left text-xs font-semibold text-slate-700 hover:text-[#007cff] hover:bg-slate-50 p-2.5 rounded-lg transition-all cursor-pointer bg-transparent border-0 w-full"
+                      >
+                        Leadership Team
+                      </button>
+                      <button
+                        onClick={() => handleAboutSectionClick('core-values-section')}
+                        className="text-left text-xs font-semibold text-slate-700 hover:text-[#007cff] hover:bg-slate-50 p-2.5 rounded-lg transition-all cursor-pointer bg-transparent border-0 w-full"
+                      >
+                        Why Choose Us
+                      </button>
+                      <button
+                        onClick={() => handleAboutSectionClick('about-security-section')}
+                        className="text-left text-xs font-semibold text-slate-700 hover:text-[#007cff] hover:bg-slate-50 p-2.5 rounded-lg transition-all cursor-pointer bg-transparent border-0 w-full"
+                      >
+                        Data Security & Trust
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
 
               {/* Services Mega Dropdown trigger */}
               <div 
@@ -252,7 +308,7 @@ export default function Navbar({
                   onClick={() => handleNavClick('services')}
                   className={`flex items-center gap-1 text-sm font-semibold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'services' ? 'text-[#007cff]' : 'text-slate-600'}`}
                 >
-                  Our Services
+                  Services
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeMega === 'services' ? 'rotate-180' : ''}`} />
                 </button>
 
@@ -632,12 +688,50 @@ export default function Navbar({
             >
               Home
             </button>
-            <button 
-              onClick={() => handleNavClick('about')}
-              className={`text-left text-base font-semibold pb-2 border-b border-slate-100 ${currentPage === 'about' ? 'text-[#007cff]' : 'text-slate-700'}`}
-            >
-              About Us
-            </button>
+            {/* Mobile About Us Accordion */}
+            <div className="border-b border-slate-100 pb-2">
+              <button 
+                onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
+                className="w-full flex justify-between items-center text-left text-base font-semibold text-slate-700"
+              >
+                <span className={currentPage === 'about' ? 'text-[#007cff]' : ''}>About Us</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileAboutOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {mobileAboutOpen && (
+                <div className="mt-3 pl-3 flex flex-col gap-2.5 border-l-2 border-blue-500/30">
+                  <button
+                    onClick={() => handleAboutSectionClick('about-hero-header')}
+                    className="text-left text-xs text-slate-500 hover:text-[#007cff] py-1 transition-colors"
+                  >
+                    Company Overview
+                  </button>
+                  <button
+                    onClick={() => handleAboutSectionClick('brand-story-section')}
+                    className="text-left text-xs text-slate-500 hover:text-[#007cff] py-1 transition-colors"
+                  >
+                    Our Story & Mission
+                  </button>
+                  <button
+                    onClick={() => handleAboutSectionClick('founders-section')}
+                    className="text-left text-xs text-slate-500 hover:text-[#007cff] py-1 transition-colors"
+                  >
+                    Leadership Team
+                  </button>
+                  <button
+                    onClick={() => handleAboutSectionClick('core-values-section')}
+                    className="text-left text-xs text-slate-500 hover:text-[#007cff] py-1 transition-colors"
+                  >
+                    Why Choose Us
+                  </button>
+                  <button
+                    onClick={() => handleAboutSectionClick('about-security-section')}
+                    className="text-left text-xs text-slate-500 hover:text-[#007cff] py-1 transition-colors"
+                  >
+                    Data Security & Trust
+                  </button>
+                </div>
+              )}
+            </div>
 
               {/* Mobile Services Accordion */}
              <div className="border-b border-slate-100 pb-2">

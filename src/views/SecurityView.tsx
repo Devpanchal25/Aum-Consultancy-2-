@@ -31,7 +31,7 @@ export default function SecurityView({ setCurrentPage, openConsultation, openSec
     },
     {
       title: 'Biometric Facility Security Controls',
-      desc: 'Our physical server databases and processing bays in Ahmedabad are restricted via multi-level biometric locks, CCTV surveillance, and secure entry clearances.',
+      desc: 'Our physical server databases and processing bays in Vadodara are restricted via multi-level biometric locks, CCTV surveillance, and secure entry clearances.',
       icon: <Server className="w-5 h-5 text-[#007cff]" />
     },
     {
@@ -71,43 +71,26 @@ export default function SecurityView({ setCurrentPage, openConsultation, openSec
   return (
     <div className="pt-20">
       
-      {/* Header Banner with Premium Background Photo */}
-      <section className="relative text-white overflow-hidden py-24 sm:py-32 lg:py-40 bg-navy-950 border-b border-navy-850">
-        {/* Premium background photo with high-contrast dual-layer dark overlay */}
-        <div className="absolute inset-0 z-0">
-          <SafeImage 
-            src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1600" 
-            alt="Secure data defense center background" 
-            className="w-full h-full object-cover opacity-45 select-none pointer-events-none"
-            category="other"
-          />
-          {/* Layer 1: Solid high-density dark tint for rich text-contrast */}
-          <div className="absolute inset-0 bg-navy-950/75 mix-blend-multiply"></div>
-          {/* Layer 2: Radial and vertical gradients for elegant lighting and focus */}
-          <div className="absolute inset-0 bg-gradient-to-b from-navy-950/45 via-navy-950/85 to-navy-950"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,124,255,0.06),transparent_65%)]"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            {/* Centered Hero Panel with Premium Glass Overlay */}
-            <div className="bg-navy-950/70 backdrop-blur-md border border-white/10 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl space-y-4 sm:space-y-6">
-              <span className="text-xs font-mono text-[#007cff] uppercase tracking-widest font-semibold block">Confidentiality Standards</span>
-              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
-                Security & Compliance Playbook
-              </h1>
-              <p className="text-slate-200 text-xs sm:text-sm md:text-base max-w-2xl mx-auto font-light leading-relaxed">
-                International CPA firms require absolute confidentiality. We treat data protection as an architectural requirement rather than a secondary operational checklist.
-              </p>
-              <div className="pt-2">
-                <button 
-                  onClick={openSecurityPolicy}
-                  className="bg-[#007cff] hover:bg-blue-600 text-white font-bold text-xs tracking-wider px-6 py-3 rounded-lg transition-all hover:scale-[1.02] shadow-lg shadow-blue-500/15 uppercase cursor-pointer inline-block"
-                >
-                  Open Interactive Security Policy
-                </button>
-              </div>
-            </div>
+      {/* Header Banner */}
+      <section className="relative text-navy-950 overflow-hidden py-16 sm:py-20 bg-white border-b border-slate-100" id="security-hero-header">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4 sm:space-y-6">
+          <span className="text-xs font-mono text-[#007cff] uppercase tracking-widest font-semibold block">
+            Confidentiality Standards
+          </span>
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-navy-950 leading-tight">
+            Security & Compliance Playbook
+          </h1>
+          <div className="h-1 w-16 bg-[#007cff] mx-auto rounded-full"></div>
+          <p className="text-slate-600 text-xs sm:text-sm md:text-base max-w-2xl mx-auto font-light leading-relaxed">
+            International CPA firms require absolute confidentiality. We treat data protection as an architectural requirement rather than a secondary operational checklist.
+          </p>
+          <div className="pt-2">
+            <button 
+              onClick={openSecurityPolicy}
+              className="bg-[#007cff] hover:bg-blue-600 text-white font-bold text-xs tracking-wider px-6 py-3 rounded-lg transition-all hover:scale-[1.02] shadow-lg shadow-blue-500/15 uppercase cursor-pointer inline-block"
+            >
+              Open Interactive Security Policy
+            </button>
           </div>
         </div>
       </section>
@@ -215,7 +198,7 @@ export default function SecurityView({ setCurrentPage, openConsultation, openSec
           <div className="space-y-4 max-w-2xl mx-auto">
             <h3 className="font-serif text-2xl font-bold">Unconditional Confidentiality Framework</h3>
             <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
-              Aum Consultancy guarantees that no client data, bank logins, invoice trails, or personal information will ever be shared, sold, or exposed. Our Ahmedabad office operates under an unconditional "Clean Desk" policy. Employees are banned from bringing personal smart devices, cameras, or writing pads inside the workstation bays.
+              Aum Consultancy guarantees that no client data, bank logins, invoice trails, or personal information will ever be shared, sold, or exposed. Our Vadodara office operates under an unconditional "Clean Desk" policy. Employees are banned from bringing personal smart devices, cameras, or writing pads inside the workstation bays.
             </p>
           </div>
 

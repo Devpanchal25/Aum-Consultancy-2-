@@ -112,8 +112,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     accountingSections: [
       {
         type: 'text-block',
-        title: 'Fully Compliant with: US GAAP | IFRS | IRS Guidelines | HMRC Frameworks | ATO Standards',
-        text: 'Contact us today to seamlessly scale your year-end capacity.'
+        title: 'Fully Compliant with: US GAAP | IFRS | IRS Guidelines | HMRC Frameworks | ATO Standards'
       },
       {
         type: 'text-block',
@@ -265,7 +264,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     category: 'audit',
     title: 'Audit Support & Assurance Services',
     catchphrase: 'Build instant audit capacity, protect your margins, and eliminate busy-season bottlenecks. Enterprise-grade audit file prep and substantive testing mapped to US, UK, Canadian, and Australian regulatory standards.',
-    description: 'The tedious groundwork of financial auditing—assembling lead schedules, checking transaction trails, and compiling thousands of working papers—should never limit your firm\'s growth or drain your internal staff.\n\nAt Aum Consultancy, we act as a highly specialized, seamless extension of your audit team. We take care of the time-consuming data gathering, substantive sample testing, and file compilation behind the scenes. Whether you are a public practice looking to scale engagement capacity without adding local payroll overhead, or a corporate entity prepping for an upcoming regulatory review, we ensure your audit files are clean, unassailable, and delivered well ahead of your deadlines.\n\nContact us today to explore our scalable, secure offshore audit support teams.',
+    description: 'The tedious groundwork of financial auditing—assembling lead schedules, checking transaction trails, and compiling thousands of working papers—should never limit your firm\'s growth or drain your internal staff.\n\nAt Aum Consultancy, we act as a highly specialized, seamless extension of your audit team. We take care of the time-consuming data gathering, substantive sample testing, and file compilation behind the scenes. Whether you are a public practice looking to scale engagement capacity without adding local payroll overhead, or a corporate entity prepping for an upcoming regulatory review, we ensure your audit files are clean, unassailable, and delivered well ahead of your deadlines.',
     image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800&h=500&fm=webp',
     iconName: 'ShieldAlert',
     checklists: [],
@@ -411,7 +410,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     category: 'tax',
     title: 'Back-Year Tax Services & Catch-Up Filing',
     catchphrase: 'Years behind on your taxes? Stop worrying. We’ll clean up your records, handle the IRS or tax authorities, and clear your backlog completely.',
-    description: 'Life happens, business moves fast, and it is incredibly easy to fall behind on tax filings. But ignoring unfiled back-taxes is a ticking time bomb. With failure-to-file penalties compounding monthly and the risk of automated substitute returns (where the government files for you without any deductions), you need an immediate strategy to wipe the slate clean.\n\nAt Aum Consultancy, we offer a 100% judgment-free zone. Our specialized tax reconstruction squad steps in to take the burden off your shoulders. We pull historical transcripts, rebuild missing books, and completely resolve your past tax liabilities so you can breathe easy again.\n\nContact us today for a private, confidential consultation.',
+    description: 'Life happens, business moves fast, and it is incredibly easy to fall behind on tax filings. But ignoring unfiled back-taxes is a ticking time bomb. With failure-to-file penalties compounding monthly and the risk of automated substitute returns (where the government files for you without any deductions), you need an immediate strategy to wipe the slate clean.\n\nAt Aum Consultancy, we offer a 100% judgment-free zone. Our specialized tax reconstruction squad steps in to take the burden off your shoulders. We pull historical transcripts, rebuild missing books, and completely resolve your past tax liabilities so you can breathe easy again.\n\n.',
     image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=800&h=500',
     iconName: 'Receipt',
     checklists: [],
@@ -485,12 +484,12 @@ const BASE_SUB_SERVICES: SubService[] = [
     category: 'tax',
     title: 'Individual & Personal Tax Return Services',
     catchphrase: 'Stop guessing on tax software. Get your maximum legal refund, avoid audit traps, and let dedicated tax experts handle your personal filing.',
-    description: 'Filing your personal tax return shouldn\'t feel like a high-stakes guessing game. With tax laws constantly shifting, relying on generic DIY software often means leaving thousands of dollars in deductions on the table—or worse, accidentally triggering a compliance red flag.\n\nAt Aum Consultancy, we take the stress completely out of tax season. We provide personalized, meticulous tax preparation for individuals, remote professionals, expatriates, and high-net-worth investors. We don\'t just input your numbers into a form; we deeply analyze your financial footprint to build a bulletproof return that keeps more of your hard-earned money exactly where it belongs: in your pocket.\n\nContact us today to secure your stress-free personal tax filing.',
+    description: 'Filing your personal tax return shouldn\'t feel like a high-stakes guessing game. With tax laws constantly shifting, relying on generic DIY software often means leaving thousands of dollars in deductions on the table—or worse, accidentally triggering a compliance red flag.\n\nAt Aum Consultancy, we take the stress completely out of tax season. We provide personalized, meticulous tax preparation for individuals, remote professionals, expatriates, and high-net-worth investors. We don\'t just input your numbers into a form; we deeply analyze your financial footprint to build a bulletproof return that keeps more of your hard-earned money exactly where it belongs: in your pocket.\n\n.',
     image: 'https://images.unsplash.com/photo-1554774853-aae0a22c8aa4?auto=format&fit=crop&q=80&w=800&h=500',
     iconName: 'Receipt',
     checklists: [],
     whyPartner: [],
-    didYouKnow: 'Don\'t miss out on changing family, education, and energy incentives. Recent tax updates across major global markets have significantly shifted thresholds for child tax credits, student interest deductions, and clean-energy home improvement incentives. We double-check every single life change you experienced this year to ensure you claim every single credit you legally qualify for.',
+    didYouKnow: 'Recent tax updates across major global markets have significantly shifted thresholds for child tax credits, student interest deductions, and clean-energy home improvement incentives. We double-check every single life change you experienced this year to ensure you claim every single credit you legally qualify for.',
     ctaText: 'File Personal Taxes',
     accountingSections: [
       {
@@ -570,12 +569,12 @@ const BASE_SUB_SERVICES: SubService[] = [
     category: 'tax',
     title: 'C-Corporation Tax Return Services (Form 1120)',
     catchphrase: 'Maximize corporate tax efficiency, protect your balance sheet, and ensure flawless compliance with complex corporate tax frameworks.',
-    description: 'Operating as a C-Corporation provides immense flexibility for fundraising and growth, but it also carries some of the most complex filing requirements in the financial world. Navigating the pitfalls of double-taxation, tracking accumulated earnings, managing net operating losses (NOLs), and balancing complex book-to-tax differences requires advanced tax engineering.\n\nAt Aum Consultancy, we specialize in providing elite C-Corp tax compliance and structural reporting. We go far beyond basic data entry; our corporate tax specialists forensically review your financial statements to optimize your corporate tax brackets, capture major tax credits, and protect your company from costly regulatory audits.\n\nContact us today to secure an expert corporate tax review.',
+    description: 'Operating as a C-Corporation provides immense flexibility for fundraising and growth, but it also carries some of the most complex filing requirements in the financial world. Navigating the pitfalls of double-taxation, tracking accumulated earnings, managing net operating losses (NOLs), and balancing complex book-to-tax differences requires advanced tax engineering.\n\nAt Aum Consultancy, we specialize in providing elite C-Corp tax compliance and structural reporting. We go far beyond basic data entry; our corporate tax specialists forensically review your financial statements to optimize your corporate tax brackets, capture major tax credits, and protect your company from costly regulatory audits.\n\n.',
     image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800&h=500',
     iconName: 'Receipt',
     checklists: [],
     whyPartner: [],
-    didYouKnow: 'Is Your Corporation Capitalizing on Modern Cost Recovery? Don\'t let your profits get drained by outdated depreciation models. Navigating modern tax laws requires deep mastery of corporate cost recovery systems. Our teams perform advanced calculations for accelerated depreciation, section allowances, and capitalized expenditures, ensuring your major equipment investments, software purchases, and real estate assets are written off to give your corporation the maximum immediate cash-flow advantage.',
+    didYouKnow: 'Navigating modern tax laws requires deep mastery of corporate cost recovery systems. Our teams perform advanced calculations for accelerated depreciation, section allowances, and capitalized expenditures, ensuring your major equipment investments, software purchases, and real estate assets are written off to give your corporation the maximum immediate cash-flow advantage.',
     ctaText: 'Schedule a Corporate Tax Capacity Consultation',
     accountingSections: [
       {
@@ -644,7 +643,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     category: 'tax',
     title: 'LLC, LLP & Partnership Tax Return Services',
     catchphrase: 'Multi-jurisdictional partnership tax support for CPA firms and growing enterprises across the US, UK, Canada, and Australia.',
-    description: 'Managing the tax footprint of a pass-through or flow-through business entity requires balancing the needs of the enterprise with the individual tax profiles of its members or partners. Because multi-owner LLCs, LLPs, and Partnerships do not pay income tax directly, tracking changing capital accounts, calculating shifting partner basis, and preparing accurate individual statements is a highly meticulous process. One error on an allocation schedule can trigger major compliance penalties or internal disputes.\n\nAt Aum Consultancy, we function as a high-capacity tax delivery engine. We handle the heavy groundwork of compiling ledger data, balancing capital adjustments, and preparing pristine partnership returns. Whether you are a local CPA firm looking to offload massive volume during peak filing periods, or an expanding multi-owner enterprise, our specialists deliver seamless cross-border compliance.\n\nContact us today to set up a scalable tax capacity consultation.',
+    description: 'Managing the tax footprint of a pass-through or flow-through business entity requires balancing the needs of the enterprise with the individual tax profiles of its members or partners. Because multi-owner LLCs, LLPs, and Partnerships do not pay income tax directly, tracking changing capital accounts, calculating shifting partner basis, and preparing accurate individual statements is a highly meticulous process. One error on an allocation schedule can trigger major compliance penalties or internal disputes.\n\nAt Aum Consultancy, we function as a high-capacity tax delivery engine. We handle the heavy groundwork of compiling ledger data, balancing capital adjustments, and preparing pristine partnership returns. Whether you are a local CPA firm looking to offload massive volume during peak filing periods, or an expanding multi-owner enterprise, our specialists deliver seamless cross-border compliance.\n\n.',
     image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=800&h=500',
     iconName: 'Receipt',
     checklists: [],
@@ -730,7 +729,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     category: 'tax',
     title: 'Multistate & Multi-Region Tax Services',
     catchphrase: 'Protect your business from hidden tax liabilities. Expert economic nexus mapping, multi-jurisdictional filings, and cross-border compliance for the US, UK, Canada, and Australia.',
-    description: 'Expanding your sales across borders or hiring remote employees in other regions is fantastic for growth—but it creates a massive compliance trap. Local tax authorities are aggressively tracking where businesses generate revenue and where their employees sit. If you cross an arbitrary revenue threshold (Economic Nexus) or establish a physical footprint in a new state or territory, you are legally required to register, collect, and file taxes there. Failing to do so can lead to devastating back-tax assessments and severe fraud penalties.\n\nAt Aum Consultancy, we specialize in untangling the mess of multi-jurisdictional taxation. We actively monitor shifting regional thresholds to map out exactly where you owe taxes, calculate your liabilities with pinpoint precision, and handle all local registrations and filings so you can scale globally without fear.\n\nContact us today to schedule a comprehensive Nexus and multi-region tax assessment.',
+    description: 'Expanding your sales across borders or hiring remote employees in other regions is fantastic for growth—but it creates a massive compliance trap. Local tax authorities are aggressively tracking where businesses generate revenue and where their employees sit. If you cross an arbitrary revenue threshold (Economic Nexus) or establish a physical footprint in a new state or territory, you are legally required to register, collect, and file taxes there. Failing to do so can lead to devastating back-tax assessments and severe fraud penalties.\n\nAt Aum Consultancy, we specialize in untangling the mess of multi-jurisdictional taxation. We actively monitor shifting regional thresholds to map out exactly where you owe taxes, calculate your liabilities with pinpoint precision, and handle all local registrations and filings so you can scale globally without fear.\n\n.',
     image: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=800&h=500',
     iconName: 'Receipt',
     checklists: [],
@@ -817,7 +816,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     category: 'tax',
     title: 'Strategic Tax Planning & Advisory Services',
     catchphrase: 'Stop looking backward. Start proactively reducing your tax liability, protecting your wealth, and optimizing your global cash flow.',
-    description: 'Most businesses and high-net-worth individuals make the mistake of only talking to their accountant during tax season. By then, it is already too late to change your tax bill—you are simply recording history. True wealth preservation requires a proactive, forward-looking strategy that structures your transactions, investments, and business operations to minimize what you owe before the year ends.\n\nAt Aum Consultancy, we provide elite, year-round strategic tax planning and advisory. We analyze your entire financial footprint across your corporate entities and personal investments to identify hidden tax breaks, optimize entity structures, and deploy legal, advanced wealth-protection strategies. We don\'t just file your returns; we engineer them to save you money.\n\nContact us today to schedule a private Tax Optimization Consultation.',
+    description: 'Most businesses and high-net-worth individuals make the mistake of only talking to their accountant during tax season. By then, it is already too late to change your tax bill—you are simply recording history. True wealth preservation requires a proactive, forward-looking strategy that structures your transactions, investments, and business operations to minimize what you owe before the year ends.\n\nAt Aum Consultancy, we provide elite, year-round strategic tax planning and advisory. We analyze your entire financial footprint across your corporate entities and personal investments to identify hidden tax breaks, optimize entity structures, and deploy legal, advanced wealth-protection strategies. We don\'t just file your returns; we engineer them to save you money.\n\n.',
     image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800&h=500',
     iconName: 'Receipt',
     checklists: [],
@@ -986,10 +985,10 @@ const BASE_SUB_SERVICES: SubService[] = [
         title: ' Are You Experiencing Any of These Critical Scaling challenges?',
         text: "Busy founders don't have time for theory. If your business or your client's firm is hitting any of these operational bottlenecks, our Virtual CFO team can step in and fix it immediately:",
         items: [
-          '•\t" making sales, but bank account is always empty." → We build dynamic cash flow models to plug spending leaks and optimize operational cash cycles.',
-          '•\t" want to expand or hire, but  don\'t know if we can afford it safely." → We build data-backed scenario models to predict the exact financial impact of your next big move.',
-          '•\t" financial data is a mess, and can\'t make clear decisions." → We transform raw trial balances into crystal-clear executive reports that highlight your true profitability.',
-          '•\t"Investors or banks are asking for financial packages we don\'t have." → We prepare elite, investor-ready financial models, debt metrics, and board decks.'
+          '\t" making sales, but bank account is always empty." → We build dynamic cash flow models to plug spending leaks and optimize operational cash cycles.',
+          '\t" want to expand or hire, but  don\'t know if we can afford it safely." → We build data-backed scenario models to predict the exact financial impact of your next big move.',
+          '\t" financial data is a mess, and can\'t make clear decisions." → We transform raw trial balances into crystal-clear executive reports that highlight your true profitability.',
+          '\t"Investors or banks are asking for financial packages we don\'t have." → We prepare elite, investor-ready financial models, debt metrics, and board decks.'
         ]
       },
       {
@@ -1130,7 +1129,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     accountingSections: [
       {
         type: 'bullet',
-        title: 'Are You Protected Against These Critical Transaction Risks? (is this preferable to keep)',
+        title: 'Are You Protected Against These Critical Transaction Risks?',
         text: 'Corporate buyers and sellers must move fast, but they cannot afford to overlook structural risks. Our M&A pod steps in to answer the critical questions that protect your capital:',
         items: [
           '"Are the target company’s reported earnings actually sustainable?" → We run detailed Quality of Earnings (QoE) assessments to strip out one-time spikes and isolate true recurring cash flow.',
@@ -1195,7 +1194,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     id: 'virtual-assistant',
     category: 'other',
     title: 'Virtual Admin and Assistant Support',
-    catchphrase: 'Delegate your administrative backlog, and reclaim hours every week. (or Clear your desk, delegate your administrative backlog, and reclaim up to 20 hours every week.)',
+    catchphrase: 'Delegate your administrative backlog, and reclaim hours every week.',
     description: 'For busy business owners, corporate executives, and CPA partners across the US, UK, Canada, and Australia, time is the rarest resource. When you spend your day responding to basic emails, updating CRM logs, organizing cloud folders, and chasing clients for missing documents, you are trapped working in your business rather than on it. Hiring a full-time, local administrative assistant comes with heavy overheads, payroll taxes, and recruitment headaches.\n\nAt Aum Consultancy, our Executive Virtual Assistants (VAs) provide reliable, high-tier administrative support tailored for modern workflows. We plug directly into your daily routines to handle your clerical bottlenecks behind the scenes. You focus on high-value client relationships and closing deals; we manage the execution.',
     image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800&h=500',
     iconName: 'Users',
@@ -1266,7 +1265,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       {
         type: 'paragraph',
         title: 'Overwhelmed by Daily Paperwork?',
-        text: "Let us clear your administrative backlog so you can focus on growth.\n\nStop letting small clerical tasks dictate your schedule. Connect with our administrative operations team to outline your exact bottlenecks, map out your current systems, and assign a dedicated executive virtual assistant to your workflow.\n\n👉 Schedule an Admin Support Consultation ➔\n\nFlexible hourly packages and dedicated monthly assistant retainers are available to match your specific business volume."
+        text: "Let us clear your administrative backlog so you can focus on growth.\n\nStop letting small clerical tasks dictate your schedule. Connect with our administrative operations team to outline your exact bottlenecks, map out your current systems, and assign a dedicated executive virtual assistant to your workflow.\n\n(Flexible hourly packages and dedicated monthly assistant retainers are available to match your specific business volume.)"
       }
     ],
     didYouKnow: 'Our executive virtual assistants operate natively inside major platforms like Slack, Teams, Zoom, Asana, ClickUp, Monday.com, Trello, Google Workspace, Microsoft 365, HubSpot, Salesforce, Pipedrive, and Zoho.',
@@ -1339,7 +1338,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       {
         type: 'paragraph',
         title: 'Protect Your Core Operations. Engineer Your Next Move.',
-        text: "Let's build a secure, high-margin roadmap for your business.\n\nDon't wait for a workflow bottleneck or financial oversight to impact your profit margins. Connect with our corporate strategy and risk advisory specialists today to schedule an operational assessment, evaluate your internal control frameworks, and design a scalable growth strategy.\n\n👉 Schedule an Operational Risk Assessment ➔\n\nAll initial strategic inquiries are handled with absolute corporate confidentiality and guided directly by our senior consulting leads."
+        text: "Let's build a secure, high-margin roadmap for your business.\n\nDon't wait for a workflow bottleneck or financial oversight to impact your profit margins. Connect with our corporate strategy and risk advisory specialists today to schedule an operational assessment, evaluate your internal control frameworks, and design a scalable growth strategy.\n\n(All initial strategic inquiries are handled with absolute corporate confidentiality and guided directly by our senior consulting leads.)"
       }
     ],
     didYouKnow: "Don't wait for a workflow bottleneck or financial oversight to impact your profit margins. An operational audit isolates hidden waste, supply chain leakages, or software overspending early.",

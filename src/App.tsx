@@ -4,7 +4,6 @@ import { Page } from './types';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
-import FloatingBookCallButton from './components/FloatingBookCallButton';
 import BackToTop from './components/BackToTop';
 import BookConsultationModal from './components/BookConsultationModal';
 import DataSecurityPolicyModal from './components/DataSecurityPolicyModal';
@@ -118,7 +117,6 @@ export default function App() {
 
       {/* Floating Action widgets */}
       <WhatsAppButton />
-      <FloatingBookCallButton onClick={openConsultation} />
       <BackToTop />
 
       {/* Scheduler and Savings Calculator Modals */}

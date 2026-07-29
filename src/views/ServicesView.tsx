@@ -160,15 +160,18 @@ export default function ServicesView({
       setExpandedSubServiceId(activeSubServiceId);
       setIsClosedByUser(false);
       
-      // Auto scroll to the expanded sub service on load/change
-      if (hasScrolledRef.current !== activeSubServiceId) {
-        hasScrolledRef.current = activeSubServiceId;
+      // Auto scroll to the expanded sub service on load/change starting cleanly from its top title
+      const scrollKey = `${location.pathname}-${activeSubServiceId}`;
+      if (hasScrolledRef.current !== scrollKey) {
+        hasScrolledRef.current = scrollKey;
         setTimeout(() => {
           const el = document.getElementById(activeSubServiceId);
           if (el) {
-            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            const yOffset = -120; // Clear fixed navbar and upper contact bar
+            const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
           }
-        }, 350);
+        }, 300);
       }
     } else {
       if (isClosedByUser || isClosedRouteState) {
@@ -177,7 +180,7 @@ export default function ServicesView({
         setExpandedSubServiceId(activeSubServices[0].id);
       }
     }
-  }, [activeCategoryId, activeSubServiceId, location.state, isClosedByUser]);
+  }, [activeCategoryId, activeSubServiceId, location.pathname, location.state, isClosedByUser]);
 
   // Sync state upward in case parents use it
   useEffect(() => {
@@ -240,7 +243,7 @@ export default function ServicesView({
               <div className="relative rounded-2xl overflow-hidden border border-slate-200/60 shadow-sm bg-slate-50/70 text-navy-900">
                 <div className="relative p-6 sm:p-10 space-y-3 z-10">
                   <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#0e1b2e]">{activeCategory.title} Overview</h2>
-                  <p className="text-slate-600 text-xs sm:text-sm font-light leading-relaxed max-w-2xl">
+                  <p className="text-slate-600 text-xs sm:text-sm font-light leading-relaxed max-w-5xl">
                     {activeCategory.longDesc}
                   </p>
                 </div>
@@ -260,16 +263,17 @@ export default function ServicesView({
                     <div 
                       key={sub.id} 
                       id={sub.id}
-                      className={isAccounting 
-                        ? `rounded-2xl border transition-all duration-300 overflow-hidden ${
-                            isExpanded 
-                              ? 'border-[#007cff] bg-white shadow-lg ring-1 ring-[#007cff]/20' 
-                              : 'border-slate-200 bg-slate-50/50 hover:bg-slate-50 hover:border-slate-300 shadow-sm'
-                          }`
-                        : `bg-blue-50/45 rounded-2xl border transition-all overflow-hidden ${
-                            isExpanded ? 'border-[#007cff] bg-white shadow-md' : 'border-blue-100/60 hover:border-blue-200'
-                          }`
-                      }
+                      className={`scroll-mt-28 sm:scroll-mt-32 ${
+                        isAccounting 
+                          ? `rounded-2xl border transition-all duration-300 overflow-hidden ${
+                              isExpanded 
+                                ? 'border-[#007cff] bg-white shadow-lg ring-1 ring-[#007cff]/20' 
+                                : 'border-slate-200 bg-slate-50/50 hover:bg-slate-50 hover:border-slate-300 shadow-sm'
+                            }`
+                          : `bg-blue-50/45 rounded-2xl border transition-all overflow-hidden ${
+                              isExpanded ? 'border-[#007cff] bg-white shadow-md' : 'border-blue-100/60 hover:border-blue-200'
+                            }`
+                      }`}
                     >
                       {/* Header Toggle */}
                       <button
@@ -294,7 +298,18 @@ export default function ServicesView({
                               }
                             }
                           } else {
-                            setExpandedSubServiceId(isExpanded ? '' : sub.id);
+                            const nextState = isExpanded ? '' : sub.id;
+                            setExpandedSubServiceId(nextState);
+                            if (nextState) {
+                              setTimeout(() => {
+                                const el = document.getElementById(sub.id);
+                                if (el) {
+                                  const yOffset = -120;
+                                  const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                                  window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+                                }
+                              }, 100);
+                            }
                           }
                         }}
                         className={isAccounting
@@ -313,7 +328,7 @@ export default function ServicesView({
                           </div>
                           <div>
                             <h3 className={isAccounting
-                              ? "text-base sm:text-lg md:text-xl font-bold text-slate-900 tracking-tight"
+                              ? "text-base sm:text-lg md:text-xl font-bold text-navy-900 tracking-tight"
                               : "text-xs sm:text-sm font-bold text-navy-900"
                             }>
                               {sub.title}
@@ -350,7 +365,7 @@ export default function ServicesView({
                                 ? "inline-block text-sm sm:text-base text-blue-700 bg-blue-50 border border-blue-200/80 px-4 py-2 rounded-lg font-mono font-bold"
                                 : "inline-block text-sm sm:text-base text-blue-600 bg-blue-50 border border-blue-100 px-4 py-2 rounded-lg font-mono font-bold"
                               }>
-                                ✦ {sub.catchphrase}
+                                 {sub.catchphrase}
                               </span>
                               <p className={isAccounting
                                 ? "text-sm sm:text-base text-slate-700 leading-relaxed font-normal text-justify"
@@ -366,7 +381,7 @@ export default function ServicesView({
                                 if (section.type === 'checklist') {
                                   return (
                                     <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-4 shadow-xs">
-                                      <h4 className="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
+                                      <h4 className="text-sm sm:text-base font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
                                         <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
                                         {section.title}
                                       </h4>
@@ -383,7 +398,7 @@ export default function ServicesView({
                                 } else if (section.type === 'bullet') {
                                   return (
                                     <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-4 shadow-xs">
-                                      <h4 className="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
+                                      <h4 className="text-sm sm:text-base font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
                                         <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
                                         {section.title}
                                       </h4>
@@ -392,10 +407,10 @@ export default function ServicesView({
                                           {section.text}
                                         </p>
                                       )}
-                                      <ul className="space-y-3 pl-1">
+                                      <ul className="space-y-3 pl-1 list-none">
                                         {section.items?.map((item, itemIdx) => (
                                           <li key={itemIdx} className="flex gap-3 text-sm text-slate-700 leading-relaxed font-normal items-start">
-                                            <span className="text-[#007cff] font-bold shrink-0 mt-0.5">•</span>
+                                            <span className="text-[#007cff] font-bold shrink-0 mt-0.5">✓</span>
                                             <span>{item}</span>
                                           </li>
                                         ))}
@@ -405,7 +420,7 @@ export default function ServicesView({
                                 } else if (section.type === 'nested-sections') {
                                   return (
                                     <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-5 shadow-xs">
-                                      <h4 className="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
+                                      <h4 className="text-sm sm:text-base font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
                                         <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
                                         {section.title}
                                       </h4>
@@ -417,8 +432,7 @@ export default function ServicesView({
                                       <div className="grid grid-cols-1 gap-5">
                                         {section.subSections?.map((subSec, subIdx) => (
                                           <div key={subIdx} className="bg-white border border-slate-200/80 p-5 rounded-xl space-y-3 shadow-2xs">
-                                            <h5 className="text-xs sm:text-sm font-bold text-slate-900 flex items-center gap-2 border-b border-slate-100 pb-2 uppercase tracking-wider">
-                                              <span className="w-1.5 h-1.5 rounded-full bg-[#007cff]"></span>
+                                            <h5 className="text-xs sm:text-sm font-bold text-navy-900 flex items-center gap-2 border-b border-slate-100 pb-2 uppercase tracking-wider">
                                               {subSec.title}
                                             </h5>
                                             {subSec.text && (
@@ -426,10 +440,10 @@ export default function ServicesView({
                                                 {subSec.text}
                                               </p>
                                             )}
-                                            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2.5 pl-1">
+                                            <ul className={`grid grid-cols-1 ${subSec.items?.length === 1 ? '' : 'md:grid-cols-2'} gap-x-6 gap-y-2.5 pl-1 list-none`}>
                                               {subSec.items?.map((item, itemIdx) => (
                                                 <li key={itemIdx} className="flex gap-2.5 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal items-start">
-                                                  <span className="text-[#007cff] font-bold shrink-0 mt-0.5">•</span>
+                                                  <span className="text-[#007cff] font-bold shrink-0 mt-0.5">✓</span>
                                                   <span>{item}</span>
                                                 </li>
                                               ))}
@@ -443,7 +457,7 @@ export default function ServicesView({
                                   return (
                                     <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-4 shadow-xs">
                                       {section.title && (
-                                        <h4 className="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
+                                        <h4 className="text-sm sm:text-base font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
                                           <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
                                           {section.title}
                                         </h4>
@@ -459,7 +473,7 @@ export default function ServicesView({
                                             <div className="bg-blue-50 text-[#007cff] p-2.5 rounded-lg w-fit">
                                               {getIconComponent(gItem.iconName, 'w-5 h-5', 'text-[#007cff]')}
                                             </div>
-                                            <h5 className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">
+                                            <h5 className="text-xs sm:text-sm font-bold text-navy-900 leading-snug">
                                               {gItem.title}
                                             </h5>
                                             <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed font-normal text-justify">
@@ -476,7 +490,7 @@ export default function ServicesView({
                                   return (
                                     <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-4 shadow-xs">
                                       {section.title && (
-                                        <h4 className="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
+                                        <h4 className="text-sm sm:text-base font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
                                           <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
                                           {section.title}
                                         </h4>
@@ -510,13 +524,13 @@ export default function ServicesView({
                                   : "bg-slate-50 border border-slate-200/60 p-5 rounded-xl space-y-4"
                                 }>
                                   <span className={isAccounting
-                                    ? "text-sm sm:text-base font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2 border-b border-slate-200 pb-3"
+                                    ? "text-sm sm:text-base font-bold text-navy-900 uppercase tracking-wider flex items-center gap-2 border-b border-slate-200 pb-3"
                                     : "text-xs sm:text-sm font-extrabold text-navy-950 uppercase tracking-wider flex items-center gap-2 border-b border-slate-200 pb-2.5"
                                   }>
                                     <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
                                     {check.title}
                                   </span>
-                                  <ul className="space-y-3">
+                                  <ul className="space-y-3 list-none">
                                     {check.items.map((item, itemIdx) => (
                                       <li key={itemIdx} className={isAccounting
                                         ? "flex gap-3 text-sm text-slate-700 leading-relaxed font-normal items-start"
