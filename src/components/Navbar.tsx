@@ -739,7 +739,7 @@ export default function Navbar({
                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
                  className="w-full flex justify-between items-center text-left text-base font-semibold text-slate-700"
                >
-                 <span>Our Services</span>
+                 <span>Services</span>
                  <ChevronDown className={`w-4 h-4 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} />
                </button>
                {mobileServicesOpen && (
