@@ -484,7 +484,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     category: 'tax',
     title: 'Individual & Personal Tax Return Services',
     catchphrase: 'Stop guessing on tax software. Get your maximum legal refund, avoid audit traps, and let dedicated tax experts handle your personal filing.',
-    description: 'Filing your personal tax return shouldn\'t feel like a high-stakes guessing game. With tax laws constantly shifting, relying on generic DIY software often means leaving thousands of dollars in deductions on the table—or worse, accidentally triggering a compliance red flag.\n\nAt Aum Consultancy, we take the stress completely out of tax season. We provide personalized, meticulous tax preparation for individuals, remote professionals, expatriates, and high-net-worth investors. We don\'t just input your numbers into a form; we deeply analyze your financial footprint to build a bulletproof return that keeps more of your hard-earned money exactly where it belongs: in your pocket.\n\n.',
+    description: 'Filing your personal tax return shouldn\'t feel like a high-stakes guessing game. With tax laws constantly shifting, relying on generic DIY software often means leaving thousands of dollars in deductions on the table—or worse, accidentally triggering a compliance red flag.\n\nAt Aum Consultancy, we take the stress completely out of tax season. We provide personalized, meticulous tax preparation for individuals, remote professionals, expatriates, and high-net-worth investors. We don\'t just input your numbers into a form; we deeply analyze your financial footprint to build a bulletproof return that keeps more of your hard-earned money exactly where it belongs: in your pocket.\n\n',
     image: 'https://images.unsplash.com/photo-1554774853-aae0a22c8aa4?auto=format&fit=crop&q=80&w=800&h=500',
     iconName: 'Receipt',
     checklists: [],
@@ -643,13 +643,13 @@ const BASE_SUB_SERVICES: SubService[] = [
     category: 'tax',
     title: 'LLC, LLP & Partnership Tax Return Services',
     catchphrase: 'Multi-jurisdictional partnership tax support for CPA firms and growing enterprises across the US, UK, Canada, and Australia.',
-    description: 'Managing the tax footprint of a pass-through or flow-through business entity requires balancing the needs of the enterprise with the individual tax profiles of its members or partners. Because multi-owner LLCs, LLPs, and Partnerships do not pay income tax directly, tracking changing capital accounts, calculating shifting partner basis, and preparing accurate individual statements is a highly meticulous process. One error on an allocation schedule can trigger major compliance penalties or internal disputes.\n\nAt Aum Consultancy, we function as a high-capacity tax delivery engine. We handle the heavy groundwork of compiling ledger data, balancing capital adjustments, and preparing pristine partnership returns. Whether you are a local CPA firm looking to offload massive volume during peak filing periods, or an expanding multi-owner enterprise, our specialists deliver seamless cross-border compliance.\n\n.',
+    description: 'Managing the tax footprint of a pass-through or flow-through business entity requires balancing the needs of the enterprise with the individual tax profiles of its members or partners. Because multi-owner LLCs, LLPs, and Partnerships do not pay income tax directly, tracking changing capital accounts, calculating shifting partner basis, and preparing accurate individual statements is a highly meticulous process. One error on an allocation schedule can trigger major compliance penalties or internal disputes.\n\nAt Aum Consultancy, we function as a high-capacity tax delivery engine. We handle the heavy groundwork of compiling ledger data, balancing capital adjustments, and preparing pristine partnership returns. Whether you are a local CPA firm looking to offload massive volume during peak filing periods, or an expanding multi-owner enterprise, our specialists deliver seamless cross-border compliance.\n\n',
     image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=800&h=500',
     iconName: 'Receipt',
     checklists: [],
     whyPartner: [],
     didYouKnow: 'Scale your firm\'s output without expanding your local overhead. For accounting firms in the US, UK, Canada, and Australia, manually processing hundreds of complex partnership returns and partner slips drains local senior resources. By outsourcing data sorting, capital balancing, and form mapping to Aum Consultancy, you slash your seasonal operating overhead by up to 60%, speed up client turnaround times, and free your core local team to focus purely on high-margin client relationships.',
-    ctaText: 'Partner Tax Consultation',
+    ctaText: 'Scalable Tax Capacity Consultation',
     accountingSections: [
       {
         type: 'grid',
@@ -729,7 +729,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     category: 'tax',
     title: 'Multistate & Multi-Region Tax Services',
     catchphrase: 'Protect your business from hidden tax liabilities. Expert economic nexus mapping, multi-jurisdictional filings, and cross-border compliance for the US, UK, Canada, and Australia.',
-    description: 'Expanding your sales across borders or hiring remote employees in other regions is fantastic for growth—but it creates a massive compliance trap. Local tax authorities are aggressively tracking where businesses generate revenue and where their employees sit. If you cross an arbitrary revenue threshold (Economic Nexus) or establish a physical footprint in a new state or territory, you are legally required to register, collect, and file taxes there. Failing to do so can lead to devastating back-tax assessments and severe fraud penalties.\n\nAt Aum Consultancy, we specialize in untangling the mess of multi-jurisdictional taxation. We actively monitor shifting regional thresholds to map out exactly where you owe taxes, calculate your liabilities with pinpoint precision, and handle all local registrations and filings so you can scale globally without fear.\n\n.',
+    description: 'Expanding your sales across borders or hiring remote employees in other regions is fantastic for growth—but it creates a massive compliance trap. Local tax authorities are aggressively tracking where businesses generate revenue and where their employees sit. If you cross an arbitrary revenue threshold (Economic Nexus) or establish a physical footprint in a new state or territory, you are legally required to register, collect, and file taxes there. Failing to do so can lead to devastating back-tax assessments and severe fraud penalties.\n\nAt Aum Consultancy, we specialize in untangling the mess of multi-jurisdictional taxation. We actively monitor shifting regional thresholds to map out exactly where you owe taxes, calculate your liabilities with pinpoint precision, and handle all local registrations and filings so you can scale globally without fear.\n\n',
     image: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=800&h=500',
     iconName: 'Receipt',
     checklists: [],
@@ -816,13 +816,13 @@ const BASE_SUB_SERVICES: SubService[] = [
     category: 'tax',
     title: 'Strategic Tax Planning & Advisory Services',
     catchphrase: 'Stop looking backward. Start proactively reducing your tax liability, protecting your wealth, and optimizing your global cash flow.',
-    description: 'Most businesses and high-net-worth individuals make the mistake of only talking to their accountant during tax season. By then, it is already too late to change your tax bill—you are simply recording history. True wealth preservation requires a proactive, forward-looking strategy that structures your transactions, investments, and business operations to minimize what you owe before the year ends.\n\nAt Aum Consultancy, we provide elite, year-round strategic tax planning and advisory. We analyze your entire financial footprint across your corporate entities and personal investments to identify hidden tax breaks, optimize entity structures, and deploy legal, advanced wealth-protection strategies. We don\'t just file your returns; we engineer them to save you money.\n\n.',
+    description: 'Most businesses and high-net-worth individuals make the mistake of only talking to their accountant during tax season. By then, it is already too late to change your tax bill—you are simply recording history. True wealth preservation requires a proactive, forward-looking strategy that structures your transactions, investments, and business operations to minimize what you owe before the year ends.\n\nAt Aum Consultancy, we provide elite, year-round strategic tax planning and advisory. We analyze your entire financial footprint across your corporate entities and personal investments to identify hidden tax breaks, optimize entity structures, and deploy legal, advanced wealth-protection strategies. We don\'t just file your returns; we engineer them to save you money.\n\n',
     image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800&h=500',
     iconName: 'Receipt',
     checklists: [],
     whyPartner: [],
     didYouKnow: 'Tax planning pays for itself. Waiting until the end of the year means missing out on time-sensitive tax shelters, depreciation elections, and corporate structure shifts that must be legally executed before December 31st. Our advisory clients routinely see a massive return on investment, capturing savings that far outweigh our advisory fees. If your current accountant isn\'t calling you mid-year with proactive ideas to save you money, you are overpaying the government.',
-    ctaText: 'Optimize Tax Strategy',
+    ctaText: 'Schedule a Private Tax Optimization Consultation',
     accountingSections: [
       {
         type: 'bullet',
@@ -893,7 +893,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     checklists: [],
     whyPartner: [],
     didYouKnow: 'Undistributed trust income is a major tax target worldwide. Unlike individual tax profiles, trusts hit the top tax brackets with very small amounts of retained income. Leaving income inside a trust asset pool often triggers the highest legal tax rates automatically. Our compliance teams prioritize proactive calculations to ensure your distributions are perfectly timed and structured, leaving zero cash vulnerable to over-taxation.',
-    ctaText: 'Fiduciary Tax Consultation',
+    ctaText: 'Secure an Expert Fiduciary Tax Consultation',
     accountingSections: [
       {
         type: 'grid',
@@ -985,9 +985,9 @@ const BASE_SUB_SERVICES: SubService[] = [
         title: ' Are You Experiencing Any of These Critical Scaling challenges?',
         text: "Busy founders don't have time for theory. If your business or your client's firm is hitting any of these operational bottlenecks, our Virtual CFO team can step in and fix it immediately:",
         items: [
-          '\t" making sales, but bank account is always empty." → We build dynamic cash flow models to plug spending leaks and optimize operational cash cycles.',
-          '\t" want to expand or hire, but  don\'t know if we can afford it safely." → We build data-backed scenario models to predict the exact financial impact of your next big move.',
-          '\t" financial data is a mess, and can\'t make clear decisions." → We transform raw trial balances into crystal-clear executive reports that highlight your true profitability.',
+          '\t"Making sales, but bank account is always empty." → We build dynamic cash flow models to plug spending leaks and optimize operational cash cycles.',
+          '\t"Want to expand or hire, but  don\'t know if we can afford it safely." → We build data-backed scenario models to predict the exact financial impact of your next big move.',
+          '\t"Financial data is a mess, and can\'t make clear decisions." → We transform raw trial balances into crystal-clear executive reports that highlight your true profitability.',
           '\t"Investors or banks are asking for financial packages we don\'t have." → We prepare elite, investor-ready financial models, debt metrics, and board decks.'
         ]
       },
@@ -1188,7 +1188,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       }
     ],
     didYouKnow: 'Ticking tax or operational liabilities—such as unfiled state sales tax, payroll gaps, and bad debts—can lie undetected. Our forensic due diligence protects your capital and negotiates from absolute strength.',
-    ctaText: 'Schedule a Business Valuation Briefing -  book a call or consultation button'
+    ctaText: 'Schedule a Business Valuation Briefing'
   },
   {
     id: 'virtual-assistant',
@@ -1206,10 +1206,10 @@ const BASE_SUB_SERVICES: SubService[] = [
         title: 'Is Your Leadership Team Overwhelmed by Clerical Tasks?',
         text: 'If you or your department heads are losing valuable hours every week to these operational friction points, our dedicated VAs can step in and fix it immediately:',
         items: [
-          '•\t"I nbox is overflowing, and missing critical client emails." → We triage your inbox, filter out spam, categorize action items, and draft responses daily.',
-          '•\t" CRM data is completely outdated and disorganized." → We clean up data entry fields, log client interactions, and keep pipelines updated in real time.',
-          '•\t" Waste hours manually chasing clients for missing paperwork." → We set up systematic, polite follow-up schedules to retrieve files and contracts automatically.',
-          '•\t"Scheduling multi-timezone meetings takes forever." → We manage your executive calendar, coordinate dates across timezones, and set up meeting links seamlessly.'
+          '\t"I nbox is overflowing, and missing critical client emails." → We triage your inbox, filter out spam, categorize action items, and draft responses daily.',
+          '\t" CRM data is completely outdated and disorganized." → We clean up data entry fields, log client interactions, and keep pipelines updated in real time.',
+          '\t" Waste hours manually chasing clients for missing paperwork." → We set up systematic, polite follow-up schedules to retrieve files and contracts automatically.',
+          '\t"Scheduling multi-timezone meetings takes forever." → We manage your executive calendar, coordinate dates across timezones, and set up meeting links seamlessly.'
         ]
       },
       {
@@ -1287,10 +1287,10 @@ const BASE_SUB_SERVICES: SubService[] = [
         title: 'Is Your Enterprise Vulnerable to These Structural Risks?',
         text: 'Growth without structural control creates operational chaos. Our risk and strategy team steps in to help you solve critical structural vulnerabilities before they impact your bottom line:',
         items: [
-          '•\t"Are our internal financial controls strong enough to prevent fraud or error?" → We audit your internal systems, segregate financial duties, and build secure oversight workflows.',
-          '•\t"Want to enter a strategic alliance or joint venture, but how do we structure it safely?" → We evaluate the financial and operational mechanics of your proposed partnerships to protect your interests.',
-          '•\t" Business is growing, but internal workflows are slow and inefficient." → We perform deep operational reviews to eliminate redundant tasks, automate manual steps, and protect your profit margins.',
-          '•\t"Do we have a clear, data-backed 3-to-5 year corporate roadmap?" → We map out actionable growth timelines based on your actual capital constraints and market capabilities.'
+          '\t"Are our internal financial controls strong enough to prevent fraud or error?" → We audit your internal systems, segregate financial duties, and build secure oversight workflows.',
+          '\t"Want to enter a strategic alliance or joint venture, but how do we structure it safely?" → We evaluate the financial and operational mechanics of your proposed partnerships to protect your interests.',
+          '\t" Business is growing, but internal workflows are slow and inefficient." → We perform deep operational reviews to eliminate redundant tasks, automate manual steps, and protect your profit margins.',
+          '\t"Do we have a clear, data-backed 3-to-5 year corporate roadmap?" → We map out actionable growth timelines based on your actual capital constraints and market capabilities.'
         ]
       },
       {
@@ -1319,7 +1319,7 @@ const BASE_SUB_SERVICES: SubService[] = [
       {
         type: 'text-block',
         title: 'The Strategic Alignment Framework',
-        text: `   [ 1. Risk Diagnosis ]            [ 2. Control Engineering ]          [ 3. Strategic Growth ]
+        text: `   [ 1. Risk Diagnosis ]             [ 2. Control Engineering ]          [ 3. Strategic Growth ]
 ┌───────────────────────────┐      ┌───────────────────────────┐      ┌───────────────────────────┐
 │ • Workflow Vulnerability  │      │ • Duty Segregation        │      │ • Joint Venture Framework │
 │   Mapping & Audit         │ ────>│ • Fraud Prevention Locks  │ ────>│ • Margin-Lock Packaging   │
