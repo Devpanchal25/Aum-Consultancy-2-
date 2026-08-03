@@ -220,7 +220,7 @@ export default function ServicesView({
                     <button
                       key={cat.id}
                       onClick={() => handleCategoryChange(cat.id)}
-                      className={`flex items-center gap-2 px-4 py-3 rounded-xl border font-bold text-[11px] uppercase tracking-wider transition-all duration-200 shrink-0 cursor-pointer snap-start ${
+                      className={`flex items-center gap-2 px-4 py-3 rounded-xl border font-bold text-sm uppercase tracking-wider transition-all duration-200 shrink-0 cursor-pointer snap-start ${
                         isActive
                           ? 'bg-navy-900 border-navy-950 text-white shadow-md shadow-navy-950/15'
                           : 'bg-slate-50 border-slate-200/60 text-slate-600 hover:bg-slate-100 hover:text-navy-950 hover:border-slate-300'
@@ -242,8 +242,8 @@ export default function ServicesView({
               {/* Domain Overview Banner Card */}
               <div className="relative rounded-2xl overflow-hidden border border-slate-200/60 shadow-sm bg-slate-50/70 text-navy-900">
                 <div className="relative p-6 sm:p-10 space-y-3 z-10">
-                  <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#0e1b2e]">{activeCategory.title} Overview</h2>
-                  <p className="text-slate-600 text-xs sm:text-sm font-light leading-relaxed max-w-5xl">
+                  <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#0e1b2e]">{activeCategory.title} Overview</h2>
+                  <p className="text-slate-600 text-base sm:text-lg font-light leading-relaxed max-w-5xl">
                     {activeCategory.longDesc}
                   </p>
                 </div>
@@ -251,7 +251,7 @@ export default function ServicesView({
 
               {/* Sub-Services Expandable Accordion List */}
               <div className="space-y-4">
-                <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest block pl-1">
+                <span className="text-sm sm:text-base font-extrabold text-slate-400 uppercase tracking-widest block pl-1">
                   Active Capabilities ({activeSubServices.length})
                 </span>
 
@@ -328,8 +328,8 @@ export default function ServicesView({
                           </div>
                           <div>
                             <h3 className={isAccounting
-                              ? "text-base sm:text-lg md:text-xl font-bold text-navy-900 tracking-tight"
-                              : "text-xs sm:text-sm font-bold text-navy-900"
+                              ? "text-lg sm:text-xl md:text-2xl font-bold text-navy-900 tracking-tight"
+                              : "text-base sm:text-lg font-bold text-navy-900"
                             }>
                               {sub.title}
                             </h3>
@@ -362,14 +362,14 @@ export default function ServicesView({
                             </div>
                             <div className="col-span-12 md:col-span-8 space-y-4">
                               <span className={isAccounting
-                                ? "inline-block text-sm sm:text-base text-blue-700 bg-blue-50 border border-blue-200/80 px-4 py-2 rounded-lg font-mono font-bold"
-                                : "inline-block text-sm sm:text-base text-blue-600 bg-blue-50 border border-blue-100 px-4 py-2 rounded-lg font-mono font-bold"
+                                ? "inline-block text-lg sm:text-xl text-blue-700 bg-blue-50 border border-blue-200/80 px-4 py-3 rounded-lg font-mono font-bold"
+                                : "inline-block text-lg sm:text-xl text-blue-600 bg-blue-50 border border-blue-100 px-4 py-3 rounded-lg font-mono font-bold"
                               }>
                                  {sub.catchphrase}
                               </span>
                               <p className={isAccounting
-                                ? "text-sm sm:text-base text-slate-700 leading-relaxed font-normal text-justify"
-                                : "text-sm sm:text-base text-slate-600 leading-relaxed font-light"
+                                ? "text-lg sm:text-xl text-slate-700 leading-relaxed font-normal text-justify"
+                                : "text-lg sm:text-xl text-slate-600 leading-relaxed font-light"
                               }>
                                 {sub.description}
                               </p>
@@ -381,13 +381,13 @@ export default function ServicesView({
                                 if (section.type === 'checklist') {
                                   return (
                                     <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-4 shadow-xs">
-                                      <h4 className="text-sm sm:text-base font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
+                                      <h4 className="text-base sm:text-lg font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
                                         <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
                                         {section.title}
                                       </h4>
                                       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
                                         {section.items?.map((item, itemIdx) => (
-                                          <div key={itemIdx} className="flex gap-3 text-sm text-slate-700 leading-relaxed font-normal items-start">
+                                          <div key={itemIdx} className="flex gap-3 text-base text-slate-700 leading-relaxed font-normal items-start">
                                             <span className="text-emerald-500 font-bold shrink-0 mt-0.5">✓</span>
                                             <span>{item}</span>
                                           </div>
@@ -398,18 +398,18 @@ export default function ServicesView({
                                 } else if (section.type === 'bullet') {
                                   return (
                                     <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-4 shadow-xs">
-                                      <h4 className="text-sm sm:text-base font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
+                                      <h4 className="text-base sm:text-lg font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
                                         <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
                                         {section.title}
                                       </h4>
                                       {section.text && (
-                                        <p className="text-sm text-slate-700 leading-relaxed font-normal text-justify">
+                                        <p className="text-base text-slate-700 leading-relaxed font-normal text-justify">
                                           {section.text}
                                         </p>
                                       )}
                                       <ul className="space-y-3 pl-1 list-none">
                                         {section.items?.map((item, itemIdx) => (
-                                          <li key={itemIdx} className="flex gap-3 text-sm text-slate-700 leading-relaxed font-normal items-start">
+                                          <li key={itemIdx} className="flex gap-3 text-base text-slate-700 leading-relaxed font-normal items-start">
                                             <span className="text-[#007cff] font-bold shrink-0 mt-0.5">✓</span>
                                             <span>{item}</span>
                                           </li>
@@ -420,7 +420,7 @@ export default function ServicesView({
                                 } else if (section.type === 'nested-sections') {
                                   return (
                                     <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-5 shadow-xs">
-                                      <h4 className="text-sm sm:text-base font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
+                                      <h4 className="text-base sm:text-lg font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
                                         <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
                                         {section.title}
                                       </h4>
@@ -432,17 +432,17 @@ export default function ServicesView({
                                       <div className="grid grid-cols-1 gap-5">
                                         {section.subSections?.map((subSec, subIdx) => (
                                           <div key={subIdx} className="bg-white border border-slate-200/80 p-5 rounded-xl space-y-3 shadow-2xs">
-                                            <h5 className="text-xs sm:text-sm font-bold text-navy-900 flex items-center gap-2 border-b border-slate-100 pb-2 uppercase tracking-wider">
+                                            <h5 className="text-sm sm:text-base font-bold text-navy-900 flex items-center gap-2 border-b border-slate-100 pb-2 uppercase tracking-wider">
                                               {subSec.title}
                                             </h5>
                                             {subSec.text && (
-                                              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal text-justify">
+                                              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal text-justify">
                                                 {subSec.text}
                                               </p>
                                             )}
                                             <ul className={`grid grid-cols-1 ${subSec.items?.length === 1 ? '' : 'md:grid-cols-2'} gap-x-6 gap-y-2.5 pl-1 list-none`}>
                                               {subSec.items?.map((item, itemIdx) => (
-                                                <li key={itemIdx} className="flex gap-2.5 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal items-start">
+                                                <li key={itemIdx} className="flex gap-2.5 text-sm sm:text-base text-slate-600 leading-relaxed font-normal items-start">
                                                   <span className="text-[#007cff] font-bold shrink-0 mt-0.5">✓</span>
                                                   <span>{item}</span>
                                                 </li>
@@ -473,10 +473,10 @@ export default function ServicesView({
                                             <div className="bg-blue-50 text-[#007cff] p-2.5 rounded-lg w-fit">
                                               {getIconComponent(gItem.iconName, 'w-5 h-5', 'text-[#007cff]')}
                                             </div>
-                                            <h5 className="text-xs sm:text-sm font-bold text-navy-900 leading-snug">
+                                            <h5 className="text-sm sm:text-base font-bold text-navy-900 leading-snug">
                                               {gItem.title}
                                             </h5>
-                                            <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed font-normal text-justify">
+                                            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal text-justify">
                                               {gItem.text}
                                             </p>
                                           </div>
@@ -503,7 +503,7 @@ export default function ServicesView({
                                             </pre>
                                           </div>
                                         ) : (
-                                          <p className="text-sm text-slate-700 leading-relaxed font-normal whitespace-pre-line text-justify">
+                                          <p className="text-base text-slate-700 leading-relaxed font-normal whitespace-pre-line text-justify">
                                             {section.text}
                                           </p>
                                         )
@@ -524,8 +524,8 @@ export default function ServicesView({
                                   : "bg-slate-50 border border-slate-200/60 p-5 rounded-xl space-y-4"
                                 }>
                                   <span className={isAccounting
-                                    ? "text-sm sm:text-base font-bold text-navy-900 uppercase tracking-wider flex items-center gap-2 border-b border-slate-200 pb-3"
-                                    : "text-xs sm:text-sm font-extrabold text-navy-950 uppercase tracking-wider flex items-center gap-2 border-b border-slate-200 pb-2.5"
+                                    ? "text-base sm:text-lg font-bold text-navy-900 uppercase tracking-wider flex items-center gap-2 border-b border-slate-200 pb-3"
+                                    : "text-sm sm:text-base font-extrabold text-navy-950 uppercase tracking-wider flex items-center gap-2 border-b border-slate-200 pb-2.5"
                                   }>
                                     <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
                                     {check.title}
@@ -533,8 +533,8 @@ export default function ServicesView({
                                   <ul className="space-y-3 list-none">
                                     {check.items.map((item, itemIdx) => (
                                       <li key={itemIdx} className={isAccounting
-                                        ? "flex gap-3 text-sm text-slate-700 leading-relaxed font-normal items-start"
-                                        : "flex gap-2 text-xs sm:text-sm text-slate-600 leading-relaxed font-light"
+                                        ? "flex gap-3 text-base text-slate-700 leading-relaxed font-normal items-start"
+                                        : "flex gap-2 text-sm sm:text-base text-slate-600 leading-relaxed font-light"
                                       }>
                                         <span className="text-emerald-500 font-bold shrink-0 mt-0.5">✓</span>
                                         <span>{item}</span>
@@ -568,8 +568,8 @@ export default function ServicesView({
                                       <Check className="w-4 h-4" />
                                     </div>
                                     <p className={isAccounting
-                                      ? "text-xs sm:text-sm text-slate-700 leading-relaxed font-normal"
-                                      : "text-xs sm:text-sm text-slate-600 leading-relaxed font-light"
+                                      ? "text-sm sm:text-base text-slate-700 leading-relaxed font-normal"
+                                      : "text-sm sm:text-base text-slate-600 leading-relaxed font-light"
                                     }>{why}</p>
                                   </div>
                                 ))}
@@ -597,12 +597,12 @@ export default function ServicesView({
                                 </div>
                                 <div className="space-y-1">
                                   <strong className={isAccounting
-                                    ? "text-xs font-mono text-blue-900 uppercase tracking-wider block font-bold"
-                                    : "text-xs font-mono text-blue-800 uppercase tracking-wider block"
+                                    ? "text-sm font-mono text-blue-900 uppercase tracking-wider block font-bold"
+                                    : "text-sm font-mono text-blue-800 uppercase tracking-wider block"
                                   }>Did You Know?</strong>
                                   <p className={isAccounting
-                                    ? "text-xs sm:text-sm text-slate-700 leading-relaxed font-normal"
-                                    : "text-xs sm:text-sm text-slate-600 leading-relaxed font-light"
+                                    ? "text-sm sm:text-base text-slate-700 leading-relaxed font-normal"
+                                    : "text-sm sm:text-base text-slate-600 leading-relaxed font-light"
                                   }>{sub.didYouKnow}</p>
                                 </div>
                               </div>
@@ -617,7 +617,7 @@ export default function ServicesView({
                                 href="tel:+919879161400"
                                 className={isAccounting
                                   ? "bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm shadow-emerald-600/10 hover:shadow-md cursor-pointer text-center"
-                                  : "bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-lg transition-colors uppercase tracking-wider flex items-center gap-1.5 shadow-sm"
+                                  : "bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm sm:text-base px-5 py-3 rounded-lg transition-colors uppercase tracking-wider flex items-center gap-1.5 shadow-sm"
                                 }
                               >
                                 <Phone className="w-4 h-4" /> Click to Call
@@ -626,7 +626,7 @@ export default function ServicesView({
                                 onClick={openConsultation}
                                 className={isAccounting
                                   ? "bg-[#007cff] hover:bg-blue-600 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 uppercase tracking-wider shadow-sm shadow-blue-500/10 hover:shadow-md cursor-pointer text-center"
-                                  : "bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-lg transition-colors uppercase tracking-wider shadow-sm shadow-indigo-600/10"
+                                  : "bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm sm:text-base px-5 py-3 rounded-lg transition-colors uppercase tracking-wider shadow-sm shadow-indigo-600/10"
                                 }
                               >
                                 {sub.ctaText || 'Schedule Consultation'}
@@ -653,11 +653,11 @@ export default function ServicesView({
             {/* Left Column: Context Card */}
             <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
               <div className="space-y-3">
-                <span className="text-[10px] font-mono text-[#007cff] uppercase tracking-widest font-extrabold block">TRANSITION & COMPLIANCE</span>
-                <h2 className="font-serif text-2xl sm:text-3xl font-extrabold text-navy-950 tracking-tight leading-tight">
+                <span className="text-sm font-mono text-[#007cff] uppercase tracking-widest font-extrabold block">TRANSITION & COMPLIANCE</span>
+                <h2 className="font-serif text-4xl sm:text-5xl font-extrabold text-navy-950 tracking-tight leading-tight">
                   Demystifying the Offshore Leap
                 </h2>
-                <p className="text-xs sm:text-sm text-slate-600 font-light leading-relaxed">
+                <p className="text-base sm:text-lg text-slate-600 font-light leading-relaxed">
                   Moving financial operations offshore comes with valid questions about control, taxation, and setup. We answer the most common concerns transparently.
                 </p>
               </div>
@@ -674,7 +674,7 @@ export default function ServicesView({
                 <div className="space-y-2.5 pt-2">
                   <button
                     onClick={openConsultation}
-                    className="w-full bg-[#007cff] hover:bg-blue-600 text-white text-[10px] font-bold py-3 rounded-lg transition-colors cursor-pointer text-center block uppercase tracking-wider shadow-sm shadow-blue-500/20"
+                    className="w-full bg-[#007cff] hover:bg-blue-600 text-white text-sm sm:text-base font-bold py-3 rounded-lg transition-colors cursor-pointer text-center block uppercase tracking-wider shadow-sm shadow-blue-500/20"
                   >
                     Schedule Onboarding Briefing
                   </button>
@@ -704,7 +704,7 @@ export default function ServicesView({
                         <HelpCircle className={`w-4 h-4 shrink-0 mt-0.5 transition-colors ${
                           isOpen ? 'text-[#007cff]' : 'text-slate-400 group-hover:text-slate-600'
                         }`} />
-                        <span className={`text-xs sm:text-sm font-bold leading-snug transition-colors ${
+                        <span className={`text-sm sm:text-base font-bold leading-snug transition-colors ${
                           isOpen ? 'text-slate-950' : 'text-slate-700 group-hover:text-slate-950'
                         }`}>
                           {faq.question}
@@ -730,7 +730,7 @@ export default function ServicesView({
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.25, ease: "easeInOut" }}
                         >
-                          <div className="px-5 pb-5 pt-1 border-t border-slate-100 text-[11px] sm:text-xs text-slate-600 leading-relaxed font-light pl-12">
+                          <div className="px-5 pb-5 pt-1 border-t border-slate-100 text-sm sm:text-base text-slate-600 leading-relaxed font-light pl-12">
                             <p>{faq.answer}</p>
                           </div>
                         </motion.div>
@@ -766,7 +766,7 @@ export default function ServicesView({
               <div className="w-full">
                 <button 
                   onClick={openConsultation}
-                  className="bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold text-xs tracking-wider px-6 py-3.5 rounded-lg transition-colors uppercase block w-full text-center"
+                  className="bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold text-sm tracking-wider px-6 py-3.5 rounded-lg transition-colors uppercase block w-full text-center"
                 >
                   Onboard Your First FTE
                 </button>

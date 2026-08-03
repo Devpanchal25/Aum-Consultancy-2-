@@ -314,15 +314,11 @@ export default function Navbar({
 
                 {/* Services Mega Menu Panel */}
                 {activeMega === 'services' && (
-                  <div className="absolute top-full -left-64 w-[840px] pt-2 z-50 animate-fadeIn">
+                  <div className="absolute top-full -left-64 w-[920px] pt-2 z-50 animate-fadeIn">
                     <div className="bg-white border border-slate-200/80 shadow-2xl rounded-2xl grid grid-cols-12 overflow-hidden">
                       
                       {/* Left Sidebar: Division Tabs */}
                       <div className="col-span-5 bg-slate-50 p-5 border-r border-slate-200/50 flex flex-col gap-1.5">
-                        <div className="pb-3 mb-2 border-b border-slate-200/60">
-                          <span className="text-[10px] font-extrabold text-[#007cff] uppercase tracking-widest block font-mono">Service Divisions</span>
-                          <p className="text-[11px] text-slate-500 mt-0.5 font-light">Hover to explore capabilities</p>
-                        </div>
                         <div className="space-y-1">
                           {SERVICE_CATEGORIES.filter(cat => cat.id !== 'offshore-team').map((category) => {
                             const isSelected = activeCategoryTab === category.id;
@@ -353,8 +349,8 @@ export default function Navbar({
                                 }`}>
                                   {getIconComponent(category.iconName)}
                                 </div>
-                                <div className="flex-1 min-w-0">
-                                  <h4 className="text-xs font-bold leading-tight">{category.title}</h4>
+                                <div className="flex-1 min-w-0 overflow-hidden">
+                                  <h4 className="text-base font-bold leading-tight truncate whitespace-nowrap">{category.title}</h4>
                                 </div>
                                 <ArrowRight className={`w-3.5 h-3.5 shrink-0 transition-all ${
                                   isSelected ? 'text-[#007cff] translate-x-0.5 opacity-100' : 'text-slate-400 opacity-0 group-hover/tab:opacity-100 group-hover/tab:translate-x-0.5'
@@ -366,27 +362,15 @@ export default function Navbar({
                       </div>
 
                       {/* Right Panel: Scrollable Capabilities List */}
-                      <div className="col-span-7 p-6 bg-white flex flex-col justify-between h-[420px]">
+                      <div className="col-span-7 p-5 bg-white flex flex-col h-auto max-h-[420px]">
                         <div className="space-y-4 flex-1 flex flex-col overflow-hidden">
                           {/* Active Division Header info */}
                           {(() => {
                             const activeCat = SERVICE_CATEGORIES.find(c => c.id === activeCategoryTab) || SERVICE_CATEGORIES[0];
                             return (
                               <>
-                                <div className="border-b border-slate-100 pb-3 shrink-0">
-                                  <div className="flex items-center gap-2">
-                                    <span className="bg-blue-50 text-[#007cff] text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
-                                      {activeCat.title}
-                                    </span>
-                                    <span className="text-[10px] font-mono text-slate-400 font-semibold uppercase">Capabilities</span>
-                                  </div>
-                                  <p className="text-[11px] text-slate-500 mt-1.5 font-light">
-                                    {activeCat.shortDesc}
-                                  </p>
-                                </div>
-
                                 {/* Detailed Scrollable List */}
-                                <div className="flex-1 overflow-y-auto pr-1 space-y-1.5 scrollbar-thin scrollbar-thumb-slate-200">
+                                <div className="flex-1 overflow-y-auto pr-1 pb-2 space-y-1.5 scrollbar-thin scrollbar-thumb-slate-200">
                                   {activeCat.items.map((item, idx) => (
                                     <div
                                       key={idx}
@@ -404,9 +388,9 @@ export default function Navbar({
                                         else if (activeCat.id === 'other') targetPath = '/services/cfo-advisory';
                                         navigate(targetPath);
                                       }}
-                                      className="flex items-center py-1.5 px-2.5 rounded-lg hover:bg-slate-50 border border-transparent hover:border-slate-100/60 cursor-pointer transition-all duration-150 group/item"
+                                      className="flex items-center py-2 px-2.5 rounded-lg hover:bg-slate-50 border border-transparent hover:border-slate-100/60 cursor-pointer transition-all duration-150 group/item"
                                     >
-                                      <h5 className="text-[11px] font-bold text-slate-750 group-hover/item:text-[#007cff] transition-colors leading-none">
+                                      <h5 className="text-base font-bold text-slate-750 group-hover/item:text-[#007cff] transition-colors leading-6 truncate whitespace-nowrap">
                                         {item.title}
                                       </h5>
                                     </div>
@@ -417,29 +401,6 @@ export default function Navbar({
                           })()}
                         </div>
 
-                        {/* View all button footer */}
-                        <div className="pt-3 border-t border-slate-100 shrink-0 flex items-center justify-between">
-                          <span className="text-[10px] text-slate-400 font-medium">All deliverables backed by expert oversight & robust SLAs</span>
-                          <button
-                            onClick={() => {
-                              setIsOpen(false);
-                              setActiveMega(null);
-                              if (setSelectedSubServiceId) {
-                                setSelectedSubServiceId('');
-                              }
-                              let targetPath = '/services';
-                              if (activeCategoryTab === 'accounting') targetPath = '/services/accounting-bookkeeping';
-                              else if (activeCategoryTab === 'audit') targetPath = '/services/audit-assurance';
-                              else if (activeCategoryTab === 'tax') targetPath = '/services/tax-services';
-                              else if (activeCategoryTab === 'other') targetPath = '/services/cfo-advisory';
-                              navigate(targetPath);
-                            }}
-                            className="text-xs font-bold text-[#007cff] hover:text-blue-600 flex items-center gap-1 transition-colors cursor-pointer bg-transparent border-0"
-                          >
-                            <span>Explore Deliverables</span>
-                            <ArrowRight className="w-3.5 h-3.5" />
-                          </button>
-                        </div>
                       </div>
 
                     </div>

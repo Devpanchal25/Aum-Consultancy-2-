@@ -985,10 +985,10 @@ const BASE_SUB_SERVICES: SubService[] = [
         title: ' Are You Experiencing Any of These Critical Scaling challenges?',
         text: "Busy founders don't have time for theory. If your business or your client's firm is hitting any of these operational bottlenecks, our Virtual CFO team can step in and fix it immediately:",
         items: [
-          '\t"Making sales, but bank account is always empty." → We build dynamic cash flow models to plug spending leaks and optimize operational cash cycles.',
-          '\t"Want to expand or hire, but  don\'t know if we can afford it safely." → We build data-backed scenario models to predict the exact financial impact of your next big move.',
-          '\t"Financial data is a mess, and can\'t make clear decisions." → We transform raw trial balances into crystal-clear executive reports that highlight your true profitability.',
-          '\t"Investors or banks are asking for financial packages we don\'t have." → We prepare elite, investor-ready financial models, debt metrics, and board decks.'
+          '"Making sales, but bank account is always empty." → We build dynamic cash flow models to plug spending leaks and optimize operational cash cycles.',
+          '"Want to expand or hire, but  don\'t know if we can afford it safely." → We build data-backed scenario models to predict the exact financial impact of your next big move.',
+          '"Financial data is a mess, and can\'t make clear decisions." → We transform raw trial balances into crystal-clear executive reports that highlight your true profitability.',
+          '"Investors or banks are asking for financial packages we don\'t have." → We prepare elite, investor-ready financial models, debt metrics, and board decks.'
         ]
       },
       {

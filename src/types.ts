@@ -71,6 +71,5 @@ export interface TeamMember {
   role: string;
   image: string;
   bio: string;
-  qualifications: string[];
   linkedinUrl?: string;
 }

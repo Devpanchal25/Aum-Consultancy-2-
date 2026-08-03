@@ -291,15 +291,6 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
                   <h3 className="font-serif text-xl sm:text-2xl font-bold text-navy-900">{activeMember.name}</h3>
                   <p className="text-xs sm:text-sm text-[#007cff] font-mono tracking-wider font-bold uppercase">{activeMember.role}</p>
                   <div className="w-12 h-1 bg-[#007cff] rounded-full mx-auto sm:mx-0"></div>
-                  
-                  {/* Qualifications */}
-                  <div className="pt-2 flex flex-wrap gap-1 justify-center sm:justify-start">
-                    {activeMember.qualifications.map((q: string) => (
-                      <span key={q} className="text-[9px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-medium border border-slate-200/50">
-                        {q}
-                      </span>
-                    ))}
-                  </div>
                 </div>
               </div>
 
