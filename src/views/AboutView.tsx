@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Page } from '../types';
 import { TEAM } from '../data';
-import { ShieldCheck, Target, Eye, CheckCircle, GraduationCap, X, Linkedin, ChevronRight } from 'lucide-react';
+import { ShieldCheck, Target, Eye, CheckCircle, GraduationCap, X, Linkedin, ChevronRight, Globe, Lock, TrendingUp } from 'lucide-react';
 import SafeImage from '../components/SafeImage';
 
 interface AboutViewProps {
@@ -184,71 +184,206 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
         </div>
       </section>
 
-      {/* 4. Strategic Positioning & Capability Summary */}
-      <section className="py-20 bg-white scroll-mt-28 sm:scroll-mt-32" id="core-values-section">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+{/* 4. Vision & Mission Section */}
+      <section className="py-20 bg-white scroll-mt-28 sm:scroll-mt-32" id="vision-mission-section">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
-          {/* Block 1: Prominent Statement */}
-          <div className="text-center max-w-3xl mx-auto space-y-4">
-            <p className="text-lg sm:text-xl md:text-2xl font-serif text-[#007cff] font-bold leading-relaxed italic">
-              "Your dedicated global extension for elite accounting, advisory, Back office and administrative excellence."
-            </p>
-            <div className="w-16 h-1 bg-[#007cff]/30 rounded-full mx-auto"></div>
+          {/* Main Title Header - Centered */}
+          <div className="text-center max-w-2xl mx-auto space-y-3">
+            <span className="text-xs font-mono text-[#007cff] uppercase tracking-widest font-extrabold block">
+              OUR GUIDING PRINCIPLES & CORE COMMITMENTS
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold text-navy-950 tracking-tight">
+              Vision & Mission
+            </h2>
+            <div className="w-16 h-1 bg-[#007cff] rounded-full mx-auto"></div>
           </div>
 
-          {/* Block 2 & 3: Strategic Partner and Our Team (2-Column Grid) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+          {/* ================= VISION SECTION ================= */}
+          <div className="space-y-10">
+            {/* Vision Title & Statement */}
             <div className="space-y-4">
-              <h3 className="text-lg sm:text-xl font-serif font-bold text-navy-900 tracking-tight leading-snug">
-                Your Strategic Delivery Partner for Global Scale & Efficiency
-              </h3>
-              <p className="text-sm text-slate-600 leading-relaxed font-light">
-                We are a premier, CA/CPA-led outsourcing partner delivering elite accounting, bookkeeping, auditing, taxation, administrative, and advisory services across the US, UK, Canada, and Australia.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-lg sm:text-xl font-serif font-bold text-[#007cff] tracking-tight leading-snug">
-                Our Team
-              </h3>
-              <p className="text-sm text-slate-600 leading-relaxed font-light">
-                With a powerful powerhouse team of qualified financial experts, we possess the precision, technical depth, and operational scale to handle any level of bookkeeping, tax preparation, audit support, and advisory services.
-              </p>
-            </div>
-          </div>
-
-          {/* Block 4: Premier Chartered Accountants Detail Banner */}
-          <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-6 sm:p-10 shadow-xl space-y-6 relative overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(0,124,255,0.03),transparent_50%)]"></div>
-            
-            <div className="relative z-10 space-y-6">
-              <div className="space-y-2">
-                <span className="text-[10px] font-mono text-[#007cff] uppercase tracking-widest font-bold block">EXPERTISE & TRUST</span>
-                <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-navy-900 leading-tight">
-                  Premier Chartered Accountants providing Financial & Backend Executive Support
-                </h3>
+              <div className="flex items-center gap-3">
+                <div className="p-2 text-[#007cff]">
+                  <Eye className="w-6 h-6" />
+                </div>
+                <div>
+                  <span className="text-[10px] font-mono text-[#007cff] uppercase tracking-widest font-extrabold block">STRATEGIC OUTLOOK</span>
+                  <h3 className="font-serif text-2xl sm:text-3xl font-bold text-navy-950">Vision Statement</h3>
+                </div>
               </div>
+
+              <blockquote className="border-l-4 border-[#007cff] pl-6 py-2 text-lg sm:text-xl text-slate-800 leading-relaxed font-serif italic text-left">
+                "To transform the structural landscape of the global professional services sector by becoming the definitive, trusted offshore engine for remote accounting, tax, and audit delivery. Based out of our high-capacity delivery center in Vadodara, India, we envision a future where international talent shortages and localized wage inflation no longer restrict firm growth. By seamlessly connecting elite Indian financial expertise with public practices and corporations across the US, UK, Canada, Australia, and the UAE, we aim to redefine operational efficiency, elevate capital allocation, and empower our global partners to scale their firms without administrative boundaries."
+              </blockquote>
+            </div>
+
+            {/* Strategic Pillars of the Vision */}
+            <div className="space-y-6 pt-4 border-t border-slate-100">
+              <h4 className="text-sm font-extrabold text-navy-900 uppercase tracking-widest font-mono flex items-center gap-2">
+                <span></span> Strategic Pillars of the Vision
+              </h4>
               
-              <div className="text-sm text-slate-600 leading-relaxed font-light space-y-4">
-                <p>
-                  We are premier Chartered Accountants providing comprehensive financial and backend executive support to international clients. We act as your trusted offshore partner, delivering expert services in accounting, auditing, taxation, back-office operations, and dedicated assistance to organizational and business heads.
-                </p>
-                <p>
-                  Whether you are an individual, entrepreneur, a growing business, an onshore CPA firm, or any corporate entity, we manage your entire financial and administrative workload seamlessly. From handling your daily accounting, bookkeeping, back office operations, and complex taxation to managing rigorous auditing support, and assistance to any task or executive lead, we tailor our solutions to fit your exact operational and financial needs.
-                </p>
-              </div>
+              <div className="space-y-6">
+                <div className="flex gap-4 items-start">
+                  <div className="p-2 text-[#007cff] shrink-0 mt-0.5">
+                    <Globe className="w-5 h-5" />
+                  </div>
+                  <div className="space-y-1">
+                    <h5 className="text-base sm:text-lg font-bold text-navy-950">Eradicating Geographical Barriers</h5>
+                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light text-left">
+                      Utilizing an optimized time-zone model to create a continuous, overnight production cycle where local onshore firms upload raw workflows at close of business and receive pristine, audit-ready deliverables by the following morning.
+                    </p>
+                  </div>
+                </div>
 
-              <div className="pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center border-t border-slate-200/60 gap-4">
-                <span className="text-xs font-semibold text-[#007cff] font-sans tracking-wide uppercase flex items-center gap-1.5">
-                  ✓ Tailored solutions for your exact operational & financial needs
-                </span>
-                <span className="text-sm font-serif font-bold text-navy-900 italic">
-                  You focus on your big goals. We take care of the rest.
-                </span>
+                <div className="flex gap-4 items-start">
+                  <div className="p-2 text-[#007cff] shrink-0 mt-0.5">
+                    <Lock className="w-5 h-5" />
+                  </div>
+                  <div className="space-y-1">
+                    <h5 className="text-base sm:text-lg font-bold text-navy-950">Setting the Standard for Offshore Security</h5>
+                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light text-left">
+                      Becoming the global benchmark for secure remote staffing by proving that multi-jurisdictional financial data can be processed under bank-grade encryption frameworks with zero local vulnerability.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4 items-start">
+                  <div className="p-2 text-[#007cff] shrink-0 mt-0.5">
+                    <TrendingUp className="w-5 h-5" />
+                  </div>
+                  <div className="space-y-1">
+                    <h5 className="text-base sm:text-lg font-bold text-navy-950">Championing Growth-Focused Outsourcing</h5>
+                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light text-left">
+                      Shifting the perception of outsourcing from a mere cost-cutting tool to a high-level strategic partnership that allows local executive leadership to reclaim valuable billable hours and pivot entirely toward high-margin advisory services and client relationship management.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
+          <div className="w-full h-px bg-slate-200"></div>
+
+          {/* ================= MISSION SECTION ================= */}
+          <div className="space-y-10">
+            {/* Mission Title & Statement */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="p-2 text-[#007cff]">
+                  <Target className="w-6 h-6" />
+                </div>
+                <div>
+                  <span className="text-[10px] font-mono text-[#007cff] uppercase tracking-widest font-extrabold block">PURPOSE & EXECUTION</span>
+                  <h3 className="font-serif text-2xl sm:text-3xl font-bold text-navy-950">Mission Statement</h3>
+                </div>
+              </div>
+
+              <blockquote className="border-l-4 border-[#007cff] pl-6 py-2 text-lg sm:text-xl text-slate-800 leading-relaxed font-serif italic text-left">
+                "Our mission is to eliminate the severe operational bottlenecks, high recruitment fees, and prohibitive overhead costs that threaten the growth of modern accounting firms and corporate finance divisions. We deliver pre-trained, CA and CPA-led remote specialized teams—spanning Bookkeepers, Tax Preparers, Audit Support Staff, and Fractional CFOs—who are fully fluent in global software ecosystems and regional compliance codes from Day 1. We fulfill this by executing a structured two-week onboarding blueprint, enforcing a strict multi-tier quality assurance protocol, and maintaining an ironclad, zero-local-storage security environment that protects data integrity while systematically slashing client staffing overhead by 70% to 80%."
+              </blockquote>
+            </div>
+
+            {/* Core Mission Commitments in Action */}
+            <div className="space-y-8 pt-4 border-t border-slate-100">
+              <div className="space-y-2">
+                <h4 className="text-sm font-extrabold text-navy-900 uppercase tracking-widest font-mono flex items-center gap-2">
+                  <span></span> Core Mission Commitments in Action
+                </h4>
+                <p className="text-sm sm:text-base text-slate-600 font-light leading-relaxed text-left">
+                  To turn this mission into measurable business impact for our global partners, Aum Consultancy operates under four non-negotiable execution mandates:
+                </p>
+              </div>
+
+              {/* Vertical list of 4 Mandates */}
+              <div className="space-y-8">
+                
+                {/* Mandate 1 */}
+                <div className="space-y-3 pb-6 border-b border-slate-150">
+                  <div className="flex items-center gap-2 text-navy-950 font-bold text-lg sm:text-xl">
+                    <span className="text-[#007cff] font-mono font-extrabold">1.</span>
+                    <span>Absolute Software Fluency and Compliance Readiness</span>
+                  </div>
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light text-left">
+                    We eliminate the costly, non-billable training cycles that typically accompany staff expansion. Every remote professional deployed is pre-vetted and fully certified across major industry platforms (including QuickBooks, Xero, Sage, NetSuite, and TaxWise) and thoroughly trained in localized statutory frameworks:
+                  </p>
+                  <ul className="space-y-2 text-sm sm:text-base text-slate-700 leading-relaxed font-normal pl-4 list-disc marker:text-[#007cff]">
+                    <li>
+                      <strong className="text-navy-950 font-semibold">United States:</strong> Strict adherence to US GAAP, GAAS clarity frameworks, PCAOB compliance, and complex IRS codes (including Form 1120-S, Form 1120, and Form 7203 tracking).
+                    </li>
+                    <li>
+                      <strong className="text-navy-950 font-semibold">United Kingdom:</strong> Complete alignment with UK GAAP/IFRS, HMRC frameworks, and accounts production under the Companies Act 2006.
+                    </li>
+                    <li>
+                      <strong className="text-navy-950 font-semibold">Canada & Australia:</strong> Comprehensive mastery of Canadian Auditing Standards (CAS), CRA guidelines, Australian Auditing Standards (ASAs), and localized corporate tax and economic nexus structures.
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Mandate 2 */}
+                <div className="space-y-3 pb-6 border-b border-slate-150">
+                  <div className="flex items-center gap-2 text-navy-950 font-bold text-lg sm:text-xl">
+                    <span className="text-[#007cff] font-mono font-extrabold">2.</span>
+                    <span>Guarding the Gate with Multi-Tier Quality Assurance</span>
+                  </div>
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light text-left">
+                    We pledge to deliver 'Right the First Time' financial packages. To protect the regulatory standing of our partner firms, every work paper, tax return, ledger reconciliation, and financial draft must pass through our mandatory, multi-layer review workflow:
+                  </p>
+                  
+                  {/* Flow Steps - Clean Left Aligned, No Box */}
+                  <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm font-bold text-navy-900 my-3">
+                    <span>Preparer</span>
+                    <span className="text-[#007cff]">➔</span>
+                    <span>Senior Reviewer</span>
+                    <span className="text-[#007cff]">➔</span>
+                    <span className="text-emerald-600">Compliance Check</span>
+                  </div>
+
+                  <p className="text-sm text-slate-600 font-light leading-relaxed text-left">
+                    This internal mechanism guarantees that historical data reconstruction, substantive audit sampling, and corporate tax engineering are executed with CPA-grade accuracy before final transmission.
+                  </p>
+                </div>
+
+                {/* Mandate 3 */}
+                <div className="space-y-3 pb-6 border-b border-slate-150">
+                  <div className="flex items-center gap-2 text-navy-950 font-bold text-lg sm:text-xl">
+                    <span className="text-[#007cff] font-mono font-extrabold">3.</span>
+                    <span>Maintaining a Bank-Grade Data Security Infrastructure</span>
+                  </div>
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light text-left">
+                    We recognize that managing sensitive client data requires uncompromised vigilance. Our delivery infrastructure is architected to mirror enterprise banking protocols, utilizing:
+                  </p>
+                  <ul className="space-y-2.5 text-sm sm:text-base text-slate-700 leading-relaxed font-normal pl-1">
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-emerald-500 font-bold shrink-0">✓</span>
+                      <span><strong className="text-navy-950 font-semibold">Zero-Local-Storage Policy:</strong> Remote personnel operate strictly within the client’s secure cloud environment; no files or records can be downloaded onto physical local hardware.</span>
+                    </li>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-emerald-500 font-bold shrink-0">✓</span>
+                      <span><strong className="text-navy-950 font-semibold">End-to-End Encryption:</strong> All data transiting cloud pipelines is shielded by AES 256-bit encryption and protected by mandatory multi-factor authentication (MFA).</span>
+                    </li>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-emerald-500 font-bold shrink-0">✓</span>
+                      <span><strong className="text-navy-950 font-semibold">Global Privacy Alignment:</strong> Workflows are legally mapped to comply directly with regional data mandates, including the CCPA/CPRA (US), GDPR (UK), PIPEDA (Canada), and the Privacy Act (Australia).</span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Mandate 4 */}
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2 text-navy-950 font-bold text-lg sm:text-xl">
+                    <span className="text-[#007cff] font-mono font-extrabold">4.</span>
+                    <span>Maximizing Arbitrage and Capital Efficiency</span>
+                  </div>
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light text-left">
+                    We are dedicated to fundamentally transforming the unit economics of our client organizations. By absorbing all onboarding, administrative retention, physical office overhead, and workstation hardware costs, we shift the financial burden of scaling away from the client. We turn variable, soaring local labor costs into a predictable, fixed monthly fee, enabling companies to achieve a <strong className="text-navy-950 font-bold underline decoration-[#007cff] underline-offset-4">70% to 80% reduction</strong> in fully loaded operational expenses.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

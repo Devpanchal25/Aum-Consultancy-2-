@@ -578,35 +578,35 @@ export default function ServicesView({
                           )}
 
                           {/* 5. Did You Know & Actions */}
+                          {/* Move Did You Know above the section border so it appears before the dividing line */}
+                          {sub.didYouKnow && activeCategoryId === 'tax' && (
+                            <div className={isAccounting
+                              ? "bg-blue-50/70 border border-blue-200/80 p-5 rounded-2xl flex gap-4 items-start max-w-2xl mb-4"
+                              : "bg-blue-50 border border-blue-200 p-4 rounded-xl flex gap-3 items-start max-w-lg mb-4"
+                            }>
+                              <div className={isAccounting
+                                ? "bg-blue-100 text-[#007cff] p-2 rounded-xl shrink-0 mt-0.5 shadow-xs"
+                                : "text-[#007cff] shrink-0 mt-0.5 animate-bounce"
+                              }>
+                                <Lightbulb className="w-5 h-5" />
+                              </div>
+                              <div className="space-y-1">
+                                <strong className={isAccounting
+                                  ? "text-xs font-mono text-[#007cff] uppercase tracking-widest block"
+                                  : "text-xs font-mono text-[#007cff] uppercase tracking-widest block"
+                                }>{sub.didYouKnowTitle || 'Did You Know?'}</strong>
+                                <p className={isAccounting
+                                    ? "text-sm sm:text-base text-slate-700 leading-relaxed font-normal"
+                                    : "text-sm sm:text-base text-slate-600 leading-relaxed font-light"
+                                  }>{sub.didYouKnow}</p>
+                              </div>
+                            </div>
+                          )}
+
                           <div className={isAccounting
                             ? "pt-6 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6"
                             : "pt-5 border-t border-slate-150 flex flex-col md:flex-row items-center justify-between gap-6"
                           }>
-                            
-                            {/* Did You Know Bubble */}
-                            {sub.didYouKnow && activeCategoryId === 'tax' && (
-                              <div className={isAccounting
-                                ? "bg-blue-50/70 border border-blue-200/80 p-5 rounded-2xl flex gap-4 items-start max-w-2xl"
-                                : "bg-blue-50 border border-blue-200 p-4 rounded-xl flex gap-3 items-start max-w-lg"
-                              }>
-                                <div className={isAccounting
-                                  ? "bg-blue-100 text-[#007cff] p-2 rounded-xl shrink-0 mt-0.5 shadow-xs"
-                                  : "text-[#007cff] shrink-0 mt-0.5 animate-bounce"
-                                }>
-                                  <Lightbulb className="w-5 h-5" />
-                                </div>
-                                <div className="space-y-1">
-                                  <strong className={isAccounting
-                                    ? "text-sm font-mono text-blue-900 uppercase tracking-wider block font-bold"
-                                    : "text-sm font-mono text-blue-800 uppercase tracking-wider block"
-                                  }>Did You Know?</strong>
-                                  <p className={isAccounting
-                                    ? "text-sm sm:text-base text-slate-700 leading-relaxed font-normal"
-                                    : "text-sm sm:text-base text-slate-600 leading-relaxed font-light"
-                                  }>{sub.didYouKnow}</p>
-                                </div>
-                              </div>
-                            )}
 
                             {/* CTAs */}
                             <div className={isAccounting

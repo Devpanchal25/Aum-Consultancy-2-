@@ -122,6 +122,9 @@ export default function Footer({ setCurrentPage, openConsultation, openSecurityP
                 <a href="tel:+919879161400" className="hover:text-[#007cff] transition-colors block mt-1 font-bold text-slate-300">
                   +91 9879161400 <span className="font-light text-slate-400 text-[11px] block md:inline md:ml-1.5">(CA Jitendra Tilwani)</span>
                 </a>
+                <a href="tel:+17736739937" className="hover:text-[#007cff] transition-colors block mt-1 font-bold text-slate-300">
+                  +17736739937 <span className="font-light text-slate-400 text-[11px] block md:inline md:ml-1.5">(Shamsh Khoja (USA))</span>
+                </a>
               </div>
             </div>
 
