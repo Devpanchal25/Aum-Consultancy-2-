@@ -652,7 +652,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     iconName: 'Receipt',
     checklists: [],
     whyPartner: [],
-    didYouKnowTitle: 'Scale your firm\s output without expanding your local overhead.',
+    didYouKnowTitle: 'Scale your firm\'s output without expanding your local overhead.',
     didYouKnow: 'For accounting firms in the US, UK, Canada, and Australia, manually processing hundreds of complex partnership returns and partner slips drains local senior resources. By outsourcing data sorting, capital balancing, and form mapping to Aum Consultancy, you slash your seasonal operating overhead by up to 60%, speed up client turnaround times, and free your core local team to focus purely on high-margin client relationships.',
     ctaText: 'Scalable Tax Capacity Consultation',
     accountingSections: [
@@ -1295,10 +1295,10 @@ const BASE_SUB_SERVICES: SubService[] = [
         title: 'Is Your Enterprise Vulnerable to These Structural Risks?',
         text: 'Growth without structural control creates operational chaos. Our risk and strategy team steps in to help you solve critical structural vulnerabilities before they impact your bottom line:',
         items: [
-          '\t"Are our internal financial controls strong enough to prevent fraud or error?" → We audit your internal systems, segregate financial duties, and build secure oversight workflows.',
-          '\t"Want to enter a strategic alliance or joint venture, but how do we structure it safely?" → We evaluate the financial and operational mechanics of your proposed partnerships to protect your interests.',
-          '\t" Business is growing, but internal workflows are slow and inefficient." → We perform deep operational reviews to eliminate redundant tasks, automate manual steps, and protect your profit margins.',
-          '\t"Do we have a clear, data-backed 3-to-5 year corporate roadmap?" → We map out actionable growth timelines based on your actual capital constraints and market capabilities.'
+          'Are our internal financial controls strong enough to prevent fraud or error? → We audit your internal systems, segregate financial duties, and build secure oversight workflows.',
+          'Want to enter a strategic alliance or joint venture, but how do we structure it safely? → We evaluate the financial and operational mechanics of your proposed partnerships to protect your interests.',
+          'Business is growing, but internal workflows are slow and inefficient. → We perform deep operational reviews to eliminate redundant tasks, automate manual steps, and protect your profit margins.',
+          'Do we have a clear, data-backed 3-to-5 year corporate roadmap? → We map out actionable growth timelines based on your actual capital constraints and market capabilities.'
         ]
       },
       {

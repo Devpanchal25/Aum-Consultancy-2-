@@ -204,10 +204,10 @@ export default function Navbar({
       
       {/* Upper Info Top Bar with Phone, Email & LinkedIn */}
       <div className="bg-slate-50 border-b border-slate-200 text-slate-600 py-2 text-xs font-medium">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center sm:justify-end">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-center sm:justify-end">
           <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 sm:gap-5 text-[11px] sm:text-xs">
             <a href="tel:+919879161400" className="flex items-center gap-1.5 hover:text-[#007cff] transition-colors font-bold text-navy-900">
-              <Phone className="w-3.5 h-3.5 text-[#007cff] animate-bounce" />
+              <Phone className="w-3.5 h-3.5 text-[#007cff]" />
               <span>+91 9879161400</span>
             </a>
             <a href="mailto:aumconsulting.india@gmail.com" className="flex items-center gap-1.5 hover:text-[#007cff] transition-colors text-slate-700">
@@ -227,20 +227,23 @@ export default function Navbar({
           ? 'bg-white/95 backdrop-blur-md shadow-md border-slate-200/80 py-3' 
           : 'bg-white/90 backdrop-blur-sm border-slate-100 py-4'
       }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
           <div className="flex justify-between items-center h-14">
             
-            {/* Logo */}
-            <Logo 
-              onClick={() => handleNavClick('home')} 
-              id="navbar-logo"
-            />
+            {/* Logo with explicit left alignment and spacing */}
+            <div className="shrink-0 mr-2 sm:mr-4 lg:mr-10 xl:mr-14 flex items-center">
+              <Logo 
+                onClick={() => handleNavClick('home')} 
+                id="navbar-logo"
+                className="shrink-0"
+              />
+            </div>
 
             {/* Desktop Navigation Links */}
-            <div className="hidden lg:flex items-center gap-4 xl:gap-6 shrink-0 whitespace-nowrap">
+            <div className="hidden lg:flex items-center gap-5 xl:gap-8 shrink-0 whitespace-nowrap">
               <button 
                 onClick={() => handleNavClick('home')}
-                className={`text-base font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'home' ? 'text-[#007cff]' : 'text-slate-600'}`}
+                className={`text-[17px] font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'home' ? 'text-[#007cff]' : 'text-slate-600'}`}
               >
                 Home
               </button>
@@ -253,7 +256,7 @@ export default function Navbar({
               >
                 <button 
                   onClick={() => handleNavClick('about')}
-                  className={`flex items-center gap-1 text-base font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'about' ? 'text-[#007cff]' : 'text-slate-600'}`}
+                  className={`flex items-center gap-1 text-[17px] font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'about' ? 'text-[#007cff]' : 'text-slate-600'}`}
                 >
                   About Us
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeMega === 'about' ? 'rotate-180' : ''}`} />
@@ -265,25 +268,25 @@ export default function Navbar({
                     <div className="bg-white border border-slate-200/80 shadow-2xl rounded-xl p-2 flex flex-col gap-0.5">
                       <button
                         onClick={() => handleAboutSectionClick('brand-story-section')}
-                        className="text-left text-base font-bold text-slate-800 hover:text-[#007cff] hover:bg-slate-50 p-2.5 rounded-lg transition-all cursor-pointer bg-transparent border-0 w-full"
+                        className="text-left text-[14.5px] font-bold text-slate-800 hover:text-[#007cff] hover:bg-slate-50 p-2.5 rounded-lg transition-all cursor-pointer bg-transparent border-0 w-full"
                       >
                         About Aum Consultancy
                       </button>
                       <button
                         onClick={() => handleAboutSectionClick('founders-section')}
-                        className="text-left text-base font-bold text-slate-800 hover:text-[#007cff] hover:bg-slate-50 p-2.5 rounded-lg transition-all cursor-pointer bg-transparent border-0 w-full"
+                        className="text-left text-[14.5px] font-bold text-slate-800 hover:text-[#007cff] hover:bg-slate-50 p-2.5 rounded-lg transition-all cursor-pointer bg-transparent border-0 w-full"
                       >
                         Leadership Team
                       </button>
                       <button
                         onClick={() => handleAboutSectionClick('about-security-section')}
-                        className="text-left text-base font-bold text-slate-800 hover:text-[#007cff] hover:bg-slate-50 p-2.5 rounded-lg transition-all cursor-pointer bg-transparent border-0 w-full"
+                        className="text-left text-[14.5px] font-bold text-slate-800 hover:text-[#007cff] hover:bg-slate-50 p-2.5 rounded-lg transition-all cursor-pointer bg-transparent border-0 w-full"
                       >
                         Security Standards
                       </button>
                       <button
                         onClick={() => handleAboutSectionClick('vision-mission-section')}
-                        className="text-left text-base font-bold text-slate-800 hover:text-[#007cff] hover:bg-slate-50 p-2.5 rounded-lg transition-all cursor-pointer bg-transparent border-0 w-full"
+                        className="text-left text-[14.5px] font-bold text-slate-800 hover:text-[#007cff] hover:bg-slate-50 p-2.5 rounded-lg transition-all cursor-pointer bg-transparent border-0 w-full"
                       >
                         Vision & Mission
                       </button>
@@ -300,7 +303,7 @@ export default function Navbar({
               >
                 <button 
                   onClick={() => handleNavClick('services')}
-                  className={`flex items-center gap-1 text-base font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'services' ? 'text-[#007cff]' : 'text-slate-600'}`}
+                  className={`flex items-center gap-1 text-[17px] font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'services' ? 'text-[#007cff]' : 'text-slate-600'}`}
                 >
                   Services
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeMega === 'services' ? 'rotate-180' : ''}`} />
@@ -308,7 +311,7 @@ export default function Navbar({
 
                 {/* Services Mega Menu Panel */}
                 {activeMega === 'services' && (
-                  <div className="absolute top-full -left-64 w-[920px] pt-2 z-50 animate-fadeIn">
+                  <div className="absolute top-full -left-64 w-[920px] max-w-[95vw] pt-2 z-50 animate-fadeIn">
                     <div className="bg-white border border-slate-200/80 shadow-2xl rounded-2xl grid grid-cols-12 overflow-hidden">
                       
                       {/* Left Sidebar: Division Tabs */}
@@ -384,7 +387,7 @@ export default function Navbar({
                                       }}
                                       className="flex items-center py-2 px-2.5 rounded-lg hover:bg-slate-50 border border-transparent hover:border-slate-100/60 cursor-pointer transition-all duration-150 group/item"
                                     >
-                                      <h5 className="text-base font-bold text-slate-750 group-hover/item:text-[#007cff] transition-colors leading-6 truncate whitespace-nowrap">
+                                      <h5 className="text-[14.5px] font-bold text-slate-750 group-hover/item:text-[#007cff] transition-colors leading-6 truncate whitespace-nowrap">
                                         {item.title}
                                       </h5>
                                     </div>
@@ -414,7 +417,7 @@ export default function Navbar({
                     setActiveMega(null);
                     navigate('/build-your-team');
                   }}
-                  className={`flex items-center gap-1 text-base font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'services' ? 'text-[#007cff]' : 'text-slate-600'}`}
+                  className={`flex items-center gap-1 text-[17px] font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'services' ? 'text-[#007cff]' : 'text-slate-600'}`}
                 >
                   Build your team
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeMega === 'hire' ? 'rotate-180' : ''}`} />
@@ -422,69 +425,54 @@ export default function Navbar({
 
                 {/* Build your team Mega Menu Panel */}
                 {activeMega === 'hire' && (
-                  <div className="absolute top-full -left-20 w-[580px] pt-2 z-50 animate-fadeIn">
+                  <div className="absolute top-full -left-28 w-[720px] max-w-[95vw] pt-2 z-50 animate-fadeIn">
                     <div className="bg-white border border-slate-200/80 shadow-2xl rounded-xl p-5">
                       <div className="border-b border-slate-100 pb-3 mb-3 flex justify-between items-center">
                         <span className="text-xs font-bold text-navy-900 uppercase tracking-widest font-mono">Build Your Team</span>
                       </div>
                       
                       {/* Grid of hireable roles */}
-                      <div className="grid grid-cols-2 gap-x-6 gap-y-2 max-h-[350px] overflow-y-auto pr-1 scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-transparent">
-                        {SERVICE_CATEGORIES.find(c => c.id === 'offshore-team')?.items.map((item, idx) => (
-                          <div 
-                            key={idx}
-                            onClick={() => {
-                              setIsOpen(false);
-                              setActiveMega(null);
-                              const subId = mapTitleToSubServiceId(item.title);
-                              if (subId === 'hire-audit-support') {
-                                navigate('/build-your-team/hire-audit-support-staff');
-                              } else if (subId === 'hire-ar-specialist') {
-                                navigate('/build-your-team/hire-accounts-receivable-specialist');
-                              } else {
-                                navigate(`/build-your-team/${subId}`);
-                              }
-                            }}
-                            className="flex gap-2.5 p-1.5 rounded-lg hover:bg-slate-50 cursor-pointer transition-all group"
-                          >
-                            <div className="mt-0.5 group-hover:scale-110 transition-transform flex-shrink-0">
-                              <UserCheck className="w-4 h-4 text-[#007cff]" />
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              {(() => {
-                                const offshoreItems = SERVICE_CATEGORIES.find(c => c.id === 'offshore-team')?.items || [];
-                                const isLast = offshoreItems.length ? idx === offshoreItems.length - 1 : false;
-                                const isReceivables = item.title && (item.title.toLowerCase().includes('receivable') || item.title.toLowerCase().includes('receivables') || item.title.toLowerCase().includes('accounts receivable') || item.title.toLowerCase().includes('receivable specialist'));
-                                const shouldTruncate = Boolean(isReceivables) && !isLast;
-                                const displayTitle = (() => {
-                                  if (isLast) {
-                                    const marker = 'production';
-                                    const lower = (item.title || '').toLowerCase();
-                                    const idx = lower.indexOf(marker);
-                                    if (idx !== -1) {
-                                      return (item.title || '').slice(0, idx + marker.length) + '...';
-                                    }
-                                    return item.title;
+                      <div className="grid grid-cols-2 gap-x-6 gap-y-2 max-h-[380px] overflow-y-auto pr-1 scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-transparent">
+                        {(() => {
+                          const items = SERVICE_CATEGORIES.find(c => c.id === 'offshore-team')?.items || [];
+                          return items.map((item, idx) => {
+                            const isLast = idx === items.length - 1;
+                            return (
+                              <div 
+                                key={idx}
+                                onClick={() => {
+                                  setIsOpen(false);
+                                  setActiveMega(null);
+                                  const subId = mapTitleToSubServiceId(item.title);
+                                  if (subId === 'hire-audit-support') {
+                                    navigate('/build-your-team/hire-audit-support-staff');
+                                  } else if (subId === 'hire-ar-specialist') {
+                                    navigate('/build-your-team/hire-accounts-receivable-specialist');
+                                  } else {
+                                    navigate(`/build-your-team/${subId}`);
                                   }
-                                  return item.title;
-                                })();
-                                return (
+                                }}
+                                className={`flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 cursor-pointer transition-all group ${
+                                  isLast ? 'col-span-2' : 'overflow-hidden'
+                                }`}
+                              >
+                                <div className="group-hover:scale-110 transition-transform flex-shrink-0">
+                                  <UserCheck className="w-4 h-4 text-[#007cff]" />
+                                </div>
+                                <div className="flex-1 min-w-0">
                                   <h4
                                     title={item.title}
-                                    className={isLast
-                                      ? 'text-base font-bold text-slate-800 group-hover:text-[#007cff] transition-colors leading-6 whitespace-nowrap w-full'
-                                      : shouldTruncate
-                                        ? 'text-base font-bold text-slate-800 group-hover:text-[#007cff] transition-colors leading-6 truncate whitespace-nowrap overflow-hidden w-full'
-                                        : 'text-base font-bold text-slate-800 group-hover:text-[#007cff] transition-colors leading-6 break-words whitespace-normal w-full'
-                                    }
+                                    className={`text-[14.5px] font-bold text-slate-800 group-hover:text-[#007cff] transition-colors leading-snug ${
+                                      isLast ? 'whitespace-nowrap' : 'truncate whitespace-nowrap overflow-hidden w-full'
+                                    }`}
                                   >
-                                    {displayTitle}
+                                    {item.title}
                                   </h4>
-                                );
-                              })()}
-                            </div>
-                          </div>
-                        ))}
+                                </div>
+                              </div>
+                            );
+                          });
+                        })()}
                       </div>
                     </div>
                   </div>
@@ -503,7 +491,7 @@ export default function Navbar({
                     setActiveMega(null);
                     navigate('/industries');
                   }}
-                  className={`flex items-center gap-1 text-base font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'industries' ? 'text-[#007cff]' : 'text-slate-600'}`}
+                  className={`flex items-center gap-1 text-[17px] font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'industries' ? 'text-[#007cff]' : 'text-slate-600'}`}
                 >
                   Industries
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeMega === 'industries' ? 'rotate-180' : ''}`} />
@@ -511,7 +499,7 @@ export default function Navbar({
 
                 {/* Industries Mega Menu Panel */}
                 {activeMega === 'industries' && (
-                  <div className="absolute top-full -left-[240px] w-[760px] pt-2 z-50 animate-fadeIn">
+                  <div className="absolute top-full -left-[280px] w-[840px] max-w-[95vw] pt-2 z-50 animate-fadeIn">
                     <div className="bg-white border border-slate-200/80 shadow-2xl rounded-xl p-6">
                       <div className="border-b border-slate-100 pb-3 mb-3 flex justify-between items-center">
                         <span className="text-xs font-bold text-navy-900 uppercase tracking-widest font-mono">Industries</span>
@@ -528,7 +516,7 @@ export default function Navbar({
                       </div>
                       
                       {/* Grid container for industries (no scroll) */}
-                      <div className="grid grid-cols-2 gap-x-8 gap-y-2.5">
+                      <div className="grid grid-cols-2 gap-x-6 gap-y-2">
                         {INDUSTRIES.map((industry) => (
                           <div 
                             key={industry.id}
@@ -542,13 +530,18 @@ export default function Navbar({
                                 if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
                               }, 250);
                             }}
-                            className="flex gap-2.5 p-1.5 rounded-lg hover:bg-slate-50 cursor-pointer transition-all group"
+                            className="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 cursor-pointer transition-all group overflow-hidden"
                           >
-                            <div className="mt-0.5 group-hover:scale-110 transition-transform flex-shrink-0">
+                            <div className="group-hover:scale-110 transition-transform flex-shrink-0">
                               {getIconComponent(industry.iconName)}
                             </div>
-                            <div className="flex-1 min-w-0">
-                              <h4 className="text-base font-bold text-slate-800 group-hover:text-[#007cff] transition-colors leading-6 break-words">{industry.title}</h4>
+                            <div className="flex-1 min-w-0 overflow-hidden">
+                              <h4 
+                                title={industry.title}
+                                className="text-[14.5px] font-bold text-slate-800 group-hover:text-[#007cff] transition-colors leading-snug truncate whitespace-nowrap overflow-hidden w-full"
+                              >
+                                {industry.title}
+                              </h4>
                             </div>
                           </div>
                         ))}
@@ -570,7 +563,7 @@ export default function Navbar({
                     setActiveMega(null);
                     navigate('/resources');
                   }}
-                  className={`flex items-center gap-1 text-base font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'blog' ? 'text-[#007cff]' : 'text-slate-600'}`}
+                  className={`flex items-center gap-1 text-[17px] font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'blog' ? 'text-[#007cff]' : 'text-slate-600'}`}
                 >
                   Resources
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeMega === 'resources' ? 'rotate-180' : ''}`} />
@@ -586,7 +579,7 @@ export default function Navbar({
                           setActiveMega(null);
                           navigate('/resources/blogs');
                         }}
-                        className="text-left text-base font-bold text-slate-800 hover:text-[#007cff] hover:bg-slate-50 p-2.5 rounded-lg transition-all cursor-pointer bg-transparent border-0 w-full"
+                        className="text-left text-[14.5px] font-bold text-slate-800 hover:text-[#007cff] hover:bg-slate-50 p-2.5 rounded-lg transition-all cursor-pointer bg-transparent border-0 w-full"
                       >
                         Blogs
                       </button>
@@ -596,7 +589,7 @@ export default function Navbar({
                           setActiveMega(null);
                           navigate('/resources/newsletters');
                         }}
-                        className="text-left text-base font-bold text-slate-800 hover:text-[#007cff] hover:bg-slate-50 p-2.5 rounded-lg transition-all cursor-pointer bg-transparent border-0 w-full"
+                        className="text-left text-[14.5px] font-bold text-slate-800 hover:text-[#007cff] hover:bg-slate-50 p-2.5 rounded-lg transition-all cursor-pointer bg-transparent border-0 w-full"
                       >
                         Newsletters
                       </button>
@@ -606,7 +599,7 @@ export default function Navbar({
                           setActiveMega(null);
                           navigate('/resources/articles');
                         }}
-                        className="text-left text-base font-bold text-slate-800 hover:text-[#007cff] hover:bg-slate-50 p-2.5 rounded-lg transition-all cursor-pointer bg-transparent border-0 w-full"
+                        className="text-left text-[14.5px] font-bold text-slate-800 hover:text-[#007cff] hover:bg-slate-50 p-2.5 rounded-lg transition-all cursor-pointer bg-transparent border-0 w-full"
                       >
                         Articles
                       </button>
@@ -616,7 +609,7 @@ export default function Navbar({
                           setActiveMega(null);
                           navigate('/resources/faqs');
                         }}
-                        className="text-left text-base font-bold text-slate-800 hover:text-[#007cff] hover:bg-slate-50 p-2.5 rounded-lg transition-all cursor-pointer bg-transparent border-0 w-full"
+                        className="text-left text-[14.5px] font-bold text-slate-800 hover:text-[#007cff] hover:bg-slate-50 p-2.5 rounded-lg transition-all cursor-pointer bg-transparent border-0 w-full"
                       >
                         FAQs
                       </button>
@@ -627,7 +620,7 @@ export default function Navbar({
 
               <button 
                 onClick={() => handleNavClick('contact')}
-                className={`text-base font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'contact' ? 'text-[#007cff]' : 'text-slate-600'}`}
+                className={`text-[17px] font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'contact' ? 'text-[#007cff]' : 'text-slate-600'}`}
               >
                 Contact Us
               </button>
@@ -637,7 +630,7 @@ export default function Navbar({
             <div className="hidden lg:flex items-center gap-2 shrink-0">
               <button 
                 onClick={openConsultation}
-                className="bg-[#007cff] hover:bg-blue-600 text-white text-sm px-5 py-3 rounded-lg font-bold tracking-wide shadow-md shadow-blue-500/10 hover:scale-[1.02] transition-all uppercase whitespace-nowrap cursor-pointer ml-6"
+                className="bg-[#007cff] hover:bg-blue-600 text-white text-sm px-5 py-3 rounded-lg font-bold tracking-wide shadow-md shadow-blue-500/10 hover:scale-[1.02] transition-all uppercase whitespace-nowrap cursor-pointer ml-8"
                 id="nav-consultation-btn"
               >
                 Book Consultation
@@ -782,31 +775,11 @@ export default function Navbar({
                            }
                          }, 200);
                        }}
-                       className={(() => {
-                         const offshoreItems = SERVICE_CATEGORIES.find(c => c.id === 'offshore-team')?.items || [];
-                         const isLast = offshoreItems.length ? idx === offshoreItems.length - 1 : false;
-                         const isReceivables = item.title && (item.title.toLowerCase().includes('receivable') || item.title.toLowerCase().includes('receivables') || item.title.toLowerCase().includes('accounts receivable') || item.title.toLowerCase().includes('receivable specialist'));
-                         const shouldTruncate = Boolean(isReceivables) && !isLast;
-                         if (isLast) return 'text-left text-base font-semibold text-slate-700 hover:text-[#007cff] py-1 transition-colors whitespace-nowrap overflow-visible';
-                         return shouldTruncate
-                           ? 'text-left text-base font-semibold text-slate-700 hover:text-[#007cff] py-1 transition-colors truncate whitespace-nowrap overflow-hidden'
-                           : 'text-left text-base font-semibold text-slate-700 hover:text-[#007cff] py-1 transition-colors break-words whitespace-normal';
-                       })()}
-                       title={item.title}
-                     >
-                       {(() => {
-                         const offshoreItems = SERVICE_CATEGORIES.find(c => c.id === 'offshore-team')?.items || [];
-                         const isLastBtn = offshoreItems.length ? idx === offshoreItems.length - 1 : false;
-                         if (isLastBtn) {
-                           const marker = 'production';
-                           const lower = (item.title || '').toLowerCase();
-                           const pIdx = lower.indexOf(marker);
-                           if (pIdx !== -1) return (item.title || '').slice(0, pIdx + marker.length) + '...';
-                           return item.title;
-                         }
-                         return item.title;
-                       })()}
-                     </button>
+                        className="text-left text-sm sm:text-base font-semibold text-slate-700 hover:text-[#007cff] py-1 transition-colors break-words w-full"
+                        title={item.title}
+                      >
+                        {item.title}
+                      </button>
                    ))}
                  </div>
                )}

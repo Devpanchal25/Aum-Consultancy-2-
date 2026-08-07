@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Page } from '../types';
-import { 
-  Phone, Mail, MapPin, MessageSquare, Check, Send, 
+import {
+  Phone, Mail, MapPin, MessageSquare, Check, Send,
   Briefcase, FileText, User, Users, Globe, Building,
   ChevronDown, ChevronUp, HelpCircle
 } from 'lucide-react';
@@ -65,9 +65,9 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     const accessKey = (import.meta as any).env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE";
-    
+
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -87,7 +87,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
           from_name: "Aum Consultancy Website"
         })
       });
-      
+
       const result = await response.json();
       if (!result.success) {
         console.warn("Web3Forms error or key not configured. Graced success shown in preview. Response:", result);
@@ -111,7 +111,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
 
   return (
     <div className="pt-20">
-      
+
       {/* Header Banner matching our website theme */}
       <section className="relative text-navy-950 overflow-hidden py-16 sm:py-20 bg-white border-b border-slate-100" id="contact-hero-header">
         <div className="absolute inset-0 z-0">
@@ -129,12 +129,12 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
       {/* Main Grid: Get In Touch (Left) & Drop Us a Line Form (Right) */}
       <section className="py-20 bg-[#fbfcfd]" id="contact-main-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            
+
             {/* Left Column: Get In Touch & Info */}
             <div className="lg:col-span-6 space-y-8">
-              
+
               <div className="space-y-5">
                 <div className="relative inline-block pb-3">
                   <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#0f2942]">
@@ -142,7 +142,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                   </h2>
                   <div className="absolute bottom-0 left-0 w-16 h-[3px] bg-[#007cff]" />
                 </div>
-                
+
                 <p className="text-slate-500 text-sm leading-relaxed font-light">
                   Have a question or need more information? We’d love to hear from you! Fill out our quick inquiry form, and our team will get back to you with the answers you need.
                 </p>
@@ -150,7 +150,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
 
               {/* Contact Information Cards matching theme */}
               <div className="space-y-6 pt-2">
-                
+
                 {/* Registered Office */}
                 <div className="flex gap-4 items-start">
                   <div className="w-12 h-12 rounded-full border border-[#007cff] bg-blue-500/5 flex items-center justify-center shrink-0">
@@ -159,9 +159,9 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                   <div className="space-y-0.5">
                     <h4 className="font-serif text-lg font-bold text-[#0f2942]">Registered Office</h4>
                     <p className="text-sm text-slate-500 font-light leading-relaxed">
-                      Aum Consultancy, A-4 Hare Krishna 2,<br />
-                      Behind Earth Icon, New VIP Road,<br />
-                      Vadodara, Gujarat, India – 390006
+                      208-Helix Complex, Opposite Hotel Surya,<br />
+                      Sayajiganj, Vadodara, Gujarat, India – 390020<br />
+
                     </p>
                   </div>
                 </div>
@@ -199,7 +199,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
             {/* Right Column: Drop Us a Line Form matching brand theme */}
             <div className="lg:col-span-6">
               <div className="bg-white p-6 sm:p-10 rounded-2xl shadow-[0_15px_45px_-10px_rgba(0,0,0,0.05)] border border-slate-100 space-y-6">
-                
+
                 <div className="space-y-4">
                   <div className="relative inline-block pb-3">
                     <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0f2942]">
@@ -207,7 +207,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                     </h3>
                     <div className="absolute bottom-0 left-0 w-16 h-[2.5px] bg-[#007cff]" />
                   </div>
-                  
+
                   <p className="text-slate-500 text-xs sm:text-sm leading-relaxed font-light">
                     Your questions deserve expert answers. Fill out the form below, and our specialists will get back to you with clarity and support.
                   </p>
@@ -233,10 +233,10 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-5">
-                    
+
                     {/* Enter Your Name */}
                     <div className="space-y-1">
-                      <input 
+                      <input
                         type="text"
                         required
                         name="name"
@@ -251,7 +251,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                     {/* Row: Email ID & Number */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="space-y-1">
-                        <input 
+                        <input
                           type="email"
                           required
                           name="email"
@@ -263,13 +263,12 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                         />
                       </div>
                       <div className="space-y-1">
-                        <input 
+                        <input
                           type="tel"
-                          required
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          placeholder="Enter Your Number *"
+                          placeholder="Enter Your Number (Optional)"
                           aria-label="Your Phone Number"
                           className="w-full bg-white border border-slate-200 rounded-lg p-3.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#007cff] focus:ring-1 focus:ring-[#007cff] transition-all"
                         />
@@ -278,7 +277,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
 
                     {/* Enter Your Website */}
                     <div className="space-y-1">
-                      <input 
+                      <input
                         type="url"
                         name="website"
                         value={formData.website}
@@ -291,17 +290,15 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
 
                     {/* Dropdown: How did you hear about Aum Consultancy? */}
                     <div className="space-y-1 relative">
-                      <select 
+                      <select
                         name="hearAbout"
-                        required
                         value={formData.hearAbout}
                         onChange={handleInputChange}
                         aria-label="Where did you hear about us?"
-                        className={`w-full bg-white border border-slate-200 rounded-lg p-3.5 pr-10 text-xs focus:outline-none focus:border-[#007cff] focus:ring-1 focus:ring-[#007cff] appearance-none cursor-pointer transition-all ${
-                          formData.hearAbout === '' ? 'text-slate-400' : 'text-slate-800 font-medium'
-                        }`}
+                        className={`w-full bg-white border border-slate-200 rounded-lg p-3.5 pr-10 text-xs focus:outline-none focus:border-[#007cff] focus:ring-1 focus:ring-[#007cff] appearance-none cursor-pointer transition-all ${formData.hearAbout === '' ? 'text-slate-400' : 'text-slate-800 font-medium'
+                          }`}
                       >
-                        <option value="" disabled>Where did you hear about us? *</option>
+                        <option value="">Where did you hear about us? (Optional)</option>
                         <option value="Social Media" className="text-slate-800">Social Media (LinkedIn, Facebook)</option>
                         <option value="Email Newsletter" className="text-slate-800">Email Newsletter</option>
                         <option value="Referral / Word of Mouth" className="text-slate-800">Referral / Word of Mouth</option>
@@ -314,7 +311,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
 
                     {/* Your Message Textarea */}
                     <div className="space-y-1">
-                      <textarea 
+                      <textarea
                         rows={5}
                         required
                         name="message"
@@ -335,7 +332,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                     >
                       <span>{isSubmitting ? 'Sending Message...' : 'SUBMIT NOW'}</span>
                     </button>
-                    
+
                     <p className="text-[10px] text-slate-400 font-mono text-center">
                       🔒 Secured SSL Encrypted Connection.
                     </p>
@@ -360,9 +357,9 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
           <p className="text-slate-500 text-xs font-light max-w-md mx-auto">
             Our global desk representatives manage shifting schedules to supply direct responses within minutes.
           </p>
-          <a 
-            href="https://wa.me/919879161400?text=Hi%20Aum%20team" 
-            target="_blank" 
+          <a
+            href="https://wa.me/919879161400?text=Hi%20Aum%20team"
+            target="_blank"
             rel="noreferrer"
             className="bg-green-600 hover:bg-green-700 text-white font-bold text-xs px-6 py-2.5 rounded-lg inline-block transition-colors"
           >

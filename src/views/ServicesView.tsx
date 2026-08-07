@@ -48,6 +48,50 @@ const getIconComponent = (name: string, sizeClass = "w-5 h-5", colorClass = "tex
   }
 };
 
+const renderFormattedText = (text: string) => {
+  if (!text) return text;
+  
+  // Clean up tabs, leading/trailing whitespace
+  let cleaned = text.replace(/^\t+/, '').trim();
+
+  const colonIndex = cleaned.indexOf(': ');
+  if (colonIndex > 0 && colonIndex < 250) {
+    let rawTitle = cleaned.substring(0, colonIndex + 1);
+    let rest = cleaned.substring(colonIndex + 1);
+
+    // Strip double quotes from title and rest
+    rawTitle = rawTitle.replace(/"/g, '').trim();
+    rest = rest.replace(/^"+/, '').trim();
+
+    return (
+      <>
+        <strong className="font-bold text-navy-950 font-sans">{rawTitle} </strong>
+        {rest}
+      </>
+    );
+  }
+
+  const arrowIndex = cleaned.indexOf(' → ');
+  if (arrowIndex > 0 && arrowIndex < 250) {
+    let rawTitle = cleaned.substring(0, arrowIndex);
+    let rest = cleaned.substring(arrowIndex + 3);
+
+    // Strip double quotes from title and rest
+    rawTitle = rawTitle.replace(/"/g, '').trim();
+    rest = rest.replace(/^"+/, '').trim();
+
+    return (
+      <>
+        <strong className="font-bold text-navy-950 font-sans">{rawTitle} → </strong>
+        {rest}
+      </>
+    );
+  }
+
+  // Fallback: strip double quotes if present
+  return cleaned.replace(/"/g, '');
+};
+
 const TRANSITION_FAQS = [
   {
     question: "How do we transition our existing financial data to an offshore team without disruption?",
@@ -251,9 +295,6 @@ export default function ServicesView({
 
               {/* Sub-Services Expandable Accordion List */}
               <div className="space-y-4">
-                <span className="text-sm sm:text-base font-extrabold text-slate-400 uppercase tracking-widest block pl-1">
-                  Active Capabilities ({activeSubServices.length})
-                </span>
 
                 {activeSubServices.map((sub) => {
                   const isExpanded = expandedSubServiceId === sub.id;
@@ -298,8 +339,8 @@ export default function ServicesView({
                               }
                             }
                           } else {
-                            const nextState = isExpanded ? '' : sub.id;
-                            setExpandedSubServiceId(nextState);
+                            const nextState = !isExpanded;
+                            setExpandedSubServiceId(isExpanded ? '' : sub.id);
                             if (nextState) {
                               setTimeout(() => {
                                 const el = document.getElementById(sub.id);
@@ -328,8 +369,8 @@ export default function ServicesView({
                           </div>
                           <div>
                             <h3 className={isAccounting
-                              ? "text-lg sm:text-xl md:text-2xl font-bold text-navy-900 tracking-tight"
-                              : "text-base sm:text-lg font-bold text-navy-900"
+                              ? "text-[18.1px] sm:text-[20.1px] md:text-[24.1px] font-bold text-navy-900 tracking-tight"
+                              : "text-[16.1px] sm:text-[18.1px] font-bold text-navy-900"
                             }>
                               {sub.title}
                             </h3>
@@ -361,15 +402,18 @@ export default function ServicesView({
                               />
                             </div>
                             <div className="col-span-12 md:col-span-8 space-y-4">
-                              <span className={isAccounting
-                                ? "inline-block text-lg sm:text-xl text-blue-700 bg-blue-50 border border-blue-200/80 px-4 py-3 rounded-lg font-mono font-bold"
-                                : "inline-block text-lg sm:text-xl text-blue-600 bg-blue-50 border border-blue-100 px-4 py-3 rounded-lg font-mono font-bold"
-                              }>
+                              <span 
+                                style={{ color: '#4682B4' }}
+                                className={isAccounting
+                                  ? "inline-block text-[18.1px] sm:text-[20.1px] bg-blue-50 border border-blue-200/80 px-4 py-3 rounded-lg font-mono font-bold"
+                                  : "inline-block text-[18.1px] sm:text-[20.1px] bg-blue-50 border border-blue-100 px-4 py-3 rounded-lg font-mono font-bold"
+                                }
+                              >
                                  {sub.catchphrase}
                               </span>
                               <p className={isAccounting
-                                ? "text-lg sm:text-xl text-slate-700 leading-relaxed font-normal text-justify"
-                                : "text-lg sm:text-xl text-slate-600 leading-relaxed font-light"
+                                ? "text-[18.1px] sm:text-[20.1px] text-slate-700 leading-relaxed font-normal text-left"
+                                : "text-[18.1px] sm:text-[20.1px] text-slate-600 leading-relaxed font-light"
                               }>
                                 {sub.description}
                               </p>
@@ -381,15 +425,15 @@ export default function ServicesView({
                                 if (section.type === 'checklist') {
                                   return (
                                     <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-4 shadow-xs">
-                                      <h4 className="text-base sm:text-lg font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
+                                      <h4 className="text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
                                         <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
                                         {section.title}
                                       </h4>
                                       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
                                         {section.items?.map((item, itemIdx) => (
-                                          <div key={itemIdx} className="flex gap-3 text-base text-slate-700 leading-relaxed font-normal items-start">
+                                          <div key={itemIdx} className="flex gap-3 text-base sm:text-lg text-slate-700 leading-relaxed font-normal items-start">
                                             <span className="text-emerald-500 font-bold shrink-0 mt-0.5">✓</span>
-                                            <span>{item}</span>
+                                            <span>{renderFormattedText(item)}</span>
                                           </div>
                                         ))}
                                       </div>
@@ -398,20 +442,20 @@ export default function ServicesView({
                                 } else if (section.type === 'bullet') {
                                   return (
                                     <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-4 shadow-xs">
-                                      <h4 className="text-base sm:text-lg font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
+                                      <h4 className="text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
                                         <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
                                         {section.title}
                                       </h4>
                                       {section.text && (
-                                        <p className="text-base text-slate-700 leading-relaxed font-normal text-justify">
+                                        <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal text-left">
                                           {section.text}
                                         </p>
                                       )}
                                       <ul className="space-y-3 pl-1 list-none">
                                         {section.items?.map((item, itemIdx) => (
-                                          <li key={itemIdx} className="flex gap-3 text-base text-slate-700 leading-relaxed font-normal items-start">
+                                          <li key={itemIdx} className="flex gap-3 text-base sm:text-lg text-slate-700 leading-relaxed font-normal items-start">
                                             <span className="text-[#007cff] font-bold shrink-0 mt-0.5">✓</span>
-                                            <span>{item}</span>
+                                            <span>{renderFormattedText(item)}</span>
                                           </li>
                                         ))}
                                       </ul>
@@ -420,31 +464,31 @@ export default function ServicesView({
                                 } else if (section.type === 'nested-sections') {
                                   return (
                                     <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-5 shadow-xs">
-                                      <h4 className="text-base sm:text-lg font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
+                                      <h4 className="text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
                                         <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
                                         {section.title}
                                       </h4>
                                       {section.text && (
-                                        <p className="text-sm text-slate-700 leading-relaxed font-normal text-justify">
+                                        <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal text-left">
                                           {section.text}
                                         </p>
                                       )}
                                       <div className="grid grid-cols-1 gap-5">
                                         {section.subSections?.map((subSec, subIdx) => (
                                           <div key={subIdx} className="bg-white border border-slate-200/80 p-5 rounded-xl space-y-3 shadow-2xs">
-                                            <h5 className="text-sm sm:text-base font-bold text-navy-900 flex items-center gap-2 border-b border-slate-100 pb-2 uppercase tracking-wider">
+                                            <h5 className="text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-100 pb-2 uppercase tracking-wider">
                                               {subSec.title}
                                             </h5>
                                             {subSec.text && (
-                                              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal text-justify">
+                                              <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal text-left">
                                                 {subSec.text}
                                               </p>
                                             )}
                                             <ul className={`grid grid-cols-1 ${subSec.items?.length === 1 ? '' : 'md:grid-cols-2'} gap-x-6 gap-y-2.5 pl-1 list-none`}>
                                               {subSec.items?.map((item, itemIdx) => (
-                                                <li key={itemIdx} className="flex gap-2.5 text-sm sm:text-base text-slate-600 leading-relaxed font-normal items-start">
+                                                <li key={itemIdx} className="flex gap-2.5 text-base sm:text-lg text-slate-600 leading-relaxed font-normal items-start">
                                                   <span className="text-[#007cff] font-bold shrink-0 mt-0.5">✓</span>
-                                                  <span>{item}</span>
+                                                  <span>{renderFormattedText(item)}</span>
                                                 </li>
                                               ))}
                                             </ul>
@@ -457,13 +501,13 @@ export default function ServicesView({
                                   return (
                                     <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-4 shadow-xs">
                                       {section.title && (
-                                        <h4 className="text-sm sm:text-base font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
+                                        <h4 className="text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
                                           <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
                                           {section.title}
                                         </h4>
                                       )}
                                       {section.text && (
-                                        <p className="text-sm text-slate-700 leading-relaxed font-normal text-justify">
+                                        <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal text-left">
                                           {section.text}
                                         </p>
                                       )}
@@ -473,10 +517,10 @@ export default function ServicesView({
                                             <div className="bg-blue-50 text-[#007cff] p-2.5 rounded-lg w-fit">
                                               {getIconComponent(gItem.iconName, 'w-5 h-5', 'text-[#007cff]')}
                                             </div>
-                                            <h5 className="text-sm sm:text-base font-bold text-navy-900 leading-snug">
+                                            <h5 className="text-base sm:text-lg font-bold text-navy-900 leading-snug">
                                               {gItem.title}
                                             </h5>
-                                            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal text-justify">
+                                            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal text-left">
                                               {gItem.text}
                                             </p>
                                           </div>
@@ -490,7 +534,7 @@ export default function ServicesView({
                                   return (
                                     <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-4 shadow-xs">
                                       {section.title && (
-                                        <h4 className="text-sm sm:text-base font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
+                                        <h4 className="text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
                                           <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
                                           {section.title}
                                         </h4>
@@ -503,7 +547,7 @@ export default function ServicesView({
                                             </pre>
                                           </div>
                                         ) : (
-                                          <p className="text-base text-slate-700 leading-relaxed font-normal whitespace-pre-line text-justify">
+                                          <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal whitespace-pre-line text-left">
                                             {section.text}
                                           </p>
                                         )
@@ -524,8 +568,8 @@ export default function ServicesView({
                                   : "bg-slate-50 border border-slate-200/60 p-5 rounded-xl space-y-4"
                                 }>
                                   <span className={isAccounting
-                                    ? "text-base sm:text-lg font-bold text-navy-900 uppercase tracking-wider flex items-center gap-2 border-b border-slate-200 pb-3"
-                                    : "text-sm sm:text-base font-extrabold text-navy-950 uppercase tracking-wider flex items-center gap-2 border-b border-slate-200 pb-2.5"
+                                    ? "text-lg sm:text-xl font-bold text-navy-900 uppercase tracking-wider flex items-center gap-2 border-b border-slate-200 pb-3"
+                                    : "text-lg sm:text-xl font-extrabold text-navy-950 uppercase tracking-wider flex items-center gap-2 border-b border-slate-200 pb-2.5"
                                   }>
                                     <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
                                     {check.title}
@@ -533,11 +577,11 @@ export default function ServicesView({
                                   <ul className="space-y-3 list-none">
                                     {check.items.map((item, itemIdx) => (
                                       <li key={itemIdx} className={isAccounting
-                                        ? "flex gap-3 text-base text-slate-700 leading-relaxed font-normal items-start"
-                                        : "flex gap-2 text-sm sm:text-base text-slate-600 leading-relaxed font-light"
+                                        ? "flex gap-3 text-[16.1px] sm:text-[18.1px] text-slate-700 leading-relaxed font-normal items-start"
+                                        : "flex gap-2 text-[14.1px] sm:text-[16.1px] text-slate-600 leading-relaxed font-light"
                                       }>
                                         <span className="text-emerald-500 font-bold shrink-0 mt-0.5">✓</span>
-                                        <span>{item}</span>
+                                        <span>{renderFormattedText(item)}</span>
                                       </li>
                                     ))}
                                   </ul>
@@ -570,19 +614,18 @@ export default function ServicesView({
                                     <p className={isAccounting
                                       ? "text-sm sm:text-base text-slate-700 leading-relaxed font-normal"
                                       : "text-sm sm:text-base text-slate-600 leading-relaxed font-light"
-                                    }>{why}</p>
+                                    }>{renderFormattedText(why)}</p>
                                   </div>
                                 ))}
                               </div>
                             </div>
                           )}
 
-                          {/* 5. Did You Know & Actions */}
-                          {/* Move Did You Know above the section border so it appears before the dividing line */}
+                          {/* 5. Did You Know (Above Line) */}
                           {sub.didYouKnow && activeCategoryId === 'tax' && (
                             <div className={isAccounting
-                              ? "bg-blue-50/70 border border-blue-200/80 p-5 rounded-2xl flex gap-4 items-start max-w-2xl mb-4"
-                              : "bg-blue-50 border border-blue-200 p-4 rounded-xl flex gap-3 items-start max-w-lg mb-4"
+                              ? "bg-blue-50/70 border border-blue-200/80 p-5 rounded-2xl flex gap-4 items-start mt-6"
+                              : "bg-blue-50 border border-blue-200 p-4 rounded-xl flex gap-3 items-start mt-5"
                             }>
                               <div className={isAccounting
                                 ? "bg-blue-100 text-[#007cff] p-2 rounded-xl shrink-0 mt-0.5 shadow-xs"
@@ -592,49 +635,41 @@ export default function ServicesView({
                               </div>
                               <div className="space-y-1">
                                 <strong className={isAccounting
-                                  ? "text-xs font-mono text-[#007cff] uppercase tracking-widest block"
-                                  : "text-xs font-mono text-[#007cff] uppercase tracking-widest block"
+                                  ? "text-sm font-mono text-blue-900 uppercase tracking-wider block font-bold"
+                                  : "text-sm font-mono text-blue-800 uppercase tracking-wider block"
                                 }>{sub.didYouKnowTitle || 'Did You Know?'}</strong>
                                 <p className={isAccounting
-                                    ? "text-sm sm:text-base text-slate-700 leading-relaxed font-normal"
-                                    : "text-sm sm:text-base text-slate-600 leading-relaxed font-light"
-                                  }>{sub.didYouKnow}</p>
+                                  ? "text-sm sm:text-base text-slate-700 leading-relaxed font-normal"
+                                  : "text-sm sm:text-base text-slate-600 leading-relaxed font-light"
+                                }>{sub.didYouKnow}</p>
                               </div>
                             </div>
                           )}
 
+                          {/* 6. CTAs (Below Line) */}
                           <div className={isAccounting
-                            ? "pt-6 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6"
-                            : "pt-5 border-t border-slate-150 flex flex-col md:flex-row items-center justify-between gap-6"
+                            ? "pt-6 border-t border-slate-200 flex flex-col sm:flex-row gap-3 w-full sm:w-auto items-stretch sm:items-center"
+                            : "pt-5 border-t border-slate-150 flex flex-wrap gap-3 w-full sm:w-auto"
                           }>
-
-                            {/* CTAs */}
-                            <div className={isAccounting
-                              ? "flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0 justify-end items-stretch sm:items-center"
-                              : "flex flex-wrap gap-3 shrink-0 ml-auto w-full md:w-auto justify-end"
-                            }>
-                              <a 
-                                href="tel:+919879161400"
-                                className={isAccounting
-                                  ? "bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm shadow-emerald-600/10 hover:shadow-md cursor-pointer text-center"
-                                  : "bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm sm:text-base px-5 py-3 rounded-lg transition-colors uppercase tracking-wider flex items-center gap-1.5 shadow-sm"
-                                }
-                              >
-                                <Phone className="w-4 h-4" /> Click to Call
-                              </a>
-                              <button 
-                                onClick={openConsultation}
-                                className={isAccounting
-                                  ? "bg-[#007cff] hover:bg-blue-600 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 uppercase tracking-wider shadow-sm shadow-blue-500/10 hover:shadow-md cursor-pointer text-center"
-                                  : "bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm sm:text-base px-5 py-3 rounded-lg transition-colors uppercase tracking-wider shadow-sm shadow-indigo-600/10"
-                                }
-                              >
-                                {sub.ctaText || 'Schedule Consultation'}
-                              </button>
-                            </div>
-
+                            <a 
+                              href="tel:+919879161400"
+                              className={isAccounting
+                                ? "bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm shadow-emerald-600/10 hover:shadow-md cursor-pointer text-center"
+                                : "bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm sm:text-base px-5 py-3 rounded-lg transition-colors uppercase tracking-wider flex items-center gap-1.5 shadow-sm"
+                              }
+                            >
+                              <Phone className="w-4 h-4" /> Click to Call
+                            </a>
+                            <button 
+                              onClick={openConsultation}
+                              className={isAccounting
+                                ? "bg-[#007cff] hover:bg-blue-600 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 uppercase tracking-wider shadow-sm shadow-blue-500/10 hover:shadow-md cursor-pointer text-center"
+                                : "bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm sm:text-base px-5 py-3 rounded-lg transition-colors uppercase tracking-wider shadow-sm shadow-indigo-600/10"
+                              }
+                            >
+                              {sub.ctaText || 'Schedule Consultation'}
+                            </button>
                           </div>
-
                         </div>
                       )}
                     </div>

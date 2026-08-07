@@ -17,12 +17,14 @@ export function LogoIcon({
   monochrome?: boolean
 }) {
   return (
-    <img
-      src="/images/aum-logo.png"
-      alt="AUM Consultancy Logo"
-      className={`${className} object-contain`}
-      aria-hidden="true"
-    />
+    <div className={`${className} overflow-hidden rounded-xl shrink-0 flex items-center justify-center relative`}>
+      <img
+        src="/images/aum-logo.png"
+        alt="AUM Consultancy Logo"
+        className="w-full h-full object-cover scale-[1.28]"
+        aria-hidden="true"
+      />
+    </div>
   );
 }
 
@@ -35,16 +37,16 @@ export default function Logo({
 }: LogoProps) {
   const monochrome = variant === 'monochrome';
   const displayTextColor = darkBg ? 'text-white' : 'text-[#000000]';
-  const brandTextColor = monochrome ? 'currentColor' : 'text-[#002c5b]';
-  const subtextColor = darkBg ? 'text-slate-400' : 'text-slate-500';
+  const brandTextColor = darkBg ? 'text-white' : 'text-[#000000]';
+  const subtextColor = darkBg ? 'text-slate-300' : 'text-slate-800 font-medium';
 
   if (variant === 'square') {
     return (
       <div
-        className={`w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg border border-slate-200 ${className}`}
+        className={`w-12 h-12 rounded-xl overflow-hidden flex items-center justify-center shadow-lg border border-slate-200 ${className}`}
         {...restProps}
       >
-        <LogoIcon className="w-8 h-8" darkBg={false} />
+        <LogoIcon className="w-full h-full object-cover rounded-xl" darkBg={false} />
       </div>
     );
   }
@@ -59,7 +61,7 @@ export default function Logo({
 
   return (
     <div
-      className={`flex items-center gap-2.5 group cursor-pointer ${className}`}
+      className={`flex items-center gap-2.5 group cursor-pointer shrink-0 ${className}`}
       {...restProps}
     >
       {/* Logo Icon with responsive hover scale */}
@@ -73,7 +75,7 @@ export default function Logo({
       {/* Corporate Typography branding */}
       <div className="flex flex-col select-none">
         <div className="flex items-baseline leading-none">
-          <span className={`font-sans font-extrabold text-base sm:text-lg tracking-wide uppercase transition-colors duration-300 group-hover:text-[#002c5b] ${displayTextColor}`}>
+          <span className={`font-sans font-extrabold text-base sm:text-lg tracking-wide uppercase transition-colors duration-300 ${displayTextColor}`}>
             AUM
           </span>
           <span className={`font-sans font-light text-xs sm:text-sm tracking-[0.18em] ml-1.5 uppercase ${brandTextColor}`}>

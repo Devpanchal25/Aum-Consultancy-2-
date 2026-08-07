@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { X, Calendar, Clock, Globe, Check, Video, ChevronRight, ChevronLeft, CheckCircle2 } from 'lucide-react';
 
 interface BookConsultationModalProps {
@@ -12,6 +12,8 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
   const [selectedTime, setSelectedTime] = useState('');
   const [isTimeConfirmed, setIsTimeConfirmed] = useState(false);
   const [timezone, setTimezone] = useState('EST (USA & Canada)');
+  const [calendarMonth, setCalendarMonth] = useState(new Date().getMonth());
+  const [calendarYear, setCalendarYear] = useState(new Date().getFullYear());
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -21,10 +23,80 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const DAY_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const SHORT_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const LONG_DAY_NAMES = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+  // Generate calendar days for the current month view
+  const calendarDays = useMemo(() => {
+    const firstDay = new Date(calendarYear, calendarMonth, 1);
+    const lastDay = new Date(calendarYear, calendarMonth + 1, 0);
+    const startingDayOfWeek = firstDay.getDay();
+    const totalDays = lastDay.getDate();
+
+    const todayRef = new Date();
+    todayRef.setHours(0, 0, 0, 0);
+
+    const days: Array<{ date: Date; dayNum: number; isCurrentMonth: boolean; isPast: boolean; isSunday: boolean; isToday: boolean; isoString: string }> = [];
+
+    // Previous month trailing days
+    const prevMonthLastDay = new Date(calendarYear, calendarMonth, 0).getDate();
+    for (let i = startingDayOfWeek - 1; i >= 0; i--) {
+      const d = new Date(calendarYear, calendarMonth - 1, prevMonthLastDay - i);
+      days.push({
+        date: d,
+        dayNum: prevMonthLastDay - i,
+        isCurrentMonth: false,
+        isPast: d < todayRef,
+        isSunday: d.getDay() === 0,
+        isToday: false,
+        isoString: d.toISOString().split('T')[0]
+      });
+    }
+
+    // Current month days
+    for (let i = 1; i <= totalDays; i++) {
+      const d = new Date(calendarYear, calendarMonth, i);
+      days.push({
+        date: d,
+        dayNum: i,
+        isCurrentMonth: true,
+        isPast: d < todayRef,
+        isSunday: d.getDay() === 0,
+        isToday: d.getTime() === todayRef.getTime(),
+        isoString: d.toISOString().split('T')[0]
+      });
+    }
+
+    // Next month leading days to fill the grid
+    const remainingSlots = 42 - days.length; // 6 rows x 7 columns
+    for (let i = 1; i <= remainingSlots; i++) {
+      const d = new Date(calendarYear, calendarMonth + 1, i);
+      days.push({
+        date: d,
+        dayNum: i,
+        isCurrentMonth: false,
+        isPast: d < todayRef,
+        isSunday: d.getDay() === 0,
+        isToday: false,
+        isoString: d.toISOString().split('T')[0]
+      });
+    }
+
+    return days;
+  }, [calendarMonth, calendarYear]);
+
   if (!isOpen) return null;
 
   const timeSlots = [
-    '09:00 AM', '10:00 AM', '11:00 AM', '01:00 PM', '02:00 PM', '03:00 PM', '04:00 PM'
+    '12:00 AM', '01:00 AM', '02:00 AM', '03:00 AM', '04:00 AM', '05:00 AM',
+    '06:00 AM', '07:00 AM', '08:00 AM', '09:00 AM', '10:00 AM', '11:00 AM',
+    '12:00 PM', '01:00 PM', '02:00 PM', '03:00 PM', '04:00 PM', '05:00 PM',
+    '06:00 PM', '07:00 PM', '08:00 PM', '09:00 PM', '10:00 PM', '11:00 PM'
   ];
 
   const timezones = [
@@ -36,33 +108,42 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
     'IST (India Standard Time)'
   ];
 
-  // Dynamic next 7 weekdays generator
-  const getNextWeekdays = () => {
-    const dates = [];
-    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    
-    let count = 0;
-    let current = new Date();
-    while (count < 6) {
-      current.setDate(current.getDate() + 1);
-      // Skip Sundays
-      if (current.getDay() !== 0) {
-        dates.push({
-          dayLongName: days[current.getDay()],
-          dayName: days[current.getDay()].substring(0, 3),
-          monthName: months[current.getMonth()],
-          dayNum: current.getDate(),
-          isoString: current.toISOString().split('T')[0]
-        });
-        count++;
-      }
+  // Check if we can go to previous month (can't go before current month)
+  const canGoPrevMonth = calendarYear > today.getFullYear() || (calendarYear === today.getFullYear() && calendarMonth > today.getMonth());
+
+  const goToPrevMonth = () => {
+    if (!canGoPrevMonth) return;
+    if (calendarMonth === 0) {
+      setCalendarMonth(11);
+      setCalendarYear(calendarYear - 1);
+    } else {
+      setCalendarMonth(calendarMonth - 1);
     }
-    return dates;
   };
 
-  const weekdays = getNextWeekdays();
-  const selectedDateObj = weekdays.find(w => w.isoString === selectedDate);
+  const goToNextMonth = () => {
+    if (calendarMonth === 11) {
+      setCalendarMonth(0);
+      setCalendarYear(calendarYear + 1);
+    } else {
+      setCalendarMonth(calendarMonth + 1);
+    }
+  };
+
+  // Get selected date details for display
+  const getSelectedDateDetails = () => {
+    if (!selectedDate) return null;
+    const d = new Date(selectedDate + 'T00:00:00');
+    return {
+      dayLongName: LONG_DAY_NAMES[d.getDay()],
+      dayName: DAY_NAMES[d.getDay()],
+      monthName: SHORT_MONTHS[d.getMonth()],
+      dayNum: d.getDate(),
+      isoString: selectedDate
+    };
+  };
+
+  const selectedDateObj = getSelectedDateDetails();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -126,6 +207,8 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
     setSelectedDate('');
     setSelectedTime('');
     setIsTimeConfirmed(false);
+    setCalendarMonth(new Date().getMonth());
+    setCalendarYear(new Date().getFullYear());
     setFormData({ name: '', email: '', company: '', phone: '', requirements: '' });
   };
 
@@ -167,12 +250,12 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
               {/* Host Identity */}
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-full border border-slate-150 flex items-center justify-center overflow-hidden shrink-0 shadow-sm">
+                  <div className="w-11 h-11 rounded-lg border border-slate-150 flex items-center justify-center overflow-hidden shrink-0 shadow-sm">
                     {/* Logo avatar from image */}
                     <img 
                       src="/images/aum-logo.png" 
                       alt="AUM Consultancy Logo" 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover scale-[1.28]"
                     />
                   </div>
                   <div>
@@ -224,95 +307,151 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
             
             {/* Step 1: Date & Time selector */}
             {step === 1 && (
-              <div className="space-y-6">
+              <div className="space-y-5">
                 <div>
                   <h3 className="text-base sm:text-lg font-bold text-slate-950">Select a Date & Time</h3>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-12 gap-6">
-                  {/* Left part of step 1: Date Selector Grid */}
-                  <div className={`${selectedDate ? 'sm:col-span-7' : 'sm:col-span-12'} space-y-4`}>
-                    <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Available Days</div>
-                    
-                    <div className="grid grid-cols-3 gap-2">
-                      {weekdays.map((wd) => (
-                        <button
-                          key={wd.isoString}
-                          type="button"
-                          onClick={() => {
-                            setSelectedDate(wd.isoString);
-                            setSelectedTime(''); // Reset time on date change
-                          }}
-                          className={`flex flex-col items-center justify-center p-3 rounded-xl border transition-all ${
-                            selectedDate === wd.isoString
-                              ? 'bg-[#006bff]/10 border-[#006bff] text-[#006bff] font-bold shadow-sm'
-                              : 'bg-white border-slate-200 text-slate-800 hover:border-[#006bff] hover:bg-slate-50'
-                          }`}
-                        >
-                          <span className="text-[10px] uppercase font-semibold text-slate-400">{wd.dayName}</span>
-                          <span className="text-lg font-extrabold my-0.5">{wd.dayNum}</span>
-                          <span className="text-[9px] font-mono uppercase text-slate-500">{wd.monthName}</span>
-                        </button>
-                      ))}
-                    </div>
-
-                    {/* Time zone widget */}
-                    <div className="space-y-2 pt-2">
-                      <div className="flex items-center gap-1.5 text-xs font-bold text-slate-500 uppercase tracking-wider">
-                        <Globe className="w-3.5 h-3.5 text-slate-400" />
-                        <span>Time Zone Offset</span>
-                      </div>
-                      <select
-                        value={timezone}
-                        onChange={(e) => setTimezone(e.target.value)}
-                        className="bg-white border border-slate-200 text-xs text-slate-700 rounded-lg p-2 w-full outline-none focus:ring-1 focus:ring-[#006bff]"
-                      >
-                        {timezones.map((tz) => (
-                          <option key={tz} value={tz}>{tz}</option>
-                        ))}
-                      </select>
-                    </div>
+                {/* Calendar Date Picker */}
+                <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+                  {/* Month/Year Navigation */}
+                  <div className="flex items-center justify-between mb-4">
+                    <button
+                      type="button"
+                      onClick={goToPrevMonth}
+                      disabled={!canGoPrevMonth}
+                      className={`p-1.5 rounded-lg transition-all ${
+                        canGoPrevMonth 
+                          ? 'hover:bg-slate-100 text-slate-600 cursor-pointer' 
+                          : 'text-slate-300 cursor-not-allowed'
+                      }`}
+                    >
+                      <ChevronLeft className="w-4 h-4" />
+                    </button>
+                    <span className="text-sm font-bold text-slate-800 tracking-wide">
+                      {MONTH_NAMES[calendarMonth]} {calendarYear}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={goToNextMonth}
+                      className="p-1.5 rounded-lg hover:bg-slate-100 text-slate-600 cursor-pointer transition-all"
+                    >
+                      <ChevronRight className="w-4 h-4" />
+                    </button>
                   </div>
 
-                  {/* Right part of step 1: Time Slots Column (only shows if date is picked) */}
-                  {selectedDate && (
-                    <div className="sm:col-span-5 space-y-3 animate-slideLeft">
-                      <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">
-                        {selectedDateObj ? `${selectedDateObj.dayLongName}, ${selectedDateObj.monthName} ${selectedDateObj.dayNum}` : 'Selected Date'}
+                  {/* Day-of-week headers */}
+                  <div className="grid grid-cols-7 gap-1 mb-1">
+                    {DAY_NAMES.map((day) => (
+                      <div key={day} className="text-center text-[10px] font-bold text-slate-400 uppercase tracking-wider py-1">
+                        {day}
                       </div>
-                      
-                      <div className="space-y-2 overflow-y-auto max-h-[220px] pr-1">
-                        {timeSlots.map((time) => {
-                          const isSelected = selectedTime === time;
-                          return (
-                            <div key={time} className="flex gap-2">
-                              <button
-                                type="button"
-                                onClick={() => handleTimeClick(time)}
-                                className={`flex-1 py-3 text-xs font-bold rounded-lg border transition-all duration-150 ${
-                                  isSelected 
-                                    ? 'bg-[#006bff]/10 border-[#006bff] text-[#006bff] text-center' 
-                                    : 'bg-white border-[#006bff]/40 text-[#006bff] text-center hover:border-2 hover:border-[#006bff]'
-                                }`}
-                              >
-                                {time}
-                              </button>
-                              
-                              {isSelected && (
-                                <button
-                                  type="button"
-                                  onClick={handleConfirmTime}
-                                  className="bg-[#006bff] hover:bg-blue-600 text-white font-bold px-4 rounded-lg text-xs tracking-wider transition-all animate-fadeIn"
-                                >
-                                  Next
-                                </button>
-                              )}
-                            </div>
-                          );
-                        })}
+                    ))}
+                  </div>
+
+                  {/* Calendar Grid */}
+                  <div className="grid grid-cols-7 gap-1">
+                    {calendarDays.map((day, idx) => {
+                      const isDisabled = day.isPast || day.isSunday;
+                      const isSelected = selectedDate === day.isoString;
+                      const isCurrentMonth = day.isCurrentMonth;
+
+                      return (
+                        <button
+                          key={idx}
+                          type="button"
+                          disabled={isDisabled}
+                          onClick={() => {
+                            if (!isDisabled) {
+                              setSelectedDate(day.isoString);
+                              setSelectedTime('');
+                              setIsTimeConfirmed(false);
+                            }
+                          }}
+                          className={`
+                            relative aspect-square flex items-center justify-center rounded-lg text-xs font-semibold transition-all duration-150
+                            ${isDisabled 
+                              ? 'text-slate-300 cursor-not-allowed' 
+                              : isSelected
+                                ? 'bg-[#006bff] text-white shadow-md shadow-blue-500/20 scale-105'
+                                : isCurrentMonth 
+                                  ? 'text-slate-700 hover:bg-[#006bff]/10 hover:text-[#006bff] cursor-pointer'
+                                  : 'text-slate-300 hover:bg-slate-50 cursor-pointer'
+                            }
+                            ${day.isToday && !isSelected ? 'ring-1 ring-[#006bff]/40 font-extrabold text-[#006bff]' : ''}
+                          `}
+                        >
+                          {day.dayNum}
+                          {day.isToday && (
+                            <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#006bff]" />
+                          )}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Time Slots (shown below calendar when date is selected) */}
+                {selectedDate && (
+                  <div className="space-y-3 animate-fadeIn">
+                    <div className="flex items-center justify-between">
+                      <div className="text-xs font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
+                        <Clock className="w-3.5 h-3.5 text-slate-400" />
+                        <span>Select Time — {selectedDateObj ? `${selectedDateObj.dayLongName}, ${selectedDateObj.monthName} ${selectedDateObj.dayNum}` : ''}</span>
                       </div>
                     </div>
-                  )}
+                    
+                    <div className="max-h-[180px] overflow-y-auto pr-1">
+                    <div className="grid grid-cols-4 gap-2">
+                      {timeSlots.map((time) => {
+                        const isSelected = selectedTime === time;
+                        return (
+                          <button
+                            key={time}
+                            type="button"
+                            onClick={() => handleTimeClick(time)}
+                            className={`py-2.5 text-xs font-bold rounded-lg border transition-all duration-150 ${
+                              isSelected 
+                                ? 'bg-[#006bff]/10 border-[#006bff] text-[#006bff] shadow-sm' 
+                                : 'bg-white border-slate-200 text-slate-700 hover:border-[#006bff] hover:text-[#006bff]'
+                            }`}
+                          >
+                            {time}
+                          </button>
+                        );
+                      })}
+                    </div>
+                    </div>
+
+                    {/* Confirm button when time is selected */}
+                    {selectedTime && (
+                      <button
+                        type="button"
+                        onClick={handleConfirmTime}
+                        className="w-full bg-[#006bff] hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg text-xs tracking-wider transition-all uppercase flex items-center justify-center gap-2 cursor-pointer shadow-sm active:translate-y-[1px] animate-fadeIn"
+                      >
+                        <span>Confirm — {selectedTime}</span>
+                        <ChevronRight className="w-4 h-4" />
+                      </button>
+                    )}
+                  </div>
+                )}
+
+                {/* Time zone widget */}
+                <div className="space-y-2 pt-1">
+                  <div className="flex items-center gap-1.5 text-xs font-bold text-slate-500 uppercase tracking-wider">
+                    <Globe className="w-3.5 h-3.5 text-slate-400" />
+                    <span>Time Zone Offset</span>
+                  </div>
+                  <select
+                    value={timezone}
+                    onChange={(e) => setTimezone(e.target.value)}
+                    className="bg-white border border-slate-200 text-xs text-slate-700 rounded-lg p-2 w-full outline-none focus:ring-1 focus:ring-[#006bff]"
+                  >
+                    {timezones.map((tz) => (
+                      <option key={tz} value={tz}>{tz}</option>
+                    ))}
+                  </select>
                 </div>
               </div>
             )}
@@ -375,11 +514,10 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
                       />
                     </div>
                     <div className="space-y-1">
-                      <label htmlFor="modal-phone" className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Phone Number *</label>
+                      <label htmlFor="modal-phone" className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Phone Number</label>
                       <input
                         id="modal-phone"
                         type="tel"
-                        required
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
@@ -390,7 +528,7 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
                   </div>
 
                   <div className="space-y-1">
-                    <label htmlFor="modal-requirements" className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Briefly state your requirements / bottlenecks *</label>
+                    <label htmlFor="modal-requirements" className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Briefly state your requirements *</label>
                     <textarea
                       id="modal-requirements"
                       rows={3}
@@ -413,7 +551,7 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
                       <span>Scheduling Call...</span>
                     ) : (
                       <>
-                        <span>Schedule Event</span>
+                        <span>Schedule Meeting</span>
                         <ChevronRight className="w-4 h-4" />
                       </>
                     )}
