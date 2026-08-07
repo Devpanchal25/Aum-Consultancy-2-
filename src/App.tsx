@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import { Page } from './types';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -133,6 +134,9 @@ export default function App() {
         isOpen={isNewsletterOpen}
         onClose={closeNewsletter}
       />
+
+      {/* Vercel Web Analytics */}
+      <Analytics />
     </div>
   );
 }
