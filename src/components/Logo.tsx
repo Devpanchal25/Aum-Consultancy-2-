@@ -75,14 +75,14 @@ export default function Logo({
       {/* Corporate Typography branding */}
       <div className="flex flex-col select-none">
         <div className="flex items-baseline leading-none">
-          <span className={`font-sans font-extrabold text-sm sm:text-lg tracking-wide uppercase transition-colors duration-300 ${displayTextColor}`}>
+          <span className={`font-sans font-extrabold text-base sm:text-lg tracking-wide uppercase transition-colors duration-300 ${displayTextColor}`}>
             AUM
           </span>
-          <span className={`font-sans font-light text-[11px] sm:text-sm tracking-[0.12em] sm:tracking-[0.18em] ml-1 sm:ml-1.5 uppercase ${brandTextColor}`}>
+          <span className={`font-sans font-light text-xs sm:text-sm tracking-[0.14em] sm:tracking-[0.18em] ml-1.5 uppercase ${brandTextColor}`}>
             Consultancy
           </span>
         </div>
-        <span className={`text-[7.5px] sm:text-[9px] font-mono tracking-[0.1em] sm:tracking-[0.25em] mt-0.5 uppercase ${subtextColor}`}>
+        <span className={`hidden sm:block text-[8px] sm:text-[9px] font-mono tracking-[0.2em] sm:tracking-[0.25em] mt-0.5 uppercase ${subtextColor}`}>
           Your Strategic Offshore Partner
         </span>
       </div>
