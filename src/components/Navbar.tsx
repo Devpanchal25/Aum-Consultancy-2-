@@ -203,21 +203,21 @@ export default function Navbar({
     <header className="fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300">
       
       {/* Upper Info Top Bar with Phone, Email & LinkedIn */}
-      <div className="bg-slate-50 border-b border-slate-200 text-slate-600 py-2 text-xs font-medium">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-center sm:justify-end">
-          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 sm:gap-5 text-[11px] sm:text-xs">
-            <a href="tel:+919879161400" className="flex items-center gap-1.5 hover:text-[#007cff] transition-colors font-bold text-navy-900">
+      <div className="bg-slate-50 border-b border-slate-200 text-slate-600 py-1.5 text-[11px] sm:text-xs font-medium">
+        <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-10 flex items-center justify-between sm:justify-end gap-2">
+          <div className="flex items-center gap-3 sm:gap-5 min-w-0 overflow-hidden">
+            <a href="tel:+919879161400" className="flex items-center gap-1 hover:text-[#007cff] transition-colors font-bold text-navy-900 shrink-0">
               <Phone className="w-3.5 h-3.5 text-[#007cff]" />
               <span>+91 9879161400</span>
             </a>
-            <a href="mailto:aumconsulting.india@gmail.com" className="flex items-center gap-1.5 hover:text-[#007cff] transition-colors text-slate-700">
-              <Mail className="w-3.5 h-3.5 text-[#007cff]" />
-              <span>aumconsulting.india@gmail.com</span>
-            </a>
-            <a href="https://www.linkedin.com/company/aum-consultancy-india/" target="_blank" rel="noreferrer" className="flex items-center gap-1 pl-2 border-l border-slate-300 text-slate-500 hover:text-[#007cff] transition-colors" title="LinkedIn">
-              <Linkedin className="w-3.5 h-3.5 text-[#007cff]" />
+            <a href="mailto:aumconsulting.india@gmail.com" className="hidden sm:flex items-center gap-1.5 hover:text-[#007cff] transition-colors text-slate-700 truncate">
+              <Mail className="w-3.5 h-3.5 text-[#007cff] shrink-0" />
+              <span className="truncate">aumconsulting.india@gmail.com</span>
             </a>
           </div>
+          <a href="https://www.linkedin.com/company/aum-consultancy-india/" target="_blank" rel="noreferrer" className="flex items-center gap-1 pl-2 border-l border-slate-300 text-slate-500 hover:text-[#007cff] transition-colors shrink-0" title="LinkedIn">
+            <Linkedin className="w-3.5 h-3.5 text-[#007cff]" />
+          </a>
         </div>
       </div>
 
@@ -227,11 +227,11 @@ export default function Navbar({
           ? 'bg-white/95 backdrop-blur-md shadow-md border-slate-200/80 py-3' 
           : 'bg-white/90 backdrop-blur-sm border-slate-100 py-4'
       }`}>
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-10">
           <div className="flex justify-between items-center h-14">
             
             {/* Logo with explicit left alignment and spacing */}
-            <div className="shrink-0 mr-2 sm:mr-4 lg:mr-10 xl:mr-14 flex items-center">
+            <div className="shrink-0 mr-2 sm:mr-3 xl:mr-8 flex items-center">
               <Logo 
                 onClick={() => handleNavClick('home')} 
                 id="navbar-logo"
@@ -240,10 +240,10 @@ export default function Navbar({
             </div>
 
             {/* Desktop Navigation Links */}
-            <div className="hidden lg:flex items-center gap-5 xl:gap-8 shrink-0 whitespace-nowrap">
+            <div className="hidden xl:flex items-center gap-3 xl:gap-6 shrink-0 whitespace-nowrap">
               <button 
                 onClick={() => handleNavClick('home')}
-                className={`text-[17px] font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'home' ? 'text-[#007cff]' : 'text-slate-600'}`}
+                className={`text-[15px] xl:text-[16px] font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'home' ? 'text-[#007cff]' : 'text-slate-600'}`}
               >
                 Home
               </button>
@@ -256,7 +256,7 @@ export default function Navbar({
               >
                 <button 
                   onClick={() => handleNavClick('about')}
-                  className={`flex items-center gap-1 text-[17px] font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'about' ? 'text-[#007cff]' : 'text-slate-600'}`}
+                  className={`flex items-center gap-1 text-[15px] xl:text-[16px] font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'about' ? 'text-[#007cff]' : 'text-slate-600'}`}
                 >
                   About Us
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeMega === 'about' ? 'rotate-180' : ''}`} />
@@ -303,7 +303,7 @@ export default function Navbar({
               >
                 <button 
                   onClick={() => handleNavClick('services')}
-                  className={`flex items-center gap-1 text-[17px] font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'services' ? 'text-[#007cff]' : 'text-slate-600'}`}
+                  className={`flex items-center gap-1 text-[15px] xl:text-[16px] font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'services' ? 'text-[#007cff]' : 'text-slate-600'}`}
                 >
                   Services
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeMega === 'services' ? 'rotate-180' : ''}`} />
@@ -311,7 +311,7 @@ export default function Navbar({
 
                 {/* Services Mega Menu Panel */}
                 {activeMega === 'services' && (
-                  <div className="absolute top-full -left-64 w-[920px] max-w-[95vw] pt-2 z-50 animate-fadeIn">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 w-[920px] max-w-[92vw] pt-2 z-50 animate-fadeIn">
                     <div className="bg-white border border-slate-200/80 shadow-2xl rounded-2xl grid grid-cols-12 overflow-hidden">
                       
                       {/* Left Sidebar: Division Tabs */}
@@ -417,7 +417,7 @@ export default function Navbar({
                     setActiveMega(null);
                     navigate('/build-your-team');
                   }}
-                  className={`flex items-center gap-1 text-[17px] font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'services' ? 'text-[#007cff]' : 'text-slate-600'}`}
+                  className={`flex items-center gap-1 text-[15px] xl:text-[16px] font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'services' ? 'text-[#007cff]' : 'text-slate-600'}`}
                 >
                   Build your team
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeMega === 'hire' ? 'rotate-180' : ''}`} />
@@ -425,7 +425,7 @@ export default function Navbar({
 
                 {/* Build your team Mega Menu Panel */}
                 {activeMega === 'hire' && (
-                  <div className="absolute top-full -left-28 w-[720px] max-w-[95vw] pt-2 z-50 animate-fadeIn">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 w-[720px] max-w-[92vw] pt-2 z-50 animate-fadeIn">
                     <div className="bg-white border border-slate-200/80 shadow-2xl rounded-xl p-5">
                       <div className="border-b border-slate-100 pb-3 mb-3 flex justify-between items-center">
                         <span className="text-xs font-bold text-navy-900 uppercase tracking-widest font-mono">Build Your Team</span>
@@ -499,7 +499,7 @@ export default function Navbar({
 
                 {/* Industries Mega Menu Panel */}
                 {activeMega === 'industries' && (
-                  <div className="absolute top-full -left-[280px] w-[840px] max-w-[95vw] pt-2 z-50 animate-fadeIn">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 w-[840px] max-w-[92vw] pt-2 z-50 animate-fadeIn">
                     <div className="bg-white border border-slate-200/80 shadow-2xl rounded-xl p-6">
                       <div className="border-b border-slate-100 pb-3 mb-3 flex justify-between items-center">
                         <span className="text-xs font-bold text-navy-900 uppercase tracking-widest font-mono">Industries</span>
@@ -563,7 +563,7 @@ export default function Navbar({
                     setActiveMega(null);
                     navigate('/resources');
                   }}
-                  className={`flex items-center gap-1 text-[17px] font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'blog' ? 'text-[#007cff]' : 'text-slate-600'}`}
+                  className={`flex items-center gap-1 text-[15px] xl:text-[16px] font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'blog' ? 'text-[#007cff]' : 'text-slate-600'}`}
                 >
                   Resources
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeMega === 'resources' ? 'rotate-180' : ''}`} />
@@ -620,17 +620,17 @@ export default function Navbar({
 
               <button 
                 onClick={() => handleNavClick('contact')}
-                className={`text-[17px] font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'contact' ? 'text-[#007cff]' : 'text-slate-600'}`}
+                className={`text-[15px] xl:text-[16px] font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'contact' ? 'text-[#007cff]' : 'text-slate-600'}`}
               >
                 Contact Us
               </button>
             </div>
 
             {/* Action CTAs - Solid Warm Golden Amber Button */}
-            <div className="hidden lg:flex items-center gap-2 shrink-0">
+            <div className="hidden xl:flex items-center gap-2 shrink-0">
               <button 
                 onClick={openConsultation}
-                className="bg-[#007cff] hover:bg-blue-600 text-white text-sm px-5 py-3 rounded-lg font-bold tracking-wide shadow-md shadow-blue-500/10 hover:scale-[1.02] transition-all uppercase whitespace-nowrap cursor-pointer ml-8"
+                className="bg-[#007cff] hover:bg-blue-600 text-white text-xs xl:text-sm px-4 xl:px-5 py-2.5 xl:py-3 rounded-lg font-bold tracking-wide shadow-md shadow-blue-500/10 hover:scale-[1.02] transition-all uppercase whitespace-nowrap cursor-pointer ml-3 xl:ml-6"
                 id="nav-consultation-btn"
               >
                 Book Consultation
@@ -638,16 +638,16 @@ export default function Navbar({
             </div>
 
             {/* Mobile Hamburger Menu Toggle */}
-            <div className="lg:hidden flex items-center gap-3">
+            <div className="xl:hidden flex items-center gap-1.5 sm:gap-3 shrink-0">
               <button 
                 onClick={openConsultation}
-                className="bg-[#007cff] hover:bg-blue-600 text-white text-sm px-4 py-2 rounded-md font-bold transition-all"
+                className="bg-[#007cff] hover:bg-blue-600 text-white text-[11px] sm:text-sm px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-md font-bold transition-all uppercase whitespace-nowrap"
               >
                 Consult Free
               </button>
               <button 
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-slate-750 p-2 focus:outline-none bg-slate-100 rounded-md border border-slate-200 cursor-pointer"
+                className="text-slate-750 p-1.5 sm:p-2 focus:outline-none bg-slate-100 rounded-md border border-slate-200 cursor-pointer shrink-0"
                 id="mobile-menu-toggle"
               >
                 {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -659,7 +659,7 @@ export default function Navbar({
 
         {/* Mobile Navigation Drawer */}
         {isOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-slate-200 shadow-2xl p-6 flex flex-col gap-4 animate-slideDown max-h-[85vh] overflow-y-auto">
+          <div className="xl:hidden absolute top-full left-0 right-0 bg-white border-t border-slate-200 shadow-2xl p-6 flex flex-col gap-4 animate-slideDown max-h-[85vh] overflow-y-auto">
             <button 
               onClick={() => handleNavClick('home')}
               className={`text-left text-base font-semibold pb-2 border-b border-slate-100 ${currentPage === 'home' ? 'text-[#007cff]' : 'text-slate-700'}`}

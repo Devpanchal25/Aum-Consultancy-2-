@@ -189,17 +189,17 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {/* Item 1 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm relative overflow-hidden flex flex-col h-full">
-              <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
-                <div className="flex items-start pl-2 min-h-[52px] sm:min-h-[60px] md:min-h-[64px] lg:min-h-[104px] xl:min-h-[88px] 2xl:min-h-[64px]">
+              <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-4">
+                <div className="flex items-start pl-2">
                   <h3 className="font-serif text-base sm:text-lg font-bold text-black leading-tight pt-1">Capacity Bottlenecks & High Cost of Local Hiring</h3>
                 </div>
                 
-                <div className="space-y-4 pl-2 mt-2">
+                <div className="space-y-4 pl-2">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-wider">
                       <span>The Challenge:</span>
                     </div>
-                    <p className="text-xs text-slate-600 leading-relaxed font-light min-h-[112px] md:min-h-[96px] lg:min-h-[176px] xl:min-h-[144px] 2xl:min-h-[112px]">
+                    <p className="text-xs text-slate-600 leading-relaxed font-light">
                       Finding qualified local accountants in the US, UK, Canada, or Australia is slow, hyper-competitive, and incredibly expensive.
                     </p>
                   </div>
@@ -207,7 +207,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                     <div className="flex items-center gap-2 text-xs font-bold text-indigo-600 uppercase tracking-wider">
                       <span>Our Approach:</span>
                     </div>
-                    <p className="text-xs text-slate-700 leading-relaxed font-light min-h-[128px] md:min-h-[112px] lg:min-h-[192px] xl:min-h-[160px] 2xl:min-h-[128px]">
+                    <p className="text-xs text-slate-700 leading-relaxed font-light">
                       We provide instant access to qualified, remote CA/CPA-led teams to scale your accounting capacity on demand, cutting your operational overhead.
                     </p>
                   </div>
@@ -217,17 +217,17 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
 
             {/* Item 2 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm relative overflow-hidden flex flex-col h-full">
-              <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
-                <div className="flex items-start pl-2 min-h-[52px] sm:min-h-[60px] md:min-h-[64px] lg:min-h-[104px] xl:min-h-[88px] 2xl:min-h-[64px]">
+              <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-4">
+                <div className="flex items-start pl-2">
                   <h3 className="font-serif text-base sm:text-lg font-bold text-black leading-tight pt-1">Bookkeeping Backlogs</h3>
                 </div>
                 
-                <div className="space-y-4 pl-2 mt-2">
+                <div className="space-y-4 pl-2">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-wider">
                       <span>The Challenge:</span>
                     </div>
-                    <p className="text-xs text-slate-600 leading-relaxed font-light min-h-[112px] md:min-h-[96px] lg:min-h-[176px] xl:min-h-[144px] 2xl:min-h-[112px]">
+                    <p className="text-xs text-slate-600 leading-relaxed font-light">
                       Falling behind on daily data entry, ledger maintenance, and bank reconciliations stalls your operational speed and destroys client trust.
                     </p>
                   </div>
@@ -235,7 +235,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                     <div className="flex items-center gap-2 text-xs font-bold text-indigo-600 uppercase tracking-wider">
                       <span>Our Approach:</span>
                     </div>
-                    <p className="text-xs text-slate-700 leading-relaxed font-light min-h-[128px] md:min-h-[112px] lg:min-h-[192px] xl:min-h-[160px] 2xl:min-h-[128px]">
+                    <p className="text-xs text-slate-700 leading-relaxed font-light">
                       Our team takes over real-time bookkeeping, ledger clean-ups, and daily accounting maintenance, keeping your financial records pristine.
                     </p>
                   </div>
@@ -245,17 +245,17 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
 
             {/* Item 3 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm relative overflow-hidden flex flex-col h-full">
-              <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
-                <div className="flex items-start pl-2 min-h-[52px] sm:min-h-[60px] md:min-h-[64px] lg:min-h-[104px] xl:min-h-[88px] 2xl:min-h-[64px]">
+              <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-4">
+                <div className="flex items-start pl-2">
                   <h3 className="font-serif text-base sm:text-lg font-bold text-black leading-tight pt-1">Tax Compliance Stress</h3>
                 </div>
                 
-                <div className="space-y-4 pl-2 mt-2">
+                <div className="space-y-4 pl-2">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-wider">
                       <span>The Challenge:</span>
                     </div>
-                    <p className="text-xs text-slate-600 leading-relaxed font-light min-h-[112px] md:min-h-[96px] lg:min-h-[176px] xl:min-h-[144px] 2xl:min-h-[112px]">
+                    <p className="text-xs text-slate-600 leading-relaxed font-light">
                       Navigating evolving international tax deadlines or miscalculating corporate filings leads to brutal compliance penalties.
                     </p>
                   </div>
@@ -263,7 +263,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                     <div className="flex items-center gap-2 text-xs font-bold text-indigo-600 uppercase tracking-wider">
                       <span>Our Approach:</span>
                     </div>
-                    <p className="text-xs text-slate-700 leading-relaxed font-light min-h-[128px] md:min-h-[112px] lg:min-h-[192px] xl:min-h-[160px] 2xl:min-h-[128px]">
+                    <p className="text-xs text-slate-700 leading-relaxed font-light">
                       Get precise, region-specific taxation preparation and filing support tailored directly to IRS, HMRC, CRA, and ATO regulations.
                     </p>
                   </div>
@@ -273,17 +273,17 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
 
             {/* Item 4 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm relative overflow-hidden flex flex-col h-full">
-              <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
-                <div className="flex items-start pl-2 min-h-[52px] sm:min-h-[60px] md:min-h-[64px] lg:min-h-[104px] xl:min-h-[88px] 2xl:min-h-[64px]">
+              <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-4">
+                <div className="flex items-start pl-2">
                   <h3 className="font-serif text-base sm:text-lg font-bold text-black leading-tight pt-1">Complex Auditing Support & Financial Reporting</h3>
                 </div>
                 
-                <div className="space-y-4 pl-2 mt-2">
+                <div className="space-y-4 pl-2">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-wider">
                       <span>The Challenge:</span>
                     </div>
-                    <p className="text-xs text-slate-600 leading-relaxed font-light min-h-[112px] md:min-h-[96px] lg:min-h-[176px] xl:min-h-[144px] 2xl:min-h-[112px]">
+                    <p className="text-xs text-slate-600 leading-relaxed font-light">
                       When peak audit season hits, firm partners get dragged into tedious sheet verification and drafting reports instead of focusing on high-level strategy and client growth.
                     </p>
                   </div>
@@ -291,7 +291,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                     <div className="flex items-center gap-2 text-xs font-bold text-indigo-600 uppercase tracking-wider">
                       <span>Our Approach:</span>
                     </div>
-                    <p className="text-xs text-slate-700 leading-relaxed font-light min-h-[128px] md:min-h-[112px] lg:min-h-[192px] xl:min-h-[160px] 2xl:min-h-[128px]">
+                    <p className="text-xs text-slate-700 leading-relaxed font-light">
                       Our experienced teams handle the heavy lifting of audit preparation, working paper verification, and financial reporting compliance, acting as reliable delivery assistants to your leadership.
                     </p>
                   </div>
