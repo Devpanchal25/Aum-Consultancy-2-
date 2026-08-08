@@ -68,7 +68,11 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
     if (anchorId) {
       setTimeout(() => {
         const el = document.getElementById(anchorId);
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (el) {
+          const yOffset = -110;
+          const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+        }
       }, 150);
     }
   };

@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { Page } from './types';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -23,6 +23,18 @@ import NewslettersView from './views/NewslettersView';
 import PrivacyPolicyView from './views/PrivacyPolicyView';
 import TermsConditionsView from './views/TermsConditionsView';
 import NotFoundView from './views/NotFoundView';
+
+function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }
+  }, [pathname, hash]);
+
+  return null;
+}
 
 export default function App() {
   const navigate = useNavigate();
@@ -63,6 +75,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 relative selection:bg-gold-500/30 selection:text-navy-900" id="main-application-container">
+      <ScrollToTop />
       {/* Dynamic Header */}
       <Navbar 
         openConsultation={openConsultation}

@@ -205,24 +205,29 @@ export default function ServicesView({
       setIsClosedByUser(false);
 
       // Auto scroll to the expanded sub service on load/change starting cleanly from its top title
-      const scrollKey = `${location.pathname}-${activeSubServiceId}`;
-      if (hasScrolledRef.current !== scrollKey) {
-        hasScrolledRef.current = scrollKey;
-        setTimeout(() => {
-          const el = document.getElementById(activeSubServiceId);
-          if (el) {
-            const yOffset = -120; // Clear fixed navbar and upper contact bar
-            const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-            window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
-          }
-        }, 300);
-      }
+      const timer = setTimeout(() => {
+        const el = document.getElementById(activeSubServiceId);
+        if (el) {
+          const yOffset = -110; // Clear fixed navbar and upper contact bar
+          const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }, 150);
+
+      return () => clearTimeout(timer);
     } else {
       if (isClosedByUser || isClosedRouteState) {
         setExpandedSubServiceId('');
       } else if (activeSubServices.length > 0) {
         setExpandedSubServiceId(activeSubServices[0].id);
       }
+      const timer = setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
+
+      return () => clearTimeout(timer);
     }
   }, [activeCategoryId, activeSubServiceId, location.pathname, location.state, isClosedByUser]);
 

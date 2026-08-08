@@ -521,8 +521,14 @@ export default function Navbar({
                               navigate('/industries');
                               setTimeout(() => {
                                 const el = document.getElementById(`industry-card-${industry.id}`);
-                                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                              }, 250);
+                                if (el) {
+                                  const yOffset = -110;
+                                  const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                                  window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+                                } else {
+                                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                                }
+                              }, 200);
                             }}
                             className="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 cursor-pointer transition-all group overflow-hidden"
                           >
@@ -727,9 +733,8 @@ export default function Navbar({
                         else if (s.id === 'other') navigate('/services/cfo-advisory');
                         else navigate('/services');
                         setTimeout(() => {
-                          const el = document.getElementById('services-explorer-section');
-                          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        }, 200);
+                          window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }, 100);
                       }}
                       className="text-left text-xs text-slate-500 hover:text-[#007cff] py-1 transition-colors"
                     >
@@ -758,16 +763,15 @@ export default function Navbar({
                         setSelectedServiceId('offshore-team');
                         const subId = mapTitleToSubServiceId(item.title);
                         setSelectedSubServiceId?.(subId);
-                        handleNavClick('services');
-                        setTimeout(() => {
-                          const el = document.getElementById(subId);
-                          if (el) {
-                            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                          } else {
-                            const sec = document.getElementById('service-detail-card');
-                            if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                          }
-                        }, 200);
+                        setIsOpen(false);
+                        setActiveMega(null);
+                        if (subId === 'hire-audit-support') {
+                          navigate('/build-your-team/hire-audit-support-staff');
+                        } else if (subId === 'hire-ar-specialist') {
+                          navigate('/build-your-team/hire-accounts-receivable-specialist');
+                        } else {
+                          navigate(`/build-your-team/${subId}`);
+                        }
                       }}
                       className="text-left text-sm sm:text-base font-semibold text-slate-700 hover:text-[#007cff] py-1 transition-colors break-words w-full"
                       title={item.title}
@@ -795,11 +799,19 @@ export default function Navbar({
                       key={ind.id}
                       onClick={() => {
                         setSelectedIndustryId(ind.id);
-                        handleNavClick('industries');
+                        setIsOpen(false);
+                        setActiveMega(null);
+                        navigate('/industries');
                         setTimeout(() => {
                           const el = document.getElementById(`industry-card-${ind.id}`);
-                          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        }, 150);
+                          if (el) {
+                            const yOffset = -110;
+                            const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                            window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+                          } else {
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                          }
+                        }, 200);
                       }}
                       className="text-left text-base text-slate-700 hover:text-[#007cff] py-1 transition-colors"
                     >
