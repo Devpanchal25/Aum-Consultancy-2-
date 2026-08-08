@@ -203,20 +203,20 @@ export default function Navbar({
     <header className="fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300">
 
       {/* Upper Info Top Bar with Phone, Email & LinkedIn */}
-      <div className="bg-slate-50 border-b border-slate-200 text-slate-600 py-1.5 text-[11px] sm:text-xs font-medium">
-        <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-10 flex items-center justify-between sm:justify-end gap-2">
+      <div className="bg-slate-50 border-b border-slate-200 text-slate-600 py-1 sm:py-1.5 text-[10px] min-[380px]:text-[11px] sm:text-xs font-medium">
+        <div className="max-w-[1440px] mx-auto px-2.5 sm:px-6 lg:px-10 flex items-center justify-between sm:justify-end gap-1.5 sm:gap-2">
           <div className="flex items-center gap-2 sm:gap-5 min-w-0 overflow-hidden">
             <a href="tel:+919879161400" className="flex items-center gap-1 hover:text-[#007cff] transition-colors font-bold text-navy-900 shrink-0">
-              <Phone className="w-3.5 h-3.5 text-[#007cff]" />
+              <Phone className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#007cff]" />
               <span>+91 9879161400</span>
             </a>
-            <a href="mailto:aumconsulting.india@gmail.com" className="hidden min-[480px]:flex items-center gap-1.5 hover:text-[#007cff] transition-colors text-slate-700 truncate">
-              <Mail className="w-3.5 h-3.5 text-[#007cff] shrink-0" />
+            <a href="mailto:aumconsulting.india@gmail.com" className="flex items-center gap-1 hover:text-[#007cff] transition-colors text-slate-700 min-w-0 truncate">
+              <Mail className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#007cff] shrink-0" />
               <span className="truncate">aumconsulting.india@gmail.com</span>
             </a>
           </div>
-          <a href="https://www.linkedin.com/company/aum-consultancy-india/" target="_blank" rel="noreferrer" className="flex items-center gap-1 pl-2 border-l border-slate-300 text-slate-500 hover:text-[#007cff] transition-colors shrink-0" title="LinkedIn">
-            <Linkedin className="w-3.5 h-3.5 text-[#007cff]" />
+          <a href="https://www.linkedin.com/company/aum-consultancy-india/" target="_blank" rel="noreferrer" className="flex items-center gap-1 pl-1.5 sm:pl-2 border-l border-slate-300 text-slate-500 hover:text-[#007cff] transition-colors shrink-0" title="LinkedIn">
+            <Linkedin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#007cff]" />
           </a>
         </div>
       </div>
@@ -635,9 +635,9 @@ export default function Navbar({
             <div className="xl:hidden flex items-center gap-1.5 sm:gap-3 shrink-0 ml-auto">
               <button
                 onClick={openConsultation}
-                className="bg-[#007cff] hover:bg-blue-600 !text-white text-[11px] sm:text-sm px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-lg font-bold transition-all uppercase whitespace-nowrap cursor-pointer shadow-sm"
+                className="bg-[#007cff] hover:bg-blue-600 !text-white text-[10px] min-[380px]:text-[11px] sm:text-xs px-2.5 sm:px-3.5 py-1.5 rounded-lg font-bold transition-all uppercase whitespace-nowrap cursor-pointer shadow-sm"
               >
-                Consult Free
+                Consult Now
               </button>
               <button
                 onClick={() => setIsOpen(!isOpen)}

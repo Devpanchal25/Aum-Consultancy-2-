@@ -287,9 +287,7 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
                 <p>
                   Welcome! Start booking meetings with Aum Consultancy.
                 </p>
-                <p>
-                  Our senior advisory desk oversees double-signoff structures to secure up to 50% operational cost savings for global firms.
-                </p>
+                
               </div>
             </div>
 

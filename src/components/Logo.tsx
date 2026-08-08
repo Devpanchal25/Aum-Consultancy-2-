@@ -78,11 +78,11 @@ export default function Logo({
           <span className={`font-sans font-extrabold text-sm sm:text-lg tracking-wide uppercase transition-colors duration-300 ${displayTextColor} shrink-0`}>
             AUM
           </span>
-          <span className={`font-sans font-light text-xs sm:text-sm tracking-[0.1em] sm:tracking-[0.18em] ml-1 sm:ml-1.5 uppercase ${brandTextColor} truncate`}>
+          <span className={`font-sans font-light text-[11px] sm:text-sm tracking-[0.08em] sm:tracking-[0.18em] ml-1 sm:ml-1.5 uppercase ${brandTextColor} truncate`}>
             Consultancy
           </span>
         </div>
-        <span className={`hidden min-[420px]:block text-[8px] sm:text-[9px] font-mono tracking-[0.15em] sm:tracking-[0.25em] mt-0.5 uppercase truncate ${subtextColor}`}>
+        <span className={`text-[7.5px] min-[360px]:text-[8px] sm:text-[9px] font-mono tracking-[0.12em] sm:tracking-[0.25em] mt-0.5 uppercase block truncate ${subtextColor}`}>
           Your Strategic Offshore Partner
         </span>
       </div>
