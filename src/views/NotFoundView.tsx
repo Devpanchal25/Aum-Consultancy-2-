@@ -10,7 +10,7 @@ export default function NotFoundView() {
         <div className="p-4 bg-red-50 border border-red-100 rounded-2xl w-fit mx-auto">
           <AlertCircle className="w-10 h-10 text-red-500 animate-pulse" />
         </div>
-        
+
         <div className="space-y-2">
           <span className="text-[10px] font-mono font-bold text-red-500 uppercase tracking-widest block">Error 404</span>
           <h1 className="font-serif text-2xl font-extrabold text-navy-900">Page Not Found</h1>

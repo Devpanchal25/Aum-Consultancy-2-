@@ -4,12 +4,12 @@ import { Page, ServiceItem, IndustryItem } from '../types';
 import { SERVICES, INDUSTRIES, SOFTWARE_EXPERTISE, TESTIMONIALS, FAQS, BLOGS } from '../data';
 import SoftwareRibbon from '../components/SoftwareRibbon';
 import SafeImage from '../components/SafeImage';
-import { 
-  ArrowRight, ShieldCheck, CheckCircle, Laptop, Calendar, Users, 
+import {
+  ArrowRight, ShieldCheck, CheckCircle, Laptop, Calendar, Users,
   ChevronDown, ChevronRight, Lock, EyeOff, Award, ArrowUpRight, Check,
   Target, Globe, Sparkles, Database, FileCheck, DollarSign,
-  HeartPulse, Building, Factory, HardHat, Store, ShoppingBag, 
-  Calculator, FileText, Percent, ShieldAlert, Briefcase, Layers, 
+  HeartPulse, Building, Factory, HardHat, Store, ShoppingBag,
+  Calculator, FileText, Percent, ShieldAlert, Briefcase, Layers,
   UserCheck, Coins, Rocket, Landmark, Receipt, ReceiptText
 } from 'lucide-react';
 
@@ -99,14 +99,14 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
 
   return (
     <div className="pt-20">
-      
+
       {/* 1. HERO SECTION */}
       <section className="relative text-navy-950 overflow-hidden py-16 sm:py-24 lg:py-28 bg-white border-b border-slate-100" id="hero-section">
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8">
-            
-            <motion.h1 
+
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut", delay: 0.25 }}
@@ -117,8 +117,8 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                 We’ll Handle the Numbers.
               </span>
             </motion.h1>
-            
-            <motion.p 
+
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
@@ -128,13 +128,13 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
             </motion.p>
 
             {/* Action Buttons */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut", delay: 0.55 }}
               className="flex flex-col sm:flex-row gap-4 justify-center pt-2"
             >
-              <button 
+              <button
                 onClick={openConsultation}
                 className="bg-[#007cff] hover:bg-blue-600 text-white font-extrabold text-xs tracking-wider px-8 py-4 rounded-xl shadow-lg shadow-blue-500/15 hover:scale-[1.03] active:scale-95 transition-all uppercase cursor-pointer"
               >
@@ -151,8 +151,8 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
         <div className="max-w-7xl mx-auto px-4 text-center text-sm md:text-base lg:text-lg font-bold flex flex-wrap justify-center items-center gap-3 sm:gap-4 tracking-wide">
           <span className="flex items-center gap-3">
             <svg className="w-6 h-6 md:w-7 md:h-7 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="verified-compliance-shield-icon">
-              <path d="M12 2L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-3z" fill="#0e1b2e" stroke="#007cff" strokeWidth="2" strokeLinejoin="round"/>
-              <path d="M9 11.5l2 2 4-4" stroke="#007cff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M12 2L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-3z" fill="#0e1b2e" stroke="#007cff" strokeWidth="2" strokeLinejoin="round" />
+              <path d="M9 11.5l2 2 4-4" stroke="#007cff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
             <span className="text-white">Fully Compliant with:</span>
           </span>
@@ -177,9 +177,9 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
         {/* Ambient Glows */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(241,159,28,0.02),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(0,124,255,0.02),transparent_60%)]"></div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 relative z-10">
-          
+
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-black leading-tight">
               Reclaim Your Time. Scale Your Firm’s Delivery Capacity.
@@ -193,7 +193,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                 <div className="flex items-start pl-2">
                   <h3 className="font-serif text-base sm:text-lg font-bold text-black leading-tight pt-1">Capacity Bottlenecks & High Cost of Local Hiring</h3>
                 </div>
-                
+
                 <div className="space-y-4 pl-2">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-wider">
@@ -221,7 +221,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                 <div className="flex items-start pl-2">
                   <h3 className="font-serif text-base sm:text-lg font-bold text-black leading-tight pt-1">Bookkeeping Backlogs</h3>
                 </div>
-                
+
                 <div className="space-y-4 pl-2">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-wider">
@@ -249,7 +249,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                 <div className="flex items-start pl-2">
                   <h3 className="font-serif text-base sm:text-lg font-bold text-black leading-tight pt-1">Tax Compliance Stress</h3>
                 </div>
-                
+
                 <div className="space-y-4 pl-2">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-wider">
@@ -277,7 +277,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                 <div className="flex items-start pl-2">
                   <h3 className="font-serif text-base sm:text-lg font-bold text-black leading-tight pt-1">Complex Auditing Support & Financial Reporting</h3>
                 </div>
-                
+
                 <div className="space-y-4 pl-2">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-wider">
@@ -409,7 +409,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                 <div className="h-16 lg:h-20 flex items-start">
                   <h3 className="font-serif text-lg font-bold text-black leading-tight">Guaranteed Turnaround & Timely Service Deliveries</h3>
                 </div>
-                
+
                 <div className="space-y-3 flex-1 flex flex-col justify-between mt-2">
                   <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-light">
                     In accounting and compliance, a missed deadline means a lost client or a severe financial penalty.
@@ -427,7 +427,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                 <div className="h-16 lg:h-20 flex items-start">
                   <h3 className="font-serif text-lg font-bold text-black leading-tight">Tech-Driven Innovations & Modern Systems</h3>
                 </div>
-                
+
                 <div className="space-y-3 flex-1 flex flex-col justify-between mt-2">
                   <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-light">
                     You shouldn't have to change your entire technology stack just to work with an offshore partner.
@@ -445,7 +445,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                 <div className="h-16 lg:h-20 flex items-start">
                   <h3 className="font-serif text-lg font-bold text-black leading-tight">Tailor-Made Operational Systems (Custom Solutions)</h3>
                 </div>
-                
+
                 <div className="space-y-3 flex-1 flex flex-col justify-between mt-2">
                   <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-light">
                     Every accounting firm has a unique way of managing working papers, communication, and client onboarding. A rigid, one-size-fits-all outsourcing model never works.
@@ -463,7 +463,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                 <div className="h-16 lg:h-20 flex items-start">
                   <h3 className="font-serif text-lg font-bold text-black leading-tight">Seamless Time-Zone Synchronization</h3>
                 </div>
-                
+
                 <div className="space-y-3 flex-1 flex flex-col justify-between mt-2">
                   <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-light">
                     Waiting 24 hours just to get a simple question answered destroys your daily operational speed.
@@ -481,7 +481,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
       {/* 11.5 CLIENT REVIEWS & TESTIMONIALS */}
       <section className="py-16 bg-white border-t border-slate-200/80" id="testimonials-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-          
+
           {/* Header styled exactly like reference image but slightly more compact */}
           <div className="text-left space-y-2">
             <h2 className="font-serif text-2xl sm:text-3xl font-extrabold text-[#0e1b2e] tracking-tight">
@@ -492,7 +492,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
 
           {/* Single-column vertical stack of high-impact reviews aligned with wide layout */}
           <div className="space-y-6">
-            
+
             {/* Review 1 */}
             <div className="bg-white border border-slate-200/70 rounded-xl p-6 sm:p-8 shadow-sm flex flex-col justify-between">
               <div className="space-y-4">
@@ -552,7 +552,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
           </div>
 
           <div className="text-center pt-4">
-            <button 
+            <button
               onClick={openConsultation}
               className="bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-extrabold tracking-wider px-6 py-3 rounded-lg shadow-sm uppercase cursor-pointer transition-colors duration-200"
             >

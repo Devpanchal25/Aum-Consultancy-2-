@@ -4,8 +4,8 @@ import { Page } from '../types';
 import { SERVICES } from '../data';
 import { SUB_SERVICES, SubService } from '../servicesData';
 import SafeImage from '../components/SafeImage';
-import { 
-  Calculator, FileText, Percent, ShieldAlert, Users, TrendingUp, 
+import {
+  Calculator, FileText, Percent, ShieldAlert, Users, TrendingUp,
   Briefcase, Layers, UserCheck, Award, ArrowRight, Check,
   Clock, ShieldCheck, ClipboardCheck, Sparkles, Server, ChevronRight,
   ChevronDown, Lightbulb, AlertTriangle, Phone, HelpCircle, Receipt, ReceiptText,
@@ -50,7 +50,7 @@ const getIconComponent = (name: string, sizeClass = "w-5 h-5", colorClass = "tex
 
 const renderFormattedText = (text: string) => {
   if (!text) return text;
-  
+
   // Clean up tabs, leading/trailing whitespace
   let cleaned = text.replace(/^\t+/, '').trim();
 
@@ -119,9 +119,9 @@ const TRANSITION_FAQS = [
   }
 ];
 
-export default function ServicesView({ 
-  setCurrentPage, 
-  openConsultation, 
+export default function ServicesView({
+  setCurrentPage,
+  openConsultation,
   openQuote,
   selectedServiceId,
   setSelectedServiceId,
@@ -131,7 +131,7 @@ export default function ServicesView({
   const location = useLocation();
   const navigate = useNavigate();
   const hasScrolledRef = useRef<string | null>(null);
-  
+
   const handleCategoryChange = (catId: string) => {
     if (setSelectedServiceId) {
       setSelectedServiceId(catId);
@@ -139,14 +139,14 @@ export default function ServicesView({
     if (setSelectedSubServiceId) {
       setSelectedSubServiceId('');
     }
-    
+
     if (catId === 'accounting') navigate('/services/accounting-bookkeeping');
     else if (catId === 'audit') navigate('/services/audit-assurance');
     else if (catId === 'tax') navigate('/services/tax-services');
     else if (catId === 'other') navigate('/services/cfo-advisory');
     else if (catId === 'offshore-team') navigate('/services/build-offshore-team');
   };
-  
+
   // Determine the active category based on the URL route
   let activeCategoryId = 'accounting';
   const path = location.pathname;
@@ -203,7 +203,7 @@ export default function ServicesView({
     if (activeSubServiceId) {
       setExpandedSubServiceId(activeSubServiceId);
       setIsClosedByUser(false);
-      
+
       // Auto scroll to the expanded sub service on load/change starting cleanly from its top title
       const scrollKey = `${location.pathname}-${activeSubServiceId}`;
       if (hasScrolledRef.current !== scrollKey) {
@@ -247,7 +247,7 @@ export default function ServicesView({
 
   return (
     <div className="pt-20">
-      
+
 
 
       {/* 2. Detailed Sub-Services Explorer */}
@@ -255,429 +255,424 @@ export default function ServicesView({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Detail Panel and Sub-Services Explorer */}
           <div className="space-y-8" id="sub-services-explorer">
-              
-              {/* Category Tab Switcher */}
-              <div className="flex overflow-x-auto pb-4 border-b border-slate-100 gap-2 scrollbar-none snap-x snap-mandatory -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap sm:overflow-x-visible sm:justify-center">
-                {SERVICES.map((cat) => {
-                  const isActive = activeCategoryId === cat.id;
-                  return (
+
+            {/* Category Tab Switcher */}
+            <div className="flex overflow-x-auto pb-4 border-b border-slate-100 gap-2 scrollbar-none snap-x snap-mandatory -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap sm:overflow-x-visible sm:justify-center">
+              {SERVICES.map((cat) => {
+                const isActive = activeCategoryId === cat.id;
+                return (
+                  <button
+                    key={cat.id}
+                    onClick={() => handleCategoryChange(cat.id)}
+                    className={`flex items-center gap-2 px-4 py-3 rounded-xl border font-bold text-sm uppercase tracking-wider transition-all duration-200 shrink-0 cursor-pointer snap-start ${isActive
+                        ? 'bg-navy-900 border-navy-950 text-white shadow-md shadow-navy-950/15'
+                        : 'bg-slate-50 border-slate-200/60 text-slate-600 hover:bg-slate-100 hover:text-navy-950 hover:border-slate-300'
+                      }`}
+                  >
+                    {getIconComponent(cat.iconName, 'w-3.5 h-3.5', isActive ? 'text-white' : 'text-[#007cff]')}
+                    <span>
+                      {cat.id === 'accounting' && 'Accounting'}
+                      {cat.id === 'audit' && 'Audit'}
+                      {cat.id === 'tax' && 'Tax Services'}
+                      {cat.id === 'other' && 'CFO Advisory'}
+                      {cat.id === 'offshore-team' && 'Build Your Team'}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Domain Overview Banner Card */}
+            <div className="relative rounded-2xl overflow-hidden border border-slate-200/60 shadow-sm bg-slate-50/70 text-navy-900">
+              <div className="relative p-6 sm:p-10 space-y-3 z-10">
+                <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#0e1b2e]">{activeCategory.title} Overview</h2>
+                <p className="text-slate-600 text-base sm:text-lg font-light leading-relaxed max-w-5xl">
+                  {activeCategory.longDesc}
+                </p>
+              </div>
+            </div>
+
+            {/* Sub-Services Expandable Accordion List */}
+            <div className="space-y-4">
+
+              {activeSubServices.map((sub) => {
+                const isExpanded = expandedSubServiceId === sub.id;
+                const isAccounting = activeCategoryId === 'accounting' || activeCategoryId === 'tax' || sub.id === 'audit-assurance-support' || activeCategoryId === 'other' || activeCategoryId === 'offshore-team';
+
+                return (
+                  <div
+                    key={sub.id}
+                    id={sub.id}
+                    className={`scroll-mt-28 sm:scroll-mt-32 ${isAccounting
+                        ? `rounded-2xl border transition-all duration-300 overflow-hidden ${isExpanded
+                          ? 'border-[#007cff] bg-white shadow-lg ring-1 ring-[#007cff]/20'
+                          : 'border-slate-200 bg-slate-50/50 hover:bg-slate-50 hover:border-slate-300 shadow-sm'
+                        }`
+                        : `bg-blue-50/45 rounded-2xl border transition-all overflow-hidden ${isExpanded ? 'border-[#007cff] bg-white shadow-md' : 'border-blue-100/60 hover:border-blue-200'
+                        }`
+                      }`}
+                  >
+                    {/* Header Toggle */}
                     <button
-                      key={cat.id}
-                      onClick={() => handleCategoryChange(cat.id)}
-                      className={`flex items-center gap-2 px-4 py-3 rounded-xl border font-bold text-sm uppercase tracking-wider transition-all duration-200 shrink-0 cursor-pointer snap-start ${
-                        isActive
-                          ? 'bg-navy-900 border-navy-950 text-white shadow-md shadow-navy-950/15'
-                          : 'bg-slate-50 border-slate-200/60 text-slate-600 hover:bg-slate-100 hover:text-navy-950 hover:border-slate-300'
-                      }`}
-                    >
-                      {getIconComponent(cat.iconName, 'w-3.5 h-3.5', isActive ? 'text-white' : 'text-[#007cff]')}
-                      <span>
-                        {cat.id === 'accounting' && 'Accounting'}
-                        {cat.id === 'audit' && 'Audit'}
-                        {cat.id === 'tax' && 'Tax Services'}
-                        {cat.id === 'other' && 'CFO Advisory'}
-                        {cat.id === 'offshore-team' && 'Build Your Team'}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
-              
-              {/* Domain Overview Banner Card */}
-              <div className="relative rounded-2xl overflow-hidden border border-slate-200/60 shadow-sm bg-slate-50/70 text-navy-900">
-                <div className="relative p-6 sm:p-10 space-y-3 z-10">
-                  <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#0e1b2e]">{activeCategory.title} Overview</h2>
-                  <p className="text-slate-600 text-base sm:text-lg font-light leading-relaxed max-w-5xl">
-                    {activeCategory.longDesc}
-                  </p>
-                </div>
-              </div>
-
-              {/* Sub-Services Expandable Accordion List */}
-              <div className="space-y-4">
-
-                {activeSubServices.map((sub) => {
-                  const isExpanded = expandedSubServiceId === sub.id;
-                  const isAccounting = activeCategoryId === 'accounting' || activeCategoryId === 'tax' || sub.id === 'audit-assurance-support' || activeCategoryId === 'other' || activeCategoryId === 'offshore-team';
-
-                  return (
-                    <div 
-                      key={sub.id} 
-                      id={sub.id}
-                      className={`scroll-mt-28 sm:scroll-mt-32 ${
-                        isAccounting 
-                          ? `rounded-2xl border transition-all duration-300 overflow-hidden ${
-                              isExpanded 
-                                ? 'border-[#007cff] bg-white shadow-lg ring-1 ring-[#007cff]/20' 
-                                : 'border-slate-200 bg-slate-50/50 hover:bg-slate-50 hover:border-slate-300 shadow-sm'
-                            }`
-                          : `bg-blue-50/45 rounded-2xl border transition-all overflow-hidden ${
-                              isExpanded ? 'border-[#007cff] bg-white shadow-md' : 'border-blue-100/60 hover:border-blue-200'
-                            }`
-                      }`}
-                    >
-                      {/* Header Toggle */}
-                      <button
-                        id={`btn-${sub.id}`}
-                        aria-expanded={isExpanded}
-                        aria-controls={`panel-${sub.id}`}
-                        onClick={() => {
-                          if (activeCategoryId === 'offshore-team') {
-                            if (isExpanded) {
-                              setIsClosedByUser(true);
-                              setExpandedSubServiceId('');
-                              navigate('/build-your-team', { state: { isClosedByUser: true } });
-                            } else {
-                              setIsClosedByUser(false);
-                              setExpandedSubServiceId(sub.id);
-                              if (sub.id === 'hire-audit-support') {
-                                navigate('/build-your-team/hire-audit-support-staff');
-                              } else if (sub.id === 'hire-ar-specialist') {
-                                navigate('/build-your-team/hire-accounts-receivable-specialist');
-                              } else {
-                                navigate(`/build-your-team/${sub.id}`);
-                              }
-                            }
+                      id={`btn-${sub.id}`}
+                      aria-expanded={isExpanded}
+                      aria-controls={`panel-${sub.id}`}
+                      onClick={() => {
+                        if (activeCategoryId === 'offshore-team') {
+                          if (isExpanded) {
+                            setIsClosedByUser(true);
+                            setExpandedSubServiceId('');
+                            navigate('/build-your-team', { state: { isClosedByUser: true } });
                           } else {
-                            const nextState = !isExpanded;
-                            setExpandedSubServiceId(isExpanded ? '' : sub.id);
-                            if (nextState) {
-                              setTimeout(() => {
-                                const el = document.getElementById(sub.id);
-                                if (el) {
-                                  const yOffset = -120;
-                                  const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                                  window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
-                                }
-                              }, 100);
+                            setIsClosedByUser(false);
+                            setExpandedSubServiceId(sub.id);
+                            if (sub.id === 'hire-audit-support') {
+                              navigate('/build-your-team/hire-audit-support-staff');
+                            } else if (sub.id === 'hire-ar-specialist') {
+                              navigate('/build-your-team/hire-accounts-receivable-specialist');
+                            } else {
+                              navigate(`/build-your-team/${sub.id}`);
                             }
                           }
-                        }}
+                        } else {
+                          const nextState = !isExpanded;
+                          setExpandedSubServiceId(isExpanded ? '' : sub.id);
+                          if (nextState) {
+                            setTimeout(() => {
+                              const el = document.getElementById(sub.id);
+                              if (el) {
+                                const yOffset = -120;
+                                const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                                window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+                              }
+                            }, 100);
+                          }
+                        }
+                      }}
+                      className={isAccounting
+                        ? "w-full flex justify-between items-center p-6 sm:p-7 text-left transition-colors cursor-pointer group"
+                        : "w-full flex justify-between items-center p-5 text-left transition-colors cursor-pointer"
+                      }
+                    >
+                      <div className="flex items-center gap-4 sm:gap-5">
+                        <div className={isAccounting
+                          ? `p-3 rounded-xl border shadow-sm transition-all duration-300 ${isExpanded ? 'bg-[#007cff] border-[#005fcc] text-white' : 'bg-white border-slate-200 text-[#007cff] group-hover:border-slate-300'
+                          }`
+                          : `p-2 rounded-xl border shadow-sm ${isExpanded ? 'bg-navy-900 border-navy-950 text-white' : 'bg-white'}`
+                        }>
+                          {getIconComponent(sub.iconName, isAccounting ? 'w-5 h-5' : 'w-4 h-4', isExpanded && isAccounting ? 'text-white' : 'text-[#007cff]')}
+                        </div>
+                        <div>
+                          <h3 className={isAccounting
+                            ? "text-[18.1px] sm:text-[20.1px] md:text-[24.1px] font-bold text-navy-900 tracking-tight"
+                            : "text-[16.1px] sm:text-[18.1px] font-bold text-navy-900"
+                          }>
+                            {sub.title}
+                          </h3>
+                        </div>
+                      </div>
+                      <ChevronDown className={`text-slate-400 transition-transform duration-300 group-hover:text-slate-600 ${isExpanded ? 'rotate-180 text-[#007cff]' : ''} ${isAccounting ? 'w-5 h-5' : 'w-4 h-4'}`} />
+                    </button>
+
+                    {/* Expandable Content Panel */}
+                    {isExpanded && (
+                      <div
+                        id={`panel-${sub.id}`}
+                        role="region"
+                        aria-labelledby={`btn-${sub.id}`}
                         className={isAccounting
-                          ? "w-full flex justify-between items-center p-6 sm:p-7 text-left transition-colors cursor-pointer group"
-                          : "w-full flex justify-between items-center p-5 text-left transition-colors cursor-pointer"
+                          ? "border-t border-slate-200 p-6 sm:p-8 space-y-8 animate-fadeIn"
+                          : "border-t border-slate-150 p-5 sm:p-8 space-y-6 animate-fadeIn"
                         }
                       >
-                        <div className="flex items-center gap-4 sm:gap-5">
-                          <div className={isAccounting
-                            ? `p-3 rounded-xl border shadow-sm transition-all duration-300 ${
-                                isExpanded ? 'bg-[#007cff] border-[#005fcc] text-white' : 'bg-white border-slate-200 text-[#007cff] group-hover:border-slate-300'
-                              }`
-                            : `p-2 rounded-xl border shadow-sm ${isExpanded ? 'bg-navy-900 border-navy-950 text-white' : 'bg-white'}`
-                          }>
-                            {getIconComponent(sub.iconName, isAccounting ? 'w-5 h-5' : 'w-4 h-4', isExpanded && isAccounting ? 'text-white' : 'text-[#007cff]')}
-                          </div>
-                          <div>
-                            <h3 className={isAccounting
-                              ? "text-[18.1px] sm:text-[20.1px] md:text-[24.1px] font-bold text-navy-900 tracking-tight"
-                              : "text-[16.1px] sm:text-[18.1px] font-bold text-navy-900"
-                            }>
-                              {sub.title}
-                            </h3>
-                          </div>
-                        </div>
-                        <ChevronDown className={`text-slate-400 transition-transform duration-300 group-hover:text-slate-600 ${isExpanded ? 'rotate-180 text-[#007cff]' : ''} ${isAccounting ? 'w-5 h-5' : 'w-4 h-4'}`} />
-                      </button>
 
-                      {/* Expandable Content Panel */}
-                      {isExpanded && (
-                        <div 
-                          id={`panel-${sub.id}`}
-                          role="region"
-                          aria-labelledby={`btn-${sub.id}`}
-                          className={isAccounting
-                            ? "border-t border-slate-200 p-6 sm:p-8 space-y-8 animate-fadeIn"
-                            : "border-t border-slate-150 p-5 sm:p-8 space-y-6 animate-fadeIn"
-                          }
-                        >
-                          
-                          {/* 1. Interactive Image Header & Catchphrase */}
-                          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-                            <div className="col-span-12 md:col-span-4 rounded-xl overflow-hidden border border-slate-200 bg-slate-100 aspect-video md:aspect-square">
-                              <SafeImage 
-                                src={sub.image} 
-                                alt={sub.title} 
-                                className="w-full h-full object-cover"
-                                category={activeCategoryId === 'accounting' ? 'accounting' : activeCategoryId === 'tax' ? 'tax' : activeCategoryId === 'audit' ? 'audit' : 'other'}
-                              />
-                            </div>
-                            <div className="col-span-12 md:col-span-8 space-y-4">
-                              <span 
-                                style={{ color: '#4682B4' }}
-                                className={isAccounting
-                                  ? "inline-block text-[18.1px] sm:text-[20.1px] bg-blue-50 border border-blue-200/80 px-4 py-3 rounded-lg font-mono font-bold"
-                                  : "inline-block text-[18.1px] sm:text-[20.1px] bg-blue-50 border border-blue-100 px-4 py-3 rounded-lg font-mono font-bold"
-                                }
-                              >
-                                 {sub.catchphrase}
-                              </span>
-                              <p className={isAccounting
-                                ? "text-[18.1px] sm:text-[20.1px] text-slate-700 leading-relaxed font-normal text-left"
-                                : "text-[18.1px] sm:text-[20.1px] text-slate-600 leading-relaxed font-light"
-                              }>
-                                {sub.description}
-                              </p>
-                            </div>
-                          </div>                           {/* 2. Checklists Grid or Structured Sections */}
-                          {isAccounting && sub.accountingSections && sub.accountingSections.length > 0 ? (
-                            <div className="space-y-6 pt-6 border-t border-slate-200">
-                              {sub.accountingSections.map((section, sIdx) => {
-                                if (section.type === 'checklist') {
-                                  return (
-                                    <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-4 shadow-xs">
-                                      <h4 className="text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
-                                        <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
-                                        {section.title}
-                                      </h4>
-                                      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
-                                        {section.items?.map((item, itemIdx) => (
-                                          <div key={itemIdx} className="flex gap-3 text-base sm:text-lg text-slate-700 leading-relaxed font-normal items-start">
-                                            <span className="text-emerald-500 font-bold shrink-0 mt-0.5">✓</span>
-                                            <span>{renderFormattedText(item)}</span>
-                                          </div>
-                                        ))}
-                                      </div>
-                                    </div>
-                                  );
-                                } else if (section.type === 'bullet') {
-                                  return (
-                                    <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-4 shadow-xs">
-                                      <h4 className="text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
-                                        <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
-                                        {section.title}
-                                      </h4>
-                                      {section.text && (
-                                        <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal text-left">
-                                          {section.text}
-                                        </p>
-                                      )}
-                                      <ul className="space-y-3 pl-1 list-none">
-                                        {section.items?.map((item, itemIdx) => (
-                                          <li key={itemIdx} className="flex gap-3 text-base sm:text-lg text-slate-700 leading-relaxed font-normal items-start">
-                                            <span className="text-[#007cff] font-bold shrink-0 mt-0.5">✓</span>
-                                            <span>{renderFormattedText(item)}</span>
-                                          </li>
-                                        ))}
-                                      </ul>
-                                    </div>
-                                  );
-                                } else if (section.type === 'nested-sections') {
-                                  return (
-                                    <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-5 shadow-xs">
-                                      <h4 className="text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
-                                        <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
-                                        {section.title}
-                                      </h4>
-                                      {section.text && (
-                                        <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal text-left">
-                                          {section.text}
-                                        </p>
-                                      )}
-                                      <div className="grid grid-cols-1 gap-5">
-                                        {section.subSections?.map((subSec, subIdx) => (
-                                          <div key={subIdx} className="bg-white border border-slate-200/80 p-5 rounded-xl space-y-3 shadow-2xs">
-                                            <h5 className="text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-100 pb-2 uppercase tracking-wider">
-                                              {subSec.title}
-                                            </h5>
-                                            {subSec.text && (
-                                              <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal text-left">
-                                                {subSec.text}
-                                              </p>
-                                            )}
-                                            <ul className={`grid grid-cols-1 ${subSec.items?.length === 1 ? '' : 'md:grid-cols-2'} gap-x-6 gap-y-2.5 pl-1 list-none`}>
-                                              {subSec.items?.map((item, itemIdx) => (
-                                                <li key={itemIdx} className="flex gap-2.5 text-base sm:text-lg text-slate-600 leading-relaxed font-normal items-start">
-                                                  <span className="text-[#007cff] font-bold shrink-0 mt-0.5">✓</span>
-                                                  <span>{renderFormattedText(item)}</span>
-                                                </li>
-                                              ))}
-                                            </ul>
-                                          </div>
-                                        ))}
-                                      </div>
-                                    </div>
-                                  );
-                                } else if (section.type === 'grid') {
-                                  return (
-                                    <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-4 shadow-xs">
-                                      {section.title && (
-                                        <h4 className="text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
-                                          <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
-                                          {section.title}
-                                        </h4>
-                                      )}
-                                      {section.text && (
-                                        <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal text-left">
-                                          {section.text}
-                                        </p>
-                                      )}
-                                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-2">
-                                        {section.gridItems?.map((gItem, gIdx) => (
-                                          <div key={gIdx} className="bg-white border border-slate-200 p-5 rounded-xl space-y-3 shadow-2xs hover:shadow-xs hover:border-[#007cff]/40 transition-all duration-300">
-                                            <div className="bg-blue-50 text-[#007cff] p-2.5 rounded-lg w-fit">
-                                              {getIconComponent(gItem.iconName, 'w-5 h-5', 'text-[#007cff]')}
-                                            </div>
-                                            <h5 className="text-base sm:text-lg font-bold text-navy-900 leading-snug">
-                                              {gItem.title}
-                                            </h5>
-                                            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal text-left">
-                                              {gItem.text}
-                                            </p>
-                                          </div>
-                                        ))}
-                                      </div>
-                                    </div>
-                                  );
-                                } else {
-                                  // text-block or paragraph
-                                  const isDiagram = section.text && (section.text.includes('┌') || section.text.includes('─'));
-                                  return (
-                                    <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-4 shadow-xs">
-                                      {section.title && (
-                                        <h4 className="text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
-                                          <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
-                                          {section.title}
-                                        </h4>
-                                      )}
-                                      {section.text && (
-                                        isDiagram ? (
-                                          <div className="bg-[#0e1b2e] border border-slate-800 p-5 rounded-xl overflow-x-auto shadow-inner">
-                                            <pre className="font-mono text-[10px] sm:text-xs text-[#007cff] leading-normal whitespace-pre min-w-[500px] md:min-w-0">
-                                              {section.text}
-                                            </pre>
-                                          </div>
-                                        ) : (
-                                          <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal whitespace-pre-line text-left">
-                                            {section.text}
-                                          </p>
-                                        )
-                                      )}
-                                    </div>
-                                  );
-                                }
-                              })}
-                            </div>
-                          ) : (
-                            <div className={isAccounting
-                              ? "grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-slate-200"
-                              : "grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-slate-100"
+                        {/* 1. Interactive Image Header & Catchphrase */}
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                          <div className="col-span-12 md:col-span-4 rounded-xl overflow-hidden border border-slate-200 bg-slate-100 aspect-video md:aspect-square">
+                            <SafeImage
+                              src={sub.image}
+                              alt={sub.title}
+                              className="w-full h-full object-cover"
+                              category={activeCategoryId === 'accounting' ? 'accounting' : activeCategoryId === 'tax' ? 'tax' : activeCategoryId === 'audit' ? 'audit' : 'other'}
+                            />
+                          </div>
+                          <div className="col-span-12 md:col-span-8 space-y-4">
+                            <span
+                              style={{ color: '#4682B4' }}
+                              className={isAccounting
+                                ? "inline-block text-[18.1px] sm:text-[20.1px] bg-blue-50 border border-blue-200/80 px-4 py-3 rounded-lg font-mono font-bold"
+                                : "inline-block text-[18.1px] sm:text-[20.1px] bg-blue-50 border border-blue-100 px-4 py-3 rounded-lg font-mono font-bold"
+                              }
+                            >
+                              {sub.catchphrase}
+                            </span>
+                            <p className={isAccounting
+                              ? "text-[18.1px] sm:text-[20.1px] text-slate-700 leading-relaxed font-normal text-left"
+                              : "text-[18.1px] sm:text-[20.1px] text-slate-600 leading-relaxed font-light"
                             }>
-                              {sub.checklists.map((check, idx) => (
-                                <div key={idx} className={isAccounting
-                                  ? "bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-4 shadow-xs"
-                                  : "bg-slate-50 border border-slate-200/60 p-5 rounded-xl space-y-4"
+                              {sub.description}
+                            </p>
+                          </div>
+                        </div>                           {/* 2. Checklists Grid or Structured Sections */}
+                        {isAccounting && sub.accountingSections && sub.accountingSections.length > 0 ? (
+                          <div className="space-y-6 pt-6 border-t border-slate-200">
+                            {sub.accountingSections.map((section, sIdx) => {
+                              if (section.type === 'checklist') {
+                                return (
+                                  <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-4 shadow-xs">
+                                    <h4 className="text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
+                                      <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
+                                      {section.title}
+                                    </h4>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
+                                      {section.items?.map((item, itemIdx) => (
+                                        <div key={itemIdx} className="flex gap-3 text-base sm:text-lg text-slate-700 leading-relaxed font-normal items-start">
+                                          <span className="text-emerald-500 font-bold shrink-0 mt-0.5">✓</span>
+                                          <span>{renderFormattedText(item)}</span>
+                                        </div>
+                                      ))}
+                                    </div>
+                                  </div>
+                                );
+                              } else if (section.type === 'bullet') {
+                                return (
+                                  <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-4 shadow-xs">
+                                    <h4 className="text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
+                                      <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
+                                      {section.title}
+                                    </h4>
+                                    {section.text && (
+                                      <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal text-left">
+                                        {section.text}
+                                      </p>
+                                    )}
+                                    <ul className="space-y-3 pl-1 list-none">
+                                      {section.items?.map((item, itemIdx) => (
+                                        <li key={itemIdx} className="flex gap-3 text-base sm:text-lg text-slate-700 leading-relaxed font-normal items-start">
+                                          <span className="text-[#007cff] font-bold shrink-0 mt-0.5">✓</span>
+                                          <span>{renderFormattedText(item)}</span>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </div>
+                                );
+                              } else if (section.type === 'nested-sections') {
+                                return (
+                                  <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-5 shadow-xs">
+                                    <h4 className="text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
+                                      <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
+                                      {section.title}
+                                    </h4>
+                                    {section.text && (
+                                      <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal text-left">
+                                        {section.text}
+                                      </p>
+                                    )}
+                                    <div className="grid grid-cols-1 gap-5">
+                                      {section.subSections?.map((subSec, subIdx) => (
+                                        <div key={subIdx} className="bg-white border border-slate-200/80 p-5 rounded-xl space-y-3 shadow-2xs">
+                                          <h5 className="text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-100 pb-2 uppercase tracking-wider">
+                                            {subSec.title}
+                                          </h5>
+                                          {subSec.text && (
+                                            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal text-left">
+                                              {subSec.text}
+                                            </p>
+                                          )}
+                                          <ul className={`grid grid-cols-1 ${subSec.items?.length === 1 ? '' : 'md:grid-cols-2'} gap-x-6 gap-y-2.5 pl-1 list-none`}>
+                                            {subSec.items?.map((item, itemIdx) => (
+                                              <li key={itemIdx} className="flex gap-2.5 text-base sm:text-lg text-slate-600 leading-relaxed font-normal items-start">
+                                                <span className="text-[#007cff] font-bold shrink-0 mt-0.5">✓</span>
+                                                <span>{renderFormattedText(item)}</span>
+                                              </li>
+                                            ))}
+                                          </ul>
+                                        </div>
+                                      ))}
+                                    </div>
+                                  </div>
+                                );
+                              } else if (section.type === 'grid') {
+                                return (
+                                  <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-4 shadow-xs">
+                                    {section.title && (
+                                      <h4 className="text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
+                                        <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
+                                        {section.title}
+                                      </h4>
+                                    )}
+                                    {section.text && (
+                                      <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal text-left">
+                                        {section.text}
+                                      </p>
+                                    )}
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-2">
+                                      {section.gridItems?.map((gItem, gIdx) => (
+                                        <div key={gIdx} className="bg-white border border-slate-200 p-5 rounded-xl space-y-3 shadow-2xs hover:shadow-xs hover:border-[#007cff]/40 transition-all duration-300">
+                                          <div className="bg-blue-50 text-[#007cff] p-2.5 rounded-lg w-fit">
+                                            {getIconComponent(gItem.iconName, 'w-5 h-5', 'text-[#007cff]')}
+                                          </div>
+                                          <h5 className="text-base sm:text-lg font-bold text-navy-900 leading-snug">
+                                            {gItem.title}
+                                          </h5>
+                                          <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal text-left">
+                                            {gItem.text}
+                                          </p>
+                                        </div>
+                                      ))}
+                                    </div>
+                                  </div>
+                                );
+                              } else {
+                                // text-block or paragraph
+                                const isDiagram = section.text && (section.text.includes('┌') || section.text.includes('─'));
+                                return (
+                                  <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-4 shadow-xs">
+                                    {section.title && (
+                                      <h4 className="text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
+                                        <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
+                                        {section.title}
+                                      </h4>
+                                    )}
+                                    {section.text && (
+                                      isDiagram ? (
+                                        <div className="bg-[#0e1b2e] border border-slate-800 p-5 rounded-xl overflow-x-auto shadow-inner">
+                                          <pre className="font-mono text-[10px] sm:text-xs text-[#007cff] leading-normal whitespace-pre min-w-[500px] md:min-w-0">
+                                            {section.text}
+                                          </pre>
+                                        </div>
+                                      ) : (
+                                        <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal whitespace-pre-line text-left">
+                                          {section.text}
+                                        </p>
+                                      )
+                                    )}
+                                  </div>
+                                );
+                              }
+                            })}
+                          </div>
+                        ) : (
+                          <div className={isAccounting
+                            ? "grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-slate-200"
+                            : "grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-slate-100"
+                          }>
+                            {sub.checklists.map((check, idx) => (
+                              <div key={idx} className={isAccounting
+                                ? "bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-4 shadow-xs"
+                                : "bg-slate-50 border border-slate-200/60 p-5 rounded-xl space-y-4"
+                              }>
+                                <span className={isAccounting
+                                  ? "text-lg sm:text-xl font-bold text-navy-900 uppercase tracking-wider flex items-center gap-2 border-b border-slate-200 pb-3"
+                                  : "text-lg sm:text-xl font-extrabold text-navy-950 uppercase tracking-wider flex items-center gap-2 border-b border-slate-200 pb-2.5"
                                 }>
-                                  <span className={isAccounting
-                                    ? "text-lg sm:text-xl font-bold text-navy-900 uppercase tracking-wider flex items-center gap-2 border-b border-slate-200 pb-3"
-                                    : "text-lg sm:text-xl font-extrabold text-navy-950 uppercase tracking-wider flex items-center gap-2 border-b border-slate-200 pb-2.5"
-                                  }>
-                                    <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
-                                    {check.title}
-                                  </span>
-                                  <ul className="space-y-3 list-none">
-                                    {check.items.map((item, itemIdx) => (
-                                      <li key={itemIdx} className={isAccounting
-                                        ? "flex gap-3 text-[16.1px] sm:text-[18.1px] text-slate-700 leading-relaxed font-normal items-start"
-                                        : "flex gap-2 text-[14.1px] sm:text-[16.1px] text-slate-600 leading-relaxed font-light"
-                                      }>
-                                        <span className="text-emerald-500 font-bold shrink-0 mt-0.5">✓</span>
-                                        <span>{renderFormattedText(item)}</span>
-                                      </li>
-                                    ))}
-                                  </ul>
+                                  <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
+                                  {check.title}
+                                </span>
+                                <ul className="space-y-3 list-none">
+                                  {check.items.map((item, itemIdx) => (
+                                    <li key={itemIdx} className={isAccounting
+                                      ? "flex gap-3 text-[16.1px] sm:text-[18.1px] text-slate-700 leading-relaxed font-normal items-start"
+                                      : "flex gap-2 text-[14.1px] sm:text-[16.1px] text-slate-600 leading-relaxed font-light"
+                                    }>
+                                      <span className="text-emerald-500 font-bold shrink-0 mt-0.5">✓</span>
+                                      <span>{renderFormattedText(item)}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+
+                        {/* 4. Why Partner List */}
+                        {sub.whyPartner && sub.whyPartner.length > 0 && (
+                          <div className={isAccounting
+                            ? "space-y-4 pt-6 border-t border-slate-200"
+                            : "space-y-3 pt-4 border-t border-slate-100"
+                          }>
+                            <span className={isAccounting
+                              ? "text-xs font-bold text-slate-500 uppercase tracking-widest block"
+                              : "text-xs font-extrabold text-slate-400 uppercase tracking-widest block"
+                            }>
+                              {sub.whyPartnerTitle || "Key Competitive Advantage:"}
+                            </span>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                              {sub.whyPartner.map((why, wIdx) => (
+                                <div key={wIdx} className={isAccounting
+                                  ? "bg-white border border-slate-200 p-5 rounded-xl flex gap-3 items-start shadow-xs hover:border-slate-300 transition-colors"
+                                  : "bg-white border border-slate-150 p-4 rounded-lg flex gap-3 items-start"
+                                }>
+                                  <div className="bg-emerald-50 text-emerald-600 p-1 rounded-lg mt-0.5 shrink-0">
+                                    <Check className="w-4 h-4" />
+                                  </div>
+                                  <p className={isAccounting
+                                    ? "text-sm sm:text-base text-slate-700 leading-relaxed font-normal"
+                                    : "text-sm sm:text-base text-slate-600 leading-relaxed font-light"
+                                  }>{renderFormattedText(why)}</p>
                                 </div>
                               ))}
                             </div>
-                          )}
-
-                          {/* 4. Why Partner List */}
-                          {sub.whyPartner && sub.whyPartner.length > 0 && (
-                            <div className={isAccounting
-                              ? "space-y-4 pt-6 border-t border-slate-200"
-                              : "space-y-3 pt-4 border-t border-slate-100"
-                            }>
-                              <span className={isAccounting
-                                ? "text-xs font-bold text-slate-500 uppercase tracking-widest block"
-                                : "text-xs font-extrabold text-slate-400 uppercase tracking-widest block"
-                              }>
-                                {sub.whyPartnerTitle || "Key Competitive Advantage:"}
-                              </span>
-                              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                {sub.whyPartner.map((why, wIdx) => (
-                                  <div key={wIdx} className={isAccounting
-                                    ? "bg-white border border-slate-200 p-5 rounded-xl flex gap-3 items-start shadow-xs hover:border-slate-300 transition-colors"
-                                    : "bg-white border border-slate-150 p-4 rounded-lg flex gap-3 items-start"
-                                  }>
-                                    <div className="bg-emerald-50 text-emerald-600 p-1 rounded-lg mt-0.5 shrink-0">
-                                      <Check className="w-4 h-4" />
-                                    </div>
-                                    <p className={isAccounting
-                                      ? "text-sm sm:text-base text-slate-700 leading-relaxed font-normal"
-                                      : "text-sm sm:text-base text-slate-600 leading-relaxed font-light"
-                                    }>{renderFormattedText(why)}</p>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                          )}
-
-                          {/* 5. Did You Know (Above Line) */}
-                          {sub.didYouKnow && activeCategoryId === 'tax' && (
-                            <div className={isAccounting
-                              ? "bg-blue-50/70 border border-blue-200/80 p-5 rounded-2xl flex gap-4 items-start mt-6"
-                              : "bg-blue-50 border border-blue-200 p-4 rounded-xl flex gap-3 items-start mt-5"
-                            }>
-                              <div className={isAccounting
-                                ? "bg-blue-100 text-[#007cff] p-2 rounded-xl shrink-0 mt-0.5 shadow-xs"
-                                : "text-[#007cff] shrink-0 mt-0.5 animate-bounce"
-                              }>
-                                <Lightbulb className="w-5 h-5" />
-                              </div>
-                              <div className="space-y-1">
-                                <strong className={isAccounting
-                                  ? "text-sm font-mono text-blue-900 uppercase tracking-wider block font-bold"
-                                  : "text-sm font-mono text-blue-800 uppercase tracking-wider block"
-                                }>{sub.didYouKnowTitle || 'Did You Know?'}</strong>
-                                <p className={isAccounting
-                                  ? "text-sm sm:text-base text-slate-700 leading-relaxed font-normal"
-                                  : "text-sm sm:text-base text-slate-600 leading-relaxed font-light"
-                                }>{sub.didYouKnow}</p>
-                              </div>
-                            </div>
-                          )}
-
-                          {/* 6. CTAs (Below Line) */}
-                          <div className={isAccounting
-                            ? "pt-6 border-t border-slate-200 flex flex-col sm:flex-row gap-3 w-full sm:w-auto items-stretch sm:items-center"
-                            : "pt-5 border-t border-slate-150 flex flex-wrap gap-3 w-full sm:w-auto"
-                          }>
-                            <a 
-                              href="tel:+919879161400"
-                              className={isAccounting
-                                ? "bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm shadow-emerald-600/10 hover:shadow-md cursor-pointer text-center"
-                                : "bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm sm:text-base px-5 py-3 rounded-lg transition-colors uppercase tracking-wider flex items-center gap-1.5 shadow-sm"
-                              }
-                            >
-                              <Phone className="w-4 h-4" /> Click to Call
-                            </a>
-                            <button 
-                              onClick={openConsultation}
-                              className={isAccounting
-                                ? "bg-[#007cff] hover:bg-blue-600 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 uppercase tracking-wider shadow-sm shadow-blue-500/10 hover:shadow-md cursor-pointer text-center"
-                                : "bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm sm:text-base px-5 py-3 rounded-lg transition-colors uppercase tracking-wider shadow-sm shadow-indigo-600/10"
-                              }
-                            >
-                              {sub.ctaText || 'Schedule Consultation'}
-                            </button>
                           </div>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
+                        )}
 
+                        {/* 5. Did You Know (Above Line) */}
+                        {sub.didYouKnow && activeCategoryId === 'tax' && (
+                          <div className={isAccounting
+                            ? "bg-blue-50/70 border border-blue-200/80 p-5 rounded-2xl flex gap-4 items-start mt-6"
+                            : "bg-blue-50 border border-blue-200 p-4 rounded-xl flex gap-3 items-start mt-5"
+                          }>
+                            <div className={isAccounting
+                              ? "bg-blue-100 text-[#007cff] p-2 rounded-xl shrink-0 mt-0.5 shadow-xs"
+                              : "text-[#007cff] shrink-0 mt-0.5 animate-bounce"
+                            }>
+                              <Lightbulb className="w-5 h-5" />
+                            </div>
+                            <div className="space-y-1">
+                              <strong className={isAccounting
+                                ? "text-sm font-mono text-blue-900 uppercase tracking-wider block font-bold"
+                                : "text-sm font-mono text-blue-800 uppercase tracking-wider block"
+                              }>{sub.didYouKnowTitle || 'Did You Know?'}</strong>
+                              <p className={isAccounting
+                                ? "text-sm sm:text-base text-slate-700 leading-relaxed font-normal"
+                                : "text-sm sm:text-base text-slate-600 leading-relaxed font-light"
+                              }>{sub.didYouKnow}</p>
+                            </div>
+                          </div>
+                        )}
+
+                        {/* 6. CTAs (Below Line) */}
+                        <div className={isAccounting
+                          ? "pt-6 border-t border-slate-200 flex flex-col sm:flex-row gap-3 w-full sm:w-auto items-stretch sm:items-center"
+                          : "pt-5 border-t border-slate-150 flex flex-wrap gap-3 w-full sm:w-auto"
+                        }>
+                          <a
+                            href="tel:+919879161400"
+                            className={isAccounting
+                              ? "bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm shadow-emerald-600/10 hover:shadow-md cursor-pointer text-center"
+                              : "bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm sm:text-base px-5 py-3 rounded-lg transition-colors uppercase tracking-wider flex items-center gap-1.5 shadow-sm"
+                            }
+                          >
+                            <Phone className="w-4 h-4" /> Click to Call
+                          </a>
+                          <button
+                            onClick={openConsultation}
+                            className={isAccounting
+                              ? "bg-[#007cff] hover:bg-blue-600 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 uppercase tracking-wider shadow-sm shadow-blue-500/10 hover:shadow-md cursor-pointer text-center"
+                              : "bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm sm:text-base px-5 py-3 rounded-lg transition-colors uppercase tracking-wider shadow-sm shadow-indigo-600/10"
+                            }
+                          >
+                            {sub.ctaText || 'Schedule Consultation'}
+                          </button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
+
+          </div>
         </div>
       </section>
 
@@ -722,13 +717,12 @@ export default function ServicesView({
               {TRANSITION_FAQS.map((faq, idx) => {
                 const isOpen = openTransitionFaqIndex === idx;
                 return (
-                  <div 
+                  <div
                     key={idx}
-                    className={`bg-white rounded-xl border transition-all overflow-hidden ${
-                      isOpen 
-                        ? 'border-blue-500/30 shadow-md shadow-blue-500/[0.02]' 
+                    className={`bg-white rounded-xl border transition-all overflow-hidden ${isOpen
+                        ? 'border-blue-500/30 shadow-md shadow-blue-500/[0.02]'
                         : 'border-slate-200/80 hover:border-slate-300'
-                    }`}
+                      }`}
                   >
                     <button
                       onClick={() => setOpenTransitionFaqIndex(isOpen ? null : idx)}
@@ -736,18 +730,15 @@ export default function ServicesView({
                       aria-expanded={isOpen}
                     >
                       <div className="flex items-start gap-3">
-                        <HelpCircle className={`w-4 h-4 shrink-0 mt-0.5 transition-colors ${
-                          isOpen ? 'text-[#007cff]' : 'text-slate-400 group-hover:text-slate-600'
-                        }`} />
-                        <span className={`text-sm sm:text-base font-bold leading-snug transition-colors ${
-                          isOpen ? 'text-slate-950' : 'text-slate-700 group-hover:text-slate-950'
-                        }`}>
+                        <HelpCircle className={`w-4 h-4 shrink-0 mt-0.5 transition-colors ${isOpen ? 'text-[#007cff]' : 'text-slate-400 group-hover:text-slate-600'
+                          }`} />
+                        <span className={`text-sm sm:text-base font-bold leading-snug transition-colors ${isOpen ? 'text-slate-950' : 'text-slate-700 group-hover:text-slate-950'
+                          }`}>
                           {faq.question}
                         </span>
                       </div>
-                      <div className={`p-1 rounded-lg transition-colors shrink-0 ${
-                        isOpen ? 'bg-blue-500/10 text-[#007cff]' : 'bg-slate-50 text-slate-400 group-hover:text-slate-600'
-                      }`}>
+                      <div className={`p-1 rounded-lg transition-colors shrink-0 ${isOpen ? 'bg-blue-500/10 text-[#007cff]' : 'bg-slate-50 text-slate-400 group-hover:text-slate-600'
+                        }`}>
                         <motion.div
                           animate={{ rotate: isOpen ? 180 : 0 }}
                           transition={{ duration: 0.2 }}
@@ -799,7 +790,7 @@ export default function ServicesView({
             </div>
             <div className="flex flex-col md:flex-row gap-3 items-center text-center">
               <div className="w-full">
-                <button 
+                <button
                   onClick={openConsultation}
                   className="bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold text-sm tracking-wider px-6 py-3.5 rounded-lg transition-colors uppercase block w-full text-center"
                 >

@@ -3,10 +3,10 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { Page } from '../types';
 import { SERVICES, INDUSTRIES, SERVICE_CATEGORIES } from '../data';
 import Logo from './Logo';
-import { 
-  Menu, X, ChevronDown, Phone, MessageSquare, ShieldCheck, 
-  ArrowRight, Landmark, Building, HeartPulse, Laptop, ShoppingBag, 
-  Calculator, FileText, Percent, ShieldAlert, Users, TrendingUp, 
+import {
+  Menu, X, ChevronDown, Phone, MessageSquare, ShieldCheck,
+  ArrowRight, Landmark, Building, HeartPulse, Laptop, ShoppingBag,
+  Calculator, FileText, Percent, ShieldAlert, Users, TrendingUp,
   Briefcase, Layers, UserCheck, Award, Linkedin, Twitter, Facebook, Instagram, Mail,
   Factory, HardHat, Coins, Receipt, ReceiptText
 } from 'lucide-react';
@@ -54,7 +54,7 @@ const getIconComponent = (name: string) => {
 
 const mapTitleToSubServiceId = (title: string): string => {
   const t = title.toLowerCase().trim();
-  
+
   // Accounting & Bookkeeping
   if (t.includes('backlog') || t.includes('bookkeeping & backlog')) return 'bookkeeping-backlog';
   if (t.includes('year-end') || t.includes('closing')) return 'year-end-closing';
@@ -102,14 +102,14 @@ const mapTitleToSubServiceId = (title: string): string => {
   // Fallback map checks
   if (t.includes('bookkeeper')) return 'hire-bookkeeper';
   if (t.includes('accountant')) return 'hire-accountant';
-  
+
   return 'hire-accountant';
 };
 
-export default function Navbar({ 
-  currentPage: propCurrentPage, 
-  setCurrentPage, 
-  openConsultation, 
+export default function Navbar({
+  currentPage: propCurrentPage,
+  setCurrentPage,
+  openConsultation,
   openQuote,
   openNewsletter,
   setSelectedServiceId,
@@ -137,7 +137,7 @@ export default function Navbar({
   const [scrolled, setScrolled] = useState(false);
   const [activeMega, setActiveMega] = useState<'services' | 'industries' | 'resources' | 'hire' | 'about' | null>(null);
   const [activeCategoryTab, setActiveCategoryTab] = useState<string>('accounting');
-  
+
   // Track mobile accordions
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
@@ -161,7 +161,7 @@ export default function Navbar({
     setIsOpen(false);
     setActiveMega(null);
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    
+
     switch (page) {
       case 'home': navigate('/'); break;
       case 'about': navigate('/about'); break;
@@ -201,16 +201,16 @@ export default function Navbar({
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300">
-      
+
       {/* Upper Info Top Bar with Phone, Email & LinkedIn */}
       <div className="bg-slate-50 border-b border-slate-200 text-slate-600 py-1.5 text-[11px] sm:text-xs font-medium">
         <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-10 flex items-center justify-between sm:justify-end gap-2">
-          <div className="flex items-center gap-3 sm:gap-5 min-w-0 overflow-hidden">
+          <div className="flex items-center gap-2 sm:gap-5 min-w-0 overflow-hidden">
             <a href="tel:+919879161400" className="flex items-center gap-1 hover:text-[#007cff] transition-colors font-bold text-navy-900 shrink-0">
               <Phone className="w-3.5 h-3.5 text-[#007cff]" />
               <span>+91 9879161400</span>
             </a>
-            <a href="mailto:aumconsulting.india@gmail.com" className="hidden sm:flex items-center gap-1.5 hover:text-[#007cff] transition-colors text-slate-700 truncate">
+            <a href="mailto:aumconsulting.india@gmail.com" className="hidden min-[480px]:flex items-center gap-1.5 hover:text-[#007cff] transition-colors text-slate-700 truncate">
               <Mail className="w-3.5 h-3.5 text-[#007cff] shrink-0" />
               <span className="truncate">aumconsulting.india@gmail.com</span>
             </a>
@@ -222,18 +222,17 @@ export default function Navbar({
       </div>
 
       {/* Main Glassmorphism Navbar */}
-      <nav className={`w-full transition-all duration-300 border-b ${
-        scrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-md border-slate-200/80 py-3' 
-          : 'bg-white/90 backdrop-blur-sm border-slate-100 py-4'
-      }`}>
+      <nav className={`w-full transition-all duration-300 border-b ${scrolled
+        ? 'bg-white/95 backdrop-blur-md shadow-md border-slate-200/80 py-2.5 sm:py-3'
+        : 'bg-white/90 backdrop-blur-sm border-slate-100 py-3 sm:py-4'
+        }`}>
         <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-10">
-          <div className="flex justify-between items-center h-14">
-            
+          <div className="flex justify-between items-center h-12 sm:h-14 gap-2">
+
             {/* Logo with explicit left alignment and spacing */}
-            <div className="shrink-0 mr-2 sm:mr-3 xl:mr-8 flex items-center">
-              <Logo 
-                onClick={() => handleNavClick('home')} 
+            <div className="shrink min-w-0 mr-1 sm:mr-3 xl:mr-8 flex items-center">
+              <Logo
+                onClick={() => handleNavClick('home')}
                 id="navbar-logo"
                 className="shrink-0"
               />
@@ -241,7 +240,7 @@ export default function Navbar({
 
             {/* Desktop Navigation Links */}
             <div className="hidden xl:flex items-center gap-3 xl:gap-6 shrink-0 whitespace-nowrap">
-              <button 
+              <button
                 onClick={() => handleNavClick('home')}
                 className={`text-[15px] xl:text-[16px] font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'home' ? 'text-[#007cff]' : 'text-slate-600'}`}
               >
@@ -249,12 +248,12 @@ export default function Navbar({
               </button>
 
               {/* About Us Dropdown Trigger */}
-              <div 
+              <div
                 className="relative"
                 onMouseEnter={() => setActiveMega('about')}
                 onMouseLeave={() => setActiveMega(null)}
               >
-                <button 
+                <button
                   onClick={() => handleNavClick('about')}
                   className={`flex items-center gap-1 text-[15px] xl:text-[16px] font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'about' ? 'text-[#007cff]' : 'text-slate-600'}`}
                 >
@@ -296,12 +295,12 @@ export default function Navbar({
               </div>
 
               {/* Services Mega Dropdown trigger */}
-              <div 
+              <div
                 className="relative"
                 onMouseEnter={() => setActiveMega('services')}
                 onMouseLeave={() => setActiveMega(null)}
               >
-                <button 
+                <button
                   onClick={() => handleNavClick('services')}
                   className={`flex items-center gap-1 text-[15px] xl:text-[16px] font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'services' ? 'text-[#007cff]' : 'text-slate-600'}`}
                 >
@@ -313,7 +312,7 @@ export default function Navbar({
                 {activeMega === 'services' && (
                   <div className="absolute top-full left-1/2 -translate-x-1/2 w-[920px] max-w-[92vw] pt-2 z-50 animate-fadeIn">
                     <div className="bg-white border border-slate-200/80 shadow-2xl rounded-2xl grid grid-cols-12 overflow-hidden">
-                      
+
                       {/* Left Sidebar: Division Tabs */}
                       <div className="col-span-5 bg-slate-50 p-5 border-r border-slate-200/50 flex flex-col gap-1.5">
                         <div className="space-y-1">
@@ -335,23 +334,20 @@ export default function Navbar({
                                   else if (category.id === 'other') navigate('/services/cfo-advisory');
                                   else navigate('/services');
                                 }}
-                                className={`flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all duration-200 relative group/tab ${
-                                  isSelected 
-                                    ? 'bg-white shadow-md text-[#007cff] font-bold border-l-4 border-[#007cff] pl-4' 
-                                    : 'text-slate-600 hover:bg-slate-100/70 border-l-4 border-transparent hover:text-slate-900'
-                                }`}
+                                className={`flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all duration-200 relative group/tab ${isSelected
+                                  ? 'bg-white shadow-md text-[#007cff] font-bold border-l-4 border-[#007cff] pl-4'
+                                  : 'text-slate-600 hover:bg-slate-100/70 border-l-4 border-transparent hover:text-slate-900'
+                                  }`}
                               >
-                                <div className={`p-1.5 rounded-lg shrink-0 transition-colors ${
-                                  isSelected ? 'bg-blue-50 text-[#007cff]' : 'bg-slate-100 text-slate-500 group-hover/tab:bg-white group-hover/tab:text-[#007cff]'
-                                }`}>
+                                <div className={`p-1.5 rounded-lg shrink-0 transition-colors ${isSelected ? 'bg-blue-50 text-[#007cff]' : 'bg-slate-100 text-slate-500 group-hover/tab:bg-white group-hover/tab:text-[#007cff]'
+                                  }`}>
                                   {getIconComponent(category.iconName)}
                                 </div>
                                 <div className="flex-1 min-w-0 overflow-hidden">
                                   <h4 className="text-base font-bold leading-tight truncate whitespace-nowrap">{category.title}</h4>
                                 </div>
-                                <ArrowRight className={`w-3.5 h-3.5 shrink-0 transition-all ${
-                                  isSelected ? 'text-[#007cff] translate-x-0.5 opacity-100' : 'text-slate-400 opacity-0 group-hover/tab:opacity-100 group-hover/tab:translate-x-0.5'
-                                }`} />
+                                <ArrowRight className={`w-3.5 h-3.5 shrink-0 transition-all ${isSelected ? 'text-[#007cff] translate-x-0.5 opacity-100' : 'text-slate-400 opacity-0 group-hover/tab:opacity-100 group-hover/tab:translate-x-0.5'
+                                  }`} />
                               </div>
                             );
                           })}
@@ -406,12 +402,12 @@ export default function Navbar({
               </div>
 
               {/* Build your team Dropdown trigger */}
-              <div 
+              <div
                 className="relative"
                 onMouseEnter={() => setActiveMega('hire')}
                 onMouseLeave={() => setActiveMega(null)}
               >
-                <button 
+                <button
                   onClick={() => {
                     setIsOpen(false);
                     setActiveMega(null);
@@ -430,7 +426,7 @@ export default function Navbar({
                       <div className="border-b border-slate-100 pb-3 mb-3 flex justify-between items-center">
                         <span className="text-xs font-bold text-navy-900 uppercase tracking-widest font-mono">Build Your Team</span>
                       </div>
-                      
+
                       {/* Grid of hireable roles */}
                       <div className="grid grid-cols-2 gap-x-6 gap-y-2 max-h-[380px] overflow-y-auto pr-1 scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-transparent">
                         {(() => {
@@ -438,7 +434,7 @@ export default function Navbar({
                           return items.map((item, idx) => {
                             const isLast = idx === items.length - 1;
                             return (
-                              <div 
+                              <div
                                 key={idx}
                                 onClick={() => {
                                   setIsOpen(false);
@@ -452,9 +448,8 @@ export default function Navbar({
                                     navigate(`/build-your-team/${subId}`);
                                   }
                                 }}
-                                className={`flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 cursor-pointer transition-all group ${
-                                  isLast ? 'col-span-2' : 'overflow-hidden'
-                                }`}
+                                className={`flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 cursor-pointer transition-all group ${isLast ? 'col-span-2' : 'overflow-hidden'
+                                  }`}
                               >
                                 <div className="group-hover:scale-110 transition-transform flex-shrink-0">
                                   <UserCheck className="w-4 h-4 text-[#007cff]" />
@@ -462,9 +457,8 @@ export default function Navbar({
                                 <div className="flex-1 min-w-0">
                                   <h4
                                     title={item.title}
-                                    className={`text-[14.5px] font-bold text-slate-800 group-hover:text-[#007cff] transition-colors leading-snug ${
-                                      isLast ? 'whitespace-nowrap' : 'truncate whitespace-nowrap overflow-hidden w-full'
-                                    }`}
+                                    className={`text-[14.5px] font-bold text-slate-800 group-hover:text-[#007cff] transition-colors leading-snug ${isLast ? 'whitespace-nowrap' : 'truncate whitespace-nowrap overflow-hidden w-full'
+                                      }`}
                                   >
                                     {item.title}
                                   </h4>
@@ -480,12 +474,12 @@ export default function Navbar({
               </div>
 
               {/* Industries Mega Dropdown trigger */}
-              <div 
+              <div
                 className="relative"
                 onMouseEnter={() => setActiveMega('industries')}
                 onMouseLeave={() => setActiveMega(null)}
               >
-                <button 
+                <button
                   onClick={() => {
                     setIsOpen(false);
                     setActiveMega(null);
@@ -503,7 +497,7 @@ export default function Navbar({
                     <div className="bg-white border border-slate-200/80 shadow-2xl rounded-xl p-6">
                       <div className="border-b border-slate-100 pb-3 mb-3 flex justify-between items-center">
                         <span className="text-xs font-bold text-navy-900 uppercase tracking-widest font-mono">Industries</span>
-                        <button 
+                        <button
                           onClick={() => {
                             setIsOpen(false);
                             setActiveMega(null);
@@ -514,11 +508,11 @@ export default function Navbar({
                           Explore Industries <ArrowRight className="w-3 h-3" />
                         </button>
                       </div>
-                      
+
                       {/* Grid container for industries (no scroll) */}
                       <div className="grid grid-cols-2 gap-x-6 gap-y-2">
                         {INDUSTRIES.map((industry) => (
-                          <div 
+                          <div
                             key={industry.id}
                             onClick={() => {
                               setIsOpen(false);
@@ -536,7 +530,7 @@ export default function Navbar({
                               {getIconComponent(industry.iconName)}
                             </div>
                             <div className="flex-1 min-w-0 overflow-hidden">
-                              <h4 
+                              <h4
                                 title={industry.title}
                                 className="text-[14.5px] font-bold text-slate-800 group-hover:text-[#007cff] transition-colors leading-snug truncate whitespace-nowrap overflow-hidden w-full"
                               >
@@ -552,12 +546,12 @@ export default function Navbar({
               </div>
 
               {/* Resources Dropdown trigger */}
-              <div 
+              <div
                 className="relative"
                 onMouseEnter={() => setActiveMega('resources')}
                 onMouseLeave={() => setActiveMega(null)}
               >
-                <button 
+                <button
                   onClick={() => {
                     setIsOpen(false);
                     setActiveMega(null);
@@ -618,7 +612,7 @@ export default function Navbar({
                 )}
               </div>
 
-              <button 
+              <button
                 onClick={() => handleNavClick('contact')}
                 className={`text-[15px] xl:text-[16px] font-bold transition-colors hover:text-[#007cff] cursor-pointer whitespace-nowrap ${currentPage === 'contact' ? 'text-[#007cff]' : 'text-slate-600'}`}
               >
@@ -628,7 +622,7 @@ export default function Navbar({
 
             {/* Action CTAs - Solid Warm Golden Amber Button */}
             <div className="hidden xl:flex items-center gap-2 shrink-0">
-              <button 
+              <button
                 onClick={openConsultation}
                 className="bg-[#007cff] hover:bg-blue-600 text-white text-xs xl:text-sm px-4 xl:px-5 py-2.5 xl:py-3 rounded-lg font-bold tracking-wide shadow-md shadow-blue-500/10 hover:scale-[1.02] transition-all uppercase whitespace-nowrap cursor-pointer ml-3 xl:ml-6"
                 id="nav-consultation-btn"
@@ -638,14 +632,14 @@ export default function Navbar({
             </div>
 
             {/* Mobile Hamburger Menu Toggle */}
-            <div className="xl:hidden flex items-center gap-1.5 sm:gap-3 shrink-0">
-              <button 
+            <div className="xl:hidden flex items-center gap-1.5 sm:gap-3 shrink-0 ml-auto">
+              <button
                 onClick={openConsultation}
-                className="bg-[#007cff] hover:bg-blue-600 text-white text-[11px] sm:text-sm px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-md font-bold transition-all uppercase whitespace-nowrap"
+                className="bg-[#007cff] hover:bg-blue-600 !text-white text-[11px] sm:text-sm px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-lg font-bold transition-all uppercase whitespace-nowrap cursor-pointer shadow-sm"
               >
                 Consult Free
               </button>
-              <button 
+              <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="text-slate-750 p-1.5 sm:p-2 focus:outline-none bg-slate-100 rounded-md border border-slate-200 cursor-pointer shrink-0"
                 id="mobile-menu-toggle"
@@ -660,7 +654,7 @@ export default function Navbar({
         {/* Mobile Navigation Drawer */}
         {isOpen && (
           <div className="xl:hidden absolute top-full left-0 right-0 bg-white border-t border-slate-200 shadow-2xl p-6 flex flex-col gap-4 animate-slideDown max-h-[85vh] overflow-y-auto">
-            <button 
+            <button
               onClick={() => handleNavClick('home')}
               className={`text-left text-base font-semibold pb-2 border-b border-slate-100 ${currentPage === 'home' ? 'text-[#007cff]' : 'text-slate-700'}`}
             >
@@ -668,7 +662,7 @@ export default function Navbar({
             </button>
             {/* Mobile About Us Accordion */}
             <div className="border-b border-slate-100 pb-2">
-              <button 
+              <button
                 onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
                 className="w-full flex justify-between items-center text-left text-base font-semibold text-slate-700"
               >
@@ -705,120 +699,120 @@ export default function Navbar({
               )}
             </div>
 
-              {/* Mobile Services Accordion */}
-             <div className="border-b border-slate-100 pb-2">
-               <button 
-                 onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                 className="w-full flex justify-between items-center text-left text-base font-semibold text-slate-700"
-               >
-                 <span>Services</span>
-                 <ChevronDown className={`w-4 h-4 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} />
-               </button>
-               {mobileServicesOpen && (
-                 <div className="mt-3 pl-3 flex flex-col gap-2.5 border-l-2 border-blue-500/30">
-                   {SERVICES.filter(s => s.id !== 'offshore-team').map((s) => (
-                     <button
-                       key={s.id}
-                       onClick={() => {
-                         setSelectedServiceId(s.id);
-                         if (setSelectedSubServiceId) {
-                           setSelectedSubServiceId('');
-                         }
-                         setIsOpen(false);
-                         setActiveMega(null);
-                         window.scrollTo({ top: 0, behavior: 'smooth' });
-                         if (s.id === 'accounting') navigate('/services/accounting-bookkeeping');
-                         else if (s.id === 'audit') navigate('/services/audit-assurance');
-                         else if (s.id === 'tax') navigate('/services/tax-services');
-                         else if (s.id === 'other') navigate('/services/cfo-advisory');
-                         else navigate('/services');
-                         setTimeout(() => {
-                           const el = document.getElementById('services-explorer-section');
-                           if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                         }, 200);
-                       }}
-                       className="text-left text-xs text-slate-500 hover:text-[#007cff] py-1 transition-colors"
-                     >
-                       {s.title}
-                     </button>
-                   ))}
-                 </div>
-               )}
-             </div>
+            {/* Mobile Services Accordion */}
+            <div className="border-b border-slate-100 pb-2">
+              <button
+                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                className="w-full flex justify-between items-center text-left text-base font-semibold text-slate-700"
+              >
+                <span>Services</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {mobileServicesOpen && (
+                <div className="mt-3 pl-3 flex flex-col gap-2.5 border-l-2 border-blue-500/30">
+                  {SERVICES.filter(s => s.id !== 'offshore-team').map((s) => (
+                    <button
+                      key={s.id}
+                      onClick={() => {
+                        setSelectedServiceId(s.id);
+                        if (setSelectedSubServiceId) {
+                          setSelectedSubServiceId('');
+                        }
+                        setIsOpen(false);
+                        setActiveMega(null);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        if (s.id === 'accounting') navigate('/services/accounting-bookkeeping');
+                        else if (s.id === 'audit') navigate('/services/audit-assurance');
+                        else if (s.id === 'tax') navigate('/services/tax-services');
+                        else if (s.id === 'other') navigate('/services/cfo-advisory');
+                        else navigate('/services');
+                        setTimeout(() => {
+                          const el = document.getElementById('services-explorer-section');
+                          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }, 200);
+                      }}
+                      className="text-left text-xs text-slate-500 hover:text-[#007cff] py-1 transition-colors"
+                    >
+                      {s.title}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
 
-             {/* Mobile Build your team Accordion */}
-             <div className="border-b border-slate-100 pb-2">
-               <button 
-                 onClick={() => setMobileHireOpen(!mobileHireOpen)}
-                 className="w-full flex justify-between items-center text-left text-base font-semibold text-slate-700"
-               >
-                 <span>Build your team</span>
-                 <ChevronDown className={`w-4 h-4 transition-transform ${mobileHireOpen ? 'rotate-180' : ''}`} />
-               </button>
-               {mobileHireOpen && (
-                 <div className="mt-3 pl-3 flex flex-col gap-2.5 border-l-2 border-blue-500/30">
-                   {SERVICE_CATEGORIES.find(c => c.id === 'offshore-team')?.items.map((item, idx) => (
-                     <button
-                       key={idx}
-                       onClick={() => {
-                         setSelectedServiceId('offshore-team');
-                         const subId = mapTitleToSubServiceId(item.title);
-                         setSelectedSubServiceId?.(subId);
-                         handleNavClick('services');
-                         setTimeout(() => {
-                           const el = document.getElementById(subId);
-                           if (el) {
-                             el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                           } else {
-                             const sec = document.getElementById('service-detail-card');
-                             if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                           }
-                         }, 200);
-                       }}
-                        className="text-left text-sm sm:text-base font-semibold text-slate-700 hover:text-[#007cff] py-1 transition-colors break-words w-full"
-                        title={item.title}
-                      >
-                        {item.title}
-                      </button>
-                   ))}
-                 </div>
-               )}
-             </div>
+            {/* Mobile Build your team Accordion */}
+            <div className="border-b border-slate-100 pb-2">
+              <button
+                onClick={() => setMobileHireOpen(!mobileHireOpen)}
+                className="w-full flex justify-between items-center text-left text-base font-semibold text-slate-700"
+              >
+                <span>Build your team</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileHireOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {mobileHireOpen && (
+                <div className="mt-3 pl-3 flex flex-col gap-2.5 border-l-2 border-blue-500/30">
+                  {SERVICE_CATEGORIES.find(c => c.id === 'offshore-team')?.items.map((item, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => {
+                        setSelectedServiceId('offshore-team');
+                        const subId = mapTitleToSubServiceId(item.title);
+                        setSelectedSubServiceId?.(subId);
+                        handleNavClick('services');
+                        setTimeout(() => {
+                          const el = document.getElementById(subId);
+                          if (el) {
+                            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                          } else {
+                            const sec = document.getElementById('service-detail-card');
+                            if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                          }
+                        }, 200);
+                      }}
+                      className="text-left text-sm sm:text-base font-semibold text-slate-700 hover:text-[#007cff] py-1 transition-colors break-words w-full"
+                      title={item.title}
+                    >
+                      {item.title}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
 
-             {/* Mobile Industries Accordion */}
-             <div className="border-b border-slate-100 pb-2">
-               <button 
-                 onClick={() => setMobilePageSectorsOpen(!mobilePageSectorsOpen)}
-                 className="w-full flex justify-between items-center text-left text-base font-semibold text-slate-700"
-               >
-                 <span>Industries</span>
-                 <ChevronDown className={`w-4 h-4 transition-transform ${mobilePageSectorsOpen ? 'rotate-180' : ''}`} />
-               </button>
-               {mobilePageSectorsOpen && (
-                 <div className="mt-3 pl-3 flex flex-col gap-2.5 border-l-2 border-blue-500/30">
-                   {INDUSTRIES.map((ind) => (
-                     <button
-                       key={ind.id}
-                       onClick={() => {
-                         setSelectedIndustryId(ind.id);
-                         handleNavClick('industries');
-                         setTimeout(() => {
-                           const el = document.getElementById(`industry-card-${ind.id}`);
-                           if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                         }, 150);
-                       }}
-                       className="text-left text-base text-slate-700 hover:text-[#007cff] py-1 transition-colors"
-                     >
-                       {ind.title}
-                     </button>
-                   ))}
-                 </div>
-               )}
-             </div>
+            {/* Mobile Industries Accordion */}
+            <div className="border-b border-slate-100 pb-2">
+              <button
+                onClick={() => setMobilePageSectorsOpen(!mobilePageSectorsOpen)}
+                className="w-full flex justify-between items-center text-left text-base font-semibold text-slate-700"
+              >
+                <span>Industries</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobilePageSectorsOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {mobilePageSectorsOpen && (
+                <div className="mt-3 pl-3 flex flex-col gap-2.5 border-l-2 border-blue-500/30">
+                  {INDUSTRIES.map((ind) => (
+                    <button
+                      key={ind.id}
+                      onClick={() => {
+                        setSelectedIndustryId(ind.id);
+                        handleNavClick('industries');
+                        setTimeout(() => {
+                          const el = document.getElementById(`industry-card-${ind.id}`);
+                          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }, 150);
+                      }}
+                      className="text-left text-base text-slate-700 hover:text-[#007cff] py-1 transition-colors"
+                    >
+                      {ind.title}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
 
             {/* Mobile Resources Accordion */}
             <div className="border-b border-slate-100 pb-2">
-              <button 
+              <button
                 onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)}
                 className="w-full flex justify-between items-center text-left text-base font-semibold text-slate-700"
               >
@@ -858,7 +852,7 @@ export default function Navbar({
               )}
             </div>
 
-            <button 
+            <button
               onClick={() => handleNavClick('contact')}
               className={`text-left text-base font-semibold pb-2 border-b border-slate-100 ${currentPage === 'contact' ? 'text-[#007cff]' : 'text-slate-700'}`}
             >
@@ -867,7 +861,7 @@ export default function Navbar({
 
             {/* Mobile Actions - Solid Warm Golden Amber */}
             <div className="flex flex-col gap-3 mt-4">
-              <button 
+              <button
                 onClick={() => { setIsOpen(false); openConsultation(); }}
                 className="w-full text-center bg-[#007cff] text-white text-xs py-3.5 rounded-lg font-bold shadow-lg shadow-blue-500/10 uppercase"
               >

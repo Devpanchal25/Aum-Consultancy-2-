@@ -10,7 +10,7 @@ interface LogoProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export function LogoIcon({
-  className = 'w-10 h-10',
+  className = 'w-8 h-8 sm:w-10 sm:h-10',
 }: {
   className?: string;
   darkBg?: boolean;
@@ -31,7 +31,7 @@ export function LogoIcon({
 export default function Logo({
   variant = 'horizontal',
   className = '',
-  iconClassName = 'w-10 h-10',
+  iconClassName = 'w-8 h-8 sm:w-10 sm:h-10',
   darkBg = false,
   ...restProps
 }: LogoProps) {
@@ -61,7 +61,7 @@ export default function Logo({
 
   return (
     <div
-      className={`flex items-center gap-2.5 group cursor-pointer shrink-0 ${className}`}
+      className={`flex items-center gap-1.5 sm:gap-2.5 group cursor-pointer shrink-0 ${className}`}
       {...restProps}
     >
       {/* Logo Icon with responsive hover scale */}
@@ -73,16 +73,16 @@ export default function Logo({
       </div>
 
       {/* Corporate Typography branding */}
-      <div className="flex flex-col select-none">
-        <div className="flex items-baseline leading-none">
-          <span className={`font-sans font-extrabold text-base sm:text-lg tracking-wide uppercase transition-colors duration-300 ${displayTextColor}`}>
+      <div className="flex flex-col select-none min-w-0">
+        <div className="flex items-baseline leading-none min-w-0 flex-wrap">
+          <span className={`font-sans font-extrabold text-sm sm:text-lg tracking-wide uppercase transition-colors duration-300 ${displayTextColor} shrink-0`}>
             AUM
           </span>
-          <span className={`font-sans font-light text-xs sm:text-sm tracking-[0.14em] sm:tracking-[0.18em] ml-1.5 uppercase ${brandTextColor}`}>
+          <span className={`font-sans font-light text-xs sm:text-sm tracking-[0.1em] sm:tracking-[0.18em] ml-1 sm:ml-1.5 uppercase ${brandTextColor} truncate`}>
             Consultancy
           </span>
         </div>
-        <span className={`hidden sm:block text-[8px] sm:text-[9px] font-mono tracking-[0.2em] sm:tracking-[0.25em] mt-0.5 uppercase ${subtextColor}`}>
+        <span className={`hidden min-[420px]:block text-[8px] sm:text-[9px] font-mono tracking-[0.15em] sm:tracking-[0.25em] mt-0.5 uppercase truncate ${subtextColor}`}>
           Your Strategic Offshore Partner
         </span>
       </div>

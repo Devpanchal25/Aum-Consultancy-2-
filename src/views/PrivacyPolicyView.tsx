@@ -10,8 +10,8 @@ export default function PrivacyPolicyView() {
       <section className="bg-navy-900 text-white py-12 sm:py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(0,124,255,0.06),transparent_50%)]"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-4">
-          <button 
-            onClick={() => navigate(-1)} 
+          <button
+            onClick={() => navigate(-1)}
             className="flex items-center gap-1.5 text-xs text-[#007cff] font-mono hover:underline cursor-pointer"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
@@ -27,7 +27,7 @@ export default function PrivacyPolicyView() {
       {/* Main content body */}
       <section className="py-16 max-w-4xl mx-auto px-4 sm:px-6">
         <div className="bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-10 shadow-sm space-y-8 text-slate-700">
-          
+
           <div className="flex items-center gap-3 border-b border-slate-100 pb-4">
             <ShieldCheck className="w-6 h-6 text-[#007cff]" />
             <span className="text-xs font-mono text-slate-400 font-bold uppercase tracking-wider">Effective Date: July 7, 2026</span>

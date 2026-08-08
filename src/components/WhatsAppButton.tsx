@@ -21,10 +21,10 @@ export default function WhatsAppButton() {
     // Selected representative phone number
     const selected = countries.find(c => c.name.includes(country)) || countries[0];
     const encodedText = encodeURIComponent(`Hello Aum Consultancy team, I am writing from ${country}. I would like to inquire about: ${message}`);
-    
+
     // Create WhatsApp URL
     const whatsappUrl = `https://wa.me/${selected.phone.replace('+', '')}?text=${encodedText}`;
-    
+
     // Simulate send effect then open WhatsApp in a new tab
     setSubmitted(true);
     setTimeout(() => {
@@ -56,7 +56,7 @@ export default function WhatsAppButton() {
                 </p>
               </div>
             </div>
-            <button 
+            <button
               onClick={() => setIsOpen(false)}
               className="text-white/80 hover:text-white hover:bg-white/10 p-1 rounded-full transition-colors"
             >
@@ -76,8 +76,8 @@ export default function WhatsAppButton() {
           <form onSubmit={handleSendMessage} className="p-3.5 border-t border-slate-100 space-y-2.5 bg-white">
             <div className="flex flex-col gap-1">
               <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Select Regional Rep:</label>
-              <select 
-                value={country} 
+              <select
+                value={country}
                 onChange={(e) => setCountry(e.target.value)}
                 className="w-full bg-slate-100 border-none rounded-lg p-2 text-xs text-slate-700 focus:ring-1 focus:ring-green-500 outline-none"
               >
@@ -90,7 +90,7 @@ export default function WhatsAppButton() {
             </div>
 
             <div className="relative">
-              <textarea 
+              <textarea
                 rows={2}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
@@ -98,7 +98,7 @@ export default function WhatsAppButton() {
                 className="w-full bg-slate-50 border border-slate-200 rounded-lg pl-3 pr-10 py-2.5 text-xs text-slate-700 focus:outline-none focus:border-green-500 resize-none"
                 required
               />
-              <button 
+              <button
                 type="submit"
                 disabled={submitted}
                 className="absolute right-2.5 bottom-2.5 bg-green-600 text-white p-1.5 rounded-full hover:bg-green-700 hover:scale-105 transition-all flex items-center justify-center"
@@ -111,15 +111,15 @@ export default function WhatsAppButton() {
       )}
 
       {/* Floating Action Button */}
-      <button 
+      <button
         onClick={() => setIsOpen(!isOpen)}
         className="bg-green-600 hover:bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg shadow-green-600/30 hover:scale-110 active:scale-95 transition-all border border-green-500/20 group"
         title="Chat on WhatsApp"
         aria-label="Chat with Aum Consultancy on WhatsApp"
         id="floating-whatsapp-btn"
       >
-        <svg 
-          className="w-7 h-7 fill-current group-hover:rotate-12 transition-transform duration-300" 
+        <svg
+          className="w-7 h-7 fill-current group-hover:rotate-12 transition-transform duration-300"
           viewBox="0 0 24 24"
         >
           <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.842-1.001zm10.332-6.568c-.287-.144-1.701-.84-1.963-.935-.262-.096-.453-.144-.644.144-.192.287-.741.935-.908 1.127-.167.192-.334.216-.621.072-.287-.144-1.214-.447-2.312-1.427-.855-.763-1.433-1.705-1.601-1.992-.167-.287-.018-.442.126-.585.13-.129.287-.335.431-.503.144-.168.192-.288.287-.48.096-.192.048-.36-.024-.503-.072-.144-.644-1.581-.882-2.155-.232-.559-.467-.483-.644-.492l-.55-.008c-.192 0-.503.072-.765.36-.262.287-1.004.983-1.004 2.399 0 1.416 1.028 2.783 1.171 2.975.144.192 2.025 3.093 4.906 4.337.686.296 1.221.473 1.638.605.688.218 1.314.187 1.809.113.553-.083 1.701-.695 1.94-1.365.239-.67.239-1.244.167-1.365-.072-.121-.263-.193-.55-.337z" />

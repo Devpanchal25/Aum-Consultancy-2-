@@ -33,7 +33,7 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
 
   return (
     <div className="pt-20">
-      
+
       {/* Hero Banner Header */}
       <section className="relative text-navy-950 overflow-hidden py-16 sm:py-24 bg-white border-b border-slate-100 scroll-mt-28 sm:scroll-mt-32" id="about-hero-header">
         <div className="absolute inset-0 z-0">
@@ -60,13 +60,13 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
       <section className="py-20 bg-slate-50 border-b border-slate-100 scroll-mt-28 sm:scroll-mt-32" id="brand-story-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center space-y-8">
-            
+
             <div className="space-y-3">
               <h2 className="font-serif text-3xl sm:text-4xl font-bold text-navy-900 leading-tight">
                 About Aum Consultancy
               </h2>
             </div>
-            
+
             <div className="text-sm sm:text-base text-slate-600 leading-relaxed font-light space-y-6">
               <p>
                 As a premier offshore financial architecture partner, we seamlessly integrate into businesses and public accounting practices across the US, UK, Canada, and Australia. At Aum Consultancy, we don't operate as a detached vendor; we act as your hidden competitive advantage. We manage the heavy data processing and compliance rules behind the scenes, freeing your core leadership team to focus entirely on what matters most.
@@ -84,7 +84,7 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
       {/* 2. Founder & Core Leadership Team */}
       <section className="py-20 bg-white border-b border-slate-100 scroll-mt-28 sm:scroll-mt-32" id="founders-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
+
           <div className="text-center max-w-2xl mx-auto space-y-3">
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-navy-900">
               Our Leadership Team
@@ -94,25 +94,25 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
           {/* Team Grid */}
           <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 justify-items-center">
             {TEAM.map((member) => (
-              <div 
+              <div
                 key={member.name}
                 className="bg-white border border-slate-100 rounded-2xl p-6 sm:p-8 text-center flex flex-col justify-between hover:shadow-lg transition-all duration-300 relative group w-full max-w-sm"
               >
                 <div className="space-y-4 flex flex-col items-center">
-                  
+
                   {/* Circular Avatar with LinkedIn overlay */}
                   <div className="relative w-36 h-36 sm:w-40 sm:h-40 shrink-0">
                     <div className="w-full h-full rounded-full overflow-hidden border-2 border-slate-100 shadow-sm bg-slate-50">
-                      <SafeImage 
-                        src={member.image} 
-                        alt={member.name} 
+                      <SafeImage
+                        src={member.image}
+                        alt={member.name}
                         className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
                         category="team"
                       />
                     </div>
-                    <a 
-                      href={member.linkedinUrl || "https://www.linkedin.com/company/aum-consultancy-india/"} 
-                      target="_blank" 
+                    <a
+                      href={member.linkedinUrl || "https://www.linkedin.com/company/aum-consultancy-india/"}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="absolute bottom-1 right-2 bg-[#007cff] p-2 rounded-full text-white border-2 border-white hover:bg-blue-600 transition-colors shadow-md cursor-pointer flex items-center justify-center"
                       onClick={(e) => e.stopPropagation()}
@@ -158,7 +158,7 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
               We know that handing over financial data requires absolute confidence. To gain and maintain your complete trust, we enforce bank-grade security protocols across our entire ecosystem:
             </p>
           </div>
- 
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white border border-slate-200/60 p-6 sm:p-8 rounded-2xl space-y-4 hover:shadow-lg hover:border-slate-300/60 transition-all duration-300">
               <h3 className="text-xs font-extrabold text-navy-900 uppercase tracking-wider font-sans">Zero-Local-Storage Policy</h3>
@@ -166,14 +166,14 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
                 Your client data remains entirely locked within secure, designated cloud environments—never downloaded or stored on local drives.
               </p>
             </div>
- 
+
             <div className="bg-white border border-slate-200/60 p-6 sm:p-8 rounded-2xl space-y-4 hover:shadow-lg hover:border-slate-300/60 transition-all duration-300">
               <h3 className="text-xs font-extrabold text-navy-900 uppercase tracking-wider font-sans">Multi-Tier Encryption</h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
                 We protect your sensitive data using AES 256-bit encryption for all data at rest and in transit.
               </p>
             </div>
- 
+
             <div className="bg-white border border-slate-200/60 p-6 sm:p-8 rounded-2xl space-y-4 hover:shadow-lg hover:border-slate-300/60 transition-all duration-300">
               <h3 className="text-xs font-extrabold text-navy-900 uppercase tracking-wider font-sans">Strict Access Control</h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
@@ -184,10 +184,10 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
         </div>
       </section>
 
-{/* 4. Vision & Mission Section */}
+      {/* 4. Vision & Mission Section */}
       <section className="py-20 bg-white scroll-mt-28 sm:scroll-mt-32" id="vision-mission-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          
+
           {/* Main Title Header - Centered */}
           <div className="text-center max-w-2xl mx-auto space-y-3">
             <span className="text-xs font-mono text-[#007cff] uppercase tracking-widest font-extrabold block">
@@ -223,7 +223,7 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
               <h4 className="text-sm font-extrabold text-navy-900 uppercase tracking-widest font-mono flex items-center gap-2">
                 <span></span> Strategic Pillars of the Vision
               </h4>
-              
+
               <div className="space-y-6">
                 <div className="flex gap-4 items-start">
                   <div className="p-2 text-[#007cff] shrink-0 mt-0.5">
@@ -298,7 +298,7 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
 
               {/* Vertical list of 4 Mandates */}
               <div className="space-y-8">
-                
+
                 {/* Mandate 1 */}
                 <div className="space-y-3 pb-6 border-b border-slate-150">
                   <div className="flex items-center gap-2 text-navy-950 font-bold text-lg sm:text-xl">
@@ -330,7 +330,7 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
                   <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light text-left">
                     We pledge to deliver 'Right the First Time' financial packages. To protect the regulatory standing of our partner firms, every work paper, tax return, ledger reconciliation, and financial draft must pass through our mandatory, multi-layer review workflow:
                   </p>
-                  
+
                   {/* Flow Steps - Clean Left Aligned, No Box */}
                   <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm font-bold text-navy-900 my-3">
                     <span>Preparer</span>
@@ -391,9 +391,9 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
       {activeMember && (
         <div className="fixed inset-0 bg-navy-950/75 backdrop-blur-xs z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl shadow-2xl border border-slate-200/80 max-w-2xl w-full relative overflow-hidden max-h-[85vh] flex flex-col animate-in fade-in zoom-in-95 duration-200">
-            
+
             {/* Close button */}
-            <button 
+            <button
               onClick={() => setActiveMember(null)}
               className="absolute top-4 right-4 text-slate-400 hover:text-navy-900 transition-colors p-1.5 rounded-full hover:bg-slate-100 cursor-pointer z-10"
             >
@@ -405,16 +405,16 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5">
                 <div className="relative w-24 h-24 sm:w-28 sm:h-28 shrink-0">
                   <div className="w-full h-full rounded-full overflow-hidden border border-slate-200 shadow-sm bg-slate-50">
-                    <SafeImage 
-                      src={activeMember.image} 
-                      alt={activeMember.name} 
+                    <SafeImage
+                      src={activeMember.image}
+                      alt={activeMember.name}
                       className="w-full h-full object-cover"
                       category="team"
                     />
                   </div>
-                  <a 
-                    href={activeMember.linkedinUrl || "https://www.linkedin.com/company/aum-consultancy-india/"} 
-                    target="_blank" 
+                  <a
+                    href={activeMember.linkedinUrl || "https://www.linkedin.com/company/aum-consultancy-india/"}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="absolute bottom-0 right-1 bg-[#007cff] p-1.5 rounded-full text-white border-2 border-white hover:bg-blue-600 transition-colors shadow-sm cursor-pointer flex items-center justify-center"
                   >

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Page, IndustryItem } from '../types';
 import { INDUSTRIES } from '../data';
-import { 
-  HeartPulse, Building, Factory, HardHat, Store, Laptop, 
-  ShoppingBag, Coins, Rocket, Briefcase, Landmark, CheckCircle, 
+import {
+  HeartPulse, Building, Factory, HardHat, Store, Laptop,
+  ShoppingBag, Coins, Rocket, Briefcase, Landmark, CheckCircle,
   ArrowRight, ShieldAlert, BadgeInfo, Star, Search, X, Filter
 } from 'lucide-react';
 import SafeImage from '../components/SafeImage';
@@ -50,8 +50,8 @@ const getIconComponent = (name: string, sizeClass = "w-5 h-5") => {
   }
 };
 
-export default function IndustriesView({ 
-  setCurrentPage, 
+export default function IndustriesView({
+  setCurrentPage,
   openConsultation,
   selectedIndustryId,
   setSelectedIndustryId
@@ -112,7 +112,7 @@ export default function IndustriesView({
 
   const filteredIndustries = INDUSTRIES.filter((ind) => {
     const matchesCategory = activeCategory === 'all' || getIndustryCategory(ind.id) === activeCategory;
-    const matchesSearch = searchQuery.trim() === '' || 
+    const matchesSearch = searchQuery.trim() === '' ||
       ind.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       ind.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
       ind.challenges.some(c => c.toLowerCase().includes(searchQuery.toLowerCase())) ||
@@ -123,7 +123,7 @@ export default function IndustriesView({
 
   return (
     <div className="pt-20">
-      
+
       {/* Header Banner */}
       <section className="relative text-navy-950 overflow-hidden py-16 sm:py-20 bg-white border-b border-slate-100" id="industries-hero-header">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4 sm:space-y-6">
@@ -143,7 +143,7 @@ export default function IndustriesView({
       {/* Industries Grid & Detailed Solutions Panel */}
       <section className="py-20 bg-white" id="industries-grid-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
+
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="text-xs font-extrabold text-[#007cff] uppercase tracking-widest block font-sans">Specialized Handbooks</span>
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-navy-900">
@@ -176,7 +176,7 @@ export default function IndustriesView({
                   </button>
                 )}
               </div>
-              
+
               <div className="text-[11px] text-slate-500 font-medium font-mono shrink-0 flex items-center gap-2">
                 <span className="bg-blue-500/10 border border-blue-500/20 text-[#007cff] px-2.5 py-0.5 rounded-full font-bold">
                   {filteredIndustries.length}
@@ -194,11 +194,10 @@ export default function IndustriesView({
                     setActiveCategory(cat.id);
                     setSelectedIndustryId(null);
                   }}
-                  className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border cursor-pointer ${
-                    activeCategory === cat.id
+                  className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border cursor-pointer ${activeCategory === cat.id
                       ? 'bg-navy-950 border-navy-950 text-white shadow-sm'
                       : 'bg-white hover:bg-slate-50 text-slate-600 border-slate-200 hover:border-slate-300'
-                  }`}
+                    }`}
                 >
                   {cat.label}
                 </button>
@@ -233,25 +232,24 @@ export default function IndustriesView({
               {filteredIndustries.map((ind) => {
                 const hasImage = INDUSTRY_IMAGES[ind.id];
                 const isSelected = selectedIndustryId === ind.id;
-                
+
                 return (
-                  <div 
+                  <div
                     key={ind.id}
                     id={`industry-card-${ind.id}`}
                     onClick={() => setSelectedIndustryId(isSelected ? null : ind.id)}
-                    className={`bg-white rounded-3xl border overflow-hidden transition-all duration-300 cursor-pointer flex flex-col justify-between group shadow-xs ${
-                      isSelected 
-                        ? 'border-[#007cff] ring-1 ring-[#007cff] shadow-md scale-[1.01]' 
+                    className={`bg-white rounded-3xl border overflow-hidden transition-all duration-300 cursor-pointer flex flex-col justify-between group shadow-xs ${isSelected
+                        ? 'border-[#007cff] ring-1 ring-[#007cff] shadow-md scale-[1.01]'
                         : 'border-slate-150 hover:border-slate-300 hover:shadow-sm'
-                    }`}
+                      }`}
                   >
                     <div>
                       {/* Full-bleed Industry Photo */}
                       {hasImage && (
                         <div className="relative h-44 w-full overflow-hidden bg-slate-100 shrink-0 select-none">
-                          <SafeImage 
-                            src={hasImage} 
-                            alt={ind.title} 
+                          <SafeImage
+                            src={hasImage}
+                            alt={ind.title}
                             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                             category="other"
                           />
@@ -293,7 +291,7 @@ export default function IndustriesView({
                     {/* Expanded Details Panel inside the card */}
                     {isSelected && (
                       <div className="px-6 pb-6 pt-5 border-t border-slate-100 space-y-5 bg-blue-50/20 animate-fadeIn shrink-0">
-                        
+
                         {/* Challenges list */}
                         <div className="space-y-2.5">
                           <span className="text-[10px] font-extrabold text-rose-600 uppercase tracking-wider block flex items-center gap-1.5 font-mono">
@@ -366,7 +364,7 @@ export default function IndustriesView({
             Whether you operate multi-state physical retail networks in the USA or need quarterly VAT filing with HMRC in the UK, we've got you covered.
           </p>
         </div>
-        <button 
+        <button
           onClick={openConsultation}
           className="bg-[#007cff] hover:bg-blue-600 text-white font-bold text-xs tracking-wider px-8 py-3.5 rounded-lg transition-all shadow-md inline-block uppercase cursor-pointer"
         >

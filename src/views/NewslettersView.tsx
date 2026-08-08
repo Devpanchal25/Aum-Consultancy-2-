@@ -50,8 +50,8 @@ export default function NewslettersView() {
       <section className="bg-navy-900 text-white py-16 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(0,124,255,0.06),transparent_50%)]"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-4">
-          <button 
-            onClick={() => navigate('/resources')} 
+          <button
+            onClick={() => navigate('/resources')}
             className="flex items-center gap-1.5 text-xs text-[#007cff] font-mono hover:underline mb-2 cursor-pointer"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
@@ -70,7 +70,7 @@ export default function NewslettersView() {
       {/* Main Content split */}
       <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
+
           {/* Left Side: Subscribe Panel */}
           <div className="col-span-12 lg:col-span-5 bg-white rounded-3xl border border-slate-200/80 p-6 sm:p-10 shadow-sm space-y-6">
             <div className="p-3 bg-blue-500/10 border border-blue-500/20 rounded-2xl w-fit">
@@ -131,8 +131,8 @@ export default function NewslettersView() {
 
             <div className="space-y-6">
               {PAST_ISSUES.map((issue, idx) => (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm hover:border-[#007cff]/30 transition-colors"
                 >
                   <div className="flex items-center justify-between mb-2">

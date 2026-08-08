@@ -5,24 +5,28 @@
   --font-sans: "Inter", "Poppins", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Poppins", Georgia, serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-  
+
   --color-workspace-bg: #ffffff;
-  
+
   /* Primary Oxford Navy Core -> Mapped to Clean White & Light Blues */
   --color-navy-950: #ffffff;
-  --color-navy-900: #f0f7ff; /* Soft light blue background */
-  --color-navy-850: #e0f2fe; /* Light blue border/accent */
-  --color-navy-800: #bae6fd; /* Light blue accent */
+  --color-navy-900: #f0f7ff;
+  /* Soft light blue background */
+  --color-navy-850: #e0f2fe;
+  /* Light blue border/accent */
+  --color-navy-800: #bae6fd;
+  /* Light blue accent */
   --color-navy-700: #38bdf8;
-  --color-navy-600: #007cff; /* Premium light blue */
-  
+  --color-navy-600: #007cff;
+  /* Premium light blue */
+
   /* Slate/Text Dark Base -> Mapped to pure black/charcoal text */
   --color-slate-950: #000000;
   --color-slate-900: #000000;
   --color-slate-800: #111111;
   --color-slate-700: #1f2937;
   --color-slate-600: #374151;
-  
+
   /* Override Default Indigo -> Light Blue Accents */
   --color-indigo-50: #f0f7ff;
   --color-indigo-100: #e0f2fe;
@@ -30,12 +34,14 @@
   --color-indigo-300: #7dd3fc;
   --color-indigo-400: #38bdf8;
   --color-indigo-500: #007cff;
-  --color-indigo-600: #007cff; /* Premium light blue accent */
-  --color-indigo-700: #005fcc; /* Hover state light blue */
+  --color-indigo-600: #007cff;
+  /* Premium light blue accent */
+  --color-indigo-700: #005fcc;
+  /* Hover state light blue */
   --color-indigo-800: #0369a1;
   --color-indigo-900: #075985;
   --color-indigo-950: #0c4a6e;
-  
+
   /* Override Default Blue to correspond to light blue shades */
   --color-blue-50: #f0f7ff;
   --color-blue-100: #e0efff;
@@ -48,7 +54,7 @@
   --color-blue-800: #002e5c;
   --color-blue-900: #002147;
   --color-blue-950: #001227;
-  
+
   /* Gold/Amber Helpers -> Mapped to light blue */
   --color-gold-100: #f0f7ff;
   --color-gold-400: #3ba4ff;
@@ -61,6 +67,7 @@
     scroll-behavior: smooth;
     font-size: 16px;
   }
+
   body {
     @apply font-sans bg-white text-black selection:bg-blue-500/20 selection:text-blue-900 overflow-x-hidden antialiased;
   }
@@ -70,21 +77,29 @@
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #f8fafc;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
 
 /* Infinite Marquee Animation for Industry served strip */
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-marquee {
@@ -102,8 +117,12 @@
  */
 
 /* Force all elements inside dark containers that now have white backgrounds to display black text */
-.bg-navy-950:not(footer):not(footer *), .bg-navy-900:not(footer):not(footer *), .bg-navy-850, .bg-blue-50,
-div[class*="bg-navy-"]:not(footer):not(footer *), section[class*="bg-navy-"]:not(footer):not(footer *),
+.bg-navy-950:not(footer):not(footer *),
+.bg-navy-900:not(footer):not(footer *),
+.bg-navy-850,
+.bg-blue-50,
+div[class*="bg-navy-"]:not(footer):not(footer *),
+section[class*="bg-navy-"]:not(footer):not(footer *),
 header {
   color: #000000 !important;
 }
@@ -113,10 +132,14 @@ header {
   background-color: #ffffff !important;
   border-bottom: 1px solid #e2e8f0 !important;
 }
-header button, header a {
+
+header button:not(.bg-\[\#007cff\]):not(.bg-blue-600):not(.text-white),
+header a:not(.bg-\[\#007cff\]):not(.bg-blue-600):not(.text-white) {
   color: #1f2937 !important;
 }
-header button:hover, header a:hover {
+
+header button:not(.bg-\[\#007cff\]):not(.bg-blue-600):not(.text-white):hover,
+header a:not(.bg-\[\#007cff\]):not(.bg-blue-600):not(.text-white):hover {
   color: #007cff !important;
 }
 
@@ -126,45 +149,99 @@ nav[class*="bg-white"] {
 }
 
 /* Main non-footer soft blue bg elements */
-.bg-navy-900:not(footer), .bg-blue-50:not(footer) {
-  background-color: #f0f7ff !important; /* Soft light blue container bg */
+.bg-navy-900:not(footer),
+.bg-blue-50:not(footer) {
+  background-color: #f0f7ff !important;
+  /* Soft light blue container bg */
 }
-.bg-navy-900:not(footer) *, .bg-blue-50:not(footer) * {
+
+.bg-navy-900:not(footer) *,
+.bg-blue-50:not(footer) * {
   color: #111111 !important;
 }
 
 /* Precise Footer styling matching user specifications */
 footer {
-  background-color: #f0f7ff !important; /* Soft light blue */
-  border-top: 1px solid rgba(186, 230, 253, 0.8) !important; /* #bae6fd border with 80% opacity */
+  background-color: #f0f7ff !important;
+  /* Soft light blue */
+  border-top: 1px solid rgba(186, 230, 253, 0.8) !important;
+  /* #bae6fd border with 80% opacity */
 }
-footer, footer .text-slate-300 {
-  color: #1e293b !important; /* Slate/Gray readable text color on light blue */
+
+footer,
+footer .text-slate-300 {
+  color: #1e293b !important;
+  /* Slate/Gray readable text color on light blue */
 }
+
 footer .text-slate-400 {
-  color: #475569 !important; /* subtle readable gray subtext on light blue */
+  color: #475569 !important;
+  /* subtle readable gray subtext on light blue */
 }
+
 footer .text-white {
-  color: #0c1a30 !important; /* elegant deep navy headers in footer on light blue */
+  color: #0c1a30 !important;
+  /* elegant deep navy headers in footer on light blue */
 }
-footer a, footer button {
-  color: #007cff !important; /* Premium light blue links */
+
+footer a,
+footer button {
+  color: #007cff !important;
+  /* Premium light blue links */
 }
-footer a:hover, footer button:hover {
-  color: #007cff !important; /* Premium light blue hover */
+
+footer a:hover,
+footer button:hover {
+  color: #007cff !important;
+  /* Premium light blue hover */
 }
 
 /* Ensure all text classes for navy colors are dark and highly readable, overriding the theme background color definitions */
-.text-navy-950, h1.text-navy-950, h2.text-navy-950, h3.text-navy-950, h4.text-navy-950, span.text-navy-950, p.text-navy-950, strong.text-navy-950, div.text-navy-950 {
+.text-navy-950,
+h1.text-navy-950,
+h2.text-navy-950,
+h3.text-navy-950,
+h4.text-navy-950,
+span.text-navy-950,
+p.text-navy-950,
+strong.text-navy-950,
+div.text-navy-950 {
   color: #0c1a30 !important;
 }
-.text-navy-900, h1.text-navy-900, h2.text-navy-900, h3.text-navy-900, h4.text-navy-900, span.text-navy-900, p.text-navy-900, strong.text-navy-900, div.text-navy-900 {
+
+.text-navy-900,
+h1.text-navy-900,
+h2.text-navy-900,
+h3.text-navy-900,
+h4.text-navy-900,
+span.text-navy-900,
+p.text-navy-900,
+strong.text-navy-900,
+div.text-navy-900 {
   color: #0f213d !important;
 }
-.text-navy-850, h1.text-navy-850, h2.text-navy-850, h3.text-navy-850, h4.text-navy-850, span.text-navy-850, p.text-navy-850, strong.text-navy-850, div.text-navy-850 {
+
+.text-navy-850,
+h1.text-navy-850,
+h2.text-navy-850,
+h3.text-navy-850,
+h4.text-navy-850,
+span.text-navy-850,
+p.text-navy-850,
+strong.text-navy-850,
+div.text-navy-850 {
   color: #1a2e4c !important;
 }
-.text-navy-800, h1.text-navy-800, h2.text-navy-800, h3.text-navy-800, h4.text-navy-800, span.text-navy-800, p.text-navy-800, strong.text-navy-800, div.text-navy-800 {
+
+.text-navy-800,
+h1.text-navy-800,
+h2.text-navy-800,
+h3.text-navy-800,
+h4.text-navy-800,
+span.text-navy-800,
+p.text-navy-800,
+strong.text-navy-800,
+div.text-navy-800 {
   color: #243b5e !important;
 }
 
@@ -172,34 +249,71 @@ footer a:hover, footer button:hover {
 footer .bg-navy-950 {
   background-color: #ffffff !important;
 }
+
 footer .bg-navy-950 * {
-  color: #475569 !important; /* Slate/Gray readable text */
+  color: #475569 !important;
+  /* Slate/Gray readable text */
 }
-footer .bg-navy-950 a, footer .bg-navy-950 button {
+
+footer .bg-navy-950 a,
+footer .bg-navy-950 button {
   color: #007cff !important;
 }
-footer .bg-navy-950 a:hover, footer .bg-navy-950 button:hover {
+
+footer .bg-navy-950 a:hover,
+footer .bg-navy-950 button:hover {
   color: #007cff !important;
 }
 
 /* Force standard text classes inside the converted navy containers (excluding footer) to be black/dark slate instead of white */
-.bg-navy-950:not(footer) .text-white, .bg-navy-900:not(footer) .text-white, .bg-navy-850 .text-white, .bg-blue-50:not(footer) .text-white,
-.bg-navy-950:not(footer) .text-slate-100, .bg-navy-900:not(footer) .text-slate-100, .bg-blue-50:not(footer) .text-slate-100,
-.bg-navy-950:not(footer) .text-slate-200, .bg-navy-900:not(footer) .text-slate-200, .bg-blue-50:not(footer) .text-slate-200,
-.bg-navy-950:not(footer) .text-slate-300, .bg-navy-900:not(footer) .text-slate-300, .bg-blue-50:not(footer) .text-slate-300,
-.bg-navy-950:not(footer) .text-slate-400, .bg-navy-900:not(footer) .text-slate-400, .bg-blue-50:not(footer) .text-slate-400,
-.bg-navy-950:not(footer) .text-indigo-100, .bg-navy-900:not(footer) .text-indigo-100, .bg-blue-50:not(footer) .text-indigo-100,
-.bg-navy-950:not(footer) .text-indigo-200, .bg-navy-900:not(footer) .text-indigo-200, .bg-blue-50:not(footer) .text-indigo-200,
-.bg-navy-950:not(footer) .text-indigo-300, .bg-navy-900:not(footer) .text-indigo-300, .bg-blue-50:not(footer) .text-indigo-300,
-.bg-navy-950:not(footer) .text-indigo-400, .bg-navy-900:not(footer) .text-indigo-400, .bg-blue-50:not(footer) .text-indigo-400 {
+.bg-navy-950:not(footer) .text-white,
+.bg-navy-900:not(footer) .text-white,
+.bg-navy-850 .text-white,
+.bg-blue-50:not(footer) .text-white,
+.bg-navy-950:not(footer) .text-slate-100,
+.bg-navy-900:not(footer) .text-slate-100,
+.bg-blue-50:not(footer) .text-slate-100,
+.bg-navy-950:not(footer) .text-slate-200,
+.bg-navy-900:not(footer) .text-slate-200,
+.bg-blue-50:not(footer) .text-slate-200,
+.bg-navy-950:not(footer) .text-slate-300,
+.bg-navy-900:not(footer) .text-slate-300,
+.bg-blue-50:not(footer) .text-slate-300,
+.bg-navy-950:not(footer) .text-slate-400,
+.bg-navy-900:not(footer) .text-slate-400,
+.bg-blue-50:not(footer) .text-slate-400,
+.bg-navy-950:not(footer) .text-indigo-100,
+.bg-navy-900:not(footer) .text-indigo-100,
+.bg-blue-50:not(footer) .text-indigo-100,
+.bg-navy-950:not(footer) .text-indigo-200,
+.bg-navy-900:not(footer) .text-indigo-200,
+.bg-blue-50:not(footer) .text-indigo-200,
+.bg-navy-950:not(footer) .text-indigo-300,
+.bg-navy-900:not(footer) .text-indigo-300,
+.bg-blue-50:not(footer) .text-indigo-300,
+.bg-navy-950:not(footer) .text-indigo-400,
+.bg-navy-900:not(footer) .text-indigo-400,
+.bg-blue-50:not(footer) .text-indigo-400 {
   color: #111111 !important;
 }
 
 /* Ensure all headings in navy or blue containers (excluding footer) are pure black */
-.bg-navy-950:not(footer) h1, .bg-navy-950:not(footer) h2, .bg-navy-950:not(footer) h3, .bg-navy-950:not(footer) h4,
-.bg-navy-900:not(footer) h1, .bg-navy-900:not(footer) h2, .bg-navy-900:not(footer) h3, .bg-navy-900:not(footer) h4,
-.bg-blue-900 h1, .bg-blue-900 h2, .bg-blue-900 h3, .bg-blue-900 h4,
-.bg-blue-50:not(footer) h1, .bg-blue-50:not(footer) h2, .bg-blue-50:not(footer) h3, .bg-blue-50:not(footer) h4 {
+.bg-navy-950:not(footer) h1,
+.bg-navy-950:not(footer) h2,
+.bg-navy-950:not(footer) h3,
+.bg-navy-950:not(footer) h4,
+.bg-navy-900:not(footer) h1,
+.bg-navy-900:not(footer) h2,
+.bg-navy-900:not(footer) h3,
+.bg-navy-900:not(footer) h4,
+.bg-blue-900 h1,
+.bg-blue-900 h2,
+.bg-blue-900 h3,
+.bg-blue-900 h4,
+.bg-blue-50:not(footer) h1,
+.bg-blue-50:not(footer) h2,
+.bg-blue-50:not(footer) h3,
+.bg-blue-50:not(footer) h4 {
   color: #000000 !important;
 }
 
@@ -235,8 +349,15 @@ footer .bg-navy-950 a:hover, footer .bg-navy-950 button:hover {
 }
 
 /* Convert amber/gold color highlights and text across all files to light blue accents */
-.text-amber-500, .text-amber-600, .text-amber-700, .text-amber-800,
-.text-gold-500, .text-gold-600, .text-indigo-600, .text-indigo-700, .text-blue-700 {
+.text-amber-500,
+.text-amber-600,
+.text-amber-700,
+.text-amber-800,
+.text-gold-500,
+.text-gold-600,
+.text-indigo-600,
+.text-indigo-700,
+.text-blue-700 {
   color: #007cff !important;
 }
 
@@ -319,57 +440,79 @@ footer .bg-navy-950 a:hover, footer .bg-navy-950 button:hover {
   box-shadow: 0 0 0 2px rgba(0, 124, 255, 0.2) !important;
 }
 
-.bg-amber-500, .bg-amber-600, .bg-gold-500, .bg-indigo-600, .bg-indigo-700,
-button.bg-\[\#f19f1c\], a.bg-\[\#f19f1c\], button#cta-home-book-consultation, button#nav-consultation-btn {
+.bg-amber-500,
+.bg-amber-600,
+.bg-gold-500,
+.bg-indigo-600,
+.bg-indigo-700,
+button.bg-\[\#f19f1c\],
+a.bg-\[\#f19f1c\],
+button#cta-home-book-consultation,
+button#nav-consultation-btn {
   background-color: #007cff !important;
   color: #ffffff !important;
 }
 
-.hover\:bg-amber-600:hover, .hover\:bg-indigo-700:hover,
-button.bg-\[\#f19f1c\]:hover, a.bg-\[\#f19f1c\]:hover {
+.hover\:bg-amber-600:hover,
+.hover\:bg-indigo-700:hover,
+button.bg-\[\#f19f1c\]:hover,
+a.bg-\[\#f19f1c\]:hover {
   background-color: #007cff !important;
   color: #ffffff !important;
 }
 
-.border-amber-200, .border-amber-300, .border-gold-500, .border-indigo-600, .border-blue-600 {
+.border-amber-200,
+.border-amber-300,
+.border-gold-500,
+.border-indigo-600,
+.border-blue-600 {
   border-color: #bae6fd !important;
 }
 
 /* Soft light blue highlight card backgrounds */
-.bg-amber-50, .bg-amber-100, .bg-indigo-50, .bg-blue-50, .bg-indigo-50\/10 {
+.bg-amber-50,
+.bg-amber-100,
+.bg-indigo-50,
+.bg-blue-50,
+.bg-indigo-50\/10 {
   background-color: #f0f7ff !important;
 }
 
 /* Convert SVG lines/icons that are white on white inside updated containers */
-.bg-navy-950 svg, .bg-navy-900 svg {
+.bg-navy-950 svg,
+.bg-navy-900 svg {
   stroke-opacity: 1 !important;
 }
 
 /* Modal backgrounds and card styling to stay white with black text */
-div[class*="bg-navy-950/80"], div[class*="bg-navy-950/60"] {
-  background-color: rgba(15, 23, 42, 0.45) !important; /* darkened backdrop overlay for popups */
+div[class*="bg-navy-950/80"],
+div[class*="bg-navy-950/60"] {
+  background-color: rgba(15, 23, 42, 0.45) !important;
+  /* darkened backdrop overlay for popups */
 }
 
-.fixed.inset-0 + div.bg-navy-900,
+.fixed.inset-0+div.bg-navy-900,
 div#newsletter-modal .bg-navy-900,
 div.fixed .bg-navy-900 {
   background-color: #ffffff !important;
   border: 1px solid #e2e8f0 !important;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
 }
+
 div#newsletter-modal *,
 div.fixed .bg-navy-900 * {
   color: #111111 !important;
 }
 
 /* Specific inputs in modals and newsletter subscribe bars */
-input, textarea {
+input,
+textarea {
   background-color: #ffffff !important;
   color: #000000 !important;
   border-color: #cbd5e1 !important;
 }
-input::placeholder, textarea::placeholder {
+
+input::placeholder,
+textarea::placeholder {
   color: #94a3b8 !important;
 }
-
-

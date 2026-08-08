@@ -1,6 +1,6 @@
 import { Page } from '../types';
-import { 
-  ShieldCheck, Lock, EyeOff, Server, FileText, CheckCircle, 
+import {
+  ShieldCheck, Lock, EyeOff, Server, FileText, CheckCircle,
   Terminal, Cpu, Network, ArrowRight, BookOpen, AlertCircle
 } from 'lucide-react';
 import SafeImage from '../components/SafeImage';
@@ -12,7 +12,7 @@ interface SecurityViewProps {
 }
 
 export default function SecurityView({ setCurrentPage, openConsultation, openSecurityPolicy }: SecurityViewProps) {
-  
+
   const protocols = [
     {
       title: 'Cryptographic Encrypted Cloud Storage',
@@ -70,7 +70,7 @@ export default function SecurityView({ setCurrentPage, openConsultation, openSec
 
   return (
     <div className="pt-20">
-      
+
       {/* Header Banner */}
       <section className="relative text-navy-950 overflow-hidden py-16 sm:py-20 bg-white border-b border-slate-100" id="security-hero-header">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4 sm:space-y-6">
@@ -85,7 +85,7 @@ export default function SecurityView({ setCurrentPage, openConsultation, openSec
             International CPA firms require absolute confidentiality. We treat data protection as an architectural requirement rather than a secondary operational checklist.
           </p>
           <div className="pt-2">
-            <button 
+            <button
               onClick={openSecurityPolicy}
               className="bg-[#007cff] hover:bg-blue-600 text-white font-bold text-xs tracking-wider px-6 py-3 rounded-lg transition-all hover:scale-[1.02] shadow-lg shadow-blue-500/15 uppercase cursor-pointer inline-block"
             >
@@ -98,7 +98,7 @@ export default function SecurityView({ setCurrentPage, openConsultation, openSec
       {/* Main Core Protocols */}
       <section className="py-20 bg-white" id="security-protocols-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          
+
           <div className="text-center space-y-3">
             <span className="text-xs font-extrabold text-[#007cff] uppercase tracking-widest block font-sans">System Security</span>
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-navy-900">
@@ -108,7 +108,7 @@ export default function SecurityView({ setCurrentPage, openConsultation, openSec
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {protocols.map((p) => (
-              <div 
+              <div
                 key={p.title}
                 className="bg-slate-50 border border-slate-150 p-6 sm:p-8 rounded-2xl space-y-4 hover:shadow-lg transition-all"
               >
@@ -123,9 +123,9 @@ export default function SecurityView({ setCurrentPage, openConsultation, openSec
             {/* Replaced Simulated Terminal Block with a beautiful premium security imagery card */}
             <div className="bg-slate-900 text-white rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group shadow-lg min-h-[300px]">
               <div className="relative h-44 w-full overflow-hidden shrink-0">
-                <SafeImage 
-                  src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600&h=400" 
-                  alt="Cybersecurity defense systems" 
+                <SafeImage
+                  src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600&h=400"
+                  alt="Cybersecurity defense systems"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   category="other"
                 />
@@ -153,7 +153,7 @@ export default function SecurityView({ setCurrentPage, openConsultation, openSec
       {/* Jurisdictional Compliances */}
       <section className="py-20 bg-blue-50 border-t border-b border-blue-100" id="compliance-regulations-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          
+
           <div className="text-center max-w-2xl mx-auto space-y-3">
             <span className="text-xs font-extrabold text-[#007cff] uppercase tracking-widest block font-sans">Regional Accordances</span>
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-navy-900">
@@ -166,7 +166,7 @@ export default function SecurityView({ setCurrentPage, openConsultation, openSec
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {regulations.map((r) => (
-              <div 
+              <div
                 key={r.name}
                 className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-150 shadow-sm space-y-3 hover:border-blue-500/20 transition-colors"
               >
@@ -220,13 +220,13 @@ export default function SecurityView({ setCurrentPage, openConsultation, openSec
           </p>
         </div>
         <div className="flex flex-wrap justify-center gap-4">
-          <button 
+          <button
             onClick={openSecurityPolicy}
             className="border border-[#007cff] text-[#007cff] hover:bg-blue-50 font-bold text-xs tracking-wider px-8 py-3.5 rounded-lg transition-all shadow-sm inline-block uppercase cursor-pointer"
           >
             Review Security Policy Overlay
           </button>
-          <button 
+          <button
             onClick={openConsultation}
             className="bg-[#007cff] hover:bg-blue-600 text-white font-bold text-xs tracking-wider px-8 py-3.5 rounded-lg transition-all shadow-md inline-block uppercase cursor-pointer"
           >
