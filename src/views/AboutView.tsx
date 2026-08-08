@@ -44,12 +44,12 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6">
-            <span className="text-xs font-mono text-[#007cff] uppercase tracking-widest font-semibold block">Secure, competent, scalable, and culturally aligned</span>
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0e1b2e] leading-tight">
+            <span className="text-sm font-mono text-[#007cff] uppercase tracking-widest font-semibold block">Secure, competent, scalable, and culturally aligned</span>
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-[#0e1b2e] leading-tight">
               Your Global Financial Engine. <br />
               <span className="text-[#007cff] font-sans">Driven by Precision, Built for Scale.</span>
             </h1>
-            <p className="text-slate-600 text-xs sm:text-sm md:text-base max-w-2xl mx-auto font-light leading-relaxed">
+            <p className="text-slate-600 text-sm sm:text-base md:text-lg max-w-3xl mx-auto font-light leading-relaxed">
               Bridging the gap between elite CA/CPA-led oversight and cost-efficient back-office execution for growing businesses and public accounting practices worldwide.
             </p>
           </div>
@@ -62,12 +62,12 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
           <div className="max-w-3xl mx-auto text-center space-y-8">
 
             <div className="space-y-3">
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-navy-900 leading-tight">
+              <h2 className="font-serif text-4xl sm:text-5xl font-bold text-navy-900 leading-tight">
                 About Aum Consultancy
               </h2>
             </div>
 
-            <div className="text-sm sm:text-base text-slate-600 leading-relaxed font-light space-y-6">
+            <div className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed font-light space-y-6">
               <p>
                 As a premier offshore financial architecture partner, we seamlessly integrate into businesses and public accounting practices across the US, UK, Canada, and Australia. At Aum Consultancy, we don't operate as a detached vendor; we act as your hidden competitive advantage. We manage the heavy data processing and compliance rules behind the scenes, freeing your core leadership team to focus entirely on what matters most.
               </p>
@@ -86,7 +86,7 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-navy-900">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-navy-900">
               Our Leadership Team
             </h2>
           </div>
@@ -123,8 +123,8 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
 
                   {/* Info */}
                   <div className="space-y-1">
-                    <h3 className="text-base sm:text-lg font-serif font-bold text-navy-900 block">{member.name}</h3>
-                    <span className="text-[10px] text-[#007cff] uppercase font-mono tracking-wider font-bold block">{member.role}</span>
+                    <h3 className="text-lg sm:text-xl font-serif font-bold text-navy-900 block">{member.name}</h3>
+                    <span className="text-xs sm:text-sm text-[#007cff] uppercase font-mono tracking-wider font-bold block">{member.role}</span>
                   </div>
 
                 </div>
@@ -132,10 +132,10 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
                 <div className="pt-4">
                   <button
                     onClick={() => setActiveMember(member)}
-                    className="border border-[#007cff]/30 text-[#007cff] hover:bg-[#007cff]/5 px-6 py-2 rounded-full text-xs font-medium hover:border-[#007cff] transition-all duration-200 inline-flex items-center gap-1.5 cursor-pointer"
+                    className="border border-[#007cff]/30 text-[#007cff] hover:bg-[#007cff]/5 px-6 py-2.5 rounded-full text-sm font-medium hover:border-[#007cff] transition-all duration-200 inline-flex items-center gap-1.5 cursor-pointer"
                   >
                     <span>Know More</span>
-                    <ChevronRight className="w-3.5 h-3.5" />
+                    <ChevronRight className="w-4 h-4" />
                   </button>
                 </div>
 
@@ -151,32 +151,32 @@ export default function AboutView({ setCurrentPage, openConsultation }: AboutVie
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,124,255,0.015),transparent_50%)]"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-navy-900 flex items-center justify-center gap-2">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-navy-900 flex items-center justify-center gap-2">
               Ironclad Security: Enterprise-Grade Data Protection
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm font-light leading-relaxed">
+            <p className="text-slate-600 text-sm sm:text-base md:text-lg font-light leading-relaxed">
               We know that handing over financial data requires absolute confidence. To gain and maintain your complete trust, we enforce bank-grade security protocols across our entire ecosystem:
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white border border-slate-200/60 p-6 sm:p-8 rounded-2xl space-y-4 hover:shadow-lg hover:border-slate-300/60 transition-all duration-300">
-              <h3 className="text-xs font-extrabold text-navy-900 uppercase tracking-wider font-sans">Zero-Local-Storage Policy</h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
+              <h3 className="text-sm sm:text-base font-extrabold text-navy-900 uppercase tracking-wider font-sans">Zero-Local-Storage Policy</h3>
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light">
                 Your client data remains entirely locked within secure, designated cloud environments—never downloaded or stored on local drives.
               </p>
             </div>
 
             <div className="bg-white border border-slate-200/60 p-6 sm:p-8 rounded-2xl space-y-4 hover:shadow-lg hover:border-slate-300/60 transition-all duration-300">
-              <h3 className="text-xs font-extrabold text-navy-900 uppercase tracking-wider font-sans">Multi-Tier Encryption</h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
+              <h3 className="text-sm sm:text-base font-extrabold text-navy-900 uppercase tracking-wider font-sans">Multi-Tier Encryption</h3>
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light">
                 We protect your sensitive data using AES 256-bit encryption for all data at rest and in transit.
               </p>
             </div>
 
             <div className="bg-white border border-slate-200/60 p-6 sm:p-8 rounded-2xl space-y-4 hover:shadow-lg hover:border-slate-300/60 transition-all duration-300">
-              <h3 className="text-xs font-extrabold text-navy-900 uppercase tracking-wider font-sans">Strict Access Control</h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
+              <h3 className="text-sm sm:text-base font-extrabold text-navy-900 uppercase tracking-wider font-sans">Strict Access Control</h3>
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light">
                 Enforced multi-factor authentication (MFA) and continuous security auditing ensure only authorized personnel touch your files.
               </p>
             </div>
