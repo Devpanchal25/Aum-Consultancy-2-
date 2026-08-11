@@ -116,10 +116,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
               transition={{ duration: 0.7, ease: "easeOut", delay: 0.25 }}
               className="font-serif text-2xl min-[400px]:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-navy-950 tracking-tight leading-tight"
             >
-              <span className="block sm:inline md:block">Scale Your Capacity & Eliminate Local Overhead.</span>{" "}
-              <span className="text-[#007cff] block sm:inline md:block mt-1 sm:mt-0">
-                We’ll Handle the Numbers.
-              </span>
+              Scale Your Capacity & Eliminate Local Overhead. We'll Handle the Numbers.
             </motion.h1>
 
             <motion.p
@@ -193,7 +190,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {/* Item 1 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
-              <div className="min-h-[64px] sm:min-h-[72px] lg:min-h-[88px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+              <div className="min-h-[80px] sm:min-h-[96px] lg:min-h-[120px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
                 <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Capacity Bottlenecks & High Cost of Local Hiring</h3>
               </div>
 
@@ -220,7 +217,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
 
             {/* Item 2 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
-              <div className="min-h-[64px] sm:min-h-[72px] lg:min-h-[88px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+              <div className="min-h-[80px] sm:min-h-[96px] lg:min-h-[120px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
                 <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Bookkeeping Backlogs</h3>
               </div>
 
@@ -247,7 +244,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
 
             {/* Item 3 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
-              <div className="min-h-[64px] sm:min-h-[72px] lg:min-h-[88px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+              <div className="min-h-[80px] sm:min-h-[96px] lg:min-h-[120px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
                 <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Tax Compliance Stress</h3>
               </div>
 
@@ -274,7 +271,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
 
             {/* Item 4 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
-              <div className="min-h-[64px] sm:min-h-[72px] lg:min-h-[88px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+              <div className="min-h-[80px] sm:min-h-[96px] lg:min-h-[120px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
                 <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Complex Auditing Support & Financial Reporting</h3>
               </div>
 
@@ -314,99 +311,119 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(241,159,28,0.02),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(0,124,255,0.02),transparent_60%)]"></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 relative z-10">
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <h2 className="font-serif text-4xl sm:text-5xl font-bold text-black leading-tight">
               Our Core Values
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
             {/* Value 1 */}
-            <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl p-6 sm:p-8 flex flex-col h-full shadow-sm hover:shadow-md transition-shadow">
-              <div className="min-h-[72px] sm:min-h-[80px] lg:min-h-[88px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-black leading-tight">Ironclad Data Security & Compliance</h3>
+            <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
+              <div className="min-h-[80px] sm:min-h-[96px] lg:min-h-[120px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+                <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Ironclad Data Security & Compliance</h3>
               </div>
 
-              <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[180px] mb-6">
-                <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light">
-                  We protect your financial data with the same rigor as an enterprise bank. Security is embedded in every layer of our operations to ensure total peace of mind.
-                </p>
-              </div>
-
-              <div className="pt-4 border-t border-slate-100 space-y-1.5 mt-auto">
-                <div className="flex items-center gap-2 text-[11px] sm:text-xs font-bold text-[#007cff] uppercase tracking-wide font-mono whitespace-nowrap">
-                  <span>WHAT THIS MEANS FOR YOU</span>
+              <div className="flex-1 flex flex-col">
+                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[170px] space-y-1.5">
+                  <div className="flex items-center gap-2 text-xs font-bold text-slate-800 uppercase tracking-wider font-mono">
+                    <span>OUR COMMITMENT</span>
+                  </div>
+                  <p className="text-sm text-slate-600 leading-relaxed font-light">
+                    We protect your financial data with the same rigor as an enterprise bank. Security is embedded in every layer of our operations to ensure total peace of mind.
+                  </p>
                 </div>
-                <p className="text-sm text-slate-700 leading-relaxed font-light">
-                  Your sensitive data stays in secure cloud environments with AES 256-bit encryption, strict multi-factor authentication, and zero-local-storage policies adhering to US, UK, CA, and AU privacy laws.
-                </p>
+
+                <div className="pt-4 border-t border-slate-100 space-y-1.5">
+                  <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
+                    <span>WHAT THIS MEANS FOR YOU</span>
+                  </div>
+                  <p className="text-sm text-slate-700 leading-relaxed font-light">
+                    Your sensitive data stays in secure cloud environments with AES 256-bit encryption, strict multi-factor authentication, and zero-local-storage policies adhering to US, UK, CA, and AU privacy laws.
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Value 2 */}
-            <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl p-6 sm:p-8 flex flex-col h-full shadow-sm hover:shadow-md transition-shadow">
-              <div className="min-h-[72px] sm:min-h-[80px] lg:min-h-[88px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-black leading-tight">Absolute Quality & CPA-Grade Accuracy</h3>
+            <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
+              <div className="min-h-[80px] sm:min-h-[96px] lg:min-h-[120px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+                <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Absolute Quality & CPA-Grade Accuracy</h3>
               </div>
 
-              <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[180px] mb-6">
-                <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light">
-                  Near enough is not good enough in compliance. We deliver pristine, audit-ready financials that match the rigorous standards of your local regulatory bodies.
-                </p>
-              </div>
-
-              <div className="pt-4 border-t border-slate-100 space-y-1.5 mt-auto">
-                <div className="flex items-center gap-2 text-[11px] sm:text-xs font-bold text-[#007cff] uppercase tracking-wide font-mono whitespace-nowrap">
-                  <span>WHAT THIS MEANS FOR YOU</span>
+              <div className="flex-1 flex flex-col">
+                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[170px] space-y-1.5">
+                  <div className="flex items-center gap-2 text-xs font-bold text-slate-800 uppercase tracking-wider font-mono">
+                    <span>OUR COMMITMENT</span>
+                  </div>
+                  <p className="text-sm text-slate-600 leading-relaxed font-light">
+                    Near enough is not good enough in compliance. We deliver pristine, audit-ready financials that match the rigorous standards of your local regulatory bodies.
+                  </p>
                 </div>
-                <p className="text-sm text-slate-700 leading-relaxed font-light">
-                  Workflows governed strictly by US GAAP & IFRS standards. Every ledger, reconciliation, and tax filing undergoes multi-tier reviews ensuring total compliance with IRS, HMRC, CRA, and ATO.
-                </p>
+
+                <div className="pt-4 border-t border-slate-100 space-y-1.5">
+                  <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
+                    <span>WHAT THIS MEANS FOR YOU</span>
+                  </div>
+                  <p className="text-sm text-slate-700 leading-relaxed font-light">
+                    Workflows governed strictly by US GAAP & IFRS standards. Every ledger, reconciliation, and tax filing undergoes multi-tier reviews ensuring total compliance with IRS, HMRC, CRA, and ATO.
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Value 3 */}
-            <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl p-6 sm:p-8 flex flex-col h-full shadow-sm hover:shadow-md transition-shadow">
-              <div className="min-h-[72px] sm:min-h-[80px] lg:min-h-[88px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-black leading-tight">Client-Centric Scale & Responsiveness</h3>
+            <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
+              <div className="min-h-[80px] sm:min-h-[96px] lg:min-h-[120px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+                <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Client-Centric Scale & Responsiveness</h3>
               </div>
 
-              <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[180px] mb-6">
-                <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light">
-                  We don't operate as a detached vendor; we integrate seamlessly as your dedicated back office. Your business growth and operational speed are our primary metrics.
-                </p>
-              </div>
-
-              <div className="pt-4 border-t border-slate-100 space-y-1.5">
-                <div className="flex items-center gap-2 text-[11px] sm:text-xs font-bold text-[#007cff] uppercase tracking-wide font-mono whitespace-nowrap">
-                  <span>WHAT THIS MEANS FOR YOU</span>
+              <div className="flex-1 flex flex-col">
+                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[170px] space-y-1.5">
+                  <div className="flex items-center gap-2 text-xs font-bold text-slate-800 uppercase tracking-wider font-mono">
+                    <span>OUR COMMITMENT</span>
+                  </div>
+                  <p className="text-sm text-slate-600 leading-relaxed font-light">
+                    We don't operate as a detached vendor; we integrate seamlessly as your dedicated back office. Your business growth and operational speed are our primary metrics.
+                  </p>
                 </div>
-                <p className="text-sm text-slate-700 leading-relaxed font-light">
-                  You get a dedicated account manager and guaranteed overlapping business hours, ensuring rapid response times via Slack, Teams, or email to scale your capacity instantly.
-                </p>
+
+                <div className="pt-4 border-t border-slate-100 space-y-1.5">
+                  <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
+                    <span>WHAT THIS MEANS FOR YOU</span>
+                  </div>
+                  <p className="text-sm text-slate-700 leading-relaxed font-light">
+                    You get a dedicated account manager and guaranteed overlapping business hours, ensuring rapid response times via Slack, Teams, or email to scale your capacity instantly.
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Value 4 */}
-            <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl p-6 sm:p-8 flex flex-col h-full shadow-sm hover:shadow-md transition-shadow">
-              <div className="min-h-[72px] sm:min-h-[80px] lg:min-h-[88px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-black leading-tight">Radical Integrity & Process Transparency</h3>
+            <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
+              <div className="min-h-[80px] sm:min-h-[96px] lg:min-h-[120px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+                <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Radical Integrity & Process Transparency</h3>
               </div>
 
-              <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[180px] mb-6">
-                <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light">
-                  We believe in absolute clarity in our workflows, reporting, and pricing. Transparency means you always know who is handling your books with zero hidden fees.
-                </p>
-              </div>
-
-              <div className="pt-4 border-t border-slate-100 space-y-1.5">
-                <div className="flex items-center gap-2 text-[11px] sm:text-xs font-bold text-[#007cff] uppercase tracking-wide font-mono whitespace-nowrap">
-                  <span>WHAT THIS MEANS FOR YOU</span>
+              <div className="flex-1 flex flex-col">
+                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[170px] space-y-1.5">
+                  <div className="flex items-center gap-2 text-xs font-bold text-slate-800 uppercase tracking-wider font-mono">
+                    <span>OUR COMMITMENT</span>
+                  </div>
+                  <p className="text-sm text-slate-600 leading-relaxed font-light">
+                    We believe in absolute clarity in our workflows, reporting, and pricing. Transparency means you always know who is handling your books with zero hidden fees.
+                  </p>
                 </div>
-                <p className="text-sm text-slate-700 leading-relaxed font-light">
-                  While your financial data remains entirely locked down and secure from the outside world, you retain 100% visibility into our progress through real-time tracking and audit trails.
-                </p>
+
+                <div className="pt-4 border-t border-slate-100 space-y-1.5">
+                  <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
+                    <span>WHAT THIS MEANS FOR YOU</span>
+                  </div>
+                  <p className="text-sm text-slate-700 leading-relaxed font-light">
+                    While your financial data remains entirely locked down and secure from the outside world, you retain 100% visibility into our progress through real-time tracking and audit trails.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -415,99 +432,119 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
 
       {/* WHY CHOOSE US */}
       <section className="py-24 bg-blue-50 border-t border-b border-slate-200/60" id="why-choose-us-section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <h2 className="font-serif text-4xl sm:text-5xl font-bold text-black leading-tight">
               Why Choose Us
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
             {/* Choose 1 */}
-            <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 p-6 sm:p-8 rounded-2xl flex flex-col h-full shadow-sm hover:shadow-md transition-shadow">
-              <div className="min-h-[100px] sm:min-h-[110px] lg:min-h-[170px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-black leading-tight">Guaranteed Turnaround & Timely Service Deliveries</h3>
+            <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
+              <div className="min-h-[80px] sm:min-h-[96px] lg:min-h-[120px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+                <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Guaranteed Turnaround & Timely Service Deliveries</h3>
               </div>
 
-              <div className="min-h-[120px] sm:min-h-[130px] lg:min-h-[150px] mb-6">
-                <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light">
-                  In accounting and compliance, a missed deadline means a lost client or a severe financial penalty.
-                </p>
-              </div>
-
-              <div className="pt-4 border-t border-slate-100 space-y-1.5">
-                <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
-                  <span>OUR ADVANTAGE</span>
+              <div className="flex-1 flex flex-col">
+                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[170px] space-y-1.5">
+                  <div className="flex items-center gap-2 text-xs font-bold text-slate-800 uppercase tracking-wider font-mono">
+                    <span>THE REALITY</span>
+                  </div>
+                  <p className="text-sm text-slate-600 leading-relaxed font-light">
+                    In accounting and compliance, a missed deadline means a lost client or a severe financial penalty.
+                  </p>
                 </div>
-                <p className="text-sm text-slate-700 leading-relaxed font-light">
-                  We operate on strict, contractually backed SLAs. Overnight production cycles mean you upload client files at the close of your business day and receive them completed and verified next morning.
-                </p>
+
+                <div className="pt-4 border-t border-slate-100 space-y-1.5">
+                  <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
+                    <span>OUR ADVANTAGE</span>
+                  </div>
+                  <p className="text-sm text-slate-700 leading-relaxed font-light">
+                    We operate on strict, contractually backed SLAs. Overnight production cycles mean you upload client files at the close of your business day and receive them completed and verified next morning.
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Choose 2 */}
-            <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 p-6 sm:p-8 rounded-2xl flex flex-col h-full shadow-sm hover:shadow-md transition-shadow">
-              <div className="min-h-[100px] sm:min-h-[110px] lg:min-h-[170px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-black leading-tight">Tech-Driven Innovations & Modern Systems</h3>
+            <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
+              <div className="min-h-[80px] sm:min-h-[96px] lg:min-h-[120px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+                <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Tech-Driven Innovations & Modern Systems</h3>
               </div>
 
-              <div className="min-h-[120px] sm:min-h-[130px] lg:min-h-[150px] mb-6">
-                <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light">
-                  You shouldn't have to change your entire technology stack just to work with an offshore partner.
-                </p>
-              </div>
-
-              <div className="pt-4 border-t border-slate-100 space-y-1.5">
-                <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
-                  <span>OUR ADVANTAGE</span>
+              <div className="flex-1 flex flex-col">
+                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[170px] space-y-1.5">
+                  <div className="flex items-center gap-2 text-xs font-bold text-slate-800 uppercase tracking-wider font-mono">
+                    <span>THE REALITY</span>
+                  </div>
+                  <p className="text-sm text-slate-600 leading-relaxed font-light">
+                    You shouldn't have to change your entire technology stack just to work with an offshore partner.
+                  </p>
                 </div>
-                <p className="text-sm text-slate-700 leading-relaxed font-light">
-                  We leverage advanced cloud tools, practice management platforms, and smart AI-assisted validation workflows to eliminate manual data entry errors and maximize processing speed.
-                </p>
+
+                <div className="pt-4 border-t border-slate-100 space-y-1.5">
+                  <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
+                    <span>OUR ADVANTAGE</span>
+                  </div>
+                  <p className="text-sm text-slate-700 leading-relaxed font-light">
+                    We leverage advanced cloud tools, practice management platforms, and smart AI-assisted validation workflows to eliminate manual data entry errors and maximize processing speed.
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Choose 3 */}
-            <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 p-6 sm:p-8 rounded-2xl flex flex-col h-full shadow-sm hover:shadow-md transition-shadow">
-              <div className="min-h-[100px] sm:min-h-[110px] lg:min-h-[170px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-black leading-tight">Tailor-Made Operational Systems (Custom Solutions)</h3>
+            <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
+              <div className="min-h-[80px] sm:min-h-[96px] lg:min-h-[120px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+                <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Tailor-Made Operational Systems (Custom Solutions)</h3>
               </div>
 
-              <div className="min-h-[120px] sm:min-h-[130px] lg:min-h-[150px] mb-6">
-                <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light">
-                  Every accounting firm has a unique way of managing working papers, communication, and client onboarding.
-                </p>
-              </div>
-
-              <div className="pt-4 border-t border-slate-100 space-y-1.5">
-                <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
-                  <span>OUR ADVANTAGE</span>
+              <div className="flex-1 flex flex-col">
+                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[170px] space-y-1.5">
+                  <div className="flex items-center gap-2 text-xs font-bold text-slate-800 uppercase tracking-wider font-mono">
+                    <span>THE REALITY</span>
+                  </div>
+                  <p className="text-sm text-slate-600 leading-relaxed font-light">
+                    Every accounting firm has a unique way of managing working papers, communication, and client onboarding.
+                  </p>
                 </div>
-                <p className="text-sm text-slate-700 leading-relaxed font-light">
-                  We build a custom operational blueprint for your firm—adapting entirely to your local cloud environment, ClickUp/Asana task boards, and internal checklists.
-                </p>
+
+                <div className="pt-4 border-t border-slate-100 space-y-1.5">
+                  <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
+                    <span>OUR ADVANTAGE</span>
+                  </div>
+                  <p className="text-sm text-slate-700 leading-relaxed font-light">
+                    We build a custom operational blueprint for your firm—adapting entirely to your local cloud environment, ClickUp/Asana task boards, and internal checklists.
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Choose 4 */}
-            <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 p-6 sm:p-8 rounded-2xl flex flex-col h-full shadow-sm hover:shadow-md transition-shadow">
-              <div className="min-h-[100px] sm:min-h-[110px] lg:min-h-[170px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-black leading-tight">Seamless Time-Zone Synchronization</h3>
+            <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
+              <div className="min-h-[80px] sm:min-h-[96px] lg:min-h-[120px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+                <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Seamless Time-Zone Synchronization</h3>
               </div>
 
-              <div className="min-h-[120px] sm:min-h-[130px] lg:min-h-[150px] mb-6">
-                <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light">
-                  Waiting 24 hours just to get a simple question answered destroys your daily operational speed.
-                </p>
-              </div>
-
-              <div className="pt-4 border-t border-slate-100 space-y-1.5">
-                <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
-                  <span>OUR ADVANTAGE</span>
+              <div className="flex-1 flex flex-col">
+                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[170px] space-y-1.5">
+                  <div className="flex items-center gap-2 text-xs font-bold text-slate-800 uppercase tracking-wider font-mono">
+                    <span>THE REALITY</span>
+                  </div>
+                  <p className="text-sm text-slate-600 leading-relaxed font-light">
+                    Waiting 24 hours just to get a simple question answered destroys your daily operational speed.
+                  </p>
                 </div>
-                <p className="text-sm text-slate-700 leading-relaxed font-light">
-                  Our teams maintain dedicated overlapping hours with the US, UK, Canada, and Australia—enabling live Slack or Teams messages during your standard workday.
-                </p>
+
+                <div className="pt-4 border-t border-slate-100 space-y-1.5">
+                  <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
+                    <span>OUR ADVANTAGE</span>
+                  </div>
+                  <p className="text-sm text-slate-700 leading-relaxed font-light">
+                    Our teams maintain dedicated overlapping hours with the US, UK, Canada, and Australia—enabling live Slack or Teams messages during your standard workday.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
