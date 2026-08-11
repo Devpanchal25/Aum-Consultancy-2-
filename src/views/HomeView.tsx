@@ -193,12 +193,12 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {/* Item 1 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
-              <div className="min-h-[56px] sm:min-h-[64px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+              <div className="min-h-[64px] sm:min-h-[72px] lg:min-h-[88px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
                 <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Capacity Bottlenecks & High Cost of Local Hiring</h3>
               </div>
 
-              <div className="flex-1 flex flex-col justify-between">
-                <div className="min-h-[120px] sm:min-h-[130px] lg:min-h-[140px] space-y-1.5">
+              <div className="flex-1 flex flex-col">
+                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[170px] space-y-1.5">
                   <div className="flex items-center gap-2 text-xs font-bold text-slate-800 uppercase tracking-wider font-mono">
                     <span>THE CHALLENGE</span>
                   </div>
@@ -207,7 +207,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                   </p>
                 </div>
 
-                <div className="mt-auto pt-4 border-t border-slate-100 min-h-[120px] sm:min-h-[130px] lg:min-h-[140px] space-y-1.5">
+                <div className="pt-4 border-t border-slate-100 space-y-1.5">
                   <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
                     <span>OUR APPROACH</span>
                   </div>
@@ -220,12 +220,12 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
 
             {/* Item 2 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
-              <div className="min-h-[56px] sm:min-h-[64px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+              <div className="min-h-[64px] sm:min-h-[72px] lg:min-h-[88px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
                 <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Bookkeeping Backlogs</h3>
               </div>
 
-              <div className="flex-1 flex flex-col justify-between">
-                <div className="min-h-[120px] sm:min-h-[130px] lg:min-h-[140px] space-y-1.5">
+              <div className="flex-1 flex flex-col">
+                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[170px] space-y-1.5">
                   <div className="flex items-center gap-2 text-xs font-bold text-slate-800 uppercase tracking-wider font-mono">
                     <span>THE CHALLENGE</span>
                   </div>
@@ -234,7 +234,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                   </p>
                 </div>
 
-                <div className="mt-auto pt-4 border-t border-slate-100 min-h-[120px] sm:min-h-[130px] lg:min-h-[140px] space-y-1.5">
+                <div className="pt-4 border-t border-slate-100 space-y-1.5">
                   <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
                     <span>OUR APPROACH</span>
                   </div>
@@ -247,12 +247,12 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
 
             {/* Item 3 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
-              <div className="min-h-[56px] sm:min-h-[64px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+              <div className="min-h-[64px] sm:min-h-[72px] lg:min-h-[88px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
                 <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Tax Compliance Stress</h3>
               </div>
 
-              <div className="flex-1 flex flex-col justify-between">
-                <div className="min-h-[120px] sm:min-h-[130px] lg:min-h-[140px] space-y-1.5">
+              <div className="flex-1 flex flex-col">
+                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[170px] space-y-1.5">
                   <div className="flex items-center gap-2 text-xs font-bold text-slate-800 uppercase tracking-wider font-mono">
                     <span>THE CHALLENGE</span>
                   </div>
@@ -261,7 +261,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                   </p>
                 </div>
 
-                <div className="mt-auto pt-4 border-t border-slate-100 min-h-[120px] sm:min-h-[130px] lg:min-h-[140px] space-y-1.5">
+                <div className="pt-4 border-t border-slate-100 space-y-1.5">
                   <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
                     <span>OUR APPROACH</span>
                   </div>
@@ -274,12 +274,12 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
 
             {/* Item 4 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
-              <div className="min-h-[56px] sm:min-h-[64px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+              <div className="min-h-[64px] sm:min-h-[72px] lg:min-h-[88px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
                 <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Complex Auditing Support & Financial Reporting</h3>
               </div>
 
-              <div className="flex-1 flex flex-col justify-between">
-                <div className="min-h-[120px] sm:min-h-[130px] lg:min-h-[140px] space-y-1.5">
+              <div className="flex-1 flex flex-col">
+                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[170px] space-y-1.5">
                   <div className="flex items-center gap-2 text-xs font-bold text-slate-800 uppercase tracking-wider font-mono">
                     <span>THE CHALLENGE</span>
                   </div>
@@ -288,7 +288,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                   </p>
                 </div>
 
-                <div className="mt-auto pt-4 border-t border-slate-100 min-h-[120px] sm:min-h-[130px] lg:min-h-[140px] space-y-1.5">
+                <div className="pt-4 border-t border-slate-100 space-y-1.5">
                   <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
                     <span>OUR APPROACH</span>
                   </div>
@@ -328,9 +328,11 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                 <h3 className="font-serif text-xl sm:text-2xl font-bold text-black leading-tight">Ironclad Data Security & Compliance</h3>
               </div>
 
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light mb-6 flex-1">
-                We protect your financial data with the same rigor as an enterprise bank. Security is embedded in every layer of our operations to ensure total peace of mind.
-              </p>
+              <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[180px] mb-6">
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light">
+                  We protect your financial data with the same rigor as an enterprise bank. Security is embedded in every layer of our operations to ensure total peace of mind.
+                </p>
+              </div>
 
               <div className="pt-4 border-t border-slate-100 space-y-1.5 mt-auto">
                 <div className="flex items-center gap-2 text-[11px] sm:text-xs font-bold text-[#007cff] uppercase tracking-wide font-mono whitespace-nowrap">
@@ -348,9 +350,11 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                 <h3 className="font-serif text-xl sm:text-2xl font-bold text-black leading-tight">Absolute Quality & CPA-Grade Accuracy</h3>
               </div>
 
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light mb-6 flex-1">
-                Near enough is not good enough in compliance. We deliver pristine, audit-ready financials that match the rigorous standards of your local regulatory bodies.
-              </p>
+              <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[180px] mb-6">
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light">
+                  Near enough is not good enough in compliance. We deliver pristine, audit-ready financials that match the rigorous standards of your local regulatory bodies.
+                </p>
+              </div>
 
               <div className="pt-4 border-t border-slate-100 space-y-1.5 mt-auto">
                 <div className="flex items-center gap-2 text-[11px] sm:text-xs font-bold text-[#007cff] uppercase tracking-wide font-mono whitespace-nowrap">
@@ -368,11 +372,13 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                 <h3 className="font-serif text-xl sm:text-2xl font-bold text-black leading-tight">Client-Centric Scale & Responsiveness</h3>
               </div>
 
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light mb-6 flex-1">
-                We don't operate as a detached vendor; we integrate seamlessly as your dedicated back office. Your business growth and operational speed are our primary metrics.
-              </p>
+              <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[180px] mb-6">
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light">
+                  We don't operate as a detached vendor; we integrate seamlessly as your dedicated back office. Your business growth and operational speed are our primary metrics.
+                </p>
+              </div>
 
-              <div className="pt-4 border-t border-slate-100 space-y-1.5 mt-auto">
+              <div className="pt-4 border-t border-slate-100 space-y-1.5">
                 <div className="flex items-center gap-2 text-[11px] sm:text-xs font-bold text-[#007cff] uppercase tracking-wide font-mono whitespace-nowrap">
                   <span>WHAT THIS MEANS FOR YOU</span>
                 </div>
@@ -388,11 +394,13 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                 <h3 className="font-serif text-xl sm:text-2xl font-bold text-black leading-tight">Radical Integrity & Process Transparency</h3>
               </div>
 
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light mb-6 flex-1">
-                We believe in absolute clarity in our workflows, reporting, and pricing. Transparency means you always know who is handling your books with zero hidden fees.
-              </p>
+              <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[180px] mb-6">
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light">
+                  We believe in absolute clarity in our workflows, reporting, and pricing. Transparency means you always know who is handling your books with zero hidden fees.
+                </p>
+              </div>
 
-              <div className="pt-4 border-t border-slate-100 space-y-1.5 mt-auto">
+              <div className="pt-4 border-t border-slate-100 space-y-1.5">
                 <div className="flex items-center gap-2 text-[11px] sm:text-xs font-bold text-[#007cff] uppercase tracking-wide font-mono whitespace-nowrap">
                   <span>WHAT THIS MEANS FOR YOU</span>
                 </div>
@@ -417,15 +425,17 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-8">
             {/* Choose 1 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 p-6 sm:p-8 rounded-2xl flex flex-col h-full shadow-sm hover:shadow-md transition-shadow">
-              <div className="min-h-[72px] sm:min-h-[80px] lg:min-h-[88px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+              <div className="min-h-[100px] sm:min-h-[110px] lg:min-h-[170px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
                 <h3 className="font-serif text-xl sm:text-2xl font-bold text-black leading-tight">Guaranteed Turnaround & Timely Service Deliveries</h3>
               </div>
 
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light mb-6 flex-1">
-                In accounting and compliance, a missed deadline means a lost client or a severe financial penalty.
-              </p>
+              <div className="min-h-[120px] sm:min-h-[130px] lg:min-h-[150px] mb-6">
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light">
+                  In accounting and compliance, a missed deadline means a lost client or a severe financial penalty.
+                </p>
+              </div>
 
-              <div className="pt-4 border-t border-slate-100 space-y-1.5 mt-auto">
+              <div className="pt-4 border-t border-slate-100 space-y-1.5">
                 <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
                   <span>OUR ADVANTAGE</span>
                 </div>
@@ -437,15 +447,17 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
 
             {/* Choose 2 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 p-6 sm:p-8 rounded-2xl flex flex-col h-full shadow-sm hover:shadow-md transition-shadow">
-              <div className="min-h-[72px] sm:min-h-[80px] lg:min-h-[88px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+              <div className="min-h-[100px] sm:min-h-[110px] lg:min-h-[170px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
                 <h3 className="font-serif text-xl sm:text-2xl font-bold text-black leading-tight">Tech-Driven Innovations & Modern Systems</h3>
               </div>
 
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light mb-6 flex-1">
-                You shouldn't have to change your entire technology stack just to work with an offshore partner.
-              </p>
+              <div className="min-h-[120px] sm:min-h-[130px] lg:min-h-[150px] mb-6">
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light">
+                  You shouldn't have to change your entire technology stack just to work with an offshore partner.
+                </p>
+              </div>
 
-              <div className="pt-4 border-t border-slate-100 space-y-1.5 mt-auto">
+              <div className="pt-4 border-t border-slate-100 space-y-1.5">
                 <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
                   <span>OUR ADVANTAGE</span>
                 </div>
@@ -457,15 +469,17 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
 
             {/* Choose 3 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 p-6 sm:p-8 rounded-2xl flex flex-col h-full shadow-sm hover:shadow-md transition-shadow">
-              <div className="min-h-[72px] sm:min-h-[80px] lg:min-h-[88px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+              <div className="min-h-[100px] sm:min-h-[110px] lg:min-h-[170px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
                 <h3 className="font-serif text-xl sm:text-2xl font-bold text-black leading-tight">Tailor-Made Operational Systems (Custom Solutions)</h3>
               </div>
 
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light mb-6 flex-1">
-                Every accounting firm has a unique way of managing working papers, communication, and client onboarding.
-              </p>
+              <div className="min-h-[120px] sm:min-h-[130px] lg:min-h-[150px] mb-6">
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light">
+                  Every accounting firm has a unique way of managing working papers, communication, and client onboarding.
+                </p>
+              </div>
 
-              <div className="pt-4 border-t border-slate-100 space-y-1.5 mt-auto">
+              <div className="pt-4 border-t border-slate-100 space-y-1.5">
                 <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
                   <span>OUR ADVANTAGE</span>
                 </div>
@@ -477,15 +491,17 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
 
             {/* Choose 4 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 p-6 sm:p-8 rounded-2xl flex flex-col h-full shadow-sm hover:shadow-md transition-shadow">
-              <div className="min-h-[72px] sm:min-h-[80px] lg:min-h-[88px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+              <div className="min-h-[100px] sm:min-h-[110px] lg:min-h-[170px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
                 <h3 className="font-serif text-xl sm:text-2xl font-bold text-black leading-tight">Seamless Time-Zone Synchronization</h3>
               </div>
 
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light mb-6 flex-1">
-                Waiting 24 hours just to get a simple question answered destroys your daily operational speed.
-              </p>
+              <div className="min-h-[120px] sm:min-h-[130px] lg:min-h-[150px] mb-6">
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light">
+                  Waiting 24 hours just to get a simple question answered destroys your daily operational speed.
+                </p>
+              </div>
 
-              <div className="pt-4 border-t border-slate-100 space-y-1.5 mt-auto">
+              <div className="pt-4 border-t border-slate-100 space-y-1.5">
                 <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
                   <span>OUR ADVANTAGE</span>
                 </div>
