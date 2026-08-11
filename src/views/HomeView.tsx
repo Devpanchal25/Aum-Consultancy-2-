@@ -190,12 +190,12 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {/* Item 1 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
-              <div className="min-h-[80px] sm:min-h-[96px] lg:min-h-[120px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+              <div className="min-h-[104px] sm:min-h-[112px] lg:min-h-[116px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
                 <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Capacity Bottlenecks & High Cost of Local Hiring</h3>
               </div>
 
               <div className="flex-1 flex flex-col">
-                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[170px] space-y-1.5">
+                <div className="min-h-[100px] sm:min-h-[110px] space-y-1.5 pb-4">
                   <div className="flex items-center gap-2 text-xs font-bold text-slate-800 uppercase tracking-wider font-mono">
                     <span>THE CHALLENGE</span>
                   </div>
@@ -205,7 +205,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                 </div>
 
                 <div className="pt-4 border-t border-slate-100 space-y-1.5">
-                  <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
+                  <div className="flex items-center gap-2 text-xs font-bold text-black uppercase tracking-wider font-mono">
                     <span>OUR APPROACH</span>
                   </div>
                   <p className="text-sm text-slate-700 leading-relaxed font-light">
@@ -217,12 +217,12 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
 
             {/* Item 2 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
-              <div className="min-h-[80px] sm:min-h-[96px] lg:min-h-[120px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+              <div className="min-h-[104px] sm:min-h-[112px] lg:min-h-[116px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
                 <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Bookkeeping Backlogs</h3>
               </div>
 
               <div className="flex-1 flex flex-col">
-                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[170px] space-y-1.5">
+                <div className="min-h-[100px] sm:min-h-[110px] space-y-1.5 pb-4">
                   <div className="flex items-center gap-2 text-xs font-bold text-slate-800 uppercase tracking-wider font-mono">
                     <span>THE CHALLENGE</span>
                   </div>
@@ -232,7 +232,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                 </div>
 
                 <div className="pt-4 border-t border-slate-100 space-y-1.5">
-                  <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
+                  <div className="flex items-center gap-2 text-xs font-bold text-black uppercase tracking-wider font-mono">
                     <span>OUR APPROACH</span>
                   </div>
                   <p className="text-sm text-slate-700 leading-relaxed font-light">
@@ -244,12 +244,12 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
 
             {/* Item 3 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
-              <div className="min-h-[80px] sm:min-h-[96px] lg:min-h-[120px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+              <div className="min-h-[104px] sm:min-h-[112px] lg:min-h-[116px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
                 <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Tax Compliance Stress</h3>
               </div>
 
               <div className="flex-1 flex flex-col">
-                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[170px] space-y-1.5">
+                <div className="min-h-[100px] sm:min-h-[110px] space-y-1.5 pb-4">
                   <div className="flex items-center gap-2 text-xs font-bold text-slate-800 uppercase tracking-wider font-mono">
                     <span>THE CHALLENGE</span>
                   </div>
@@ -259,7 +259,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                 </div>
 
                 <div className="pt-4 border-t border-slate-100 space-y-1.5">
-                  <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
+                  <div className="flex items-center gap-2 text-xs font-bold text-black uppercase tracking-wider font-mono">
                     <span>OUR APPROACH</span>
                   </div>
                   <p className="text-sm text-slate-700 leading-relaxed font-light">
@@ -271,12 +271,12 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
 
             {/* Item 4 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
-              <div className="min-h-[80px] sm:min-h-[96px] lg:min-h-[120px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+              <div className="min-h-[104px] sm:min-h-[112px] lg:min-h-[116px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
                 <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Complex Auditing Support & Financial Reporting</h3>
               </div>
 
               <div className="flex-1 flex flex-col">
-                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[170px] space-y-1.5">
+                <div className="min-h-[100px] sm:min-h-[110px] space-y-1.5 pb-4">
                   <div className="flex items-center gap-2 text-xs font-bold text-slate-800 uppercase tracking-wider font-mono">
                     <span>THE CHALLENGE</span>
                   </div>
@@ -286,7 +286,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                 </div>
 
                 <div className="pt-4 border-t border-slate-100 space-y-1.5">
-                  <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
+                  <div className="flex items-center gap-2 text-xs font-bold text-black uppercase tracking-wider font-mono">
                     <span>OUR APPROACH</span>
                   </div>
                   <p className="text-sm text-slate-700 leading-relaxed font-light">
@@ -321,12 +321,12 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
             {/* Value 1 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
-              <div className="min-h-[80px] sm:min-h-[96px] lg:min-h-[120px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+              <div className="min-h-[104px] sm:min-h-[112px] lg:min-h-[116px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
                 <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Ironclad Data Security & Compliance</h3>
               </div>
 
               <div className="flex-1 flex flex-col">
-                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[170px] space-y-1.5">
+                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[155px] space-y-1.5 pb-4">
                   <div className="flex items-center gap-2 text-xs font-bold text-slate-800 uppercase tracking-wider font-mono">
                     <span>OUR COMMITMENT</span>
                   </div>
@@ -336,7 +336,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                 </div>
 
                 <div className="pt-4 border-t border-slate-100 space-y-1.5">
-                  <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
+                  <div className="flex items-center gap-2 text-xs font-bold text-black uppercase tracking-wider font-mono">
                     <span>WHAT THIS MEANS FOR YOU</span>
                   </div>
                   <p className="text-sm text-slate-700 leading-relaxed font-light">
@@ -348,12 +348,12 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
 
             {/* Value 2 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
-              <div className="min-h-[80px] sm:min-h-[96px] lg:min-h-[120px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+              <div className="min-h-[104px] sm:min-h-[112px] lg:min-h-[116px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
                 <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Absolute Quality & CPA-Grade Accuracy</h3>
               </div>
 
               <div className="flex-1 flex flex-col">
-                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[170px] space-y-1.5">
+                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[155px] space-y-1.5 pb-4">
                   <div className="flex items-center gap-2 text-xs font-bold text-slate-800 uppercase tracking-wider font-mono">
                     <span>OUR COMMITMENT</span>
                   </div>
@@ -363,7 +363,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                 </div>
 
                 <div className="pt-4 border-t border-slate-100 space-y-1.5">
-                  <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
+                  <div className="flex items-center gap-2 text-xs font-bold text-black uppercase tracking-wider font-mono">
                     <span>WHAT THIS MEANS FOR YOU</span>
                   </div>
                   <p className="text-sm text-slate-700 leading-relaxed font-light">
@@ -375,12 +375,12 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
 
             {/* Value 3 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
-              <div className="min-h-[80px] sm:min-h-[96px] lg:min-h-[120px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+              <div className="min-h-[104px] sm:min-h-[112px] lg:min-h-[116px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
                 <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Client-Centric Scale & Responsiveness</h3>
               </div>
 
               <div className="flex-1 flex flex-col">
-                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[170px] space-y-1.5">
+                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[155px] space-y-1.5 pb-4">
                   <div className="flex items-center gap-2 text-xs font-bold text-slate-800 uppercase tracking-wider font-mono">
                     <span>OUR COMMITMENT</span>
                   </div>
@@ -390,7 +390,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                 </div>
 
                 <div className="pt-4 border-t border-slate-100 space-y-1.5">
-                  <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
+                  <div className="flex items-center gap-2 text-xs font-bold text-black uppercase tracking-wider font-mono">
                     <span>WHAT THIS MEANS FOR YOU</span>
                   </div>
                   <p className="text-sm text-slate-700 leading-relaxed font-light">
@@ -402,12 +402,12 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
 
             {/* Value 4 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
-              <div className="min-h-[80px] sm:min-h-[96px] lg:min-h-[120px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+              <div className="min-h-[104px] sm:min-h-[112px] lg:min-h-[116px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
                 <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Radical Integrity & Process Transparency</h3>
               </div>
 
               <div className="flex-1 flex flex-col">
-                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[170px] space-y-1.5">
+                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[155px] space-y-1.5 pb-4">
                   <div className="flex items-center gap-2 text-xs font-bold text-slate-800 uppercase tracking-wider font-mono">
                     <span>OUR COMMITMENT</span>
                   </div>
@@ -417,7 +417,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                 </div>
 
                 <div className="pt-4 border-t border-slate-100 space-y-1.5">
-                  <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
+                  <div className="flex items-center gap-2 text-xs font-bold text-black uppercase tracking-wider font-mono">
                     <span>WHAT THIS MEANS FOR YOU</span>
                   </div>
                   <p className="text-sm text-slate-700 leading-relaxed font-light">
@@ -442,12 +442,12 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
             {/* Choose 1 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
-              <div className="min-h-[80px] sm:min-h-[96px] lg:min-h-[120px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+              <div className="min-h-[104px] sm:min-h-[112px] lg:min-h-[116px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
                 <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Guaranteed Turnaround & Timely Service Deliveries</h3>
               </div>
 
               <div className="flex-1 flex flex-col">
-                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[170px] space-y-1.5">
+                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[155px] space-y-1.5 pb-4">
                   <div className="flex items-center gap-2 text-xs font-bold text-slate-800 uppercase tracking-wider font-mono">
                     <span>THE REALITY</span>
                   </div>
@@ -457,7 +457,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                 </div>
 
                 <div className="pt-4 border-t border-slate-100 space-y-1.5">
-                  <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
+                  <div className="flex items-center gap-2 text-xs font-bold text-black uppercase tracking-wider font-mono">
                     <span>OUR ADVANTAGE</span>
                   </div>
                   <p className="text-sm text-slate-700 leading-relaxed font-light">
@@ -469,12 +469,12 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
 
             {/* Choose 2 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
-              <div className="min-h-[80px] sm:min-h-[96px] lg:min-h-[120px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+              <div className="min-h-[104px] sm:min-h-[112px] lg:min-h-[116px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
                 <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Tech-Driven Innovations & Modern Systems</h3>
               </div>
 
               <div className="flex-1 flex flex-col">
-                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[170px] space-y-1.5">
+                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[155px] space-y-1.5 pb-4">
                   <div className="flex items-center gap-2 text-xs font-bold text-slate-800 uppercase tracking-wider font-mono">
                     <span>THE REALITY</span>
                   </div>
@@ -484,7 +484,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                 </div>
 
                 <div className="pt-4 border-t border-slate-100 space-y-1.5">
-                  <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
+                  <div className="flex items-center gap-2 text-xs font-bold text-black uppercase tracking-wider font-mono">
                     <span>OUR ADVANTAGE</span>
                   </div>
                   <p className="text-sm text-slate-700 leading-relaxed font-light">
@@ -496,12 +496,12 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
 
             {/* Choose 3 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
-              <div className="min-h-[80px] sm:min-h-[96px] lg:min-h-[120px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+              <div className="min-h-[104px] sm:min-h-[112px] lg:min-h-[116px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
                 <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Tailor-Made Operational Systems (Custom Solutions)</h3>
               </div>
 
               <div className="flex-1 flex flex-col">
-                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[170px] space-y-1.5">
+                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[155px] space-y-1.5 pb-4">
                   <div className="flex items-center gap-2 text-xs font-bold text-slate-800 uppercase tracking-wider font-mono">
                     <span>THE REALITY</span>
                   </div>
@@ -511,7 +511,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                 </div>
 
                 <div className="pt-4 border-t border-slate-100 space-y-1.5">
-                  <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
+                  <div className="flex items-center gap-2 text-xs font-bold text-black uppercase tracking-wider font-mono">
                     <span>OUR ADVANTAGE</span>
                   </div>
                   <p className="text-sm text-slate-700 leading-relaxed font-light">
@@ -523,12 +523,12 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
 
             {/* Choose 4 */}
             <div className="bg-white border border-slate-200/60 border-l-4 border-l-indigo-600 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full p-6 sm:p-8">
-              <div className="min-h-[80px] sm:min-h-[96px] lg:min-h-[120px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
+              <div className="min-h-[104px] sm:min-h-[112px] lg:min-h-[116px] flex items-start pb-3 border-b border-slate-100/80 mb-4">
                 <h3 className="font-serif text-lg sm:text-xl font-bold text-black leading-tight">Seamless Time-Zone Synchronization</h3>
               </div>
 
               <div className="flex-1 flex flex-col">
-                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[170px] space-y-1.5">
+                <div className="min-h-[140px] sm:min-h-[150px] lg:min-h-[155px] space-y-1.5 pb-4">
                   <div className="flex items-center gap-2 text-xs font-bold text-slate-800 uppercase tracking-wider font-mono">
                     <span>THE REALITY</span>
                   </div>
@@ -538,7 +538,7 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
                 </div>
 
                 <div className="pt-4 border-t border-slate-100 space-y-1.5">
-                  <div className="flex items-center gap-2 text-xs font-bold text-[#007cff] uppercase tracking-wider font-mono">
+                  <div className="flex items-center gap-2 text-xs font-bold text-black uppercase tracking-wider font-mono">
                     <span>OUR ADVANTAGE</span>
                   </div>
                   <p className="text-sm text-slate-700 leading-relaxed font-light">

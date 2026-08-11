@@ -186,8 +186,8 @@ footer .text-white {
 
 footer a,
 footer button {
-  color: #007cff !important;
-  /* Premium light blue links */
+  color: #1e293b !important;
+  /* Dark font color - not blue */
 }
 
 footer a:hover,
@@ -257,7 +257,7 @@ footer .bg-navy-950 * {
 
 footer .bg-navy-950 a,
 footer .bg-navy-950 button {
-  color: #007cff !important;
+  color: #1e293b !important;
 }
 
 footer .bg-navy-950 a:hover,
