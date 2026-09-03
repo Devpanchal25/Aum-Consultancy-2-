@@ -270,9 +270,10 @@ export default function ServicesView({
                     key={cat.id}
                     onClick={() => handleCategoryChange(cat.id)}
                     className={`flex items-center gap-2 px-4 py-3 rounded-xl border font-bold text-sm uppercase tracking-wider transition-all duration-200 shrink-0 cursor-pointer snap-start ${isActive
-                        ? 'bg-navy-900 border-navy-950 text-white shadow-md shadow-navy-950/15'
-                        : 'bg-slate-50 border-slate-200/60 text-slate-600 hover:bg-slate-100 hover:text-navy-950 hover:border-slate-300'
+                      ? 'service-tab-active border-[#0e1b2e] shadow-md'
+                      : 'bg-slate-50 border-slate-200/60 text-slate-600 hover:bg-slate-100 hover:border-slate-300'
                       }`}
+                    style={!isActive ? {} : undefined}
                   >
                     {getIconComponent(cat.iconName, 'w-3.5 h-3.5', isActive ? 'text-white' : 'text-[#007cff]')}
                     <span>
@@ -309,12 +310,12 @@ export default function ServicesView({
                     key={sub.id}
                     id={sub.id}
                     className={`scroll-mt-28 sm:scroll-mt-32 ${isAccounting
-                        ? `rounded-2xl border transition-all duration-300 overflow-hidden ${isExpanded
-                          ? 'border-[#007cff] bg-white shadow-lg ring-1 ring-[#007cff]/20'
-                          : 'border-slate-200 bg-slate-50/50 hover:bg-slate-50 hover:border-slate-300 shadow-sm'
-                        }`
-                        : `bg-blue-50/45 rounded-2xl border transition-all overflow-hidden ${isExpanded ? 'border-[#007cff] bg-white shadow-md' : 'border-blue-100/60 hover:border-blue-200'
-                        }`
+                      ? `rounded-2xl border transition-all duration-300 overflow-hidden ${isExpanded
+                        ? 'border-[#007cff] bg-white shadow-lg ring-1 ring-[#007cff]/20'
+                        : 'border-slate-200 bg-slate-50/50 hover:bg-slate-50 hover:border-slate-300 shadow-sm'
+                      }`
+                      : `bg-blue-50/45 rounded-2xl border transition-all overflow-hidden ${isExpanded ? 'border-[#007cff] bg-white shadow-md' : 'border-blue-100/60 hover:border-blue-200'
+                      }`
                       }`}
                   >
                     {/* Header Toggle */}
@@ -725,8 +726,8 @@ export default function ServicesView({
                   <div
                     key={idx}
                     className={`bg-white rounded-xl border transition-all overflow-hidden ${isOpen
-                        ? 'border-blue-500/30 shadow-md shadow-blue-500/[0.02]'
-                        : 'border-slate-200/80 hover:border-slate-300'
+                      ? 'border-blue-500/30 shadow-md shadow-blue-500/[0.02]'
+                      : 'border-slate-200/80 hover:border-slate-300'
                       }`}
                   >
                     <button

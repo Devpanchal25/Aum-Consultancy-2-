@@ -160,6 +160,20 @@ nav[class*="bg-white"] {
   color: #111111 !important;
 }
 
+/* Active service category tab – white bg, blue border, dark text */
+.service-tab-active {
+  background-color: #ffffff !important;
+  color: #0e1b2e !important;
+  border: 2px solid #007cff !important;
+}
+.service-tab-active *,
+.service-tab-active span {
+  color: #0e1b2e !important;
+}
+.service-tab-active svg {
+  color: #007cff !important;
+}
+
 /* Precise Footer styling matching user specifications */
 footer {
   background-color: #f0f7ff !important;

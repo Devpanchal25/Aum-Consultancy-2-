@@ -76,9 +76,9 @@ export default function Logo({
       <div className="flex flex-col select-none min-w-0">
         <div className="flex items-baseline leading-none min-w-0 flex-wrap">
           <span className={`font-sans font-extrabold text-sm sm:text-lg tracking-wide uppercase transition-colors duration-300 ${displayTextColor} shrink-0`}>
-            AUM
+            AUM 
           </span>
-          <span className={`font-sans font-light text-[11px] sm:text-sm tracking-[0.08em] sm:tracking-[0.18em] ml-1 sm:ml-1.5 uppercase ${brandTextColor} truncate`}>
+          <span className={`font-sans font-extrabold text-sm sm:text-lg tracking-wide uppercase transition-colors duration-300 ml-1.5 ${displayTextColor} shrink-0`}>
             Consultancy
           </span>
         </div>

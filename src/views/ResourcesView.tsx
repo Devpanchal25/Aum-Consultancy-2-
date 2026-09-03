@@ -116,7 +116,7 @@ export default function ResourcesView() {
                 onClick={() => navigate('/contact')}
                 className="bg-[#007cff] hover:bg-blue-600 text-white text-xs font-bold px-6 py-3 rounded-xl transition-all shadow-lg hover:shadow-[#007cff]/10"
               >
-                Contact Our Ahmedabad HQ
+                Contact Our Vadodara Office
               </button>
             </div>
           </div>

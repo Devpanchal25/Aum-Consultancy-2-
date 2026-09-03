@@ -139,7 +139,7 @@ export default function BlogView({ setCurrentPage, openConsultation }: BlogViewP
                 <div className="space-y-1">
                   <strong className="text-xs font-bold text-slate-900 block">About Aum Editorial Council</strong>
                   <p className="text-[11px] text-slate-500 leading-relaxed font-light">
-                    Our briefs are compiled periodically by our senior Chartered Accountants and valuation auditors based out of Ahmedabad, helping Western enterprises maintain regulatory compliant bookkeeping operations.
+                    Our briefs are compiled periodically by our senior Chartered Accountants and valuation auditors based out of Vadodara, helping Western enterprises maintain regulatory compliant bookkeeping operations.
                   </p>
                 </div>
               </div>

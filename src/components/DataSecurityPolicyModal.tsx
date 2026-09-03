@@ -23,7 +23,7 @@ export default function DataSecurityPolicyModal({ isOpen, onClose, openConsultat
     const summaryText = `AUM CONSULTANCY SERVICES - ENTERPRISE DATA SECURITY STANDARD
 ========================================================================
 1. CRYPTOGRAPHIC PROTECTION: AES-256 cloud encryption at rest/transit. TLS 1.3 channels. Enforced 2FA/MFA.
-2. ZERO-LEAK INFRASTRUCTURE: Ahmedabad cleanroom facility, biometric locks, CCTV, disabled physical USB ports, disabled print/writing queues.
+2. ZERO-LEAK INFRASTRUCTURE: Vadodara cleanroom facility, biometric locks, CCTV, disabled physical USB ports, disabled print/writing queues.
 3. LEGALLY ENFORCED NDAs: Binding multi-jurisdictional non-disclosure protocols, background vetted Chartered Accountants.
 4. COMPLIANCE: GDPR, CCPA, PIPEDA, and Australian Privacy Principles (APPs).`;
 
@@ -187,7 +187,7 @@ export default function DataSecurityPolicyModal({ isOpen, onClose, openConsultat
             <div className="space-y-4">
               <div className="border-l-4 border-indigo-600 pl-3">
                 <h4 className="text-xs font-black text-navy-950 uppercase tracking-widest flex items-center gap-1.5">
-                  <Server className="w-4 h-4 text-indigo-600 animate-pulse" /> 2. Ahmedabad Facility & Hardware Cleanrooms
+                  <Server className="w-4 h-4 text-indigo-600 animate-pulse" /> 2. Vadodara Facility & Hardware Cleanrooms
                 </h4>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

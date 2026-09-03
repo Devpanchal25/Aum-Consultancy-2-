@@ -358,7 +358,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     checklists: [],
     whyPartner: [],
     didYouKnow: 'The IRS mandates electronic filing for corporations filing 10 or more returns of any type, and late filing penalties for Form 1120-S now automatically apply even if your business owes zero taxes. Missing the deadline is an expensive mistake you can easily avoid.',
-    ctaText: 'Form 1120-S Consultation',
+    ctaText: 'Schedule consultation',
     accountingSections: [
       {
         type: 'bullet',
@@ -418,7 +418,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     whyPartner: [],
     didYouKnowTitle: 'The Risk of Doing Nothing',
     didYouKnow: 'Leaving back-years unfiled gives tax authorities the right to freeze bank accounts, place liens on property, or seize refunds. Worse, the statute of limitations to claim old refunds expires after 3 years. If the government owes you money from a past year, delaying means losing that cash forever.',
-    ctaText: 'Resolve Back Taxes',
+    ctaText: 'schedule a confidential consultation',
     accountingSections: [
       {
         type: 'text-block',
@@ -493,7 +493,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     whyPartner: [],
     didYouKnowTitle: 'Are You Capitalizing on the Latest Personal Tax Credits?',
     didYouKnow: 'Recent tax updates across major global markets have significantly shifted thresholds for child tax credits, student interest deductions, and clean-energy home improvement incentives. We double-check every single life change you experienced this year to ensure you claim every single credit you legally qualify for.',
-    ctaText: 'File Personal Taxes',
+    ctaText: 'schedule a secure your stress-free personal tax filing',
     accountingSections: [
       {
         type: 'grid',
@@ -579,7 +579,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     whyPartner: [],
     didYouKnowTitle: 'Did You Know?',
     didYouKnow: 'Navigating modern tax laws requires deep mastery of corporate cost recovery systems. Our teams perform advanced calculations for accelerated depreciation, section allowances, and capitalized expenditures, ensuring your major equipment investments, software purchases, and real estate assets are written off to give your corporation the maximum immediate cash-flow advantage.',
-    ctaText: 'Schedule a Corporate Tax Capacity Consultation',
+    ctaText: 'Contact us today to secure an expert corporate tax review',
     accountingSections: [
       {
         type: 'text-block',
@@ -654,7 +654,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     whyPartner: [],
     didYouKnowTitle: 'Scale your firm\'s output without expanding your local overhead.',
     didYouKnow: 'For accounting firms in the US, UK, Canada, and Australia, manually processing hundreds of complex partnership returns and partner slips drains local senior resources. By outsourcing data sorting, capital balancing, and form mapping to Aum Consultancy, you slash your seasonal operating overhead by up to 60%, speed up client turnaround times, and free your core local team to focus purely on high-margin client relationships.',
-    ctaText: 'Scalable Tax Capacity Consultation',
+    ctaText: 'Contact us today to set up a scalable tax capacity consultation',
     accountingSections: [
       {
         type: 'grid',
@@ -741,7 +741,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     whyPartner: [],
     didYouKnowTitle: 'Ignorance of regional tax laws is not a legal defense.',
     didYouKnow: 'Many business owners don\'t realize that simply having a single remote employee or reaching a specific dollar amount in online sales can legally subject an entire company to a state or province\'s tax laws. Our rapid-response compliance teams specialize in cleaning up historic multi-state oversights, minimizing back-tax exposures, and setting up automated systems so you never miss a filing deadline again.',
-    ctaText: 'Get Nexus Assessment',
+    ctaText: 'schedule a comprehensive Nexus and multi-region tax assessment',
     accountingSections: [
       {
         type: 'grid',
@@ -829,7 +829,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     whyPartner: [],
     didYouKnowTitle: 'Tax planning pays for itself.',
     didYouKnow: 'Waiting until the end of the year means missing out on time-sensitive tax shelters, depreciation elections, and corporate structure shifts that must be legally executed before December 31st. Our advisory clients routinely see a massive return on investment, capturing savings that far outweigh our advisory fees. If your current accountant isn\'t calling you mid-year with proactive ideas to save you money, you are overpaying the government.',
-    ctaText: 'Schedule a Private Tax Optimization Consultation',
+    ctaText: 'schedule a private Tax Optimization Consultation',
     accountingSections: [
       {
         type: 'bullet',
@@ -901,7 +901,7 @@ const BASE_SUB_SERVICES: SubService[] = [
     whyPartner: [],
     didYouKnowTitle: 'Undistributed trust income is a major tax target worldwide.',
     didYouKnow: 'Unlike individual tax profiles, trusts hit the top tax brackets with very small amounts of retained income. Leaving income inside a trust asset pool often triggers the highest legal tax rates automatically. Our compliance teams prioritize proactive calculations to ensure your distributions are perfectly timed and structured, leaving zero cash vulnerable to over-taxation.',
-    ctaText: 'Secure an Expert Fiduciary Tax Consultation',
+    ctaText: 'secure an expert fiduciary tax consultation',
     accountingSections: [
       {
         type: 'grid',
