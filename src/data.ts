@@ -603,14 +603,14 @@ export const TEAM: TeamMember[] = [
   {
     name: 'CA Jitendra Tilwani',
     role: 'Founder & Managing Director',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400&h=400',
+    image: '/images/CA Jitendra Tilwani.jpg',
     bio: 'CA Jitendra Ashok Tilwani is the Founder and Managing Director of AUM Consultancy, a premier offshore hub providing global accounting firms and businesses with end-to-end finance, tax, and staffing solutions. Under his visionary leadership, the firm serves as an agile, white-label extension for international practices, particularly across the USA and Canada.\n\nHe directly orchestrates AUM’s comprehensive service architecture, which spans full-scale Client Accounting Advisory Services (CAAS)—including bookkeeping, AP/AR, and payroll—alongside high-tier Virtual CFO and Business Valuation advisory. A specialist in cross-border compliance, Jitendra oversees an extensive tax practice handling complex Individual, Partnership, C-Corp, S-Corp, and Trust returns, as well as multi-state planning and back-year tax resolution.\n\nFurthermore, he pioneered AUM’s "Build Your Offshore Team" model, allowing global CPA firms to seamlessly scale capacity by hiring dedicated, pre-vetted Indian professionals—ranging from tax preparers and reviewers to audit support staff, payroll managers, and executive assistants. Through strategic alliances and rigorous risk consulting, Jitendra drives operational excellence, bridging Indian financial talent with global market demands.',
     linkedinUrl: 'https://www.linkedin.com/in/ca-jitendra-tilwani-offshoring-accounting/'
   },
   {
     name: 'Heena Tilwani',
     role: 'Co-Founder & Proprietor',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400&h=400',
+    image: '/images/Heena Tilwani.jpg',
     bio: 'Heena Tilwani is the Co-Founder and Proprietor of AUM Consultancy, driving the firm\'s core operational execution, internal financial frameworks, and international service delivery. Working in close synergy with the leadership team, she ensures the seamless daily functioning of the offshore delivery center, translating corporate strategy into robust, high-performance client operations.\n\nShe holds complete oversight of internal financial health, managing organizational records, compliance, and employee payroll infrastructure. On the service execution front, Heena actively leads the processing pipelines for global clients, ensuring absolute precision in high-volume bookkeeping (AP/AR), payroll processing, and cross-border tax return preparation.\n\nAdditionally, she is deeply involved in the operational success of the "Build Your Offshore Team" initiative, managing the end-to-end onboarding, training, and workflow alignment of specialized Indian talent for global accounting practices. Through her meticulous administrative leadership and focus on process continuity, Heena ensures that AUM Consultancy consistently maintains its institutional-grade service benchmarks.',
     linkedinUrl: 'https://www.linkedin.com/in/heena-karamchandani-tilwani-4b07a93b0/'
   }

@@ -157,7 +157,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                     <MapPin className="w-5 h-5 text-[#007cff]" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="font-serif text-lg font-bold text-[#0f2942]">Registered Office</h4>
+                    <h4 className="font-serif text-lg font-bold text-[#0f2942]">Address</h4>
                     <p className="text-sm text-slate-500 font-light leading-relaxed">
                       208-Helix Complex, Opposite Hotel Surya,<br />
                       Sayajiganj, Vadodara, Gujarat, India – 390020<br />

@@ -260,7 +260,7 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
                   </div>
                   <div>
                     <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Aum Consultancy</h4>
-                    <p className="text-sm font-bold text-slate-900 font-sans">Corporate Advisory & Offshoring</p>
+                    <p className="text-sm font-bold text-slate-900 font-sans">Your Strategic Offshore Partner</p>
                   </div>
                 </div>
 
