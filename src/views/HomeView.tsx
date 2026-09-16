@@ -116,8 +116,8 @@ export default function HomeView({ setCurrentPage, openConsultation, openQuote }
               transition={{ duration: 0.7, ease: "easeOut", delay: 0.25 }}
               className="font-serif text-2xl min-[400px]:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-navy-950 tracking-tight leading-tight"
             >
-              Scale Your Capacity &<br />
-              Slash Your Local Overhead.<br />
+              Scale Your Capacity<br />
+              & Slash Your Local Overhead.<br />
               <span className="text-[#3B5998]">We'll Handle the Numbers.</span>
             </motion.h1>
 

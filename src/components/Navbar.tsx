@@ -877,7 +877,7 @@ export default function Navbar({
                 onClick={() => { setIsOpen(false); openConsultation(); }}
                 className="w-full text-center bg-[#007cff] text-white text-xs py-3.5 rounded-lg font-bold shadow-lg shadow-blue-500/10 uppercase"
               >
-                Book Free Consultation
+                Book Consultation
               </button>
             </div>
           </div>
