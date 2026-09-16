@@ -143,7 +143,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                   <div className="absolute bottom-0 left-0 w-16 h-[3px] bg-[#007cff]" />
                 </div>
 
-                <p className="text-slate-500 text-sm leading-relaxed font-light">
+                <p className="text-slate-700 text-sm leading-relaxed font-normal">
                   Have a question or need more information? We’d love to hear from you! Fill out our quick inquiry form, and our team will get back to you with the answers you need.
                 </p>
               </div>
@@ -158,7 +158,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                   </div>
                   <div className="space-y-0.5">
                     <h4 className="font-serif text-lg font-bold text-[#0f2942]">Address</h4>
-                    <p className="text-sm text-slate-500 font-light leading-relaxed">
+                    <p className="text-sm text-slate-700 font-normal leading-relaxed">
                       208-Helix Complex, Opposite Hotel Surya,<br />
                       Sayajiganj, Vadodara, Gujarat, India – 390020<br />
 
@@ -173,7 +173,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                   </div>
                   <div className="space-y-0.5">
                     <h4 className="font-serif text-lg font-bold text-[#0f2942]">Call Us</h4>
-                    <a href="tel:+919879161400" className="text-sm text-slate-500 font-light leading-relaxed hover:text-[#007cff] transition-colors block">
+                    <a href="tel:+919879161400" className="text-sm text-slate-700 font-normal leading-relaxed hover:text-[#007cff] transition-colors block">
                       +91 98791 61400
                     </a>
                   </div>
@@ -186,7 +186,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                   </div>
                   <div className="space-y-0.5">
                     <h4 className="font-serif text-lg font-bold text-[#0f2942]">Drop a mail</h4>
-                    <a href="mailto:aumconsulting.india@gmail.com" className="text-sm text-slate-500 font-light leading-relaxed hover:text-[#007cff] transition-colors block">
+                    <a href="mailto:aumconsulting.india@gmail.com" className="text-sm text-slate-700 font-normal leading-relaxed hover:text-[#007cff] transition-colors block">
                       aumconsulting.india@gmail.com
                     </a>
                   </div>
@@ -208,7 +208,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                     <div className="absolute bottom-0 left-0 w-16 h-[2.5px] bg-[#007cff]" />
                   </div>
 
-                  <p className="text-slate-500 text-xs sm:text-sm leading-relaxed font-light">
+                  <p className="text-slate-700 text-xs sm:text-sm leading-relaxed font-normal">
                     Your questions deserve expert answers. Fill out the form below, and our specialists will get back to you with clarity and support.
                   </p>
                 </div>
@@ -220,7 +220,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                     </div>
                     <div className="space-y-1">
                       <h4 className="font-serif text-lg font-bold text-navy-900">Message Received!</h4>
-                      <p className="text-xs text-slate-500 max-w-sm mx-auto font-light leading-relaxed">
+                      <p className="text-xs sm:text-sm text-slate-700 max-w-sm mx-auto font-normal leading-relaxed">
                         Thank you for reaching out. Our specialists have received your inquiry and will contact you shortly with clarity and support.
                       </p>
                     </div>
@@ -244,7 +244,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                         onChange={handleInputChange}
                         placeholder="Enter Your Name *"
                         aria-label="Your Name"
-                        className="w-full bg-white border border-slate-200 rounded-lg p-3.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#007cff] focus:ring-1 focus:ring-[#007cff] transition-all"
+                        className="w-full bg-white border border-slate-200 rounded-lg p-3.5 text-xs text-slate-800 placeholder-slate-500 focus:outline-none focus:border-[#007cff] focus:ring-1 focus:ring-[#007cff] transition-all"
                       />
                     </div>
 
@@ -259,7 +259,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                           onChange={handleInputChange}
                           placeholder="Enter Your Email Id *"
                           aria-label="Your Email Address"
-                          className="w-full bg-white border border-slate-200 rounded-lg p-3.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#007cff] focus:ring-1 focus:ring-[#007cff] transition-all"
+                          className="w-full bg-white border border-slate-200 rounded-lg p-3.5 text-xs text-slate-800 placeholder-slate-500 focus:outline-none focus:border-[#007cff] focus:ring-1 focus:ring-[#007cff] transition-all"
                         />
                       </div>
                       <div className="space-y-1">
@@ -270,7 +270,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                           onChange={handleInputChange}
                           placeholder="Enter Your Number (Optional)"
                           aria-label="Your Phone Number"
-                          className="w-full bg-white border border-slate-200 rounded-lg p-3.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#007cff] focus:ring-1 focus:ring-[#007cff] transition-all"
+                          className="w-full bg-white border border-slate-200 rounded-lg p-3.5 text-xs text-slate-800 placeholder-slate-500 focus:outline-none focus:border-[#007cff] focus:ring-1 focus:ring-[#007cff] transition-all"
                         />
                       </div>
                     </div>
@@ -284,7 +284,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                         onChange={handleInputChange}
                         placeholder="Enter Your Website (Optional)"
                         aria-label="Your Website URL"
-                        className="w-full bg-white border border-slate-200 rounded-lg p-3.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#007cff] focus:ring-1 focus:ring-[#007cff] transition-all"
+                        className="w-full bg-white border border-slate-200 rounded-lg p-3.5 text-xs text-slate-800 placeholder-slate-500 focus:outline-none focus:border-[#007cff] focus:ring-1 focus:ring-[#007cff] transition-all"
                       />
                     </div>
 
@@ -295,7 +295,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                         value={formData.hearAbout}
                         onChange={handleInputChange}
                         aria-label="Where did you hear about us?"
-                        className={`w-full bg-white border border-slate-200 rounded-lg p-3.5 pr-10 text-xs focus:outline-none focus:border-[#007cff] focus:ring-1 focus:ring-[#007cff] appearance-none cursor-pointer transition-all ${formData.hearAbout === '' ? 'text-slate-400' : 'text-slate-800 font-medium'
+                        className={`w-full bg-white border border-slate-200 rounded-lg p-3.5 pr-10 text-xs focus:outline-none focus:border-[#007cff] focus:ring-1 focus:ring-[#007cff] appearance-none cursor-pointer transition-all ${formData.hearAbout === '' ? 'text-slate-500' : 'text-slate-800 font-medium'
                           }`}
                       >
                         <option value="">Where did you hear about us? (Optional)</option>
@@ -304,7 +304,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                         <option value="Referral / Word of Mouth" className="text-slate-800">Referral / Word of Mouth</option>
                         <option value="Other" className="text-slate-800">Other</option>
                       </select>
-                      <div className="absolute inset-y-0 right-0 flex items-center pr-3.5 pointer-events-none text-slate-400">
+                      <div className="absolute inset-y-0 right-0 flex items-center pr-3.5 pointer-events-none text-slate-500">
                         <ChevronDown className="w-4 h-4" />
                       </div>
                     </div>
@@ -319,7 +319,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                         onChange={handleInputChange}
                         placeholder="Your Message *"
                         aria-label="Your Message or Project Details"
-                        className="w-full bg-white border border-slate-200 rounded-lg p-3.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#007cff] focus:ring-1 focus:ring-[#007cff] resize-none transition-all"
+                        className="w-full bg-white border border-slate-200 rounded-lg p-3.5 text-xs text-slate-800 placeholder-slate-500 focus:outline-none focus:border-[#007cff] focus:ring-1 focus:ring-[#007cff] resize-none transition-all"
                       />
                     </div>
 
@@ -354,7 +354,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
         <div className="max-w-4xl mx-auto px-4 text-center space-y-4">
           <MessageSquare className="w-8 h-8 text-green-500 mx-auto" />
           <h3 className="font-serif text-lg font-bold text-navy-900">Need immediate answers? Chat on WhatsApp (24/7 Support)</h3>
-          <p className="text-slate-500 text-xs font-light max-w-md mx-auto">
+          <p className="text-slate-700 text-xs sm:text-sm font-normal max-w-md mx-auto leading-relaxed">
             Our global desk representatives manage shifting schedules to supply direct responses within minutes.
           </p>
           <a

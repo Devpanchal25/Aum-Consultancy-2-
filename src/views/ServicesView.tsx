@@ -65,8 +65,8 @@ const renderFormattedText = (text: string) => {
 
     return (
       <>
-        <strong className="font-bold text-navy-950 font-sans">{rawTitle} </strong>
-        {rest}
+        <strong className="font-bold text-navy-950 font-inter">{rawTitle} </strong>
+        <span className="font-inter">{rest}</span>
       </>
     );
   }
@@ -82,8 +82,8 @@ const renderFormattedText = (text: string) => {
 
     return (
       <>
-        <strong className="font-bold text-navy-950 font-sans">{rawTitle} → </strong>
-        {rest}
+        <strong className="font-bold text-navy-950 font-inter">{rawTitle} → </strong>
+        <span className="font-inter">{rest}</span>
       </>
     );
   }
@@ -251,7 +251,7 @@ export default function ServicesView({
   };
 
   return (
-    <div className="pt-20">
+    <div className="pt-20 font-inter">
 
 
 
@@ -269,7 +269,7 @@ export default function ServicesView({
                   <button
                     key={cat.id}
                     onClick={() => handleCategoryChange(cat.id)}
-                    className={`flex items-center gap-2 px-4 py-3 rounded-xl border font-bold text-sm uppercase tracking-wider transition-all duration-200 shrink-0 cursor-pointer snap-start ${isActive
+                    className={`flex items-center gap-2 px-4 py-3 rounded-xl border font-libre font-bold text-sm uppercase tracking-wider transition-all duration-200 shrink-0 cursor-pointer snap-start ${isActive
                       ? 'service-tab-active border-[#0e1b2e] shadow-md'
                       : 'bg-slate-50 border-slate-200/60 text-slate-600 hover:bg-slate-100 hover:border-slate-300'
                       }`}
@@ -291,8 +291,8 @@ export default function ServicesView({
             {/* Domain Overview Banner Card */}
             <div className="relative rounded-2xl overflow-hidden border border-slate-200/60 shadow-sm bg-slate-50/70 text-navy-900">
               <div className="relative p-6 sm:p-10 space-y-3 z-10">
-                <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#0e1b2e]">{activeCategory.title} Overview</h2>
-                <p className="text-slate-600 text-base sm:text-lg font-light leading-relaxed max-w-5xl">
+                <h2 className="font-libre text-3xl sm:text-4xl font-bold text-[#0e1b2e]">{activeCategory.title} Overview</h2>
+                <p className="font-inter text-slate-600 text-base sm:text-lg font-light leading-relaxed max-w-5xl">
                   {activeCategory.longDesc}
                 </p>
               </div>
@@ -370,8 +370,8 @@ export default function ServicesView({
                         </div>
                         <div>
                           <h3 className={isAccounting
-                            ? "text-[18.1px] sm:text-[20.1px] md:text-[24.1px] font-bold text-navy-900 tracking-tight"
-                            : "text-[16.1px] sm:text-[18.1px] font-bold text-navy-900"
+                            ? "font-libre text-[18.1px] sm:text-[20.1px] md:text-[24.1px] font-bold text-navy-900 tracking-tight"
+                            : "font-libre text-[16.1px] sm:text-[18.1px] font-bold text-navy-900"
                           }>
                             {sub.title}
                           </h3>
@@ -406,15 +406,15 @@ export default function ServicesView({
                             <span
                               style={{ color: '#4682B4' }}
                               className={isAccounting
-                                ? "inline-block text-[18.1px] sm:text-[20.1px] bg-blue-50 border border-blue-200/80 px-4 py-3 rounded-lg font-mono font-bold"
-                                : "inline-block text-[18.1px] sm:text-[20.1px] bg-blue-50 border border-blue-100 px-4 py-3 rounded-lg font-mono font-bold"
+                                ? "inline-block text-[18.1px] sm:text-[20.1px] bg-blue-50 border border-blue-200/80 px-4 py-3 rounded-lg font-inter font-bold"
+                                : "inline-block text-[18.1px] sm:text-[20.1px] bg-blue-50 border border-blue-100 px-4 py-3 rounded-lg font-inter font-bold"
                               }
                             >
                               {sub.catchphrase}
                             </span>
                             <p className={isAccounting
-                              ? "text-[18.1px] sm:text-[20.1px] text-slate-700 leading-relaxed font-normal text-left"
-                              : "text-[18.1px] sm:text-[20.1px] text-slate-600 leading-relaxed font-light"
+                              ? "font-inter text-[18.1px] sm:text-[20.1px] text-slate-700 leading-relaxed font-normal text-left"
+                              : "font-inter text-[18.1px] sm:text-[20.1px] text-slate-600 leading-relaxed font-light"
                             }>
                               {sub.description}
                             </p>
@@ -426,13 +426,13 @@ export default function ServicesView({
                               if (section.type === 'checklist') {
                                 return (
                                   <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-4 shadow-xs">
-                                    <h4 className="text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
+                                    <h4 className="font-libre text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
                                       <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
                                       {section.title}
                                     </h4>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
                                       {section.items?.map((item, itemIdx) => (
-                                        <div key={itemIdx} className="flex gap-3 text-base sm:text-lg text-slate-700 leading-relaxed font-normal items-start">
+                                        <div key={itemIdx} className="font-inter flex gap-3 text-base sm:text-lg text-slate-700 leading-relaxed font-normal items-start">
                                           <span className="text-emerald-500 font-bold shrink-0 mt-0.5">✓</span>
                                           <span>{renderFormattedText(item)}</span>
                                         </div>
@@ -443,18 +443,18 @@ export default function ServicesView({
                               } else if (section.type === 'bullet') {
                                 return (
                                   <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-4 shadow-xs">
-                                    <h4 className="text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
+                                    <h4 className="font-libre text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
                                       <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
                                       {section.title}
                                     </h4>
                                     {section.text && (
-                                      <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal text-left">
+                                      <p className="font-inter text-base sm:text-lg text-slate-700 leading-relaxed font-normal text-left">
                                         {section.text}
                                       </p>
                                     )}
                                     <ul className="space-y-3 pl-1 list-none">
                                       {section.items?.map((item, itemIdx) => (
-                                        <li key={itemIdx} className="flex gap-3 text-base sm:text-lg text-slate-700 leading-relaxed font-normal items-start">
+                                        <li key={itemIdx} className="font-inter flex gap-3 text-base sm:text-lg text-slate-700 leading-relaxed font-normal items-start">
                                           <span className="text-[#007cff] font-bold shrink-0 mt-0.5">✓</span>
                                           <span>{renderFormattedText(item)}</span>
                                         </li>
@@ -465,29 +465,29 @@ export default function ServicesView({
                               } else if (section.type === 'nested-sections') {
                                 return (
                                   <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-5 shadow-xs">
-                                    <h4 className="text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
+                                    <h4 className="font-libre text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
                                       <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
                                       {section.title}
                                     </h4>
                                     {section.text && (
-                                      <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal text-left">
+                                      <p className="font-inter text-base sm:text-lg text-slate-700 leading-relaxed font-normal text-left">
                                         {section.text}
                                       </p>
                                     )}
                                     <div className="grid grid-cols-1 gap-5">
                                       {section.subSections?.map((subSec, subIdx) => (
                                         <div key={subIdx} className="bg-white border border-slate-200/80 p-5 rounded-xl space-y-3 shadow-2xs">
-                                          <h5 className="text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-100 pb-2 uppercase tracking-wider">
+                                          <h5 className="font-libre text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-100 pb-2 uppercase tracking-wider">
                                             {subSec.title}
                                           </h5>
                                           {subSec.text && (
-                                            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal text-left">
+                                            <p className="font-inter text-base sm:text-lg text-slate-600 leading-relaxed font-normal text-left">
                                               {subSec.text}
                                             </p>
                                           )}
                                           <ul className={`grid grid-cols-1 ${subSec.items?.length === 1 ? '' : 'md:grid-cols-2'} gap-x-6 gap-y-2.5 pl-1 list-none`}>
                                             {subSec.items?.map((item, itemIdx) => (
-                                              <li key={itemIdx} className="flex gap-2.5 text-base sm:text-lg text-slate-600 leading-relaxed font-normal items-start">
+                                              <li key={itemIdx} className="font-inter flex gap-2.5 text-base sm:text-lg text-slate-600 leading-relaxed font-normal items-start">
                                                 <span className="text-[#007cff] font-bold shrink-0 mt-0.5">✓</span>
                                                 <span>{renderFormattedText(item)}</span>
                                               </li>
@@ -502,13 +502,13 @@ export default function ServicesView({
                                 return (
                                   <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-4 shadow-xs">
                                     {section.title && (
-                                      <h4 className="text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
+                                      <h4 className="font-libre text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
                                         <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
                                         {section.title}
                                       </h4>
                                     )}
                                     {section.text && (
-                                      <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal text-left">
+                                      <p className="font-inter text-base sm:text-lg text-slate-700 leading-relaxed font-normal text-left">
                                         {section.text}
                                       </p>
                                     )}
@@ -518,10 +518,10 @@ export default function ServicesView({
                                           <div className="bg-blue-50 text-[#007cff] p-2.5 rounded-lg w-fit">
                                             {getIconComponent(gItem.iconName, 'w-5 h-5', 'text-[#007cff]')}
                                           </div>
-                                          <h5 className="text-base sm:text-lg font-bold text-navy-900 leading-snug">
+                                          <h5 className="font-libre text-base sm:text-lg font-bold text-navy-900 leading-snug">
                                             {gItem.title}
                                           </h5>
-                                          <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal text-left">
+                                          <p className="font-inter text-base sm:text-lg text-slate-600 leading-relaxed font-normal text-left">
                                             {gItem.text}
                                           </p>
                                         </div>
@@ -535,7 +535,7 @@ export default function ServicesView({
                                 return (
                                   <div key={sIdx} className="bg-slate-50/80 border border-slate-200 p-6 rounded-2xl space-y-4 shadow-xs">
                                     {section.title && (
-                                      <h4 className="text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
+                                      <h4 className="font-libre text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2 border-b border-slate-200 pb-3 uppercase tracking-wider">
                                         <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
                                         {section.title}
                                       </h4>
@@ -548,7 +548,7 @@ export default function ServicesView({
                                           </pre>
                                         </div>
                                       ) : (
-                                        <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal whitespace-pre-line text-left">
+                                        <p className="font-inter text-base sm:text-lg text-slate-700 leading-relaxed font-normal whitespace-pre-line text-left">
                                           {section.text}
                                         </p>
                                       )
@@ -569,8 +569,8 @@ export default function ServicesView({
                                 : "bg-slate-50 border border-slate-200/60 p-5 rounded-xl space-y-4"
                               }>
                                 <span className={isAccounting
-                                  ? "text-lg sm:text-xl font-bold text-navy-900 uppercase tracking-wider flex items-center gap-2 border-b border-slate-200 pb-3"
-                                  : "text-lg sm:text-xl font-extrabold text-navy-950 uppercase tracking-wider flex items-center gap-2 border-b border-slate-200 pb-2.5"
+                                  ? "font-libre text-lg sm:text-xl font-bold text-navy-900 uppercase tracking-wider flex items-center gap-2 border-b border-slate-200 pb-3"
+                                  : "font-libre text-lg sm:text-xl font-extrabold text-navy-950 uppercase tracking-wider flex items-center gap-2 border-b border-slate-200 pb-2.5"
                                 }>
                                   <ClipboardCheck className="w-5 h-5 text-[#007cff]" />
                                   {check.title}
@@ -578,8 +578,8 @@ export default function ServicesView({
                                 <ul className="space-y-3 list-none">
                                   {check.items.map((item, itemIdx) => (
                                     <li key={itemIdx} className={isAccounting
-                                      ? "flex gap-3 text-[16.1px] sm:text-[18.1px] text-slate-700 leading-relaxed font-normal items-start"
-                                      : "flex gap-2 text-[14.1px] sm:text-[16.1px] text-slate-600 leading-relaxed font-light"
+                                      ? "font-inter flex gap-3 text-[16.1px] sm:text-[18.1px] text-slate-700 leading-relaxed font-normal items-start"
+                                      : "font-inter flex gap-2 text-[14.1px] sm:text-[16.1px] text-slate-600 leading-relaxed font-light"
                                     }>
                                       <span className="text-emerald-500 font-bold shrink-0 mt-0.5">✓</span>
                                       <span>{renderFormattedText(item)}</span>
@@ -598,8 +598,8 @@ export default function ServicesView({
                             : "space-y-3 pt-4 border-t border-slate-100"
                           }>
                             <span className={isAccounting
-                              ? "text-xs font-bold text-slate-500 uppercase tracking-widest block"
-                              : "text-xs font-extrabold text-slate-400 uppercase tracking-widest block"
+                              ? "font-libre text-xs font-bold text-slate-500 uppercase tracking-widest block"
+                              : "font-libre text-xs font-extrabold text-slate-400 uppercase tracking-widest block"
                             }>
                               {sub.whyPartnerTitle || "Key Competitive Advantage:"}
                             </span>
@@ -613,8 +613,8 @@ export default function ServicesView({
                                     <Check className="w-4 h-4" />
                                   </div>
                                   <p className={isAccounting
-                                    ? "text-sm sm:text-base text-slate-700 leading-relaxed font-normal"
-                                    : "text-sm sm:text-base text-slate-600 leading-relaxed font-light"
+                                    ? "font-inter text-sm sm:text-base text-slate-700 leading-relaxed font-normal"
+                                    : "font-inter text-sm sm:text-base text-slate-600 leading-relaxed font-light"
                                   }>{renderFormattedText(why)}</p>
                                 </div>
                               ))}
@@ -636,12 +636,12 @@ export default function ServicesView({
                             </div>
                             <div className="space-y-1">
                               <strong className={isAccounting
-                                ? "text-sm font-mono text-blue-900 uppercase tracking-wider block font-bold"
-                                : "text-sm font-mono text-blue-800 uppercase tracking-wider block"
+                                ? "font-libre text-sm text-blue-900 uppercase tracking-wider block font-bold"
+                                : "font-libre text-sm text-blue-800 uppercase tracking-wider block font-bold"
                               }>{sub.didYouKnowTitle || 'Did You Know?'}</strong>
                               <p className={isAccounting
-                                ? "text-sm sm:text-base text-slate-700 leading-relaxed font-normal"
-                                : "text-sm sm:text-base text-slate-600 leading-relaxed font-light"
+                                ? "font-inter text-sm sm:text-base text-slate-700 leading-relaxed font-normal"
+                                : "font-inter text-sm sm:text-base text-slate-600 leading-relaxed font-light"
                               }>{sub.didYouKnow}</p>
                             </div>
                           </div>
@@ -655,8 +655,8 @@ export default function ServicesView({
                           <a
                             href="tel:+919879161400"
                             className={isAccounting
-                              ? "bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm shadow-emerald-600/10 hover:shadow-md cursor-pointer text-center"
-                              : "bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm sm:text-base px-5 py-3 rounded-lg transition-colors uppercase tracking-wider flex items-center gap-1.5 shadow-sm"
+                              ? "font-inter bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm shadow-emerald-600/10 hover:shadow-md cursor-pointer text-center"
+                              : "font-inter bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm sm:text-base px-5 py-3 rounded-lg transition-colors uppercase tracking-wider flex items-center gap-1.5 shadow-sm"
                             }
                           >
                             <Phone className="w-4 h-4" /> Click to Call
@@ -664,8 +664,8 @@ export default function ServicesView({
                           <button
                             onClick={openConsultation}
                             className={isAccounting
-                              ? "bg-[#007cff] hover:bg-blue-600 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 uppercase tracking-wider shadow-sm shadow-blue-500/10 hover:shadow-md cursor-pointer text-center"
-                              : "bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm sm:text-base px-5 py-3 rounded-lg transition-colors uppercase tracking-wider shadow-sm shadow-indigo-600/10"
+                              ? "font-inter bg-[#007cff] hover:bg-blue-600 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 uppercase tracking-wider shadow-sm shadow-blue-500/10 hover:shadow-md cursor-pointer text-center"
+                              : "font-inter bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm sm:text-base px-5 py-3 rounded-lg transition-colors uppercase tracking-wider shadow-sm shadow-indigo-600/10"
                             }
                           >
                             {sub.ctaText || 'Schedule Consultation'}
@@ -689,11 +689,11 @@ export default function ServicesView({
             {/* Left Column: Context Card */}
             <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
               <div className="space-y-3">
-                <span className="text-sm font-mono text-[#007cff] uppercase tracking-widest font-extrabold block">TRANSITION & COMPLIANCE</span>
-                <h2 className="font-serif text-4xl sm:text-5xl font-extrabold text-navy-950 tracking-tight leading-tight">
+                <span className="font-libre text-sm text-[#007cff] uppercase tracking-widest font-extrabold block">TRANSITION & COMPLIANCE</span>
+                <h2 className="font-libre text-4xl sm:text-5xl font-extrabold text-navy-950 tracking-tight leading-tight">
                   Demystifying the Offshore Leap
                 </h2>
-                <p className="text-base sm:text-lg text-slate-600 font-light leading-relaxed">
+                <p className="font-inter text-base sm:text-lg text-slate-600 font-light leading-relaxed">
                   Moving financial operations offshore comes with valid questions about control, taxation, and setup. We answer the most common concerns transparently.
                 </p>
               </div>
@@ -701,16 +701,16 @@ export default function ServicesView({
               <div className="bg-navy-900 text-white rounded-2xl p-6 border border-navy-800 space-y-5 shadow-lg relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-500/10 to-transparent rounded-full blur-xl"></div>
                 <div className="space-y-2">
-                  <span className="text-[9px] font-mono text-blue-400 uppercase tracking-wider block">HAVE MORE QUESTIONS?</span>
-                  <h3 className="text-sm font-bold">Speak Directly with a Transition Specialist</h3>
-                  <p className="text-[11px] text-slate-300 font-light leading-relaxed">
+                  <span className="font-libre text-[9px] text-blue-400 uppercase tracking-wider block">HAVE MORE QUESTIONS?</span>
+                  <h3 className="font-libre text-sm font-bold">Speak Directly with a Transition Specialist</h3>
+                  <p className="font-inter text-[11px] text-slate-300 font-light leading-relaxed">
                     Every firm has unique regulatory and workflow requirements. Schedule a customized briefing with our transition team today.
                   </p>
                 </div>
                 <div className="space-y-2.5 pt-2">
                   <button
                     onClick={openConsultation}
-                    className="w-full bg-[#007cff] hover:bg-blue-600 text-white text-sm sm:text-base font-bold py-3 rounded-lg transition-colors cursor-pointer text-center block uppercase tracking-wider shadow-sm shadow-blue-500/20"
+                    className="font-inter w-full bg-[#007cff] hover:bg-blue-600 text-white text-sm sm:text-base font-bold py-3 rounded-lg transition-colors cursor-pointer text-center block uppercase tracking-wider shadow-sm shadow-blue-500/20"
                   >
                     Schedule Onboarding Briefing
                   </button>
@@ -738,7 +738,7 @@ export default function ServicesView({
                       <div className="flex items-start gap-3">
                         <HelpCircle className={`w-4 h-4 shrink-0 mt-0.5 transition-colors ${isOpen ? 'text-[#007cff]' : 'text-slate-400 group-hover:text-slate-600'
                           }`} />
-                        <span className={`text-sm sm:text-base font-bold leading-snug transition-colors ${isOpen ? 'text-slate-950' : 'text-slate-700 group-hover:text-slate-950'
+                        <span className={`font-libre text-sm sm:text-base font-bold leading-snug transition-colors ${isOpen ? 'text-slate-950' : 'text-slate-700 group-hover:text-slate-950'
                           }`}>
                           {faq.question}
                         </span>
@@ -762,7 +762,7 @@ export default function ServicesView({
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.25, ease: "easeInOut" }}
                         >
-                          <div className="px-5 pb-5 pt-1 border-t border-slate-100 text-sm sm:text-base text-slate-600 leading-relaxed font-light pl-12">
+                          <div className="px-5 pb-5 pt-1 border-t border-slate-100 font-inter text-sm sm:text-base text-slate-600 leading-relaxed font-light pl-12">
                             <p>{faq.answer}</p>
                           </div>
                         </motion.div>
@@ -783,22 +783,22 @@ export default function ServicesView({
             <div className="flex flex-col md:flex-row gap-3 items-center">
               <Clock className="w-8 h-8 text-blue-500 shrink-0" />
               <div>
-                <strong className="text-white block text-sm">Fast Turnaround Guarantee</strong>
-                <span className="text-[11px] text-slate-400">All books cleared daily or within a pre-agreed 24-hour cycle.</span>
+                <strong className="font-libre text-white block text-sm">Fast Turnaround Guarantee</strong>
+                <span className="font-inter text-[11px] text-slate-400">All books cleared daily or within a pre-agreed 24-hour cycle.</span>
               </div>
             </div>
             <div className="flex flex-col md:flex-row gap-3 items-center">
               <ShieldCheck className="w-8 h-8 text-[#007cff] shrink-0" />
               <div>
-                <strong className="text-white block text-sm">Professional Double Check</strong>
-                <span className="text-[11px] text-slate-400">Zero entry errors. Formulated results reviewed by full-time CAs.</span>
+                <strong className="font-libre text-white block text-sm">Professional Double Check</strong>
+                <span className="font-inter text-[11px] text-slate-400">Zero entry errors. Formulated results reviewed by full-time CAs.</span>
               </div>
             </div>
             <div className="flex flex-col md:flex-row gap-3 items-center text-center">
               <div className="w-full">
                 <button
                   onClick={openConsultation}
-                  className="bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold text-sm tracking-wider px-6 py-3.5 rounded-lg transition-colors uppercase block w-full text-center"
+                  className="font-inter bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold text-sm tracking-wider px-6 py-3.5 rounded-lg transition-colors uppercase block w-full text-center"
                 >
                   Onboard Your First FTE
                 </button>

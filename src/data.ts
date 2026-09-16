@@ -609,7 +609,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: 'Heena Tilwani',
-    role: 'Co-Founder & Proprietor',
+    role: 'Co-Founder',
     image: '/images/Heena Tilwani.jpg',
     bio: 'Heena Tilwani is the Co-Founder and Proprietor of AUM Consultancy, driving the firm\'s core operational execution, internal financial frameworks, and international service delivery. Working in close synergy with the leadership team, she ensures the seamless daily functioning of the offshore delivery center, translating corporate strategy into robust, high-performance client operations.\n\nShe holds complete oversight of internal financial health, managing organizational records, compliance, and employee payroll infrastructure. On the service execution front, Heena actively leads the processing pipelines for global clients, ensuring absolute precision in high-volume bookkeeping (AP/AR), payroll processing, and cross-border tax return preparation.\n\nAdditionally, she is deeply involved in the operational success of the "Build Your Offshore Team" initiative, managing the end-to-end onboarding, training, and workflow alignment of specialized Indian talent for global accounting practices. Through her meticulous administrative leadership and focus on process continuity, Heena ensures that AUM Consultancy consistently maintains its institutional-grade service benchmarks.',
     linkedinUrl: 'https://www.linkedin.com/in/heena-karamchandani-tilwani-4b07a93b0/'

@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { X, Calendar, Clock, Globe, Check, Video, ChevronRight, ChevronLeft, CheckCircle2 } from 'lucide-react';
+import Logo from './Logo';
 
 interface BookConsultationModalProps {
   isOpen: boolean;
@@ -249,20 +250,10 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
 
               {/* Host Identity */}
               <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-lg border border-slate-150 flex items-center justify-center overflow-hidden shrink-0 shadow-sm">
-                    {/* Logo avatar from image */}
-                    <img 
-                      src="/images/aum-logo.png" 
-                      alt="AUM Consultancy Logo" 
-                      className="w-full h-full object-cover scale-[1.28]"
-                    />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Aum Consultancy</h4>
-                    <p className="text-sm font-bold text-slate-900 font-sans">Your Strategic Offshore Partner</p>
-                  </div>
-                </div>
+                <Logo 
+                  className="!cursor-default" 
+                  iconClassName="w-10 h-10 sm:w-11 sm:h-11" 
+                />
 
                 <div className="space-y-2 pt-2">
                   <h3 className="font-serif text-xl sm:text-2xl font-extrabold text-slate-950 leading-tight">

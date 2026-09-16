@@ -1,10 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", "Poppins", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Poppins", Georgia, serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-libre: "Libre Franklin", sans-serif;
+  --font-inter: "Inter", sans-serif;
 
   --color-workspace-bg: #ffffff;
 
@@ -528,5 +530,14 @@ textarea {
 
 input::placeholder,
 textarea::placeholder {
-  color: #94a3b8 !important;
+  color: #64748b !important;
+}
+
+/* Explicit font utilities for Services typography */
+.font-libre {
+  font-family: 'Libre Franklin', sans-serif !important;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif !important;
 }
