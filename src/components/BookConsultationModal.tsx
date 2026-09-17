@@ -32,6 +32,11 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
   const SHORT_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   const LONG_DAY_NAMES = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
+  // Helper to format date string as YYYY-MM-DD in local time without UTC offset shifts
+  const formatDateKey = (year: number, month: number, day: number) => {
+    return `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+  };
+
   // Generate calendar days for the current month view
   const calendarDays = useMemo(() => {
     const firstDay = new Date(calendarYear, calendarMonth, 1);
@@ -47,15 +52,16 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
     // Previous month trailing days
     const prevMonthLastDay = new Date(calendarYear, calendarMonth, 0).getDate();
     for (let i = startingDayOfWeek - 1; i >= 0; i--) {
-      const d = new Date(calendarYear, calendarMonth - 1, prevMonthLastDay - i);
+      const dayNum = prevMonthLastDay - i;
+      const d = new Date(calendarYear, calendarMonth - 1, dayNum);
       days.push({
         date: d,
-        dayNum: prevMonthLastDay - i,
+        dayNum: dayNum,
         isCurrentMonth: false,
         isPast: d < todayRef,
         isSunday: d.getDay() === 0,
         isToday: false,
-        isoString: d.toISOString().split('T')[0]
+        isoString: formatDateKey(d.getFullYear(), d.getMonth(), dayNum)
       });
     }
 
@@ -69,7 +75,7 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
         isPast: d < todayRef,
         isSunday: d.getDay() === 0,
         isToday: d.getTime() === todayRef.getTime(),
-        isoString: d.toISOString().split('T')[0]
+        isoString: formatDateKey(calendarYear, calendarMonth, i)
       });
     }
 
@@ -84,7 +90,7 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
         isPast: d < todayRef,
         isSunday: d.getDay() === 0,
         isToday: false,
-        isoString: d.toISOString().split('T')[0]
+        isoString: formatDateKey(d.getFullYear(), d.getMonth(), i)
       });
     }
 
@@ -131,15 +137,16 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
     }
   };
 
-  // Get selected date details for display
+  // Get selected date details for display (safe from UTC timezone shifts)
   const getSelectedDateDetails = () => {
     if (!selectedDate) return null;
-    const d = new Date(selectedDate + 'T00:00:00');
+    const [y, m, dNum] = selectedDate.split('-').map(Number);
+    const d = new Date(y, m - 1, dNum);
     return {
       dayLongName: LONG_DAY_NAMES[d.getDay()],
       dayName: DAY_NAMES[d.getDay()],
       monthName: SHORT_MONTHS[d.getMonth()],
-      dayNum: d.getDate(),
+      dayNum: dNum,
       isoString: selectedDate
     };
   };
@@ -166,9 +173,9 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     const accessKey = (import.meta as any).env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE";
-    
+
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -190,7 +197,7 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
           from_name: "Aum Consultancy Booking Portal"
         })
       });
-      
+
       const result = await response.json();
       if (!result.success) {
         console.warn("Web3Forms consultation error or key not configured. Graced success shown. Response:", result);
@@ -214,34 +221,35 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-900/80 backdrop-blur-md">
-      <div className="relative bg-white w-full max-w-4xl rounded-2xl shadow-2xl border border-slate-200 overflow-hidden animate-zoomIn flex flex-col max-h-[90vh]">
-        
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-4 md:p-6 bg-slate-900/80 backdrop-blur-md">
+      <div className="relative bg-white w-full max-w-4xl rounded-xl sm:rounded-2xl shadow-2xl border border-slate-200 overflow-hidden animate-zoomIn flex flex-col max-h-[92dvh] sm:max-h-[90vh]">
+
         {/* Main Header Row with X Button */}
-        <div className="absolute top-4 right-4 z-20">
-          <button 
+        <div className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20">
+          <button
             onClick={() => {
               resetModal();
               onClose();
             }}
-            className="text-slate-400 hover:text-slate-700 bg-slate-100 p-2 rounded-full transition-colors"
+            className="text-slate-400 hover:text-slate-700 bg-slate-100 hover:bg-slate-200 p-1.5 sm:p-2 rounded-full transition-colors active:scale-95 shadow-xs"
             title="Close booking widget"
+            aria-label="Close booking modal"
           >
-            <X className="w-5 h-5" />
+            <X className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
         </div>
 
         {/* Inner Grid Area */}
-        <div className="grid grid-cols-1 md:grid-cols-12 h-full overflow-y-auto">
-          
+        <div className="grid grid-cols-1 md:grid-cols-12 h-full overflow-y-auto overscroll-contain">
+
           {/* LEFT SIDEBAR: Host & Event Details */}
-          <div className="md:col-span-5 bg-white p-6 sm:p-8 border-b md:border-b-0 md:border-r border-slate-100 flex flex-col justify-between">
-            <div className="space-y-6">
+          <div className="md:col-span-5 bg-white p-4 sm:p-6 md:p-8 border-b md:border-b-0 md:border-r border-slate-100 flex flex-col justify-between">
+            <div className="space-y-3 sm:space-y-4 md:space-y-6 pr-8 sm:pr-10 md:pr-0">
               {/* Back button (only shown on Form step) */}
               {step === 2 && (
-                <button 
+                <button
                   onClick={() => setStep(1)}
-                  className="flex items-center gap-1 text-xs font-semibold text-[#006bff] hover:underline"
+                  className="inline-flex items-center gap-1 text-xs font-semibold text-[#006bff] hover:underline mb-1"
                 >
                   <ChevronLeft className="w-4 h-4" />
                   Back
@@ -249,24 +257,24 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
               )}
 
               {/* Host Identity */}
-              <div className="space-y-4">
-                <Logo 
-                  className="!cursor-default" 
-                  iconClassName="w-10 h-10 sm:w-11 sm:h-11" 
+              <div className="space-y-2 sm:space-y-3 md:space-y-4">
+                <Logo
+                  className="!cursor-default"
+                  iconClassName="w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11"
                 />
 
-                <div className="space-y-2 pt-2">
-                  <h3 className="font-serif text-xl sm:text-2xl font-extrabold text-slate-950 leading-tight">
+                <div className="space-y-1 sm:space-y-2 pt-1 sm:pt-2">
+                  <h3 className="font-serif text-lg sm:text-xl md:text-2xl font-extrabold text-slate-950 leading-tight">
                     30-Min Strategy Call
                   </h3>
-                  
-                  <div className="flex flex-col gap-2.5 pt-3">
-                    <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-600 font-medium">
-                      <Clock className="w-4 h-4 text-slate-400" />
+
+                  <div className="flex flex-wrap md:flex-col gap-2 md:gap-2.5 pt-1.5 sm:pt-2.5">
+                    <div className="flex items-center gap-1.5 sm:gap-2.5 text-xs sm:text-sm text-slate-600 font-medium">
+                      <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-400 shrink-0" />
                       <span>30 min</span>
                     </div>
-                    <div className="flex items-start gap-3 text-xs sm:text-sm text-slate-600 font-medium">
-                      <Video className="w-4 h-4 text-slate-400 mt-0.5 shrink-0" />
+                    <div className="flex items-center gap-1.5 sm:gap-2.5 text-xs sm:text-sm text-slate-600 font-medium">
+                      <Video className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-400 shrink-0" />
                       <span>Web conferencing details provided upon confirmation.</span>
                     </div>
                   </div>
@@ -274,11 +282,10 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
               </div>
 
               {/* Description */}
-              <div className="text-xs text-slate-500 leading-relaxed font-light space-y-2 pt-2">
+              <div className="text-xs text-slate-500 leading-relaxed font-light">
                 <p>
                   Welcome! Start booking meetings with Aum Consultancy.
                 </p>
-                
               </div>
             </div>
 
@@ -292,47 +299,48 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
           </div>
 
           {/* RIGHT SIDEBAR: Date Picker & slots */}
-          <div className="md:col-span-7 bg-[#fafbfc] p-6 sm:p-8 flex flex-col justify-between min-h-[480px]">
-            
+          <div className="md:col-span-7 bg-[#fafbfc] p-3.5 sm:p-6 md:p-8 flex flex-col justify-between md:min-h-[480px]">
+
             {/* Step 1: Date & Time selector */}
             {step === 1 && (
-              <div className="space-y-5">
+              <div className="space-y-3.5 sm:space-y-5">
                 <div>
                   <h3 className="text-base sm:text-lg font-bold text-slate-950">Select a Date & Time</h3>
                 </div>
 
                 {/* Calendar Date Picker */}
-                <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+                <div className="bg-white rounded-xl border border-slate-200 p-2.5 sm:p-4 shadow-sm">
                   {/* Month/Year Navigation */}
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center justify-between mb-2 sm:mb-4">
                     <button
                       type="button"
                       onClick={goToPrevMonth}
                       disabled={!canGoPrevMonth}
-                      className={`p-1.5 rounded-lg transition-all ${
-                        canGoPrevMonth 
-                          ? 'hover:bg-slate-100 text-slate-600 cursor-pointer' 
+                      className={`p-1.5 rounded-lg transition-all ${canGoPrevMonth
+                          ? 'hover:bg-slate-100 text-slate-600 cursor-pointer active:scale-95'
                           : 'text-slate-300 cursor-not-allowed'
-                      }`}
+                        }`}
+                      aria-label="Previous month"
                     >
-                      <ChevronLeft className="w-4 h-4" />
+                      <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
                     </button>
-                    <span className="text-sm font-bold text-slate-800 tracking-wide">
+                    <span className="text-xs sm:text-sm font-bold text-slate-800 tracking-wide">
                       {MONTH_NAMES[calendarMonth]} {calendarYear}
                     </span>
                     <button
                       type="button"
                       onClick={goToNextMonth}
-                      className="p-1.5 rounded-lg hover:bg-slate-100 text-slate-600 cursor-pointer transition-all"
+                      className="p-1.5 rounded-lg hover:bg-slate-100 text-slate-600 cursor-pointer transition-all active:scale-95"
+                      aria-label="Next month"
                     >
-                      <ChevronRight className="w-4 h-4" />
+                      <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
                     </button>
                   </div>
 
                   {/* Day-of-week headers */}
                   <div className="grid grid-cols-7 gap-1 mb-1">
                     {DAY_NAMES.map((day) => (
-                      <div key={day} className="text-center text-[10px] font-bold text-slate-400 uppercase tracking-wider py-1">
+                      <div key={day} className="text-center text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider py-0.5 sm:py-1">
                         {day}
                       </div>
                     ))}
@@ -358,13 +366,13 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
                             }
                           }}
                           className={`
-                            relative aspect-square flex items-center justify-center rounded-lg text-xs font-semibold transition-all duration-150
-                            ${isDisabled 
-                              ? 'text-slate-300 cursor-not-allowed' 
+                            relative aspect-square flex items-center justify-center rounded-lg text-[11px] sm:text-xs font-semibold transition-all duration-150 select-none
+                            ${isDisabled
+                              ? 'text-slate-300 cursor-not-allowed'
                               : isSelected
                                 ? 'bg-[#006bff] text-white shadow-md shadow-blue-500/20 scale-105'
-                                : isCurrentMonth 
-                                  ? 'text-slate-700 hover:bg-[#006bff]/10 hover:text-[#006bff] cursor-pointer'
+                                : isCurrentMonth
+                                  ? 'text-slate-700 hover:bg-[#006bff]/10 hover:text-[#006bff] cursor-pointer active:scale-95'
                                   : 'text-slate-300 hover:bg-slate-50 cursor-pointer'
                             }
                             ${day.isToday && !isSelected ? 'ring-1 ring-[#006bff]/40 font-extrabold text-[#006bff]' : ''}
@@ -382,34 +390,33 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
 
                 {/* Time Slots (shown below calendar when date is selected) */}
                 {selectedDate && (
-                  <div className="space-y-3 animate-fadeIn">
+                  <div className="space-y-2.5 sm:space-y-3 animate-fadeIn">
                     <div className="flex items-center justify-between">
-                      <div className="text-xs font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
+                      <div className="text-[11px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
                         <Clock className="w-3.5 h-3.5 text-slate-400" />
                         <span>Select Time — {selectedDateObj ? `${selectedDateObj.dayLongName}, ${selectedDateObj.monthName} ${selectedDateObj.dayNum}` : ''}</span>
                       </div>
                     </div>
-                    
-                    <div className="max-h-[180px] overflow-y-auto pr-1">
-                    <div className="grid grid-cols-4 gap-2">
-                      {timeSlots.map((time) => {
-                        const isSelected = selectedTime === time;
-                        return (
-                          <button
-                            key={time}
-                            type="button"
-                            onClick={() => handleTimeClick(time)}
-                            className={`py-2.5 text-xs font-bold rounded-lg border transition-all duration-150 ${
-                              isSelected 
-                                ? 'bg-[#006bff]/10 border-[#006bff] text-[#006bff] shadow-sm' 
-                                : 'bg-white border-slate-200 text-slate-700 hover:border-[#006bff] hover:text-[#006bff]'
-                            }`}
-                          >
-                            {time}
-                          </button>
-                        );
-                      })}
-                    </div>
+
+                    <div className="max-h-[160px] sm:max-h-[180px] overflow-y-auto pr-1">
+                      <div className="grid grid-cols-3 sm:grid-cols-4 gap-1.5 sm:gap-2">
+                        {timeSlots.map((time) => {
+                          const isSelected = selectedTime === time;
+                          return (
+                            <button
+                              key={time}
+                              type="button"
+                              onClick={() => handleTimeClick(time)}
+                              className={`py-2 sm:py-2.5 px-1 sm:px-2 text-[11px] sm:text-xs font-bold rounded-lg border transition-all duration-150 text-center whitespace-nowrap active:scale-95 ${isSelected
+                                  ? 'bg-[#006bff]/10 border-[#006bff] text-[#006bff] shadow-xs'
+                                  : 'bg-white border-slate-200 text-slate-700 hover:border-[#006bff] hover:text-[#006bff]'
+                                }`}
+                            >
+                              {time}
+                            </button>
+                          );
+                        })}
+                      </div>
                     </div>
 
                     {/* Confirm button when time is selected */}
@@ -417,7 +424,7 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
                       <button
                         type="button"
                         onClick={handleConfirmTime}
-                        className="w-full bg-[#006bff] hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg text-xs tracking-wider transition-all uppercase flex items-center justify-center gap-2 cursor-pointer shadow-sm active:translate-y-[1px] animate-fadeIn"
+                        className="w-full bg-[#006bff] hover:bg-blue-600 text-white font-bold py-2.5 sm:py-3 px-4 rounded-lg text-xs tracking-wider transition-all uppercase flex items-center justify-center gap-2 cursor-pointer shadow-sm active:translate-y-[1px] animate-fadeIn"
                       >
                         <span>Confirm — {selectedTime}</span>
                         <ChevronRight className="w-4 h-4" />
@@ -427,15 +434,15 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
                 )}
 
                 {/* Time zone widget */}
-                <div className="space-y-2 pt-1">
-                  <div className="flex items-center gap-1.5 text-xs font-bold text-slate-500 uppercase tracking-wider">
+                <div className="space-y-1.5 sm:space-y-2 pt-1">
+                  <div className="flex items-center gap-1.5 text-[11px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider">
                     <Globe className="w-3.5 h-3.5 text-slate-400" />
                     <span>Time Zone Offset</span>
                   </div>
                   <select
                     value={timezone}
                     onChange={(e) => setTimezone(e.target.value)}
-                    className="bg-white border border-slate-200 text-xs text-slate-700 rounded-lg p-2 w-full outline-none focus:ring-1 focus:ring-[#006bff]"
+                    className="bg-white border border-slate-200 text-xs sm:text-sm text-slate-700 rounded-lg p-2 sm:p-2.5 w-full outline-none focus:ring-1 focus:ring-[#006bff]"
                   >
                     {timezones.map((tz) => (
                       <option key={tz} value={tz}>{tz}</option>
@@ -555,7 +562,7 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
                 <div className="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-500 border border-emerald-200">
                   <CheckCircle2 className="w-10 h-10" />
                 </div>
-                
+
                 <div className="space-y-2 max-w-md">
                   <h4 className="font-serif text-xl font-bold text-slate-900">You are Scheduled!</h4>
                   <p className="text-xs text-slate-500 leading-relaxed">

@@ -4,26 +4,18 @@ import { MessageSquare, X, Send, Check } from 'lucide-react';
 export default function WhatsAppButton() {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
-  const [country, setCountry] = useState('India (Head Office)');
   const [submitted, setSubmitted] = useState(false);
 
-  const countries = [
-    { name: 'India (Head Office)', phone: '+919879161400', flag: '🇮🇳' },
-    { name: 'United Kingdom', phone: '+442079460958', flag: '🇬🇧' },
-    { name: 'Australia', phone: '+61298765432', flag: '🇦🇺' },
-    { name: 'United Arab Emirates', phone: '+97142345678', flag: '🇦🇪' }
-  ];
+  const phone = '+919879161400';
 
   const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault();
     if (!message.trim()) return;
 
-    // Selected representative phone number
-    const selected = countries.find(c => c.name.includes(country)) || countries[0];
-    const encodedText = encodeURIComponent(`Hello Aum Consultancy team, I am writing from ${country}. I would like to inquire about: ${message}`);
+    const encodedText = encodeURIComponent(`Hello Aum Consultancy team, I would like to inquire about: ${message}`);
 
     // Create WhatsApp URL
-    const whatsappUrl = `https://wa.me/${selected.phone.replace('+', '')}?text=${encodedText}`;
+    const whatsappUrl = `https://wa.me/${phone.replace('+', '')}?text=${encodedText}`;
 
     // Simulate send effect then open WhatsApp in a new tab
     setSubmitted(true);
@@ -72,23 +64,8 @@ export default function WhatsAppButton() {
             </div>
           </div>
 
-          {/* Dropdown & Message Input Form */}
-          <form onSubmit={handleSendMessage} className="p-3.5 border-t border-slate-100 space-y-2.5 bg-white">
-            <div className="flex flex-col gap-1">
-              <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Select Regional Rep:</label>
-              <select
-                value={country}
-                onChange={(e) => setCountry(e.target.value)}
-                className="w-full bg-slate-100 border-none rounded-lg p-2 text-xs text-slate-700 focus:ring-1 focus:ring-green-500 outline-none"
-              >
-                {countries.map((c) => (
-                  <option key={c.name} value={c.name}>
-                    {c.flag} {c.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-
+          {/* Message Input Form */}
+          <form onSubmit={handleSendMessage} className="p-3.5 border-t border-slate-100 bg-white">
             <div className="relative">
               <textarea
                 rows={2}

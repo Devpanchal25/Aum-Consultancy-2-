@@ -542,7 +542,7 @@ export const BLOGS: BlogPost[] = [
       'By selecting an offshore partner who treats data security as an architectural requirement rather than a secondary checklist, you protect your customers while improving your margins.',
       'Please verify from official legal sources before finalizing compliance procedures in your specific state.'
     ],
-    author: 'Amish Patel, Founder'
+    author: 'Jay Parmar'
   },
   {
     id: '2',
@@ -559,7 +559,7 @@ export const BLOGS: BlogPost[] = [
       'Furthermore, we help startups calculate and document federal research & development (R&D) payroll wage tax credits, saving early-stage firms thousands of dollars annually in cash offsets.',
       'Scaling smartly means keeping fixed overhead as small as possible. Outsourcing your financial management gives you the corporate structure you need to prepare for your next funding round.'
     ],
-    author: 'Rajiv Sharma, Senior Valuation Expert'
+    author: 'Jay Parmar'
   },
   {
     id: '3',
@@ -578,7 +578,7 @@ export const BLOGS: BlogPost[] = [
       'Staying compliant from day one prevents surprise penalties that can erase your entire product margin. Partnering with a specialized offshore tax group ensures your sales reporting is flawless.',
       'Please verify nexus details with official regional tax departments or local CPAs, as rules shift frequently.'
     ],
-    author: 'Priya Nair, Tax Director'
+    author: 'Jay Parmar'
   },
   {
     id: '4',
@@ -595,7 +595,7 @@ export const BLOGS: BlogPost[] = [
       'Our whitelabel offshore teams operate as logical extensions of your local office, logging into your secure servers and adhering strictly to your standard operating procedures.',
       'The math is simple: outsourcing reduces labor expenses by up to 60%, turning compliance seasons from stressful crunches into highly profitable opportunities.'
     ],
-    author: 'Amish Patel, Founder'
+    author: 'Jay Parmar'
   }
 ];
 
