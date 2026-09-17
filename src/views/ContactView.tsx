@@ -44,6 +44,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   // Form states matching screenshot
   const [formData, setFormData] = useState({
@@ -64,9 +65,21 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
 
-    const accessKey = (import.meta as any).env.VITE_WEB3FORMS_ACCESS_KEY || "916cf501-53f0-4d7f-9b47-7ceec5c36e2b";
+    // Honeypot spam check — bots fill hidden fields, real users don't
+    const form = e.target as HTMLFormElement;
+    const honeypot = (form.elements.namedItem('_gotcha') as HTMLInputElement)?.value;
+    if (honeypot) return;
+
+    setIsSubmitting(true);
+    setSubmitError('');
+
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+    if (!accessKey) {
+      setIsSubmitting(false);
+      setSubmitError('Contact form is temporarily unavailable. Please reach us via phone or WhatsApp.');
+      return;
+    }
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -77,35 +90,28 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
         },
         body: JSON.stringify({
           access_key: accessKey,
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          website: formData.website,
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim(),
+          website: formData.website.trim(),
           hearAbout: formData.hearAbout,
-          message: formData.message,
-          subject: `New Aum Consultancy Contact Submission from ${formData.name}`,
+          message: formData.message.trim(),
+          subject: `New Aum Consultancy Contact Submission from ${formData.name.trim()}`,
           from_name: "Aum Consultancy Website"
         })
       });
 
       const result = await response.json();
-      if (!result.success) {
-        console.warn("Web3Forms error or key not configured. Graced success shown in preview. Response:", result);
+      if (result.success) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', phone: '', website: '', hearAbout: '', message: '' });
+      } else {
+        setSubmitError('Something went wrong. Please try again or contact us directly.');
       }
-    } catch (error) {
-      console.error("Submission failed. Graced success shown in preview.", error);
+    } catch {
+      setSubmitError('Unable to send message. Please check your connection or contact us via phone/WhatsApp.');
     } finally {
       setIsSubmitting(false);
-      setSubmitted(true);
-      // Reset form fields
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        website: '',
-        hearAbout: '',
-        message: ''
-      });
     }
   };
 
@@ -233,6 +239,14 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-5">
+                    {/* Honeypot spam trap — hidden from real users */}
+                    <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" style={{ display: 'none' }} aria-hidden="true" />
+
+                    {submitError && (
+                      <div className="bg-red-50 border border-red-200 text-red-700 text-xs p-3 rounded-lg font-medium">
+                        {submitError}
+                      </div>
+                    )}
 
                     {/* Enter Your Name */}
                     <div className="space-y-1">
@@ -243,6 +257,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                         value={formData.name}
                         onChange={handleInputChange}
                         placeholder="Enter Your Name *"
+                        maxLength={100}
                         aria-label="Your Name"
                         className="w-full bg-white border border-slate-200 rounded-lg p-3.5 text-xs text-slate-800 placeholder-slate-500 focus:outline-none focus:border-[#007cff] focus:ring-1 focus:ring-[#007cff] transition-all"
                       />
@@ -258,6 +273,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                           value={formData.email}
                           onChange={handleInputChange}
                           placeholder="Enter Your Email Id *"
+                          maxLength={254}
                           aria-label="Your Email Address"
                           className="w-full bg-white border border-slate-200 rounded-lg p-3.5 text-xs text-slate-800 placeholder-slate-500 focus:outline-none focus:border-[#007cff] focus:ring-1 focus:ring-[#007cff] transition-all"
                         />
@@ -269,6 +285,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                           value={formData.phone}
                           onChange={handleInputChange}
                           placeholder="Enter Your Number (Optional)"
+                          maxLength={20}
                           aria-label="Your Phone Number"
                           className="w-full bg-white border border-slate-200 rounded-lg p-3.5 text-xs text-slate-800 placeholder-slate-500 focus:outline-none focus:border-[#007cff] focus:ring-1 focus:ring-[#007cff] transition-all"
                         />
@@ -283,6 +300,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                         value={formData.website}
                         onChange={handleInputChange}
                         placeholder="Enter Your Website (Optional)"
+                        maxLength={200}
                         aria-label="Your Website URL"
                         className="w-full bg-white border border-slate-200 rounded-lg p-3.5 text-xs text-slate-800 placeholder-slate-500 focus:outline-none focus:border-[#007cff] focus:ring-1 focus:ring-[#007cff] transition-all"
                       />
@@ -318,6 +336,7 @@ export default function ContactView({ setCurrentPage, openConsultation }: Contac
                         value={formData.message}
                         onChange={handleInputChange}
                         placeholder="Your Message *"
+                        maxLength={2000}
                         aria-label="Your Message or Project Details"
                         className="w-full bg-white border border-slate-200 rounded-lg p-3.5 text-xs text-slate-800 placeholder-slate-500 focus:outline-none focus:border-[#007cff] focus:ring-1 focus:ring-[#007cff] resize-none transition-all"
                       />

@@ -649,6 +649,8 @@ export default function Navbar({
                 onClick={() => setIsOpen(!isOpen)}
                 className="text-slate-750 p-1.5 sm:p-2 focus:outline-none bg-slate-100 rounded-md border border-slate-200 cursor-pointer shrink-0"
                 id="mobile-menu-toggle"
+                aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+                aria-expanded={isOpen}
               >
                 {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>

@@ -541,3 +541,28 @@ textarea::placeholder {
 .font-inter {
   font-family: 'Inter', sans-serif !important;
 }
+
+/* Respect prefers-reduced-motion for accessibility (WCAG 2.2 AA) */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  .animate-marquee {
+    animation: none !important;
+  }
+
+  .animate-pulse,
+  .animate-ping,
+  .animate-bounce {
+    animation: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

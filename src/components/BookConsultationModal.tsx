@@ -23,6 +23,7 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
     requirements: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const today = new Date();
   today.setHours(0, 0, 0, 0);
@@ -172,9 +173,21 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
 
-    const accessKey = (import.meta as any).env.VITE_WEB3FORMS_ACCESS_KEY || "916cf501-53f0-4d7f-9b47-7ceec5c36e2b";
+    // Honeypot spam check
+    const form = e.target as HTMLFormElement;
+    const honeypot = (form.elements.namedItem('_gotcha') as HTMLInputElement)?.value;
+    if (honeypot) return;
+
+    setIsSubmitting(true);
+    setSubmitError('');
+
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+    if (!accessKey) {
+      setIsSubmitting(false);
+      setSubmitError('Booking form is temporarily unavailable. Please reach us via phone or WhatsApp.');
+      return;
+    }
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -185,28 +198,29 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
         },
         body: JSON.stringify({
           access_key: accessKey,
-          name: formData.name,
-          email: formData.email,
-          company: formData.company,
-          phone: formData.phone,
-          requirements: formData.requirements,
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          company: formData.company.trim(),
+          phone: formData.phone.trim(),
+          requirements: formData.requirements.trim(),
           scheduled_date: selectedDate,
           scheduled_time: selectedTime,
           timezone: timezone,
-          subject: `⚡ New 30-Min Strategy Call Booked by ${formData.name}`,
+          subject: `⚡ New 30-Min Strategy Call Booked by ${formData.name.trim()}`,
           from_name: "Aum Consultancy Booking Portal"
         })
       });
 
       const result = await response.json();
-      if (!result.success) {
-        console.warn("Web3Forms consultation error or key not configured. Graced success shown. Response:", result);
+      if (result.success) {
+        setStep(3); // Success Screen
+      } else {
+        setSubmitError('Something went wrong. Please try again or contact us directly.');
       }
-    } catch (error) {
-      console.error("Consultation booking submission failed. Graced success shown.", error);
+    } catch {
+      setSubmitError('Unable to submit booking. Please check your connection or contact us via phone/WhatsApp.');
     } finally {
       setIsSubmitting(false);
-      setStep(3); // Success Screen
     }
   };
 
@@ -466,6 +480,14 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
+                  {/* Honeypot spam trap */}
+                  <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" style={{ display: 'none' }} aria-hidden="true" />
+
+                  {submitError && (
+                    <div className="bg-red-50 border border-red-200 text-red-700 text-xs p-3 rounded-lg font-medium">
+                      {submitError}
+                    </div>
+                  )}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1">
                       <label htmlFor="modal-name" className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Full Name *</label>
@@ -477,6 +499,7 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
                         value={formData.name}
                         onChange={handleInputChange}
                         placeholder="e.g. John Doe"
+                        maxLength={100}
                         className="w-full bg-white border border-slate-200 rounded-lg p-2.5 text-xs text-slate-800 focus:outline-none focus:border-[#006bff] transition-colors"
                       />
                     </div>
@@ -490,6 +513,7 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
                         value={formData.email}
                         onChange={handleInputChange}
                         placeholder="e.g. jdoe@company.com"
+                        maxLength={254}
                         className="w-full bg-white border border-slate-200 rounded-lg p-2.5 text-xs text-slate-800 focus:outline-none focus:border-[#006bff] transition-colors"
                       />
                     </div>
@@ -506,6 +530,7 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
                         value={formData.company}
                         onChange={handleInputChange}
                         placeholder="e.g. Apex Brands LLC"
+                        maxLength={150}
                         className="w-full bg-white border border-slate-200 rounded-lg p-2.5 text-xs text-slate-800 focus:outline-none focus:border-[#006bff] transition-colors"
                       />
                     </div>
@@ -518,6 +543,7 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
                         value={formData.phone}
                         onChange={handleInputChange}
                         placeholder="e.g. +1 (555) 123-4567"
+                        maxLength={20}
                         className="w-full bg-white border border-slate-200 rounded-lg p-2.5 text-xs text-slate-800 focus:outline-none focus:border-[#006bff] transition-colors"
                       />
                     </div>
@@ -533,6 +559,7 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
                       value={formData.requirements}
                       onChange={handleInputChange}
                       placeholder="e.g. Need whitelabel bookkeeping staff, daily bank reconciliation support..."
+                      maxLength={2000}
                       className="w-full bg-white border border-slate-200 rounded-lg p-2.5 text-xs text-slate-800 focus:outline-none focus:border-[#006bff] resize-none transition-colors"
                     />
                   </div>
