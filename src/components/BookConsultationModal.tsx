@@ -174,7 +174,7 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
     e.preventDefault();
     setIsSubmitting(true);
 
-    const accessKey = (import.meta as any).env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE";
+    const accessKey = (import.meta as any).env.VITE_WEB3FORMS_ACCESS_KEY || "916cf501-53f0-4d7f-9b47-7ceec5c36e2b";
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
